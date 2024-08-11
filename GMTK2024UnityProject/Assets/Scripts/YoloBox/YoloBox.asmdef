@@ -1,13 +1,14 @@
 {
-    "name": "GameJam",
-    "rootNamespace": "GameJam",
+    "name": "YoloBox",
+    "rootNamespace": "YoloBox",
     "references": [
+        "Unity.TextMeshPro",
         "DOTween.Modules",
-        "Unity.TextMeshPro"
+        "UIEffect"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": false,
+    "allowUnsafeCode": true,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
