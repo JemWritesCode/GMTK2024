@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using YoloBox;
 
 namespace GameJam {
-  public sealed class HoverLabel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+  public sealed class OnHoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     [field: SerializeField]
     public Vector3 TweenScaleTo { get; private set; } = Vector3.one;
 
