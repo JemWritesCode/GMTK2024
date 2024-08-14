@@ -3,6 +3,7 @@
     "rootNamespace": "GameJam",
     "references": [
         "DOTween.Modules",
+        "Eflatun.SceneReference",
         "Unity.TextMeshPro",
         "UIEffect",
         "YoloBox"
