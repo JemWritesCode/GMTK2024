@@ -12,3 +12,4 @@ GMTK2024 GameJam Submission
     * Menubar > Window > TextMeshPro > Import TMP Essential Resources > Import
   * Setup DOTween
     * Menubar > Tools > Demigiant > DOTween Utility Panel > Setup DOTween > Apply
+  * Requires the Private Repo of our Assets > https://github.com/JemWritesCode/GMTK2024Assets > Downloaded into the GMTK2024UnityProject\Assets folder
