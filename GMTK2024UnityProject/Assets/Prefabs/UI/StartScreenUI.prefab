@@ -283,8 +283,8 @@ MonoBehaviour:
   <SettingsButtonImage>k__BackingField: {fileID: 4546736610772106029}
   <CreditsButtonImage>k__BackingField: {fileID: 1534578626170206539}
   <GameScene>k__BackingField:
-    asset: {fileID: 102900000, guid: efd978c370617c642b215f4f4c7ce03c, type: 3}
-    guid: efd978c370617c642b215f4f4c7ce03c
+    asset: {fileID: 102900000, guid: fed46f0bf882fbc43b3603b2c95a5bf0, type: 3}
+    guid: fed46f0bf882fbc43b3603b2c95a5bf0
 --- !u!1 &5383876039157444725
 GameObject:
   m_ObjectHideFlags: 0
