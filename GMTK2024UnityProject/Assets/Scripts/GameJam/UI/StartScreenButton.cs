@@ -26,6 +26,7 @@ namespace GameJam {
     private void Start() {
       _onHoverTween =
           DOTween.Sequence()
+              .SetLink(gameObject)
               .Insert(0f, transform.DOScale(TweenToScale, TweenToDuration))
               .Insert(0f, Image.DOColor(TweenToColor, TweenToDuration))
               .SetEase(Ease.InOutQuad)
