@@ -145,6 +145,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338912871525126050}
+  - component: {fileID: 7178555056655613648}
+  - component: {fileID: 6607841949122421704}
+  - component: {fileID: 2783020014658360239}
   m_Layer: 5
   m_Name: MenuPanel
   m_TagString: Untagged
@@ -173,6 +176,46 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7178555056655613648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402602202264807779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40e4d70314fce844bf417b4452d69c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PanelRectTransform>k__BackingField: {fileID: 338912871525126050}
+  <PanelCanvasGroup>k__BackingField: {fileID: 6607841949122421704}
+--- !u!225 &6607841949122421704
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402602202264807779}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &2783020014658360239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402602202264807779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40e4d70314fce844bf417b4452d69c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PanelRectTransform>k__BackingField: {fileID: 338912871525126050}
+  <PanelCanvasGroup>k__BackingField: {fileID: 6607841949122421704}
 --- !u!1 &2754709343986755661
 GameObject:
   m_ObjectHideFlags: 0
