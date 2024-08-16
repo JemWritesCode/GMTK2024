@@ -9,17 +9,19 @@ namespace GameJam {
     public Image GameLogo { get; private set; }
 
     private void Awake() {
+      CreateTweens();
       AnimateIntro();
     }
 
     public void AnimateIntro() {
       DOTween.Sequence()
           .SetTarget(gameObject)
-          .Insert(0f, CreateTranslateFade(GameLogo, 0.5f, new(0f, -150f, 0f), 2f))
+          .Insert(0f, CreateTranslateFade(GameLogo, 0.25f, new(0f, -200f, 0f), 1f, 1.5f))
           .SetEase(Ease.InOutQuad);
     }
 
-    private Sequence CreateTranslateFade(Image image, float atPosition, Vector3 translateDirection, float duration) {
+    private Sequence CreateTranslateFade(
+        Image image, float atPosition, Vector3 translateDirection, float fadeFrom, float duration) {
       return DOTween.Sequence()
           .Insert(
               atPosition - (duration / 2f),
@@ -28,7 +30,22 @@ namespace GameJam {
               atPosition,
               image
                   .DOFade(1f, duration / 2f)
-                  .From(0f));
+                  .From(fadeFrom));
+    }
+
+    private Sequence _gameLogoOnClickTween;
+
+    private void CreateTweens() {
+      _gameLogoOnClickTween =
+          DOTween.Sequence()
+              .SetAutoKill(false)
+              .Insert(0f, GameLogo.transform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 10, 1f))
+              .Pause();
+    }
+
+    public void OnGameLogoClick() {
+      _gameLogoOnClickTween.Complete();
+      _gameLogoOnClickTween.Restart();
     }
   }
 }
