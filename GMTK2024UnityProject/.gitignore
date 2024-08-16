@@ -68,6 +68,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# Ignore anything in GMTK2024Assets
+/[Aa]ssets/[Gg][Mm][Tt][Kk]2024[Aa]ssets/
+
 ######################## Cheery Bit Games Common Assets ########################
 
 # Don't upload Asset Hunter Pro
