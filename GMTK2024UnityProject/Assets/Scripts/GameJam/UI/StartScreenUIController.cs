@@ -16,7 +16,7 @@ namespace GameJam {
     public void AnimateIntro() {
       DOTween.Sequence()
           .SetTarget(gameObject)
-          .Insert(0f, CreateTranslateFade(GameLogo, 0.25f, new(0f, -200f, 0f), 1f, 1.5f))
+          .Insert(0f, CreateTranslateFade(GameLogo, 0.25f, new(0f, -200f, 0f), 0f, 3f))
           .SetEase(Ease.InOutQuad);
     }
 
