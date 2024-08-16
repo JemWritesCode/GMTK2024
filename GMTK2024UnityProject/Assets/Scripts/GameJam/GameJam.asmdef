@@ -4,6 +4,7 @@
     "references": [
         "DOTween.Modules",
         "Eflatun.SceneReference",
+        "SuperCharacterController",
         "Unity.TextMeshPro",
         "UIEffect",
         "YoloBox"
