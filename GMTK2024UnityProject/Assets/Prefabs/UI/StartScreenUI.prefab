@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4579938264686960342}
   - component: {fileID: 1534578626170206539}
   - component: {fileID: 156948419781508476}
+  - component: {fileID: 1017341905067704203}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -134,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -166,6 +167,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
+--- !u!114 &1017341905067704203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017410839285850576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456b712b987c3e949b46078e7c7da106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Image>k__BackingField: {fileID: 1534578626170206539}
+  <TweenToDuration>k__BackingField: 0.6
+  <TweenToScale>k__BackingField: {x: 1.0375, y: 1.0375, z: 1}
+  <TweenToColor>k__BackingField: {r: 1, g: 0.27843142, b: 0.3599889, a: 1}
 --- !u!1 &5135984740672510647
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +294,7 @@ GameObject:
   - component: {fileID: 5350805177265947920}
   - component: {fileID: 4546736610772106029}
   - component: {fileID: 6437515350997291685}
+  - component: {fileID: 2668163601293276536}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -324,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -356,6 +374,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
+--- !u!114 &2668163601293276536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5383876039157444725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456b712b987c3e949b46078e7c7da106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Image>k__BackingField: {fileID: 4546736610772106029}
+  <TweenToDuration>k__BackingField: 0.6
+  <TweenToScale>k__BackingField: {x: 1.0375, y: 1.0375, z: 0}
+  <TweenToColor>k__BackingField: {r: 1, g: 0.9446705, b: 0.27843142, a: 1}
 --- !u!1 &6031946230331128046
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,8 +551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectFactor: 0
-  m_Width: 0.5
+  m_EffectFactor: 0.07317454
+  m_Width: 0.75
   m_Rotation: 135
   m_Softness: 1
   m_Brightness: 1
@@ -527,7 +561,7 @@ MonoBehaviour:
   m_Player:
     play: 1
     initialPlayDelay: 0.85
-    duration: 3
+    duration: 5
     loop: 1
     loopDelay: 1.5
     updateMode: 0
@@ -543,6 +577,7 @@ GameObject:
   - component: {fileID: 1446283241890996457}
   - component: {fileID: 4280213125972616273}
   - component: {fileID: 5104020134747274243}
+  - component: {fileID: 758015420897165429}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -590,7 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -622,3 +657,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
+--- !u!114 &758015420897165429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133957060507863129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456b712b987c3e949b46078e7c7da106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Image>k__BackingField: {fileID: 4280213125972616273}
+  <TweenToDuration>k__BackingField: 0.6
+  <TweenToScale>k__BackingField: {x: 1.0375, y: 1.0375, z: 1}
+  <TweenToColor>k__BackingField: {r: 0.2784314, g: 0.63529414, b: 1, a: 1}
