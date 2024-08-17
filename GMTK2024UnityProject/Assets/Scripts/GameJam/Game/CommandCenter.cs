@@ -5,6 +5,7 @@ namespace GameJam
 {
     public class CommandCenter : MonoBehaviour
     {
+        public FireWall FireWall;
         public List<Server> Servers = new List<Server>();
         public List<Ads.Ad> CurrentAds = new List<Ads.Ad>();
         public int Users = 0;
@@ -36,7 +37,6 @@ namespace GameJam
                 users -= server.ServeServer(users);
             }
 
-            // TODO: reputation system
             if (users <= 0)
             {
                 // All were served yay
@@ -44,13 +44,11 @@ namespace GameJam
             }
             else
             {
-                Reputation -= 100;
+                Reputation -= 50;
             }
 
-            if (Reputation < 0)
-            {
-                RandomAttack();
-            }
+
+            RandomAttack(Reputation);
 
             // TODO: add mechanic to increase user count
             AddUsers(Random.Range(1, 10));
@@ -94,10 +92,14 @@ namespace GameJam
             Cash -= cash;
         }
 
-        public void RandomAttack()
+        public void RandomAttack(int reputation)
         {
-            int index = Random.Range(1, Servers.Count);
-            Servers[index].RandomAttack();
+            if (!FireWall.TryBlockAttack(reputation))
+            {
+                int index = Random.Range(1, Servers.Count);
+                Debug.Log($"ATTACK on server {index}!!");
+                Servers[index].RandomAttack();
+            }
         }
 
         public void OpenUI()

@@ -20,7 +20,7 @@ namespace GameJam
             }
         }
 
-        public void UseItem(Server server)
+        public void UseItem(Temperature temperature)
         {
             if (!usable)
             {
@@ -29,11 +29,15 @@ namespace GameJam
 
             if (CanPutOutFire)
             {
-                server.ResetHeat();
+                temperature.ResetHeat();
+            }
+            else if (!temperature.Overheated())
+            {
+                temperature.LowerHeat(HeatReduction);
             }
             else
             {
-                server.LowerHeat(HeatReduction);
+                return;
             }
 
             if (Consumable)

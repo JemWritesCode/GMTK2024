@@ -37,7 +37,14 @@ namespace GameJam
             }
         }
 
-        public void RemoveConnection()
+        public void BreakConnection()
+        {
+            pickedUp = false;
+            Connection = null;
+            line.SetPosition(1, this.transform.position + cableOffset);
+        }
+
+        public void MoveConnection()
         {
             Connection = null;
             StartConnection();
@@ -74,28 +81,20 @@ namespace GameJam
         public void CableInteract(GameObject interactAgent)
         {
             Debug.Log("Interact With Start Cable Box...");
-            if (HandManager.Instance.HoldingCable())
-            {
-                if (HandManager.Instance.CurrentCable == this)
-                {
-                    Debug.Log("Drop cable!");
-                    CancelConnection();
-                    return;
-                }
 
-                Debug.Log("Box is a starting box, holding a cable, doing nothing");
-            }
-            else
+            if (HandManager.Instance.TryPickup(this))
             {
                 if (!IsConnected())
                 {
                     Debug.Log("Box is not connected, not holding cable, creating one if able");
                     StartConnection();
                 }
-                else
-                {
-                    Debug.Log("Box is already connected, not holding cable, do nothing");
-                }
+            }
+            else if (HandManager.Instance.CurrentCable == this)
+            {
+                Debug.Log("Drop cable!");
+                CancelConnection();
+                return;
             }
         }
     }
