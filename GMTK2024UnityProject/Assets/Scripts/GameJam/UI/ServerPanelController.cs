@@ -16,6 +16,9 @@ namespace GameJam {
     [field: SerializeField]
     public CanvasGroup PanelCanvasGroup { get; private set; }
 
+    [field: SerializeField]
+    public Image BackgroundLogo { get; private set; }
+
     [field: Header("User")]
     [field: SerializeField]
     public Image UserIcon { get; private set; }
@@ -45,8 +48,13 @@ namespace GameJam {
       _showHidePanelTween =
           DOTween.Sequence()
               .SetTarget(gameObject)
-              .Insert(-0.1f, PanelRectTransform.DOPunchPosition(new(20f, 0f, 0f), 0.2f, 0, 0f))
+              .Insert(-0.1f, PanelRectTransform.DOPunchPosition(new(0f, -20f, 0f), 0.2f, 0, 0f))
               .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.1f))
+              .Insert(0f, BackgroundLogo.transform.DOMove(new(0f, 5f, 0f), 0.2f).From(true).SetEase(Ease.InOutQuad))
+              .Insert(0.05f, FadeMoveImage(UserIcon, new(2f, 0f, 0f), 0.2f))
+              .Insert(0.05f, FadeMoveImage(UserLabel, new(-2f, 0f, 0f), 0.2f))
+              .Insert(0.05f, FadeMoveImage(PowerIcon, new(2f, 0f, 0f), 0.2f))
+              .Insert(0.05f, FadeMoveImage(PowerLabel, new(-2f, 0f, 0f), 0.2f))
               .SetAutoKill(false)
               .Pause();
     }
@@ -69,6 +77,12 @@ namespace GameJam {
       IsPanelVisible = false;
 
       _showHidePanelTween.SmoothRewind();
+    }
+
+    static Tween FadeMoveImage(Graphic image, Vector3 offset, float duration) {
+      return DOTween.Sequence()
+          .Insert(0f, image.DOFade(1f, duration).From(0f, true))
+          .Insert(0f, image.transform.DOMove(offset, duration).From(true).SetEase(Ease.InOutQuad));
     }
   }
 }

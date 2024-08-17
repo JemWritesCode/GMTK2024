@@ -1066,6 +1066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PanelRectTransform>k__BackingField: {fileID: 8515092636327287442}
   <PanelCanvasGroup>k__BackingField: {fileID: 1754526743241878045}
+  <BackgroundLogo>k__BackingField: {fileID: 792264413608490596}
   <UserIcon>k__BackingField: {fileID: 926676699719714437}
   <UserLabel>k__BackingField: {fileID: 1766995129200070977}
   <PowerIcon>k__BackingField: {fileID: 537403470656295613}
