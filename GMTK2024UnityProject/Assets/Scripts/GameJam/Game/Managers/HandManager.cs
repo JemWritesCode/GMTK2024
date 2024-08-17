@@ -58,10 +58,25 @@ namespace GameJam
             return false;
         }
 
-        public void UseItem(Server server)
+        public bool TryPickup(CableStartPoint cable)
         {
-            Item.UseItem(server);
+            if (!HoldingCable() && !HoldingItem())
+            {
+                CurrentCable = cable;
+                return true;
+            }
 
+            return false;
+        }
+
+        public void UseItem(Temperature temperature)
+        {
+            Item.UseItem(temperature);
+            ConsumeItem();
+        }
+
+        private void ConsumeItem()
+        {
             if (Item.Consumable)
             {
                 // TODO: change appearance of can

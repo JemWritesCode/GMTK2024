@@ -15,14 +15,14 @@ namespace GameJam
 
         public void BreakConnection()
         {
-            Connection.CancelConnection();
+            Connection.BreakConnection();
             Connection = null;
         }
 
         public void CancelConnection()
         {
             HandManager.Instance.CurrentCable = Connection;
-            Connection.RemoveConnection();
+            Connection.MoveConnection();
             Connection = null;
         }
 

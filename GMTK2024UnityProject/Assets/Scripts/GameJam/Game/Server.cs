@@ -6,18 +6,18 @@ namespace GameJam
     public class Server : MonoBehaviour
     {
         public int UserCapacity = 100;
-        public int Heat = 0;
-        public int HeatLimit = 100;
         public int RequiredPower = 100;
 
         public List<CableEndPoint> PowerConnections = new List<CableEndPoint>();
         public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
 
+        public Temperature Temperature = new Temperature();
+
         public int ServeServer(int users)
         {
-            if (Heat >= HeatLimit)
+            if (Temperature.Overheated())
             {
-                // FIRE FIRE
+                // TODO: Play/update fire animation
                 return 0;
             }
 
@@ -54,8 +54,6 @@ namespace GameJam
                 // IDEAS: can check for different cable connections than power boxes here, upgrades!
             }
 
-            Debug.Log($"Server total power: {totalPower}");
-
             if (totalPower < RequiredPower)
             {
                 return 0;
@@ -67,36 +65,9 @@ namespace GameJam
             }
 
             float capacityPercentage = (float)users / UserCapacity;
-            UpdateHeat(capacityPercentage);
+            Temperature.UpdateHeat(capacityPercentage);
 
             return users;
-        }
-
-        private void UpdateHeat(float capacityPercentage)
-        {
-            if (capacityPercentage >= 0.8)
-            {
-                Heat++;
-            }
-
-            if (Heat > HeatLimit)
-            {
-                // TODO FIRE FIRE FIRE
-            }
-        }
-
-        public void LowerHeat(int heat)
-        {
-            Heat -= heat;
-            if (Heat < 0)
-            {
-                Heat = 0;
-            }
-        }
-
-        public void ResetHeat()
-        {
-            Heat = 0;
         }
 
         public void RandomAttack()
@@ -124,7 +95,7 @@ namespace GameJam
             Debug.Log("Interact With Server...");
             if (HandManager.Instance.HoldingItem())
             {
-                HandManager.Instance.UseItem(this);
+                HandManager.Instance.UseItem(Temperature);
             }
         }
     }

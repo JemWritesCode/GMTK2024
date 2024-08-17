@@ -6,7 +6,7 @@ namespace GameJam
     public class PowerBox : MonoBehaviour
     {
         public List<CableStartPoint> Connections = new List<CableStartPoint>();
-        public float capacity = 100f;
+        public int capacity = 100;
 
         public int GetPower()
         {
@@ -18,8 +18,13 @@ namespace GameJam
                     connections++;
                 }
             }
+
+            if (connections == 0)
+            {
+                return 0;
+            }
+
             // TODO make smart
-            Debug.Log($"Power box has {connections} connections");
             return (int)(capacity / connections);
         }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 178014135667607984}
   - component: {fileID: 8914431253482113124}
   - component: {fileID: 8348753855190412133}
+  - component: {fileID: 824037169898276130}
   m_Layer: 0
   m_Name: FireWall
   m_TagString: Untagged
@@ -126,7 +127,34 @@ MonoBehaviour:
   <HighlightRenderer>k__BackingField: {fileID: 178014135667607984}
   OnInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 824037169898276130}
+        m_TargetAssemblyTypeName: GameJam.FireWall, GameJam
+        m_MethodName: FireWallInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &824037169898276130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424716733209661058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c1c7ea7b3e0e649938782571a5ee60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaximumIntegrity: 100
+  Integrity: 100
+  IntegrityThreshold: 20
 --- !u!1 &5710336066040814331
 GameObject:
   m_ObjectHideFlags: 0
