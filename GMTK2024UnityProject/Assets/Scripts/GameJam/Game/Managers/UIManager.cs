@@ -8,6 +8,9 @@ namespace GameJam {
     [field: SerializeField]
     public MenuPanelController MenuPanel { get; private set; }
 
+    [field: SerializeField]
+    public InteractPanelController InteractPanel { get; private set; }
+
     public bool ShouldUnlockCursor() {
       return MenuPanel.IsPanelVisible;
     } 
