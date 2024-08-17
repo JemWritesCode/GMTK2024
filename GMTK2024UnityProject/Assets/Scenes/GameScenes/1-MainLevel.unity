@@ -405,18 +405,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 132921613}
     m_Modifications:
-    - target: {fileID: 1913291798510964286, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 1913291798510964286, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.228
-      objectReference: {fileID: 0}
-    - target: {fileID: 4030518372060938665, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.227
-      objectReference: {fileID: 0}
     - target: {fileID: 4988411190106308917, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.331018
@@ -464,13 +452,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6162287292783668740, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7450498260600856301, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
 --- !u!4 &598284879 stripped
 Transform:
@@ -532,10 +514,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4047769108044887067, guid: a9f77a37a3b12de4cb1681072b60e335, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f77a37a3b12de4cb1681072b60e335, type: 3}
 --- !u!4 &716267454 stripped
 Transform:
@@ -1443,13 +1422,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerLogo
       objectReference: {fileID: 0}
+    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
+    - {fileID: 6398304061357392291, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2211404144050657644, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
 --- !u!4 &8199720850706357093 stripped
 Transform:
