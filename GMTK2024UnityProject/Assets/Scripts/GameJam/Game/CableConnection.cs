@@ -29,7 +29,7 @@ namespace GameJam {
         {
             if (pickedUp)
             {
-                line.SetPosition(1, Player.Instance.gameObject.transform.position);
+                line.SetPosition(1, InteractManager.Instance.InteractAgent.transform.position);
             }
         }
 

@@ -30,7 +30,7 @@ namespace GameJam {
                 // Already has connected cable box
                 if (CanRemove)
                 {
-                    Player.CurrentCable = Connection.Cable;
+                    CableManager.Instance.CurrentCable = Connection.Cable;
                     Connection.SetConnection(null);
                     Connection = null;
                 }
@@ -38,10 +38,10 @@ namespace GameJam {
             else
             {
                 // Check if player has cable in hand
-                if (Player.CurrentCable != null)
+                if (CableManager.Instance.CurrentCable)
                 {
                     // If so connect that cable to this box
-                    Player.CurrentCable.EndConnection(this);
+                    CableManager.Instance.CurrentCable.EndConnection(this);
                 }
                 else
                 {
@@ -50,7 +50,7 @@ namespace GameJam {
                     {
                         CableConnection cable = this.gameObject.AddComponent<CableConnection>();
                         cable.StartConnection();
-                        Player.CurrentCable = cable;
+                        CableManager.Instance.CurrentCable = cable;
                     }
                 }
             }
