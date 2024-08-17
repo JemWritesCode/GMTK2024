@@ -34,8 +34,8 @@ namespace GameJam {
     }
 
     public void OnInteractKey() {
-      if (HandManager.Instance.ProcessInteracable()) {
-          return;
+      if (HandManager.Instance.ProcessInteractable()) {
+        return;
       }
 
       Interactable interactable = InteractManager.Instance.ClosestInteractable;
