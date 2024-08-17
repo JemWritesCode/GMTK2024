@@ -1,4 +1,3 @@
-using System.Net;
 using UnityEngine;
 
 namespace GameJam
@@ -7,6 +6,8 @@ namespace GameJam
     {
         public CableEndPoint Connection;
         public LineRenderer line;
+        public CableType.CableBoxType Type = CableType.CableBoxType.None;
+        public Material CableMaterial;
 
         private bool pickedUp = false;
 
@@ -19,8 +20,7 @@ namespace GameJam
 
             line.SetPosition(0, this.transform.position);
             line.SetPosition(1, this.transform.position);
-            line.startColor = Color.black;
-            line.endColor = Color.black;
+            line.material = CableMaterial;
             line.startWidth = 0.05f;
             line.endWidth = 0.05f;
             line.useWorldSpace = true;

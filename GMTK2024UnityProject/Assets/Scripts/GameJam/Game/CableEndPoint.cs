@@ -1,9 +1,11 @@
 using UnityEngine;
+using static GameJam.CableType;
 
 namespace GameJam {
     public class CableEndPoint : MonoBehaviour
     {
         public CableStartPoint Connection;
+        public CableBoxType Type = CableBoxType.None;
 
         public bool IsConnected()
         {
@@ -28,7 +30,7 @@ namespace GameJam {
             Debug.Log("Interact With End Cable Box...");
             if (CableManager.Instance.HoldingCable())
             {
-                if (!IsConnected())
+                if (!IsConnected() && CableManager.Instance.CurrentCable.Type == Type)
                 {
                     Debug.Log("Box is not connected, connecting cable");
                     CompleteConnection(CableManager.Instance.CurrentCable);

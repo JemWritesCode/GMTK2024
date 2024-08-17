@@ -5,7 +5,7 @@ namespace GameJam
 {
     public class CommandCenter : MonoBehaviour
     {
-        private List<Server> servers;
+        public List<Server> Servers = new List<Server>();
         public int Users = 0;
         public int Reputation = 1000;
 
@@ -24,7 +24,7 @@ namespace GameJam
             }
 
             int users = Users;
-            foreach (Server server in servers)
+            foreach (Server server in Servers)
             {
                 if (users <= 0)
                 {
@@ -46,14 +46,14 @@ namespace GameJam
             }
 
             // TODO: add mechanic to increase user count
-            AddUsers((int)Random.Range(0.1f, 1f) * 100);
+            AddUsers((int)(Random.Range(0.1f, 1f) * 10));
 
             updateTimer = time;
         }
 
         public void AddServer(Server server)
         {
-            servers.Add(server);
+            Servers.Add(server);
         }
 
         public void AddUsers(int users)

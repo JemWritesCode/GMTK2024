@@ -10,11 +10,27 @@ namespace GameJam
         public int HeatLimit = 100;
         public int RequiredPower = 100;
 
-        public List<CableStartPoint> PowerConnections = new List<CableStartPoint>();
+        public List<CableEndPoint> PowerConnections = new List<CableEndPoint>();
+        public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
 
         public int ServeServer(int users)
         {
-            foreach (CableStartPoint p in PowerConnections)
+            bool connected = false;
+            foreach (CableEndPoint p in DataConnections)
+            {
+                if (p.IsConnected())
+                {
+                    connected = true;
+                    break;
+                }
+            }
+
+            if (!connected)
+            {
+                return 0;
+            }
+
+            foreach (CableEndPoint p in PowerConnections)
             {
                 if (!p.IsConnected())
                 {

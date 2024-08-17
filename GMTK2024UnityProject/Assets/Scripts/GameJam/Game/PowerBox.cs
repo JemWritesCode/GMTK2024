@@ -5,13 +5,13 @@ namespace GameJam
 {
     public class PowerBox : MonoBehaviour
     {
-        public List<CableEndPoint> Connections = new List<CableEndPoint>();
+        public List<CableStartPoint> Connections = new List<CableStartPoint>();
         public float capacity = 100f;
 
         public int GetPower()
         {
             int connections = 0;
-            foreach (CableEndPoint p in Connections)
+            foreach (CableStartPoint p in Connections)
             {
                 if (p.IsConnected())
                 {
