@@ -22,7 +22,7 @@ namespace GameJam
             return Item != null;
         }
 
-        public bool ProcessInteracable()
+        public bool ProcessInteractable()
         {
             Debug.Log($"Holding item, interacting.");
             Interactable interactable = InteractManager.Instance.ClosestInteractable;

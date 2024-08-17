@@ -244,11 +244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4974129026092240093, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 499.99997
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 4974129026092240093, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 4974129026092240093, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -297,6 +297,26 @@ PrefabInstance:
     - target: {fileID: 4974129026092240093, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750996817589223620, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
+      propertyPath: m_text
+      value: '[E]\tInteract'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750996817589223620, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.27058825
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750996817589223620, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.23921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750996817589223620, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.21568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750996817589223620, guid: 107281d269d97844f8b1575cb3435f3e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282727735
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
