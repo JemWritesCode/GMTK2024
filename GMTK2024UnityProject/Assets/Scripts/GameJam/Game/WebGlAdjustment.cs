@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace GameJam {
   public sealed class WebGlAdjustment : MonoBehaviour {
+    [field: Header("SuperCharacterController")]
     [field: SerializeField]
     public SUPERCharacterAIO SuperCharacterController { get; private set; }
 
@@ -24,9 +25,9 @@ namespace GameJam {
       yield return null;
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-    Debug.Log("Adjusting sensitivity for WebGL.");
-    SuperCharacterController.Sensitivity = MouseSensitivity;
-    SuperCharacterController.bodyCatchupSpeed = BodyCatchupSpeed;
+      Debug.Log("Adjusting sensitivity for WebGL.");
+      SuperCharacterController.Sensitivity = MouseSensitivity;
+      SuperCharacterController.bodyCatchupSpeed = BodyCatchupSpeed;
 #endif
     }
   }
