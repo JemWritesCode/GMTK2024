@@ -43,7 +43,6 @@ namespace GameJam {
     }
 
     public void LockCursor() {
-      Debug.Log("Locking cursor.");
       IsCursorLocked = true;
 
       if (PlayerCharacterController) {
@@ -55,7 +54,6 @@ namespace GameJam {
     }
 
     public void UnlockCursor() {
-      Debug.Log("Unlocking cursor.");
       IsCursorLocked = false;
 
       if (PlayerCharacterController) {
