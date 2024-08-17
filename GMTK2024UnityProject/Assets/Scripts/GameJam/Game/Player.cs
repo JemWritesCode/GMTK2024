@@ -6,7 +6,7 @@ namespace GameJam
     {
         static Player() {}
 
-        private static readonly Player instance = new Player();
+        private static readonly Player instance;
 
         public static Player Instance
         {

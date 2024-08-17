@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bf4b1aa3fb7de4d835a854549978cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRemove: 0
-  connection: {fileID: 0}
+  CanRemove: 0
+  Connection: {fileID: 0}
+  Cable: {fileID: 0}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1982249915730694108}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 0

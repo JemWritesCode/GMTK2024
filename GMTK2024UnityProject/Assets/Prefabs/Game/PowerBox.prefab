@@ -122,26 +122,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7374436309394499127, guid: 47aaacc3938242b4f9ab658e3b189db2, type: 3}
-      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374436309394499127, guid: 47aaacc3938242b4f9ab658e3b189db2, type: 3}
-      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 11500000, guid: c7bf4b1aa3fb7de4d835a854549978cc, type: 3}
-    - target: {fileID: 7374436309394499127, guid: 47aaacc3938242b4f9ab658e3b189db2, type: 3}
-      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_name
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374436309394499127, guid: 47aaacc3938242b4f9ab658e3b189db2, type: 3}
-      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 7374436309394499127, guid: 47aaacc3938242b4f9ab658e3b189db2, type: 3}
-      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7795940189401232766, guid: 47aaacc3938242b4f9ab658e3b189db2, type: 3}
       propertyPath: m_Name
       value: CableBox

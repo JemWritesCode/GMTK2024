@@ -25,9 +25,8 @@ namespace GameJam {
           CanInteract && InteractAgent ? GetClosestInteractable(InteractAgent.transform, InteractRange) : default;
 
       if (interactable != ClosestInteractable) {
-        // TODO(redseiko@): add Facepunch.Highlight package to make use of this.
-        // HighlightManager.Instance.RemoveInteractable(ClosestInteractable);
-        // HighlightManager.Instance.AddInteractable(interactable);
+        HighlightManager.Instance.RemoveInteractable(ClosestInteractable);
+        HighlightManager.Instance.AddInteractable(interactable);
 
         ClosestInteractable = interactable;
       }

@@ -22,7 +22,7 @@ namespace GameJam {
             return Connection != null;
         }
 
-        public void Interact()
+        public void CableInteract(GameObject interactAgent)
         {
             Debug.Log("Interact Yeee");
             if (Connection != null)

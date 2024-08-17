@@ -4,6 +4,7 @@
     "references": [
         "DOTween.Modules",
         "Eflatun.SceneReference",
+        "Facepunch.Highlight",
         "SuperCharacterController",
         "Unity.TextMeshPro",
         "UIEffect",

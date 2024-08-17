@@ -22,6 +22,10 @@ namespace GameJam {
         OnToggleMenuKey();
       }
 
+      if (Input.GetKeyDown(InteractKey)) {
+        OnInteractKey();
+      }
+
       UpdateCursorLockState();
     }
 
@@ -33,6 +37,7 @@ namespace GameJam {
       Interactable interactable = InteractManager.Instance.ClosestInteractable;
 
       if (interactable) {
+        Debug.Log($"Has interactable, interacting.");
         interactable.Interact(InteractManager.Instance.InteractAgent);
       }
     }
