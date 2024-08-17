@@ -14,6 +14,9 @@ namespace GameJam {
     [field: SerializeField]
     public KeyCode ToggleMenuKey { get; set; } = KeyCode.Tab;
 
+    [field: SerializeField]
+    public KeyCode InteractKey { get; private set; } = KeyCode.E;
+
     private void Update() {
       if (Input.GetKeyDown(ToggleMenuKey)) {
         OnToggleMenuKey();
@@ -26,10 +29,18 @@ namespace GameJam {
       UIManager.Instance.MenuPanel.TogglePanel();
     }
 
+    public void OnInteractKey() {
+      Interactable interactable = InteractManager.Instance.ClosestInteractable;
+
+      if (interactable) {
+        interactable.Interact(InteractManager.Instance.InteractAgent);
+      }
+    }
+
     public bool IsCursorLocked { get; private set; }
 
     public void UpdateCursorLockState() {
-      bool shouldUnlockCursor = UIManager.Instance.ShouldUnlockCursor();
+      bool shouldUnlockCursor = ShouldUnlockCursor();
 
       if (shouldUnlockCursor) {
         if (IsCursorLocked) {
@@ -40,6 +51,10 @@ namespace GameJam {
           LockCursor();
         }
       }
+    }
+
+    public bool ShouldUnlockCursor() {
+      return UIManager.Instance && UIManager.Instance.ShouldUnlockCursor();
     }
 
     public void LockCursor() {
