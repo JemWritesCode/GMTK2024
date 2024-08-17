@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 445367297115461748}
   - component: {fileID: 7521242402720300912}
   - component: {fileID: 5187106523482720853}
+  - component: {fileID: 8100295253802251269}
+  - component: {fileID: 5899799395236502656}
   m_Layer: 0
-  m_Name: soda can
+  m_Name: SodaCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,8 +118,8 @@ Rigidbody:
   m_GameObject: {fileID: 1240391072824180620}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -134,3 +136,49 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8100295253802251269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240391072824180620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d04dc3391f7c644bae7ad0a67aa5189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Consumable: 1
+  CanPutOutFire: 0
+  HeatReduction: 10
+--- !u!114 &5899799395236502656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240391072824180620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InteractRange>k__BackingField: 1
+  <CanInteract>k__BackingField: 1
+  <InteractText>k__BackingField: 
+  <HighlightRenderer>k__BackingField: {fileID: 445367297115461748}
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8100295253802251269}
+        m_TargetAssemblyTypeName: GameJam.HandItem, GameJam
+        m_MethodName: Pickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -15,6 +15,12 @@ namespace GameJam
 
         public int ServeServer(int users)
         {
+            if (Heat >= HeatLimit)
+            {
+                // FIRE FIRE
+                return 0;
+            }
+
             bool connected = false;
             foreach (CableEndPoint p in DataConnections)
             {
@@ -75,6 +81,44 @@ namespace GameJam
         public void LowerHeat(int heat)
         {
             Heat -= heat;
+            if (Heat < 0)
+            {
+                Heat = 0;
+            }
+        }
+
+        public void ResetHeat()
+        {
+            Heat = 0;
+        }
+
+        public void RandomAttack()
+        {
+            if (Random.Range(0, 1) == 0)
+            {
+                int index = Random.Range(0, PowerConnections.Count);
+                if (PowerConnections[index].IsConnected())
+                {
+                    PowerConnections[index].BreakConnection();
+                }
+            }
+            else
+            {
+                int index = Random.Range(0, DataConnections.Count);
+                if (DataConnections[index].IsConnected())
+                {
+                    DataConnections[index].BreakConnection();
+                }
+            }
+        }
+
+        public void ServerInteract(GameObject interactAgent)
+        {
+            Debug.Log("Interact With Server...");
+            if (HandManager.Instance.HoldingItem())
+            {
+                HandManager.Instance.UseItem(this);
+            }
         }
     }
 }

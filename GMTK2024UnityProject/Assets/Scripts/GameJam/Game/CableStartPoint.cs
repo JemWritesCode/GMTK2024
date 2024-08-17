@@ -44,13 +44,13 @@ namespace GameJam
         public void CancelConnection()
         {
             pickedUp = false;
-            CableManager.Instance.CurrentCable = null;
+            HandManager.Instance.CurrentCable = null;
             line.SetPosition(1, this.transform.position);
         }
 
         public void StartConnection()
         {
-            CableManager.Instance.CurrentCable = this;
+            HandManager.Instance.CurrentCable = this;
             Connection = null;
             pickedUp = true;
         }
@@ -58,7 +58,7 @@ namespace GameJam
         public void CompleteConnection(CableEndPoint cable)
         {
             pickedUp = false;
-            CableManager.Instance.CurrentCable = null;
+            HandManager.Instance.CurrentCable = null;
             Connection = cable;
             line.SetPosition(1, cable.transform.position);
         }
@@ -71,9 +71,9 @@ namespace GameJam
         public void CableInteract(GameObject interactAgent)
         {
             Debug.Log("Interact With Start Cable Box...");
-            if (CableManager.Instance.HoldingCable())
+            if (HandManager.Instance.HoldingCable())
             {
-                if (CableManager.Instance.CurrentCable == this)
+                if (HandManager.Instance.CurrentCable == this)
                 {
                     Debug.Log("Drop cable!");
                     CancelConnection();

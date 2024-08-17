@@ -335,6 +335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f6a9f295bbdc94791c929a32c271d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!23 &7839593771750331247 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6426750441360516512, guid: aedc38e88c98033418eef9ed54e4ebbb, type: 3}
+  m_PrefabInstance: {fileID: 3889900091303786191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4271438000809958604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420,17 +425,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4988411190106308917}
     m_Modifications:
-    - target: {fileID: -4083682614587175250, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
-      propertyPath: m_RootOrder
-      value: 110
-      objectReference: {fileID: 0}
     - target: {fileID: 5010925442796397295, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
       propertyPath: m_Name
       value: server (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5675013305860159573, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
-      propertyPath: m_RootOrder
-      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 5675013305860159573, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -472,18 +469,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6812431470292304698, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
-      propertyPath: m_Materials.Array.data[1]
+    - target: {fileID: 8232239259909650875, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
+      propertyPath: <HighlightRenderer>k__BackingField
       value: 
-      objectReference: {fileID: 2100000, guid: dc772efc330be464785be67d4a6ee8a6, type: 2}
-    - target: {fileID: 7952352521346077735, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      objectReference: {fileID: 7839593771750331247}
+    - target: {fileID: 8232239259909650875, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2100000, guid: dc772efc330be464785be67d4a6ee8a6, type: 2}
-    - target: {fileID: 7952352521346077735, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5786f1117a840014b8ab40c3c7a18c22, type: 2}
+      objectReference: {fileID: 5184514303477253666}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
