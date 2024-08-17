@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 4175860609367214715}
   - component: {fileID: 6426750441360516512}
   - component: {fileID: 6588221185566261981}
-  - component: {fileID: 1982249915730694108}
+  - component: {fileID: -293076150264668689}
   - component: {fileID: 7374436309394499127}
   - component: {fileID: 477540927033506357}
   m_Layer: 0
-  m_Name: CableBox
+  m_Name: CableBoxEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7795940189401232766}
   m_Mesh: {fileID: 6464809856111060268, guid: bc292df39a2bda84da5276e72b27fd69, type: 3}
---- !u!114 &1982249915730694108
+--- !u!114 &-293076150264668689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,12 +95,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7795940189401232766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7bf4b1aa3fb7de4d835a854549978cc, type: 3}
+  m_Script: {fileID: 11500000, guid: b0f6a9f295bbdc94791c929a32c271d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanRemove: 0
   Connection: {fileID: 0}
-  Cable: {fileID: 0}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +118,8 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1982249915730694108}
-        m_TargetAssemblyTypeName: GameJam.CablePoint, GameJam
+      - m_Target: {fileID: -293076150264668689}
+        m_TargetAssemblyTypeName: GameJam.CableEndPoint, GameJam
         m_MethodName: CableInteract
         m_Mode: 0
         m_Arguments:

@@ -10,11 +10,11 @@ namespace GameJam
         public int HeatLimit = 100;
         public int RequiredPower = 100;
 
-        public List<CablePoint> PowerConnections = new List<CablePoint>();
+        public List<CableStartPoint> PowerConnections = new List<CableStartPoint>();
 
         public int ServeServer(int users)
         {
-            foreach (CablePoint p in PowerConnections)
+            foreach (CableStartPoint p in PowerConnections)
             {
                 if (!p.IsConnected())
                 {
