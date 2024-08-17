@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InteractRange>k__BackingField: 1
+  <InteractRange>k__BackingField: 2
   <CanInteract>k__BackingField: 1
-  <InteractText>k__BackingField: 
+  <InteractText>k__BackingField: Small Heat Reducer
   <HighlightRenderer>k__BackingField: {fileID: 445367297115461748}
   OnInteract:
     m_PersistentCalls:

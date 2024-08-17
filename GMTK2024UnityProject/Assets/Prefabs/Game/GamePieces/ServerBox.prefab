@@ -335,11 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f6a9f295bbdc94791c929a32c271d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!23 &7839593771750331247 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6426750441360516512, guid: aedc38e88c98033418eef9ed54e4ebbb, type: 3}
-  m_PrefabInstance: {fileID: 3889900091303786191}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4271438000809958604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -470,13 +465,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8232239259909650875, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
+      propertyPath: <InteractText>k__BackingField
+      value: Server
+      objectReference: {fileID: 0}
+    - target: {fileID: 8232239259909650875, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
       propertyPath: <HighlightRenderer>k__BackingField
       value: 
-      objectReference: {fileID: 7839593771750331247}
+      objectReference: {fileID: 1829464028845117296}
     - target: {fileID: 8232239259909650875, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
       propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5184514303477253666}
+      objectReference: {fileID: 5739566336200881683}
+    - target: {fileID: 8232239259909650875, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ServerInteract
+      objectReference: {fileID: 0}
+    - target: {fileID: 8232239259909650875, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameJam.Server, GameJam
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -485,6 +492,11 @@ PrefabInstance:
 --- !u!4 &659956616484156447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5675013305860159573, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
+  m_PrefabInstance: {fileID: 5181692102548655178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1829464028845117296 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6812431470292304698, guid: 2f3fe288da751a2428fc82d8e5ed9f7e, type: 3}
   m_PrefabInstance: {fileID: 5181692102548655178}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5966084084574154117

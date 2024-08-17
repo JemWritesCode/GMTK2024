@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2464040917427277490}
   - component: {fileID: 178014135667607984}
   - component: {fileID: 8914431253482113124}
+  - component: {fileID: 8348753855190412133}
   m_Layer: 0
   m_Name: FireWall
   m_TagString: Untagged
@@ -107,6 +108,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5964057, y: 2.4454348, z: 1.2836547}
   m_Center: {x: 0.00000020861626, y: 1.2227174, z: 0.018700838}
+--- !u!114 &8348753855190412133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2424716733209661058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InteractRange>k__BackingField: 2
+  <CanInteract>k__BackingField: 1
+  <InteractText>k__BackingField: Wall of Fire
+  <HighlightRenderer>k__BackingField: {fileID: 178014135667607984}
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5710336066040814331
 GameObject:
   m_ObjectHideFlags: 0

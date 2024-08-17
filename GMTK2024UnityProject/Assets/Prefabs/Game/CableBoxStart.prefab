@@ -237,6 +237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Connection: {fileID: 0}
   line: {fileID: 7688658296543449823}
+  Type: 0
+  CableMaterial: {fileID: 0}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InteractRange>k__BackingField: 1
   <CanInteract>k__BackingField: 1
-  <InteractText>k__BackingField: Connector0
+  <InteractText>k__BackingField: Cable Start Connector
   <HighlightRenderer>k__BackingField: {fileID: 6426750441360516512}
   OnInteract:
     m_PersistentCalls:

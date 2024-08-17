@@ -9,6 +9,7 @@ namespace GameJam
         public int HeatReduction = 10;
 
         private bool pickedUp = false;
+        private bool usable = true;
 
         void Update()
         {
@@ -21,6 +22,11 @@ namespace GameJam
 
         public void UseItem(Server server)
         {
+            if (!usable)
+            {
+                return;
+            }
+
             if (CanPutOutFire)
             {
                 server.ResetHeat();
@@ -28,6 +34,11 @@ namespace GameJam
             else
             {
                 server.LowerHeat(HeatReduction);
+            }
+
+            if (Consumable)
+            {
+                usable = false;
             }
         }
 
@@ -43,7 +54,13 @@ namespace GameJam
         public void Drop()
         {
             this.GetComponent<Interactable>().CanInteract = true;
+            this.GetComponent<Rigidbody>().velocity = InteractManager.Instance.InteractAgent.transform.forward + Vector3.up * 3f;
             pickedUp = false;
+        }
+
+        public void Disable()
+        {
+            usable = false;
         }
     }
 }

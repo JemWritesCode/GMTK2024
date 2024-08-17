@@ -106,8 +106,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.61169535, y: 1.0837758, z: 0.2802425}
-  m_Center: {x: 0.14890316, y: 0.1443856, z: 0.000000044703484}
+  m_Size: {x: 0.39861035, y: 1.0837758, z: 0.2802425}
+  m_Center: {x: 0.042360663, y: 0.14438558, z: 0.000000044703484}
 --- !u!54 &4287875462591883382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InteractRange>k__BackingField: 1
+  <InteractRange>k__BackingField: 2
   <CanInteract>k__BackingField: 1
-  <InteractText>k__BackingField: HotHotHot
+  <InteractText>k__BackingField: Mega Hotness Reducer
   <HighlightRenderer>k__BackingField: {fileID: 1174493622554350619}
   OnInteract:
     m_PersistentCalls:

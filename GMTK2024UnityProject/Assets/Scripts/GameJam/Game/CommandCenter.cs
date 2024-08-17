@@ -99,5 +99,10 @@ namespace GameJam
             int index = Random.Range(1, Servers.Count);
             Servers[index].RandomAttack();
         }
+
+        public void OpenUI()
+        {
+            // TODO
+        }
     }
 }

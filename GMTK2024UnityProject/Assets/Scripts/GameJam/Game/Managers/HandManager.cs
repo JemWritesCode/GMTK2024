@@ -67,7 +67,8 @@ namespace GameJam
 
             if (Item.Consumable)
             {
-                GameObject.Destroy(Item);
+                // TODO: change appearance of can
+                Item.Disable();
                 Item = null;
             }
         }

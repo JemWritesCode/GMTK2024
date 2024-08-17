@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 283465582234919589}
   - component: {fileID: -6156039036734707471}
   - component: {fileID: 8859437627071909637}
+  - component: {fileID: 5545457560978863151}
   m_Layer: 0
   m_Name: CommandCenter
   m_TagString: Untagged
@@ -56,8 +57,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3b220f529e7694b89df73f14a5aa7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Servers: []
   Users: 0
   Reputation: 1000
+  Cash: 100
+--- !u!114 &5545457560978863151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534066616178869991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InteractRange>k__BackingField: 2
+  <CanInteract>k__BackingField: 1
+  <InteractText>k__BackingField: 
+  <HighlightRenderer>k__BackingField: {fileID: 1350205177545056660}
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8859437627071909637}
+        m_TargetAssemblyTypeName: GameJam.CommandCenter, GameJam
+        m_MethodName: OpenUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4280304283152499952
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +709,11 @@ PrefabInstance:
 --- !u!4 &213860131763952379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6198975063232573576, guid: 0e16475e464050141a1bf64d51b46d48, type: 3}
+  m_PrefabInstance: {fileID: 6120645132754872947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1350205177545056660 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5065426040355326951, guid: 0e16475e464050141a1bf64d51b46d48, type: 3}
   m_PrefabInstance: {fileID: 6120645132754872947}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6215668910851356202
