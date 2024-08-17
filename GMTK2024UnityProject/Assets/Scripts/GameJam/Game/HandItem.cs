@@ -38,6 +38,7 @@ namespace GameJam
 
             if (Consumable)
             {
+                this.GetComponent<Interactable>().CanInteract = false;
                 usable = false;
             }
         }
@@ -53,14 +54,18 @@ namespace GameJam
 
         public void Drop()
         {
-            this.GetComponent<Interactable>().CanInteract = true;
+            if (IsUsable())
+            {
+                this.GetComponent<Interactable>().CanInteract = true;
+            }
+
             this.GetComponent<Rigidbody>().velocity = InteractManager.Instance.InteractAgent.transform.forward + Vector3.up * 3f;
             pickedUp = false;
         }
 
-        public void Disable()
+        public bool IsUsable()
         {
-            usable = false;
+            return usable;
         }
     }
 }

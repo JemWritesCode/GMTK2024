@@ -11,6 +11,8 @@ namespace GameJam
 
         private bool pickedUp = false;
 
+        private Vector3 cableOffset = new Vector3 (0, 0.075f, 0);
+
         void Start()
         {
             if (line == null)
@@ -18,8 +20,8 @@ namespace GameJam
                 line = gameObject.AddComponent<LineRenderer>();
             }
 
-            line.SetPosition(0, this.transform.position);
-            line.SetPosition(1, this.transform.position);
+            line.SetPosition(0, this.transform.position + cableOffset);
+            line.SetPosition(1, this.transform.position + cableOffset);
             line.material = CableMaterial;
             line.startWidth = 0.05f;
             line.endWidth = 0.05f;
@@ -45,7 +47,7 @@ namespace GameJam
         {
             pickedUp = false;
             HandManager.Instance.CurrentCable = null;
-            line.SetPosition(1, this.transform.position);
+            line.SetPosition(1, this.transform.position + cableOffset);
         }
 
         public void StartConnection()
@@ -60,7 +62,7 @@ namespace GameJam
             pickedUp = false;
             HandManager.Instance.CurrentCable = null;
             Connection = cable;
-            line.SetPosition(1, cable.transform.position);
+            line.SetPosition(1, cable.transform.position + cableOffset);
         }
 
         public bool IsConnected()
@@ -79,7 +81,6 @@ namespace GameJam
                     CancelConnection();
                     return;
                 }
-
 
                 Debug.Log("Box is a starting box, holding a cable, doing nothing");
             }

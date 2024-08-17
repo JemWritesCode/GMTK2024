@@ -27,14 +27,11 @@ namespace GameJam
             Debug.Log($"Holding item, interacting.");
             Interactable interactable = InteractManager.Instance.ClosestInteractable;
 
-            if (interactable)
-            {
-                interactable.Interact(InteractManager.Instance.InteractAgent);
-            }
-            else
+            if (!interactable)
             {
                 if (HoldingCable())
                 {
+                    Debug.Log($"Nothing to interact with, drop cable.");
                     CurrentCable.CancelConnection();
                     return true;
                 }
@@ -52,7 +49,7 @@ namespace GameJam
 
         public bool TryPickup(HandItem item)
         {
-            if (!HoldingCable() && !HoldingItem())
+            if (!HoldingCable() && !HoldingItem() && item.IsUsable())
             {
                 Item = item;
                 return true;
@@ -68,7 +65,7 @@ namespace GameJam
             if (Item.Consumable)
             {
                 // TODO: change appearance of can
-                Item.Disable();
+                Item.Drop();
                 Item = null;
             }
         }

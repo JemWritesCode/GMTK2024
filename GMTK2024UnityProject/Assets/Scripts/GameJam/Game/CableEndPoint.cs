@@ -15,7 +15,7 @@ namespace GameJam
 
         public void BreakConnection()
         {
-            Connection.RemoveConnection();
+            Connection.CancelConnection();
             Connection = null;
         }
 
