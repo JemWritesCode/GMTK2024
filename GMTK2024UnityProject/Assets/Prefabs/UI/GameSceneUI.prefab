@@ -329,17 +329,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6137234943617434277}
     m_Modifications:
-    - target: {fileID: 926676699719714437, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6b6d1a5d3dc115c40a97cc4ede9a6dba, type: 3}
     - target: {fileID: 7808564507645542937, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
       propertyPath: m_Name
       value: ServerPanel
       objectReference: {fileID: 0}
     - target: {fileID: 8515092636327287442, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
       propertyPath: m_Pivot.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8515092636327287442, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
       propertyPath: m_Pivot.y
@@ -363,7 +359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8515092636327287442, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8515092636327287442, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
       propertyPath: m_SizeDelta.y
@@ -399,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8515092636327287442, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -75
+      value: -350
       objectReference: {fileID: 0}
     - target: {fileID: 8515092636327287442, guid: 5731d945888c66448bd3ba696b901bae, type: 3}
       propertyPath: m_AnchoredPosition.y
