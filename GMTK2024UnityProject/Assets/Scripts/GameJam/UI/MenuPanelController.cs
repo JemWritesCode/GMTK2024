@@ -23,8 +23,8 @@ namespace GameJam {
       _showHidePanelTween =
           DOTween.Sequence()
               .SetTarget(PanelRectTransform)
-              .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.35f))
-              .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 100f, 0f), 0.5f).From(false, true))
+              .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.5f))
+              .Insert(0f, PanelRectTransform.DOLocalMove(new(-25f, 0f, 0f), 0.5f).From(false, true))
               .SetEase(Ease.InOutQuad)
               .SetAutoKill(false)
               .Pause();

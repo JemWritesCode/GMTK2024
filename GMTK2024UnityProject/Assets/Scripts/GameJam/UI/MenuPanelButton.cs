@@ -33,7 +33,6 @@ namespace GameJam {
           DOTween.Sequence()
               .SetLink(gameObject)
               .Insert(0f, Label.transform.DOScale(TweenToScale, TweenToDuration))
-              .Insert(0f, Label.transform.DOLocalMoveY(5f, TweenToDuration).SetRelative())
               .Insert(0f, Image.DOColor(TweenToColor, TweenToDuration))
               .SetEase(Ease.InOutQuad)
               .SetAutoKill(false)
