@@ -21,7 +21,7 @@ namespace GameJam
                     continue;
                 }
 
-                if (p.connection.TryGetComponent<PowerBox>(out PowerBox powerBox))
+                if (p.Connection.TryGetComponent<PowerBox>(out PowerBox powerBox))
                 {
                     if (powerBox.GetPower() < RequiredPower)
                     {

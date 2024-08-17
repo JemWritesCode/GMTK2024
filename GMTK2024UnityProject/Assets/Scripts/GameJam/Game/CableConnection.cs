@@ -4,7 +4,7 @@ namespace GameJam {
     public class CableConnection : MonoBehaviour
     {
         public LineRenderer line;
-        public CablePoint start;
+        //public CablePoint start;
         public CablePoint end;
 
         private bool pickedUp = true;
@@ -22,9 +22,6 @@ namespace GameJam {
                 line.endWidth = 0.05f;
                 //line.positionCount = 2;
                 line.useWorldSpace = true;
-
-                // TODO remove
-                //EndConnection(end);
             }
         }
 
@@ -32,13 +29,12 @@ namespace GameJam {
         {
             if (pickedUp)
             {
-                // TODO draw line end at player position
+                line.SetPosition(1, Player.Instance.gameObject.transform.position);
             }
         }
 
         public void StartConnection()
         {
-            // TODO: draw cable from start to character
             pickedUp = true;
         }
 

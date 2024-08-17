@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6426750441360516512}
   - component: {fileID: 6588221185566261981}
   - component: {fileID: 1982249915730694108}
+  - component: {fileID: 7374436309394499127}
+  - component: {fileID: 477540927033506357}
   m_Layer: 0
   m_Name: CableBox
   m_TagString: Untagged
@@ -54,7 +56,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 338465409801ade4ebdc3de1a6b35d2c, type: 2}
+  - {fileID: 2100000, guid: 2d11a47995dd8164ebba140b312ac6fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +85,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7795940189401232766}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 6464809856111060268, guid: bc292df39a2bda84da5276e72b27fd69, type: 3}
 --- !u!114 &1982249915730694108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,3 +100,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canRemove: 0
   connection: {fileID: 0}
+--- !u!114 &7374436309394499127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7795940189401232766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InteractRange>k__BackingField: 1
+  <CanInteract>k__BackingField: 1
+  <InteractText>k__BackingField: Connector0
+  <HighlightRenderer>k__BackingField: {fileID: 6426750441360516512}
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &477540927033506357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7795940189401232766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5625, y: 0.74999994, z: 0.2149143}
+  m_Center: {x: 0, y: 0.376371, z: 0.0137071535}
