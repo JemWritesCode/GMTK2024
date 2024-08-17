@@ -71,8 +71,12 @@ namespace GameJam
 
         public void UseItem(Temperature temperature)
         {
-            Item.UseItem(temperature);
-            ConsumeItem();
+            if (Item.UseItem(temperature))
+            {
+                ConsumeItem();
+                // TODO: possibly check fire effects here too 
+                //FireEffects.SetActive(false);
+            }
         }
 
         private void ConsumeItem()

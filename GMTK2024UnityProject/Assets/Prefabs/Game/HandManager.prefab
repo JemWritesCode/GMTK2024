@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7384480276354799245}
   - component: {fileID: 6611078207324521162}
   m_Layer: 0
-  m_Name: CableManager
+  m_Name: HandManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

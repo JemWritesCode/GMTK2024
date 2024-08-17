@@ -10,11 +10,13 @@ namespace GameJam
         public int IntegrityThreshold = 20;
 
         public Temperature Temperature = new Temperature();
+        public GameObject FireEffects;
 
         public bool TryBlockAttack(int reputation)
         {
             if (Temperature.Overheated())
             {
+                FireEffects.SetActive(true);
                 if (reputation < 0 || UnityEngine.Random.Range(0, 10) < 1)
                 {
                     return false;
@@ -24,6 +26,10 @@ namespace GameJam
                     // Only small chance to be attacked if good reputations
                     return true;
                 }
+            }
+            else
+            {
+                FireEffects.SetActive(false);
             }
 
             if (reputation > 0)
@@ -57,6 +63,10 @@ namespace GameJam
             if (HandManager.Instance.HoldingItem())
             {
                 HandManager.Instance.UseItem(Temperature);
+            }
+            else
+            {
+                ChangeIntegrity(MaximumIntegrity);
             }
         }
     }

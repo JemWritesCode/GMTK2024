@@ -12,13 +12,18 @@ namespace GameJam
         public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
 
         public Temperature Temperature = new Temperature();
+        public GameObject FireEffects;
 
         public int ServeServer(int users)
         {
             if (Temperature.Overheated())
             {
-                // TODO: Play/update fire animation
+                FireEffects.SetActive(true);
                 return 0;
+            }
+            else
+            {
+                FireEffects.SetActive(false);
             }
 
             bool connected = false;

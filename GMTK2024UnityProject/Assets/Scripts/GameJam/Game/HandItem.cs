@@ -7,6 +7,7 @@ namespace GameJam
         public bool Consumable = false;
         public bool CanPutOutFire = false;
         public int HeatReduction = 10;
+        public GameObject UseEffects;
 
         private bool pickedUp = false;
         private bool usable = true;
@@ -20,11 +21,11 @@ namespace GameJam
             }
         }
 
-        public void UseItem(Temperature temperature)
+        public bool UseItem(Temperature temperature)
         {
             if (!usable)
             {
-                return;
+                return false;
             }
 
             if (CanPutOutFire)
@@ -37,7 +38,7 @@ namespace GameJam
             }
             else
             {
-                return;
+                return false;
             }
 
             if (Consumable)
@@ -45,6 +46,11 @@ namespace GameJam
                 this.GetComponent<Interactable>().CanInteract = false;
                 usable = false;
             }
+
+            UseEffects.SetActive(true);
+            UseEffects.GetComponentInChildren<ParticleSystem>()?.Play();
+
+            return true;
         }
 
         public void Pickup()
