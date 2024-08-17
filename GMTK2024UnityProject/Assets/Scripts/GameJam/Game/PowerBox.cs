@@ -19,6 +19,7 @@ namespace GameJam
                 }
             }
             // TODO make smart
+            Debug.Log($"Power box has {connections} connections");
             return (int)(capacity / connections);
         }
 

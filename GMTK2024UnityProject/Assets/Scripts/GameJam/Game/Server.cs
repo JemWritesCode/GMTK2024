@@ -36,22 +36,29 @@ namespace GameJam
                 return 0;
             }
 
+            int totalPower = 0;
+
             foreach (CableEndPoint p in PowerConnections)
             {
                 if (!p.IsConnected())
                 {
                     continue;
                 }
-
-                if (p.Connection.TryGetComponent<PowerBox>(out PowerBox powerBox))
+                
+                PowerBox powerBox = p.Connection.GetComponentInParent<PowerBox>();
+                if (powerBox != null)
                 {
-                    if (powerBox.GetPower() < RequiredPower)
-                    {
-                        return 0;
-                    }
+                    totalPower += powerBox.GetPower();
                 }
 
                 // IDEAS: can check for different cable connections than power boxes here, upgrades!
+            }
+
+            Debug.Log($"Server total power: {totalPower}");
+
+            if (totalPower < RequiredPower)
+            {
+                return 0;
             }
 
             if (users > UserCapacity)

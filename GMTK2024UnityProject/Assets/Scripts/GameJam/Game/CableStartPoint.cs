@@ -46,6 +46,7 @@ namespace GameJam
         public void CancelConnection()
         {
             pickedUp = false;
+            Connection = null;
             HandManager.Instance.CurrentCable = null;
             line.SetPosition(1, this.transform.position + cableOffset);
         }
