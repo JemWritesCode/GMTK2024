@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-
 using DG.Tweening;
 
 using UnityEngine;
@@ -8,7 +5,7 @@ using UnityEngine;
 using YoloBox;
 
 namespace GameJam {
-  public class HelpPanelController : MonoBehaviour {
+  public sealed class DialogPanelController : MonoBehaviour {
     [field: Header("Panel")]
     [field: SerializeField]
     public RectTransform PanelRectTransform { get; private set; }
@@ -63,5 +60,6 @@ namespace GameJam {
 
       _showHidePanelTween.SmoothRewind();
     }
+
   }
 }
