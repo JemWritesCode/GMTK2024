@@ -25,11 +25,12 @@ namespace GameJam
                 return;
             }
 
-            int users = Users;
+            int users = 0;
             foreach (Server server in Servers)
             {
                 users += server.ServeServer();
             }
+            Users = users;
 
             RandomVirusAttack();
             //RandomHamsterAttack();
