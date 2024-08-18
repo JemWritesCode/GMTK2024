@@ -143,7 +143,6 @@ namespace GameJam {
       }
 
       CurrentServer = server;
-      Debug.Log($"Setting CurrentServer to: {CurrentServer}");
 
       if (server) {
         RefreshPanel(server);
@@ -165,8 +164,8 @@ namespace GameJam {
       DOTween.Sequence()
           .SetTarget(UserLabel)
           .Insert(0f, UserLabel.DOCounter(CurrentPowerValue, userValue, 0.5f))
-          .Insert(0f, UserLabel.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
-          .Insert(0f, UserIcon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f));
+          .Insert(0f, UserLabel.transform.DOPunchPosition(new(0f, 1f, 0f), 1f, 3, 1f))
+          .Insert(0f, UserIcon.transform.DOPunchScale(Vector3.one * 0.1f, 1f, 5, 0f));
 
       CurrentUserValue = userValue;
     }
@@ -177,8 +176,8 @@ namespace GameJam {
       DOTween.Sequence()
           .SetTarget(PowerLabel)
           .Insert(0f, PowerLabel.DOCounter(CurrentPowerValue, powerValue, 0.5f))
-          .Insert(0f, PowerLabel.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
-          .Insert(0f, PowerIcon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f));
+          .Insert(0f, PowerLabel.transform.DOPunchPosition(new(0f, 1f, 0f), 1f, 3, 1f))
+          .Insert(0f, PowerIcon.transform.DOPunchScale(Vector3.one * 0.1f, 1f, 5, 0f));
 
       CurrentPowerValue = powerValue;
     }
@@ -189,8 +188,8 @@ namespace GameJam {
       DOTween.Sequence()
           .SetTarget(HeatLabel)
           .Insert(0f, HeatLabel.DOPercentCounter(CurrentHeatValue, heatValue, 0.5f))
-          .Insert(0f, HeatLabel.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
-          .Insert(0f, HeatIcon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f));
+          .Insert(0f, HeatLabel.transform.DOPunchPosition(new(0f, 1f, 0f), 1f, 3, 1f))
+          .Insert(0f, HeatIcon.transform.DOPunchScale(Vector3.one * 0.1f, 1f, 5, 0f));
 
       CurrentHeatValue = heatValue;
     }

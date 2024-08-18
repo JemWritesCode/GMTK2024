@@ -39,7 +39,7 @@ namespace YoloBox {
 
     public static Tweener DOPercentCounter(this TMP_Text target, float fromValue, float toValue, float duration) {
       return DOVirtual
-          .Float(fromValue, toValue, duration, x => target.SetText(x.ToString() + "%"))
+          .Float(fromValue, toValue, duration, x => target.SetText($"{(x * 100f):F0}%"))
           .SetTarget(target);
     }
 

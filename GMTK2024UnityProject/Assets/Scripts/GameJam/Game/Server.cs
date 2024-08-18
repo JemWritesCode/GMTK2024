@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,6 +21,8 @@ namespace GameJam
         public GameObject IndicatorLight;
 
         private void Start() {
+          UserCapacity = Random.Range(0, 999);
+          RequiredPower = Random.Range(0, 999);
           Temperature.Heat = Random.Range(0, Temperature.HeatLimit);
         }
 

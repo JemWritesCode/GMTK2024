@@ -45,3 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InteractAgent>k__BackingField: {fileID: 0}
+  <InteractRange>k__BackingField: 4
+  <CanInteract>k__BackingField: 1
+  <ClosestInteractable>k__BackingField: {fileID: 0}
+  <NearbyServerRadius>k__BackingField: 2
+  <ClosestServer>k__BackingField: {fileID: 0}

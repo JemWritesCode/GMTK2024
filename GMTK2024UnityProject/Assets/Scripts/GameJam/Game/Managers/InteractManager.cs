@@ -22,7 +22,7 @@ namespace GameJam {
 
     [field: Header("Server")]
     [field: SerializeField]
-    public float NearbyServerRadius { get; set; } = 2f;
+    public float NearbyServerRange { get; set; } = 2f;
 
     [field: SerializeField]
     public Server ClosestServer { get; private set; }
@@ -106,7 +106,7 @@ namespace GameJam {
         RaycastHit raycastHit = _raycastHits[i];
         Server server = raycastHit.collider.GetComponentInParent<Server>();
 
-        if (server && server.enabled && raycastHit.distance <= NearbyServerRadius) {
+        if (server && server.enabled && raycastHit.distance <= NearbyServerRange) {
           return server;
         }
       }

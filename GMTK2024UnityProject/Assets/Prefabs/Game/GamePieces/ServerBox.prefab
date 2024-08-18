@@ -49,6 +49,8 @@ GameObject:
   - component: {fileID: 4988411190106308917}
   - component: {fileID: 5380349815449811073}
   - component: {fileID: 5739566336200881683}
+  - component: {fileID: 3861576810152414596}
+  - component: {fileID: 4913227669232868255}
   m_Layer: 0
   m_Name: ServerBox
   m_TagString: Untagged
@@ -97,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UserCapacity: 100
   RequiredPower: 100
+  IsOnline: 0
   PowerConnections:
   - {fileID: 5626538881365977888}
   - {fileID: 4659531199351619875}
@@ -106,6 +109,47 @@ MonoBehaviour:
   - {fileID: 6392835252324585887}
   FireEffects: {fileID: 8260618849769160973}
   IndicatorLight: {fileID: 577589770245053096}
+--- !u!54 &3861576810152414596
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184514303477253666}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0.05
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4913227669232868255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184514303477253666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e570548097d5844e8e9b2d365c9f621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <YeetRigidbody>k__BackingField: {fileID: 3861576810152414596}
+  <YeetPower>k__BackingField: {x: 0, y: 5, z: 0}
 --- !u!1001 &248614353794005614
 PrefabInstance:
   m_ObjectHideFlags: 0
