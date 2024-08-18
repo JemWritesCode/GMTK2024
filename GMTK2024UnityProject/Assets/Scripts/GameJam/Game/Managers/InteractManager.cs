@@ -10,8 +10,12 @@ namespace GameJam {
     [field: SerializeField]
     public GameObject InteractAgent { get; private set; }
 
+    [field: Header("Raycast")]
     [field: SerializeField, Min(0f)]
     public float InteractRange { get; set; } = 4f;
+
+    [field: SerializeField, Min(0f)]
+    public float SphereCastRadius { get; private set; } = 0.1f;
 
     [field: Header("Interact")]
     [field: SerializeField]
@@ -48,7 +52,7 @@ namespace GameJam {
       _raycastHitsCount =
           Physics.SphereCastNonAlloc(
               origin.position,
-              0.25f,
+              SphereCastRadius,
               origin.forward,
               _raycastHits,
               range,
