@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GameJam
@@ -96,9 +97,13 @@ namespace GameJam
         {
             if (!FireWall.TryBlockAttack(reputation))
             {
-                int index = Random.Range(1, Servers.Count);
-                Debug.Log($"ATTACK on server {index}!!");
-                Servers[index].RandomAttack();
+                var servers = Servers.Where(item => item.IsOnline).ToList();
+                if (servers.Count > 0)
+                {
+                    int index = Random.Range(0, servers.Count);
+                    Debug.Log($"ATTACK on server {index}!!");
+                    servers[index].RandomAttack();
+                }
             }
         }
 

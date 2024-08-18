@@ -6,6 +6,8 @@ namespace GameJam
         public int HeatLimit = 100;
         public int HeatTicks = 5;
 
+        public float TemperatureThreshold = 0.8f;
+
         public bool Overheated()
         {
             return Heat >= HeatLimit;

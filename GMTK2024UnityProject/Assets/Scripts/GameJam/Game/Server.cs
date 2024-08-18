@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GameJam
@@ -7,18 +8,22 @@ namespace GameJam
     {
         public int UserCapacity = 100;
         public int RequiredPower = 100;
+        public bool IsOnline = false;
 
         public List<CableEndPoint> PowerConnections = new List<CableEndPoint>();
         public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
 
         public Temperature Temperature = new Temperature();
         public GameObject FireEffects;
+        public GameObject IndicatorLight;
 
         public int ServeServer(int users)
         {
             if (Temperature.Overheated())
             {
                 FireEffects.SetActive(true);
+                SetIndicatorColor(Color.red);
+                IsOnline = false;
                 return 0;
             }
             else
@@ -38,6 +43,8 @@ namespace GameJam
 
             if (!connected)
             {
+                SetIndicatorColor(Color.red);
+                IsOnline = false;
                 return 0;
             }
 
@@ -61,6 +68,8 @@ namespace GameJam
 
             if (totalPower < RequiredPower)
             {
+                SetIndicatorColor(Color.red);
+                IsOnline = false;
                 return 0;
             }
 
@@ -71,26 +80,38 @@ namespace GameJam
 
             float capacityPercentage = (float)users / UserCapacity;
             Temperature.UpdateHeat(capacityPercentage);
+            if (capacityPercentage >= Temperature.TemperatureThreshold)
+            {
+                SetIndicatorColor(Color.yellow);
+            }
+            else
+            {
+                SetIndicatorColor(Color.green);
+            }
 
+            IsOnline = true;
             return users;
         }
 
         public void RandomAttack()
         {
+            // TODO support more kinds of attacks, make this better
             if (Random.Range(0, 1) == 0)
             {
-                int index = Random.Range(0, PowerConnections.Count);
-                if (PowerConnections[index].IsConnected())
+                var connections = PowerConnections.Where(item => item.IsConnected()).ToList();
+                if (connections.Count > 0)
                 {
-                    PowerConnections[index].BreakConnection();
+                    int index = Random.Range(0, connections.Count);
+                    connections[index].BreakConnection();
                 }
             }
             else
             {
-                int index = Random.Range(0, DataConnections.Count);
-                if (DataConnections[index].IsConnected())
+                var connections = DataConnections.Where(item => item.IsConnected()).ToList();
+                if (connections.Count > 0)
                 {
-                    DataConnections[index].BreakConnection();
+                    int index = Random.Range(0, connections.Count);
+                    connections[index].BreakConnection();
                 }
             }
         }
@@ -102,6 +123,11 @@ namespace GameJam
             {
                 HandManager.Instance.UseItem(Temperature);
             }
+        }
+
+        private void SetIndicatorColor(Color color)
+        {
+            IndicatorLight.GetComponentInChildren<Light>().color = color;
         }
     }
 }
