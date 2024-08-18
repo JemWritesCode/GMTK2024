@@ -8,6 +8,7 @@
         "SuperCharacterController",
         "Unity.TextMeshPro",
         "UIEffect",
+        "Wafflus.DialogueSystem",
         "YoloBox"
     ],
     "includePlatforms": [],
