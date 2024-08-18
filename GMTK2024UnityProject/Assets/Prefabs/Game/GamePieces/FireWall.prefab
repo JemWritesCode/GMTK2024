@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaximumIntegrity: 100
   Integrity: 100
-  IntegrityThreshold: 20
+  IntegrityThreshold: 0.1
   IntegrityTicks: 10
   FireEffects: {fileID: 9024481117541524685}
   IndicatorLight: {fileID: 5722646762050046352}
@@ -652,6 +652,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2586037148670821}
     m_Modifications:
+    - target: {fileID: 649284312367860296, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5865865799143198362, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_Name
       value: FireEffects

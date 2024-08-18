@@ -14,32 +14,32 @@ namespace GameJam
         public GameObject FireEffects;
         public Light IndicatorLight;
 
-        public bool TryBlockAttack(int reputation)
+        public bool TryBlockAttack()
         {
+            // TODO Balance
+            // Chance when down = 20%
+            // Chance when low integrity = 10%
+            // Chance when up = 5%
+
+            float attackChance = 0.05f;
+
             if (Temperature.Overheated())
             {
                 FireEffects.SetActive(true);
                 SetIndicatorColor(Color.red);
 
-                if (reputation < 0 || UnityEngine.Random.Range(0, 10) < 1)
-                {
-                    Integrity = Math.Clamp(Integrity - IntegrityTicks, 0, MaximumIntegrity);
-                    return false;
-                }
-                else
-                {
-                    // Only small chance to be attacked if good reputations
-                    return true;
-                }
+                attackChance = 0.2f;
             }
             else
             {
                 FireEffects.SetActive(false);
+                if (Integrity < IntegrityThreshold * MaximumIntegrity)
+                {
+                    attackChance = 0.1f;
+                }
             }
 
-            // Random chance for attack to succeed, more so if bad reputation
-            float threshold = (reputation < 0) ? IntegrityThreshold : 0;
-            if (UnityEngine.Random.Range(0, Integrity) > threshold * MaximumIntegrity)
+            if (UnityEngine.Random.Range(0, 1f) > attackChance)
             {
                 UpdateIndicatorColor();
                 return true;
@@ -50,7 +50,6 @@ namespace GameJam
             Integrity = Math.Clamp(Integrity - IntegrityTicks, 0, MaximumIntegrity);
 
             UpdateIndicatorColor();
-
             return false;
         }
 

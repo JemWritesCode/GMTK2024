@@ -153,8 +153,8 @@ namespace GameJam {
     }
 
     private void RefreshPanel(Server server) {
-      SetUserValue(server.UserCapacity);
-      SetPowerValue(server.RequiredPower);
+      SetUserValue(server.CurrentUsers);
+      SetPowerValue(server.PowerMultiplier);
       SetHeatValue(server.Temperature.HeatPercent());
     }
 

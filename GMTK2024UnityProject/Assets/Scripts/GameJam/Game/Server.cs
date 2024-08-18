@@ -6,11 +6,11 @@ using UnityEngine;
 namespace GameJam
 {
     public class Server : MonoBehaviour
-    {  
-        public int UserCapacity = 100;
+    {
+        public int UsersPerDataConnection = 100;
         public int CurrentUsers = 0;
         public float UserThreshold = 0.8f;
-        public int RequiredPower = 100;
+        public int PowerMultiplier = 100;
         public bool Online = false;
         public bool HasVirus = false;
 
@@ -25,27 +25,22 @@ namespace GameJam
         public float LightBlinkInterval = 0.5f;
         private float lightBlinkTimer;
 
-        private void Start()
-        {
-            UserCapacity = Random.Range(0, 999);
-            RequiredPower = Random.Range(0, 999);
-            Temperature.Heat = Random.Range(0, Temperature.HeatLimit);
-        }
-
         private void Update()
         {
-            if (IndicatorLight && HasVirus)
+            if (!IndicatorLight || !HasVirus)
             {
-                lightBlinkTimer += Time.deltaTime;
-                if (lightBlinkTimer > LightBlinkInterval)
-                {
-                    IndicatorLight.enabled = !IndicatorLight.enabled;
-                    lightBlinkTimer = 0;
-                }
+                return;
+            }
+
+            lightBlinkTimer += Time.deltaTime;
+            if (lightBlinkTimer > LightBlinkInterval)
+            {
+                IndicatorLight.enabled = !IndicatorLight.enabled;
+                lightBlinkTimer = 0;
             }
         }
 
-        public int ServeServer(int users)
+        public int ServeServer()
         {
             if (Temperature.Overheated())
             {
@@ -56,68 +51,27 @@ namespace GameJam
                 FireEffects.SetActive(false);
             }
 
-            if (!DataConnected() || !PowerConnected() || Temperature.Overheated() || HasVirus)
+            int dataConnections = DataConnections.Where(data => data.IsConnected()).Count();
+            int powerConnections = PowerConnections.Where(data => data.IsConnected()).Count();
+
+            if (dataConnections == 0 || powerConnections == 0 || Temperature.Overheated() || HasVirus)
             {
                 SetOnline(false);
                 CurrentUsers = 0;
+                PowerMultiplier = powerConnections;
             }
             else
             {
                 SetOnline(true);
 
-                if (users > UserCapacity)
-                {
-                    users = UserCapacity;
-                }
+                CurrentUsers = dataConnections * powerConnections * UsersPerDataConnection;
+                PowerMultiplier = powerConnections;
 
-                float capacityPercentage = (float)users / UserCapacity;
-                Temperature.UpdateHeat(capacityPercentage);
+                Temperature.UpdateHeat();
             }
 
             UpdateIndicatorColor();
-            return users;
-        }
-
-        private bool DataConnected()
-        {
-            bool connected = false;
-
-            foreach (CableEndPoint p in DataConnections)
-            {
-                if (p.IsConnected())
-                {
-                    connected = true;
-                    break;
-                }
-            }
-
-            return connected;
-        }
-
-        private bool PowerConnected()
-        {
-            int totalPower = 0;
-
-            foreach (CableEndPoint p in PowerConnections)
-            {
-                if (!p.IsConnected())
-                {
-                    continue;
-                }
-
-                PowerBox powerBox = p.Connection.GetComponentInParent<PowerBox>();
-                if (powerBox != null)
-                {
-                    totalPower += powerBox.GetPower();
-                }
-            }
-
-            if (totalPower < RequiredPower)
-            {
-                return false;
-            }
-
-            return true;
+            return CurrentUsers;
         }
 
         public void SetOnline(bool online)
@@ -133,6 +87,12 @@ namespace GameJam
         public void SetVirus(bool virus)
         {
             HasVirus = virus;
+            UpdateIndicatorColor();
+
+            if (!HasVirus)
+            {
+                IndicatorLight.enabled = true;
+            }
         }
 
         public void CableAttack()
@@ -172,10 +132,6 @@ namespace GameJam
             if (!Online || Temperature.Overheated() || HasVirus)
             {
                 SetIndicatorColor(Color.red);
-            }
-            else if (CurrentUsers >= UserThreshold * UserCapacity)
-            {
-                SetIndicatorColor(Color.yellow);
             }
             else if (Temperature.HeatReachingCritical())
             {
