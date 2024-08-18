@@ -521,6 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Image>k__BackingField: {fileID: 1641543086843217209}
   <Label>k__BackingField: {fileID: 1458249678624358098}
+  <Icon>k__BackingField: {fileID: 3615549884078907041}
   <TweenToDuration>k__BackingField: 0.5
   <TweenToScale>k__BackingField: {x: 1.065, y: 1.065, z: 1}
   <TweenToColor>k__BackingField: {r: 0.8113208, g: 0.5930393, b: 0.28702387, a: 1}

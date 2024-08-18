@@ -14,6 +14,9 @@ namespace GameJam {
     public HelpPanelController HelpPanel { get; private set; }
 
     [field: SerializeField]
+    public DialogPanelController DialogPanel { get; private set; }
+
+    [field: SerializeField]
     public InteractPanelController InteractPanel { get; private set; }
 
     [field: SerializeField]
@@ -29,7 +32,7 @@ namespace GameJam {
     }
 
     public bool ShouldUnlockCursor() {
-      return MenuPanel.IsPanelVisible;
+      return MenuPanel.IsPanelVisible || DialogPanel.IsPanelVisible;
     }
 
     public void ToggleMenu() {

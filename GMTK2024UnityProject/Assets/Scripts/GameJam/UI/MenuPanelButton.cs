@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-using YoloBox;
 using TMPro;
+
+using YoloBox;
 
 namespace GameJam {
   public sealed class MenuPanelButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
@@ -15,6 +16,9 @@ namespace GameJam {
 
     [field: SerializeField]
     public TextMeshProUGUI Label { get; private set; }
+
+    [field: SerializeField]
+    public Image Icon { get; private set; }
 
     [field: Header("OnHover")]
     [field: SerializeField]
@@ -34,6 +38,7 @@ namespace GameJam {
               .SetLink(gameObject)
               .Insert(0f, Label.transform.DOScale(TweenToScale, TweenToDuration))
               .Insert(0f, Image.DOColor(TweenToColor, TweenToDuration))
+              .Insert(0f, Icon.transform.DOPunchScale(Vector3.one * 0.1f, TweenToDuration, 5, 0f))
               .SetEase(Ease.InOutQuad)
               .SetAutoKill(false)
               .SetUpdate(true)
