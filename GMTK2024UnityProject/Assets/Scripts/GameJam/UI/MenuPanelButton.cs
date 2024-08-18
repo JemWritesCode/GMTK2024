@@ -28,6 +28,9 @@ namespace GameJam {
     public Vector3 TweenToScale { get; private set; }
 
     [field: SerializeField]
+    public Vector3 TweenToRotation { get; private set; }
+
+    [field: SerializeField]
     public Color TweenToColor { get; private set; }
 
     private Sequence _onHoverTween;
@@ -38,8 +41,8 @@ namespace GameJam {
               .SetLink(gameObject)
               .Insert(0f, Label.transform.DOScale(TweenToScale, TweenToDuration))
               .Insert(0f, Image.DOColor(TweenToColor, TweenToDuration))
-              .Insert(0f, Icon.transform.DOPunchScale(Vector3.one * 0.1f, TweenToDuration, 5, 0f))
-              .SetEase(Ease.InOutQuad)
+              .Insert(0f, Icon.transform.DOScale(TweenToScale, TweenToDuration))
+              .Insert(0f, Icon.transform.DOLocalRotate(TweenToRotation, TweenToDuration))
               .SetAutoKill(false)
               .SetUpdate(true)
               .Pause();

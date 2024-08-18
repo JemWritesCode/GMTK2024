@@ -72,23 +72,18 @@ namespace YoloBox {
           .Blendable()
           .SetTarget(gradient);
     }
-  }
 
-  public static class UIGradientExtensions {
-    public static Color GetColor1(this UIGradient gradient) {
-      return gradient.color1;
+    public static Tweener DOPlayOneShot(this AudioSource target, AudioClip audioClip) {
+      float duration = audioClip.length;
+
+      return DOVirtual
+          .Float(0f, duration, duration, EmptyFloatCallback)
+          .OnPlay(() => target.PlayOneShot(audioClip))
+          .SetTarget(target);
     }
 
-    public static Color GetColor2(this UIGradient gradient) {
-      return gradient.color2;
-    }
-
-    public static void SetColor1(this UIGradient gradient, Color color1) {
-      gradient.color1 = color1;
-    }
-
-    public static void SetColor2(this UIGradient gradient, Color color2) {
-      gradient.color2 = color2;
+    static void EmptyFloatCallback(float x) {
+      // ...
     }
   }
 }
