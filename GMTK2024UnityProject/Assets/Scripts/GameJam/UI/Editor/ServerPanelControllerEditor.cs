@@ -15,7 +15,7 @@ namespace GameJam.Editor {
       base.OnInspectorGUI();
       EditorGUILayout.Separator();
 
-      EditorGUILayout.LabelField(nameof(ServerPanelController), EditorStyles.boldLabel);
+      EditorGUILayout.LabelField(nameof(ServerPanelControllerEditor), EditorStyles.boldLabel);
       EditorGUILayout.Separator();
 
       DrawPanelControls();

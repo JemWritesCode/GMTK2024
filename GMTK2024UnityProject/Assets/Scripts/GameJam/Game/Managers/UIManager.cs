@@ -14,6 +14,9 @@ namespace GameJam {
     public HelpPanelController HelpPanel { get; private set; }
 
     [field: SerializeField]
+    public UserCountPanelController UserCountPanel { get; private set; }
+
+    [field: SerializeField]
     public DialogPanelController DialogPanel { get; private set; }
 
     [field: SerializeField]
@@ -43,12 +46,13 @@ namespace GameJam {
       }
     }
 
-    public void CalloutHelpPanel(float calloutDuration) {
-      StartCoroutine(ShowHideHelpPanel(calloutDuration));
+    public void CalloutPanels(float calloutDuration) {
+      StartCoroutine(ShowHideHelpPanel(0.5f, calloutDuration));
+      StartCoroutine(ShowUserCountPanel(1f));
     }
 
-    private IEnumerator ShowHideHelpPanel(float hideDelay) {
-      yield return new WaitForSeconds(seconds: 0.5f);
+    private IEnumerator ShowHideHelpPanel(float showDelay, float hideDelay) {
+      yield return new WaitForSeconds(seconds: showDelay);
       HelpPanel.ShowPanel();
 
       yield return new WaitForSeconds(seconds: hideDelay);
@@ -58,12 +62,21 @@ namespace GameJam {
       }
     }
 
+    private IEnumerator ShowUserCountPanel(float showDelay) {
+      yield return new WaitForSeconds(seconds: showDelay);
+      UserCountPanel.ShowPanel();
+    }
+
     public void SetCurrentInteractable(Interactable interactable) {
       InteractPanel.SetInteractable(interactable);
     }
 
     public void SetCurrentServer(Server server) {
       ServerPanel.SetServer(server);
+    }
+
+    public void SetCurrentUserCount(int userCount) {
+      UserCountPanel.SetUserCountValue(userCount);
     }
   }
 }

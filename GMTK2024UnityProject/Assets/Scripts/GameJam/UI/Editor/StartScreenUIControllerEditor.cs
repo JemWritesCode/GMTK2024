@@ -15,7 +15,7 @@ namespace GameJam.Editor {
       base.OnInspectorGUI();
       EditorGUILayout.Separator();
 
-      EditorGUILayout.LabelField(nameof(StartScreenUIController), EditorStyles.boldLabel);
+      EditorGUILayout.LabelField(nameof(StartScreenUIControllerEditor), EditorStyles.boldLabel);
       EditorGUILayout.Separator();
 
       using (new EditorGUI.DisabledScope(!Application.isPlaying)) {
