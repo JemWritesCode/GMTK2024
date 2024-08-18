@@ -30,11 +30,6 @@ namespace GameJam
             int users = Users;
             foreach (Server server in Servers)
             {
-                if (users <= 0)
-                {
-                    break;
-                }
-
                 users -= server.ServeServer(users);
             }
 
@@ -49,7 +44,7 @@ namespace GameJam
             }
 
 
-            RandomAttack(Reputation);
+            RandomVirusAttack(Reputation);
 
             // TODO: add mechanic to increase user count
             AddUsers(Random.Range(1, 10));
@@ -88,7 +83,7 @@ namespace GameJam
             Cash -= cash;
         }
 
-        public void RandomAttack(int reputation)
+        public void RandomVirusAttack(int reputation)
         {
             if (FireWalls == null || Servers == null)
             {
@@ -99,12 +94,12 @@ namespace GameJam
             {
                 if (!firewall.TryBlockAttack(reputation))
                 {
-                    var servers = Servers.Where(item => item.IsOnline).ToList();
+                    var servers = Servers.Where(item => item.IsOnline()).ToList();
                     if (servers.Count > 0)
                     {
                         int index = Random.Range(0, servers.Count);
                         Debug.Log($"ATTACK on server {index}!!");
-                        servers[index].RandomAttack();
+                        servers[index].SetVirus(true);
                     }
                 }
             }

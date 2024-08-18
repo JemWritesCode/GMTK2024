@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,8 +8,11 @@ namespace GameJam
     public class Server : MonoBehaviour
     {  
         public int UserCapacity = 100;
+        public int CurrentUsers = 0;
+        public float UserThreshold = 0.8f;
         public int RequiredPower = 100;
-        public bool IsOnline = false;
+        public bool Online = false;
+        public bool HasVirus = false;
 
         public List<CableEndPoint> PowerConnections = new List<CableEndPoint>();
         public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
@@ -18,12 +20,29 @@ namespace GameJam
         public Temperature Temperature = new Temperature();
 
         public GameObject FireEffects;
-        public GameObject IndicatorLight;
 
-        private void Start() {
-          UserCapacity = Random.Range(0, 999);
-          RequiredPower = Random.Range(0, 999);
-          Temperature.Heat = Random.Range(0, Temperature.HeatLimit);
+        public Light IndicatorLight;
+        public float LightBlinkInterval = 0.5f;
+        private float lightBlinkTimer;
+
+        private void Start()
+        {
+            UserCapacity = Random.Range(0, 999);
+            RequiredPower = Random.Range(0, 999);
+            Temperature.Heat = Random.Range(0, Temperature.HeatLimit);
+        }
+
+        private void Update()
+        {
+            if (IndicatorLight && HasVirus)
+            {
+                lightBlinkTimer += Time.deltaTime;
+                if (lightBlinkTimer > LightBlinkInterval)
+                {
+                    IndicatorLight.enabled = !IndicatorLight.enabled;
+                    lightBlinkTimer = 0;
+                }
+            }
         }
 
         public int ServeServer(int users)
@@ -31,16 +50,38 @@ namespace GameJam
             if (Temperature.Overheated())
             {
                 FireEffects.SetActive(true);
-                SetIndicatorColor(Color.red);
-                IsOnline = false;
-                return 0;
             }
             else
             {
                 FireEffects.SetActive(false);
             }
 
+            if (!DataConnected() || !PowerConnected() || Temperature.Overheated() || HasVirus)
+            {
+                SetOnline(false);
+                CurrentUsers = 0;
+            }
+            else
+            {
+                SetOnline(true);
+
+                if (users > UserCapacity)
+                {
+                    users = UserCapacity;
+                }
+
+                float capacityPercentage = (float)users / UserCapacity;
+                Temperature.UpdateHeat(capacityPercentage);
+            }
+
+            UpdateIndicatorColor();
+            return users;
+        }
+
+        private bool DataConnected()
+        {
             bool connected = false;
+
             foreach (CableEndPoint p in DataConnections)
             {
                 if (p.IsConnected())
@@ -50,13 +91,11 @@ namespace GameJam
                 }
             }
 
-            if (!connected)
-            {
-                SetIndicatorColor(Color.red);
-                IsOnline = false;
-                return 0;
-            }
+            return connected;
+        }
 
+        private bool PowerConnected()
+        {
             int totalPower = 0;
 
             foreach (CableEndPoint p in PowerConnections)
@@ -65,44 +104,38 @@ namespace GameJam
                 {
                     continue;
                 }
-                
+
                 PowerBox powerBox = p.Connection.GetComponentInParent<PowerBox>();
                 if (powerBox != null)
                 {
                     totalPower += powerBox.GetPower();
                 }
-
-                // IDEAS: can check for different cable connections than power boxes here, upgrades!
             }
 
             if (totalPower < RequiredPower)
             {
-                SetIndicatorColor(Color.red);
-                IsOnline = false;
-                return 0;
+                return false;
             }
 
-            if (users > UserCapacity)
-            {
-                users = UserCapacity;
-            }
-
-            float capacityPercentage = (float)users / UserCapacity;
-            Temperature.UpdateHeat(capacityPercentage);
-            if (capacityPercentage >= Temperature.TemperatureThreshold)
-            {
-                SetIndicatorColor(Color.yellow);
-            }
-            else
-            {
-                SetIndicatorColor(Color.green);
-            }
-
-            IsOnline = true;
-            return users;
+            return true;
         }
 
-        public void RandomAttack()
+        public void SetOnline(bool online)
+        {
+            Online = online;
+        }
+
+        public bool IsOnline()
+        {
+            return Online && !HasVirus;
+        }
+
+        public void SetVirus(bool virus)
+        {
+            HasVirus = virus;
+        }
+
+        public void CableAttack()
         {
             // TODO support more kinds of attacks, make this better
             if (Random.Range(0, 1) == 0)
@@ -130,13 +163,33 @@ namespace GameJam
             Debug.Log("Interact With Server...");
             if (HandManager.Instance.HoldingItem())
             {
-                HandManager.Instance.UseItem(Temperature);
+                HandManager.Instance.UseItem(this);
+            }
+        }
+
+        private void UpdateIndicatorColor()
+        {
+            if (!Online || Temperature.Overheated() || HasVirus)
+            {
+                SetIndicatorColor(Color.red);
+            }
+            else if (CurrentUsers >= UserThreshold * UserCapacity)
+            {
+                SetIndicatorColor(Color.yellow);
+            }
+            else if (Temperature.HeatReachingCritical())
+            {
+                SetIndicatorColor(Color.yellow);
+            }
+            else
+            {
+                SetIndicatorColor(Color.green);
             }
         }
 
         private void SetIndicatorColor(Color color)
         {
-            IndicatorLight.GetComponentInChildren<Light>().color = color;
+            IndicatorLight.color = color;
         }
     }
 }

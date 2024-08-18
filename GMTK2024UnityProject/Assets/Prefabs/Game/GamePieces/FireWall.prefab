@@ -158,8 +158,9 @@ MonoBehaviour:
   MaximumIntegrity: 100
   Integrity: 100
   IntegrityThreshold: 20
+  IntegrityTicks: 10
   FireEffects: {fileID: 9024481117541524685}
-  IndicatorLight: {fileID: 1067080972812473790}
+  IndicatorLight: {fileID: 5722646762050046352}
 --- !u!1 &5710336066040814331
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,9 +792,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927a8d57e7d6af745a1850ad9f8126c6, type: 3}
---- !u!1 &1067080972812473790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7795940189401232766, guid: 927a8d57e7d6af745a1850ad9f8126c6, type: 3}
+--- !u!108 &5722646762050046352 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 3284631389536463184, guid: 927a8d57e7d6af745a1850ad9f8126c6, type: 3}
   m_PrefabInstance: {fileID: 7133620658837348544}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6560642022615706299 stripped

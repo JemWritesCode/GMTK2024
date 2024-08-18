@@ -21,8 +21,7 @@ namespace GameJam
 
         public void CancelConnection()
         {
-            HandManager.Instance.CurrentCable = Connection;
-            Connection.MoveConnection();
+            Connection.StartConnection();
             Connection = null;
         }
 

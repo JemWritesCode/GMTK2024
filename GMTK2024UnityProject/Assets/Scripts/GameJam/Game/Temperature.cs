@@ -10,6 +10,10 @@ namespace GameJam {
       return Heat / (float) HeatLimit;
     }
 
+    public bool HeatReachingCritical() {
+      return (Heat / (float) HeatLimit) >= TemperatureThreshold;
+    }
+
     public bool Overheated() {
       return Heat >= HeatLimit;
     }

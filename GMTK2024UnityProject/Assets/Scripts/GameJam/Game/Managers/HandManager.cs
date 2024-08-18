@@ -49,7 +49,7 @@ namespace GameJam
 
         public bool TryPickup(HandItem item)
         {
-            if (!HoldingCable() && !HoldingItem() && item.IsUsable())
+            if (!HoldingCable() && !HoldingItem() && !item.Used)
             {
                 Item = item;
                 return true;
@@ -62,20 +62,26 @@ namespace GameJam
         {
             if (!HoldingCable() && !HoldingItem())
             {
-                CurrentCable = cable;
+                //CurrentCable = cable;
                 return true;
             }
 
             return false;
         }
 
-        public void UseItem(Temperature temperature)
+        public void UseItem(Server server)
         {
-            if (Item.UseItem(temperature))
+            if (server && Item && Item.UseItem(server))
             {
                 ConsumeItem();
-                // TODO: possibly check fire effects here too 
-                //FireEffects.SetActive(false);
+            }
+        }
+
+        public void UseItem(FireWall firewall)
+        {
+            if (firewall && Item && Item.UseItem(firewall))
+            {
+                ConsumeItem();
             }
         }
 
@@ -83,7 +89,8 @@ namespace GameJam
         {
             if (Item.Consumable)
             {
-                // TODO: change appearance of can
+                Item.GetComponent<Interactable>().CanInteract = false;
+                Item.Used = true;
                 Item.Drop();
                 Item = null;
             }

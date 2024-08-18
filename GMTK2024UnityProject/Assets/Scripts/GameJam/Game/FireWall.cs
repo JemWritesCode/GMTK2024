@@ -12,7 +12,7 @@ namespace GameJam
 
         public Temperature Temperature = new Temperature();
         public GameObject FireEffects;
-        public GameObject IndicatorLight;
+        public Light IndicatorLight;
 
         public bool TryBlockAttack(int reputation)
         {
@@ -59,7 +59,7 @@ namespace GameJam
             Debug.Log("Interact With FireWall...");
             if (HandManager.Instance.HoldingItem())
             {
-                HandManager.Instance.UseItem(Temperature);
+                HandManager.Instance.UseItem(this);
                 UpdateIndicatorColor();
             }
         }
@@ -76,11 +76,15 @@ namespace GameJam
 
         private void UpdateIndicatorColor()
         {
-            if (Integrity == 0)
+            if (Integrity == 0 || Temperature.Overheated())
             {
                 SetIndicatorColor(Color.red);
             }
             else if (Integrity <= IntegrityThreshold * MaximumIntegrity)
+            {
+                SetIndicatorColor(Color.yellow);
+            }
+            else if (Temperature.HeatReachingCritical())
             {
                 SetIndicatorColor(Color.yellow);
             }
@@ -92,7 +96,7 @@ namespace GameJam
 
         private void SetIndicatorColor(Color color)
         {
-            IndicatorLight.GetComponentInChildren<Light>().color = color;
+            IndicatorLight.color = color;
         }
     }
 }
