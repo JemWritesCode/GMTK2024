@@ -25,6 +25,17 @@ namespace GameJam
         public float LightBlinkInterval = 0.5f;
         private float lightBlinkTimer;
 
+        private void Awake()
+        {
+            var cablePoints = this.GetComponentsInChildren<CableEndPoint>();
+
+            PowerConnections = cablePoints.Where(cable => cable.Type == CableType.CableBoxType.Power).ToList();
+            DataConnections = cablePoints.Where(cable => cable.Type == CableType.CableBoxType.Data).ToList();
+
+            Debug.Log($"Setting up Server, {PowerConnections.Count} power connections " +
+                $"and {DataConnections.Count} data connections found.");
+        }
+
         private void Update()
         {
             if (!IndicatorLight || !HasVirus)
@@ -98,12 +109,12 @@ namespace GameJam
         public void CableAttack()
         {
             // TODO support more kinds of attacks, make this better
-            if (Random.Range(0, 1) == 0)
+            if (UnityEngine.Random.Range(0, 1) == 0)
             {
                 var connections = PowerConnections.Where(item => item.IsConnected()).ToList();
                 if (connections.Count > 0)
                 {
-                    int index = Random.Range(0, connections.Count);
+                    int index = UnityEngine.Random.Range(0, connections.Count);
                     connections[index].BreakConnection();
                 }
             }
@@ -112,7 +123,7 @@ namespace GameJam
                 var connections = DataConnections.Where(item => item.IsConnected()).ToList();
                 if (connections.Count > 0)
                 {
-                    int index = Random.Range(0, connections.Count);
+                    int index = UnityEngine.Random.Range(0, connections.Count);
                     connections[index].BreakConnection();
                 }
             }

@@ -56,10 +56,5 @@ namespace GameJam
                 }
             }
         }
-
-        public void OpenUI()
-        {
-            // TODO
-        }
     }
 }
