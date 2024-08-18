@@ -5,12 +5,13 @@ namespace GameJam
     public class HandItem : MonoBehaviour
     {
         public bool Consumable = false;
+        public bool Used = false;
         public bool CanPutOutFire = false;
         public int HeatReduction = 10;
+        public bool CanResetVirus = false;
         public GameObject UseEffects;
 
         private bool pickedUp = false;
-        private bool usable = true;
 
         void Update()
         {
@@ -21,36 +22,77 @@ namespace GameJam
             }
         }
 
-        public bool UseItem(Temperature temperature)
+        public bool UseItem(Server server)
         {
-            if (!usable)
+            if (Used)
             {
                 return false;
             }
 
-            if (CanPutOutFire)
+            if (CanResetVirus)
             {
-                temperature.ResetHeat();
+                if (server.HasVirus)
+                {
+                    server.SetVirus(false);
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else if (!temperature.Overheated())
-            {
-                temperature.LowerHeat(HeatReduction);
-            }
-            else
+            else if (!ModifyTemperature(server.Temperature))
             {
                 return false;
             }
 
-            if (Consumable)
-            {
-                this.GetComponent<Interactable>().CanInteract = false;
-                usable = false;
-            }
-
-            UseEffects.SetActive(true);
-            UseEffects.GetComponentInChildren<ParticleSystem>()?.Play();
+            PlayEffects();
 
             return true;
+        }
+
+        public bool UseItem(FireWall firewall)
+        {
+            if (Used || !ModifyTemperature(firewall.Temperature))
+            {
+                return false;
+            }
+
+            PlayEffects();
+
+            return true;
+        }
+
+        private bool ModifyTemperature(Temperature temperature)
+        {
+            if (temperature == null)
+            {
+                return false;
+            }
+
+            if (temperature.Overheated())
+            {
+                if (CanPutOutFire)
+                {
+                    temperature.ResetHeat();
+                    return true;
+                }
+            }
+            else if (!CanPutOutFire && HeatReduction > 0)
+            {
+                temperature.LowerHeat(HeatReduction);
+                return true;
+            }
+
+            return false;
+        }
+
+        private void PlayEffects()
+        {
+            UseEffects.SetActive(true);
+            foreach (var effect in UseEffects.GetComponentsInChildren<ParticleSystem>())
+            {
+                effect.Play();
+            }
         }
 
         public void Pickup()
@@ -64,18 +106,13 @@ namespace GameJam
 
         public void Drop()
         {
-            if (IsUsable())
+            if (!Used)
             {
                 this.GetComponent<Interactable>().CanInteract = true;
             }
 
             this.GetComponent<Rigidbody>().velocity = InteractManager.Instance.InteractAgent.transform.forward + Vector3.up * 3f;
             pickedUp = false;
-        }
-
-        public bool IsUsable()
-        {
-            return usable;
         }
     }
 }

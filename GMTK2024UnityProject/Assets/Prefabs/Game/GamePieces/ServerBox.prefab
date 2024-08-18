@@ -98,8 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UserCapacity: 100
+  CurrentUsers: 0
+  UserThreshold: 0.8
   RequiredPower: 100
-  IsOnline: 0
+  Online: 0
+  HasVirus: 0
   PowerConnections:
   - {fileID: 5626538881365977888}
   - {fileID: 4659531199351619875}
@@ -108,7 +111,8 @@ MonoBehaviour:
   DataConnections:
   - {fileID: 6392835252324585887}
   FireEffects: {fileID: 8260618849769160973}
-  IndicatorLight: {fileID: 577589770245053096}
+  IndicatorLight: {fileID: 5305775003961362054}
+  LightBlinkInterval: 0.5
 --- !u!54 &3861576810152414596
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5184514303477253666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e570548097d5844e8e9b2d365c9f621, type: 3}
   m_Name: 
@@ -884,9 +888,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927a8d57e7d6af745a1850ad9f8126c6, type: 3}
---- !u!1 &577589770245053096 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7795940189401232766, guid: 927a8d57e7d6af745a1850ad9f8126c6, type: 3}
+--- !u!108 &5305775003961362054 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 3284631389536463184, guid: 927a8d57e7d6af745a1850ad9f8126c6, type: 3}
   m_PrefabInstance: {fileID: 7220603471490756566}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6757404403374335405 stripped

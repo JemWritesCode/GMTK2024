@@ -44,12 +44,6 @@ namespace GameJam
             line.SetPosition(1, this.transform.position + cableOffset);
         }
 
-        public void MoveConnection()
-        {
-            Connection = null;
-            StartConnection();
-        }
-
         public void CancelConnection()
         {
             pickedUp = false;

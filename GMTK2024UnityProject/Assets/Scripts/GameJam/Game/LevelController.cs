@@ -29,7 +29,7 @@ namespace GameJam
                 totalUsers += c.Users;
             }
 
-            if (totalUsers >= UsersNeededForLevel[CurrentLevel + 1])
+            if ((CurrentLevel + 1) < UsersNeededForLevel.Count && totalUsers >= UsersNeededForLevel[CurrentLevel + 1])
             {
                 CurrentLevel++;
                 RefreshRoom();
@@ -53,6 +53,8 @@ namespace GameJam
                 commandCenters = GetActiveObjectsOfType<CommandCenter>();
                 var servers = GetActiveObjectsOfType<Server>();
                 var firewalls = GetActiveObjectsOfType<FireWall>();
+
+                Debug.Log($"Activating level {index}, {servers.Count} servers and {firewalls.Count} firewalls found.");
 
                 // Treat all command centers as the same object
                 // Will likely need to change this to support 1 or multiple
