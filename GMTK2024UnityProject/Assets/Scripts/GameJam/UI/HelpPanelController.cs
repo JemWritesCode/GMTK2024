@@ -1,12 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+
 using DG.Tweening;
 
 using UnityEngine;
-using UnityEngine.UI;
 
 using YoloBox;
 
 namespace GameJam {
-  public sealed class MenuPanelController : MonoBehaviour {
+  public class HelpPanelController : MonoBehaviour {
     [field: Header("Panel")]
     [field: SerializeField]
     public RectTransform PanelRectTransform { get; private set; }
@@ -14,12 +16,6 @@ namespace GameJam {
     [field: SerializeField]
     public CanvasGroup PanelCanvasGroup { get; private set; }
 
-    [field: Header("Buttons")]
-    [field: SerializeField]
-    public Button CloseButton { get; private set; }
-
-    [field: Header("State")]
-    [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
 
     Sequence _showHidePanelTween;
@@ -31,7 +27,7 @@ namespace GameJam {
           DOTween.Sequence()
               .SetTarget(PanelRectTransform)
               .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.5f))
-              .Insert(0f, PanelRectTransform.DOLocalMove(new(-25f, 0f, 0f), 0.5f).From(false, true))
+              .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 25f, 0f), 0.5f).From(false, true))
               .SetEase(Ease.InOutQuad)
               .SetAutoKill(false)
               .Pause();

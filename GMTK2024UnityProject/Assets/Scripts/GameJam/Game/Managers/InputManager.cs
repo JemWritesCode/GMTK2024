@@ -30,7 +30,7 @@ namespace GameJam {
     }
 
     public void OnToggleMenuKey() {
-      UIManager.Instance.MenuPanel.TogglePanel();
+      UIManager.Instance.ToggleMenu();
     }
 
     public void OnInteractKey() {
