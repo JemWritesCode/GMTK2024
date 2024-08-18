@@ -1,3 +1,5 @@
+using System.Collections;
+
 using UnityEngine;
 
 using YoloBox;
@@ -32,7 +34,25 @@ namespace GameJam {
 
     public void ToggleMenu() {
       MenuPanel.TogglePanel();
-      HelpPanel.TogglePanel();
+
+      if (MenuPanel.IsPanelVisible != HelpPanel.IsPanelVisible) {
+        HelpPanel.TogglePanel();
+      }
+    }
+
+    public void CalloutHelpPanel(float calloutDuration) {
+      StartCoroutine(ShowHideHelpPanel(calloutDuration));
+    }
+
+    private IEnumerator ShowHideHelpPanel(float hideDelay) {
+      yield return new WaitForSeconds(seconds: 0.5f);
+      HelpPanel.ShowPanel();
+
+      yield return new WaitForSeconds(seconds: hideDelay);
+
+      if (!MenuPanel.IsPanelVisible) {
+        HelpPanel.HidePanel();
+      }
     }
 
     public void SetCurrentInteractable(Interactable interactable) {
