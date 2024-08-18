@@ -39,8 +39,8 @@ namespace GameJam {
               .SetTarget(gameObject)
               .Insert(-0.1f, PanelRectTransform.DOPunchPosition(new(20f, 0f, 0f), 0.2f, 0, 0f).SetEase(Ease.OutQuad))
               .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.1f).SetEase(Ease.InOutQuad))
-              .Insert(0f, InteractIcon.transform.DOMove(new(0f, -5f, 0f), 0.2f).From(isRelative: true))
-              .Insert(0f, InteractText.transform.DOMove(new(10f, 0f, 0f), 0.2f).From(isRelative: true))
+              .Insert(0f, InteractIcon.transform.DOLocalMove(new(0f, -5f, 0f), 0.2f).From(isRelative: true))
+              .Insert(0f, InteractText.transform.DOLocalMove(new(10f, 0f, 0f), 0.2f).From(isRelative: true))
               .SetAutoKill(false)
               .Pause();
     }
