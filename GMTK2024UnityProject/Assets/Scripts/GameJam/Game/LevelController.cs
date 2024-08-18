@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,10 +8,20 @@ namespace GameJam
 {
     public class LevelController : MonoBehaviour
     {
+        public List<Level> Levels = new List<Level>();
         public int CurrentLevel = 0;
         public int TotalUsers = 0;
-        public List<GameObject> Levels = new List<GameObject>();
-        public List<int> UsersNeededForLevel = new List<int>();
+
+        [System.Serializable]
+        public class Level
+        {
+            [SerializeField]
+            public GameObject ParentObject;
+
+            [SerializeField]
+            public int UsersNeededForLevel = 0;
+            // Game event at level start
+        }
 
         private List<CommandCenter> commandCenters = new List<CommandCenter>();
 
@@ -21,7 +32,7 @@ namespace GameJam
 
         private void Update()
         {
-            if (commandCenters == null || Levels.Count != UsersNeededForLevel.Count)
+            if (commandCenters == null || Levels == null)
             {
                 return;
             }
@@ -30,27 +41,27 @@ namespace GameJam
         }
 
         public void UpdateLevelState() {
-          int totalUsers = GetTotalUsers();
+            int totalUsers = GetTotalUsers();
 
-          if (TotalUsers != totalUsers) {
-            GameManager.Instance.SetUserCount(totalUsers);
-            TotalUsers = totalUsers;
-          }
+            if (TotalUsers != totalUsers) {
+                GameManager.Instance.SetUserCount(totalUsers);
+                TotalUsers = totalUsers;
+            }
 
-          if ((CurrentLevel + 1) < UsersNeededForLevel.Count && TotalUsers >= UsersNeededForLevel[CurrentLevel + 1]) {
-            CurrentLevel++;
-            RefreshRoom();
-          }
+            if ((CurrentLevel + 1) < Levels.Count && TotalUsers >= Levels[CurrentLevel + 1].UsersNeededForLevel) {
+                CurrentLevel++;
+                RefreshRoom();
+            }
         }
 
         public int GetTotalUsers() {
-          int totalUsers = 0;
+            int totalUsers = 0;
 
-          foreach (CommandCenter center in commandCenters) {
-            totalUsers += center.Users;
-          }
+            foreach (CommandCenter center in commandCenters) {
+                totalUsers += center.Users;
+            }
 
-          return totalUsers;
+            return totalUsers;
         }
 
         public void RefreshRoom()
@@ -65,7 +76,7 @@ namespace GameJam
         {
             if (Levels != null && Levels.Count > index && index >= 0)
             {
-                Levels[index].SetActive(activate);
+                Levels[index].ParentObject.SetActive(activate);
 
                 commandCenters = GetActiveObjectsOfType<CommandCenter>();
                 var servers = GetActiveObjectsOfType<Server>();
@@ -94,9 +105,9 @@ namespace GameJam
             List<T> list = new List<T>();
             foreach (var level in Levels)
             {
-                if (level.activeSelf)
+                if (level.ParentObject.activeSelf)
                 {
-                    var objects = level.GetComponentsInChildren<T>();
+                    var objects = level.ParentObject.GetComponentsInChildren<T>();
                     list.AddRange(objects);
                 }
             }

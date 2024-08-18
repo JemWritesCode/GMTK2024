@@ -1729,6 +1729,10 @@ PrefabInstance:
       propertyPath: UsersNeededForLevel.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4231001478486217061, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
+      propertyPath: Levels.Array.data[0].ParentObject
+      value: 
+      objectReference: {fileID: 1059574683}
     - target: {fileID: 2599674881892001752, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

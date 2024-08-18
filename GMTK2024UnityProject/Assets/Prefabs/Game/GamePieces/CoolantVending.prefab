@@ -641,8 +641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InteractRange>k__BackingField: 2
   <CanInteract>k__BackingField: 1
-  <InteractText>k__BackingField: 
-  <HighlightRenderer>k__BackingField: {fileID: 0}
+  <InteractText>k__BackingField: Dispense Coolant
+  <HighlightRenderer>k__BackingField: {fileID: 5511739317810475499}
   OnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -736,5 +736,10 @@ PrefabInstance:
 --- !u!4 &285843277342962589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1309572439118845081, guid: 796ffeb1a7faa784d82c2581dd46ae7a, type: 3}
+  m_PrefabInstance: {fileID: 1286637253307131652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5511739317810475499 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6748270717999142639, guid: 796ffeb1a7faa784d82c2581dd46ae7a, type: 3}
   m_PrefabInstance: {fileID: 1286637253307131652}
   m_PrefabAsset: {fileID: 0}

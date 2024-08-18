@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 5739566336200881683}
   - component: {fileID: 3861576810152414596}
   - component: {fileID: 4913227669232868255}
+  - component: {fileID: 6234174074222611849}
   m_Layer: 0
   m_Name: ServerBox
   m_TagString: Untagged
@@ -164,19 +165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a994be96f937849b0ee7385918990b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserCapacity: 100
+  UsersPerDataConnection: 100
   CurrentUsers: 0
-  UserThreshold: 0.8
-  RequiredPower: 100
+  PowerMultiplier: 0
   Online: 0
   HasVirus: 0
-  PowerConnections:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  DataConnections:
-  - {fileID: 6392835252324585887}
+  PowerConnections: []
+  DataConnections: []
   FireEffects: {fileID: 8260618849769160973}
   IndicatorLight: {fileID: 5305775003961362054}
   LightBlinkInterval: 0.5
@@ -221,6 +216,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <YeetRigidbody>k__BackingField: {fileID: 3861576810152414596}
   <YeetPower>k__BackingField: {x: 0, y: 5, z: 0}
+--- !u!114 &6234174074222611849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5184514303477253666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InteractRange>k__BackingField: 2
+  <CanInteract>k__BackingField: 1
+  <InteractText>k__BackingField: Server
+  <HighlightRenderer>k__BackingField: {fileID: 1829464028845117296}
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5739566336200881683}
+        m_TargetAssemblyTypeName: GameJam.Server, GameJam
+        m_MethodName: ServerInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9052179208747077883
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,17 +559,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6755507170738ec4c961707a647a61f6, type: 3}
---- !u!114 &6392835252324585887 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5779391180480266745, guid: 6755507170738ec4c961707a647a61f6, type: 3}
-  m_PrefabInstance: {fileID: 613453146322866278}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f6a9f295bbdc94791c929a32c271d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7467601387313615510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8007773453469958896, guid: 6755507170738ec4c961707a647a61f6, type: 3}

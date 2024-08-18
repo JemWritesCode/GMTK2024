@@ -9,8 +9,7 @@ namespace GameJam
     {
         public int UsersPerDataConnection = 100;
         public int CurrentUsers = 0;
-        public float UserThreshold = 0.8f;
-        public int PowerMultiplier = 100;
+        public int PowerMultiplier = 0;
         public bool Online = false;
         public bool HasVirus = false;
 

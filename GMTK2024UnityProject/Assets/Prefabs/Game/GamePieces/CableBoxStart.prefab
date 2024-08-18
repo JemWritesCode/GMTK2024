@@ -240,6 +240,8 @@ MonoBehaviour:
   Type: 0
   CableMaterial: {fileID: 0}
   Hamster: {fileID: 894642291323497926, guid: 6b7b5eb89e278f546af4d5b153d1482b, type: 3}
+  HasHamster: 0
+  CableWidth: 0.025
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InteractRange>k__BackingField: 1
+  <InteractRange>k__BackingField: 2
   <CanInteract>k__BackingField: 1
   <InteractText>k__BackingField: Cable Start Connector
   <HighlightRenderer>k__BackingField: {fileID: 6426750441360516512}
