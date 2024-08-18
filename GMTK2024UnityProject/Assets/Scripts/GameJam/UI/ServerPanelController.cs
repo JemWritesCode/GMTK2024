@@ -61,17 +61,18 @@ namespace GameJam {
     public bool IsPanelVisible { get; private set; }
 
     [field: SerializeField]
-    public string CurrentUserValue { get; private set; }
+    public Server CurrentServer { get; private set; }
 
     [field: SerializeField]
-    public string CurrentPowerValue { get; private set; }
+    public int CurrentUserValue { get; private set; }
+
+    [field: SerializeField]
+    public int CurrentPowerValue { get; private set; }
 
     [field: SerializeField]
     public float CurrentHeatValue { get; private set; }
 
     private Sequence _showHidePanelTween;
-    private Sequence _setUserValueTween;
-    private Sequence _setPowerValueTween;
 
     private void Start() {
       CreateTweens();
@@ -97,9 +98,6 @@ namespace GameJam {
               .Insert(0f, FadeMoveImage(NetworkIcon, new(0f, 3f, 0f), 0.2f))
               .SetAutoKill(false)
               .Pause();
-
-      _setUserValueTween = PunchIconLabel(UserIcon, UserLabel);
-      _setPowerValueTween = PunchIconLabel(PowerIcon, PowerLabel);
     }
 
     static Sequence FadeMoveImage(Graphic image, Vector3 offset, float duration) {
@@ -108,19 +106,21 @@ namespace GameJam {
           .Insert(0f, image.transform.DOLocalMove(offset, duration).From(true));
     }
 
-    static Sequence PunchIconLabel(Image icon, TextMeshProUGUI label) {
-      return DOTween.Sequence()
-          .SetTarget(label)
-          .Insert(0f, label.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
-          .Insert(0f, icon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f))
-          .SetAutoKill(false)
-          .Pause();
-    }
-
     public void ResetPanel() {
       PanelCanvasGroup.alpha = 0f;
       PanelCanvasGroup.blocksRaycasts = false;
       IsPanelVisible = false;
+
+      CurrentServer = default;
+
+      UserLabel.text = "0";
+      CurrentUserValue = 0;
+
+      PowerLabel.text = "0";
+      CurrentPowerValue = 0;
+
+      HeatLabel.text = "0%";
+      CurrentHeatValue = 0f;
     }
 
     public void ShowPanel() {
@@ -137,22 +137,50 @@ namespace GameJam {
       _showHidePanelTween.SmoothRewind();
     }
 
-    public void SetUserValue(string value) {
-      _setUserValueTween.Complete(withCallbacks: true);
+    public void SetServer(Server server) {
+      if (CurrentServer == server) {
+        return;
+      }
 
-      UserLabel.text = value;
-      CurrentUserValue = value;
+      CurrentServer = server;
+      Debug.Log($"Setting CurrentServer to: {CurrentServer}");
 
-      _setUserValueTween.Restart();
+      if (server) {
+        RefreshPanel(server);
+        ShowPanel();
+      } else {
+        HidePanel();
+      }
     }
 
-    public void SetPowerValue(string value) {
-      _setPowerValueTween.Complete(withCallbacks: true);
+    private void RefreshPanel(Server server) {
+      SetUserValue(server.UserCapacity);
+      SetPowerValue(server.RequiredPower);
+      SetHeatValue(server.Temperature.HeatPercent());
+    }
 
-      PowerLabel.text = value;
-      CurrentPowerValue = value;
+    public void SetUserValue(int userValue) {
+      UserLabel.DOComplete(withCallbacks: true);
 
-      _setPowerValueTween.Restart();
+      DOTween.Sequence()
+          .SetTarget(UserLabel)
+          .Insert(0f, UserLabel.DOCounter(CurrentPowerValue, userValue, 0.5f))
+          .Insert(0f, UserLabel.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
+          .Insert(0f, UserIcon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f));
+
+      CurrentUserValue = userValue;
+    }
+
+    public void SetPowerValue(int powerValue) {
+      PowerLabel.DOComplete(withCallbacks: true);
+
+      DOTween.Sequence()
+          .SetTarget(PowerLabel)
+          .Insert(0f, PowerLabel.DOCounter(CurrentPowerValue, powerValue, 0.5f))
+          .Insert(0f, PowerLabel.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
+          .Insert(0f, PowerIcon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f));
+
+      CurrentPowerValue = powerValue;
     }
 
     public void SetHeatValue(float heatValue) {

@@ -42,8 +42,8 @@ namespace GameJam.Editor {
       GUILayout.EndHorizontal();
     }
 
-    string _userValue;
-    string _powerValue;
+    int _userValue;
+    int _powerValue;
     float _heatValue;
 
     private void DrawUserControls() {
@@ -54,7 +54,7 @@ namespace GameJam.Editor {
         _controller.SetUserValue(_userValue);
       }
 
-      _userValue = EditorGUILayout.TextField(_userValue);
+      _userValue = EditorGUILayout.IntField(_userValue);
 
       GUILayout.EndHorizontal();
       GUILayout.BeginHorizontal();
@@ -63,7 +63,7 @@ namespace GameJam.Editor {
         _controller.SetPowerValue(_powerValue);
       }
 
-      _powerValue = EditorGUILayout.TextField(_powerValue);
+      _powerValue = EditorGUILayout.IntField(_powerValue);
 
       GUILayout.EndHorizontal();
       GUILayout.BeginHorizontal();

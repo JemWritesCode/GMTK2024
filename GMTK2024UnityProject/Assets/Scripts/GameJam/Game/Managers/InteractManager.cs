@@ -31,7 +31,7 @@ namespace GameJam {
         ClosestInteractable = interactable;
       }
 
-      UIManager.Instance.InteractPanel.SetInteractable(ClosestInteractable);
+      UIManager.Instance.SetCurrentInteractable(ClosestInteractable);
     }
 
     private readonly RaycastHit[] _raycastHits = new RaycastHit[20];

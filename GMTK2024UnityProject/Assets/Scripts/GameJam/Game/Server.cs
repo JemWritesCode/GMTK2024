@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+
 using UnityEngine;
 
 namespace GameJam
 {
     public class Server : MonoBehaviour
-    {
+    {  
         public int UserCapacity = 100;
         public int RequiredPower = 100;
         public bool IsOnline = false;
@@ -14,6 +15,7 @@ namespace GameJam
         public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
 
         public Temperature Temperature = new Temperature();
+
         public GameObject FireEffects;
         public GameObject IndicatorLight;
 
