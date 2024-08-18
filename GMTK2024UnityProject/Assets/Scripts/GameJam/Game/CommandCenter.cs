@@ -6,7 +6,7 @@ namespace GameJam
 {
     public class CommandCenter : MonoBehaviour
     {
-        public FireWall FireWall;
+        public List<FireWall> FireWalls = new List<FireWall>();
         public List<Server> Servers = new List<Server>();
         public List<Ads.Ad> CurrentAds = new List<Ads.Ad>();
         public int Users = 0;
@@ -59,11 +59,6 @@ namespace GameJam
             updateTimer = time;
         }
 
-        public void AddServer(Server server)
-        {
-            Servers.Add(server);
-        }
-
         public void AddUsers(int users)
         {
             Users += users;
@@ -95,14 +90,22 @@ namespace GameJam
 
         public void RandomAttack(int reputation)
         {
-            if (!FireWall.TryBlockAttack(reputation))
+            if (FireWalls == null || Servers == null)
             {
-                var servers = Servers.Where(item => item.IsOnline).ToList();
-                if (servers.Count > 0)
+                return;
+            }
+
+            foreach (var firewall in FireWalls)
+            {
+                if (!firewall.TryBlockAttack(reputation))
                 {
-                    int index = Random.Range(0, servers.Count);
-                    Debug.Log($"ATTACK on server {index}!!");
-                    servers[index].RandomAttack();
+                    var servers = Servers.Where(item => item.IsOnline).ToList();
+                    if (servers.Count > 0)
+                    {
+                        int index = Random.Range(0, servers.Count);
+                        Debug.Log($"ATTACK on server {index}!!");
+                        servers[index].RandomAttack();
+                    }
                 }
             }
         }
