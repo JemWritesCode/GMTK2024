@@ -4,6 +4,8 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 
+using TMPro;
+
 using UnityEngine;
 
 namespace YoloBox {
@@ -27,6 +29,18 @@ namespace YoloBox {
       } else {
         tween.SmoothRewind();
       }
+    }
+
+    public static Tweener DOCounter(this TMP_Text target, int fromValue, int toValue, float duration) {
+      return DOVirtual
+          .Int(fromValue, toValue, duration, x => target.SetText(x.ToString()))
+          .SetTarget(target);
+    }
+
+    public static Tweener DOPercentCounter(this TMP_Text target, float fromValue, float toValue, float duration) {
+      return DOVirtual
+          .Float(fromValue, toValue, duration, x => target.SetText(x.ToString() + "%"))
+          .SetTarget(target);
     }
 
     public static TweenerCore<Color, Color, ColorOptions> DOColor1(

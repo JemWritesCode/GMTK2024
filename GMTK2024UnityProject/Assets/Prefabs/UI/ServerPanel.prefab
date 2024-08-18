@@ -2864,11 +2864,14 @@ MonoBehaviour:
   <PowerLabel>k__BackingField: {fileID: 5560296658930240200}
   <PoweredIcon>k__BackingField: {fileID: 6020329424751168739}
   <HeatIcon>k__BackingField: {fileID: 1504975213130291762}
-  <HeatLabel>k__BackingField: {fileID: 4051113209027548785}
+  <HeatLabel>k__BackingField: {fileID: 3109538227324913435}
   <FireIcon>k__BackingField: {fileID: 228480130229871035}
   <CoolantIcon>k__BackingField: {fileID: 7929416318841220856}
   <NetworkIcon>k__BackingField: {fileID: 1965613525404510391}
   <IsPanelVisible>k__BackingField: 0
+  <CurrentUserValue>k__BackingField: 
+  <CurrentPowerValue>k__BackingField: 
+  <CurrentHeatValue>k__BackingField: 0
 --- !u!1 &8278862949678214879
 GameObject:
   m_ObjectHideFlags: 0

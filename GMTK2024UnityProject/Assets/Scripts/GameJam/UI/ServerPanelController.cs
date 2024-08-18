@@ -60,7 +60,18 @@ namespace GameJam {
     [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
 
+    [field: SerializeField]
+    public string CurrentUserValue { get; private set; }
+
+    [field: SerializeField]
+    public string CurrentPowerValue { get; private set; }
+
+    [field: SerializeField]
+    public float CurrentHeatValue { get; private set; }
+
     private Sequence _showHidePanelTween;
+    private Sequence _setUserValueTween;
+    private Sequence _setPowerValueTween;
 
     private void Start() {
       CreateTweens();
@@ -86,6 +97,24 @@ namespace GameJam {
               .Insert(0f, FadeMoveImage(NetworkIcon, new(0f, 3f, 0f), 0.2f))
               .SetAutoKill(false)
               .Pause();
+
+      _setUserValueTween = PunchIconLabel(UserIcon, UserLabel);
+      _setPowerValueTween = PunchIconLabel(PowerIcon, PowerLabel);
+    }
+
+    static Sequence FadeMoveImage(Graphic image, Vector3 offset, float duration) {
+      return DOTween.Sequence()
+          .Insert(0f, image.DOFade(1f, duration).From(0f, true))
+          .Insert(0f, image.transform.DOLocalMove(offset, duration).From(true));
+    }
+
+    static Sequence PunchIconLabel(Image icon, TextMeshProUGUI label) {
+      return DOTween.Sequence()
+          .SetTarget(label)
+          .Insert(0f, label.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
+          .Insert(0f, icon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f))
+          .SetAutoKill(false)
+          .Pause();
     }
 
     public void ResetPanel() {
@@ -108,10 +137,34 @@ namespace GameJam {
       _showHidePanelTween.SmoothRewind();
     }
 
-    static Tween FadeMoveImage(Graphic image, Vector3 offset, float duration) {
-      return DOTween.Sequence()
-          .Insert(0f, image.DOFade(1f, duration).From(0f, true))
-          .Insert(0f, image.transform.DOLocalMove(offset, duration).From(true));
+    public void SetUserValue(string value) {
+      _setUserValueTween.Complete(withCallbacks: true);
+
+      UserLabel.text = value;
+      CurrentUserValue = value;
+
+      _setUserValueTween.Restart();
+    }
+
+    public void SetPowerValue(string value) {
+      _setPowerValueTween.Complete(withCallbacks: true);
+
+      PowerLabel.text = value;
+      CurrentPowerValue = value;
+
+      _setPowerValueTween.Restart();
+    }
+
+    public void SetHeatValue(float heatValue) {
+      HeatLabel.DOComplete(withCallbacks: true);
+
+      DOTween.Sequence()
+          .SetTarget(HeatLabel)
+          .Insert(0f, HeatLabel.DOPercentCounter(CurrentHeatValue, heatValue, 0.5f))
+          .Insert(0f, HeatLabel.transform.DOPunchPosition(new(0f, 2.5f, 0f), 1f, 3, 1f))
+          .Insert(0f, HeatIcon.transform.DOPunchScale(Vector3.one * 0.15f, 1f, 5, 0f));
+
+      CurrentHeatValue = heatValue;
     }
   }
 }
