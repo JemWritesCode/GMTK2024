@@ -1,3 +1,4 @@
+using UnityEditor.MemoryProfiler;
 using UnityEngine;
 
 namespace GameJam
@@ -8,10 +9,14 @@ namespace GameJam
         public LineRenderer line;
         public CableType.CableBoxType Type = CableType.CableBoxType.None;
         public Material CableMaterial;
+        public GameObject Hamster;
+        public bool HasHamster = false;
 
         private bool pickedUp = false;
 
         private Vector3 cableOffset = new Vector3 (0, 0.075f, 0);
+
+        public float CableWidth = 0.025f;
 
         void Start()
         {
@@ -23,8 +28,8 @@ namespace GameJam
             line.SetPosition(0, this.transform.position + cableOffset);
             line.SetPosition(1, this.transform.position + cableOffset);
             line.material = CableMaterial;
-            line.startWidth = 0.05f;
-            line.endWidth = 0.05f;
+            line.startWidth = CableWidth;
+            line.endWidth = CableWidth;
             line.useWorldSpace = true;
         }
 
@@ -39,23 +44,26 @@ namespace GameJam
 
         public void BreakConnection()
         {
+            if (Connection != null)
+            {
+                Connection.Connection = null;
+                Connection = null;
+            }
+
             pickedUp = false;
-            Connection = null;
             line.SetPosition(1, this.transform.position + cableOffset);
         }
 
         public void CancelConnection()
         {
-            pickedUp = false;
-            Connection = null;
+            BreakConnection();
             HandManager.Instance.CurrentCable = null;
-            line.SetPosition(1, this.transform.position + cableOffset);
         }
 
         public void StartConnection()
         {
             HandManager.Instance.CurrentCable = this;
-            Connection = null;
+            BreakConnection();
             pickedUp = true;
         }
 
@@ -89,6 +97,18 @@ namespace GameJam
                 Debug.Log("Drop cable!");
                 CancelConnection();
                 return;
+            }
+        }
+
+        public void HamsterAttack()
+        {
+            if (Hamster != null)
+            {
+                var obj = GameObject.Instantiate(Hamster, this.transform.position,
+                    this.transform.rotation * Hamster.transform.rotation);
+                obj.transform.position = transform.position;
+                obj.GetComponent<Hamster>().Lunch = this;
+                HasHamster = true;
             }
         }
     }

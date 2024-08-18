@@ -8,6 +8,7 @@ namespace GameJam
     {
         public List<FireWall> FireWalls = new List<FireWall>();
         public List<Server> Servers = new List<Server>();
+        public List<CableStartPoint> PowerBoxes = new List<CableStartPoint>();
         public int Users = 0;
 
         private readonly float updateInterval = 5f;
@@ -31,6 +32,7 @@ namespace GameJam
             }
 
             RandomVirusAttack();
+            //RandomHamsterAttack();
 
             updateTimer = time;
         }
@@ -53,6 +55,25 @@ namespace GameJam
                         Debug.Log($"ATTACK on server {index}!!");
                         servers[index].SetVirus(true);
                     }
+                }
+            }
+        }
+
+        public void RandomHamsterAttack()
+        {
+            if (PowerBoxes == null)
+            {
+                return;
+            }
+
+            if (PowerBoxes.Count > 0)
+            {
+                var boxes = PowerBoxes.Where(item => item.IsConnected() && !item.HasHamster).ToList();
+                if (boxes.Count > 0)
+                {
+                    int index = Random.Range(0, boxes.Count);
+                    Debug.Log($"Hamster ATTACK on power box {index}!!");
+                    boxes[index].HamsterAttack();
                 }
             }
         }

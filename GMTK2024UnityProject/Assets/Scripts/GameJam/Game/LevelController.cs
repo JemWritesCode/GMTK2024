@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace GameJam
@@ -6,6 +7,7 @@ namespace GameJam
     public class LevelController : MonoBehaviour
     {
         public int CurrentLevel = 0;
+        public int TotalUsers = 0;
         public List<GameObject> Levels = new List<GameObject>();
         public List<int> UsersNeededForLevel = new List<int>();
 
@@ -29,7 +31,9 @@ namespace GameJam
                 totalUsers += c.Users;
             }
 
-            if ((CurrentLevel + 1) < UsersNeededForLevel.Count && totalUsers >= UsersNeededForLevel[CurrentLevel + 1])
+            TotalUsers = totalUsers;
+
+            if ((CurrentLevel + 1) < UsersNeededForLevel.Count && TotalUsers >= UsersNeededForLevel[CurrentLevel + 1])
             {
                 CurrentLevel++;
                 RefreshRoom();
@@ -53,8 +57,12 @@ namespace GameJam
                 commandCenters = GetActiveObjectsOfType<CommandCenter>();
                 var servers = GetActiveObjectsOfType<Server>();
                 var firewalls = GetActiveObjectsOfType<FireWall>();
+                var powerBoxes = GetActiveObjectsOfType<CableStartPoint>()
+                    .Where(cable => cable.Type == CableType.CableBoxType.Power)
+                    .ToList();
 
-                Debug.Log($"Activating level {index}, {servers.Count} servers and {firewalls.Count} firewalls found.");
+                Debug.Log($"Activating level {index}, {servers.Count} servers, " +
+                    $"{firewalls.Count} firewalls, and {powerBoxes.Count} power boxes found.");
 
                 // Treat all command centers as the same object
                 // Will likely need to change this to support 1 or multiple
@@ -63,6 +71,7 @@ namespace GameJam
                 {
                     c.Servers = servers;
                     c.FireWalls = firewalls;
+                    c.PowerBoxes = powerBoxes;
                 }
             }
         }

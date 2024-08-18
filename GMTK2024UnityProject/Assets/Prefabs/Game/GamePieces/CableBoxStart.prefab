@@ -239,6 +239,7 @@ MonoBehaviour:
   line: {fileID: 7688658296543449823}
   Type: 0
   CableMaterial: {fileID: 0}
+  Hamster: {fileID: 894642291323497926, guid: 6b7b5eb89e278f546af4d5b153d1482b, type: 3}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0

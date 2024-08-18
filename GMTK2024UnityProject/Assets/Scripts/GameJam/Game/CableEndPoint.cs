@@ -15,14 +15,20 @@ namespace GameJam
 
         public void BreakConnection()
         {
-            Connection.BreakConnection();
-            Connection = null;
+            if (Connection != null)
+            {
+                Connection.Connection = null;
+                Connection = null;
+            }
         }
 
         public void CancelConnection()
         {
-            Connection.StartConnection();
-            Connection = null;
+            if (Connection != null)
+            {
+                Connection.StartConnection();
+                Connection = null;
+            }
         }
 
         public void CompleteConnection(CableStartPoint cable)
