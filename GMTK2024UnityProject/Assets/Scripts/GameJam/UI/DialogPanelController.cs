@@ -1,6 +1,7 @@
 using DG.Tweening;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 using YoloBox;
 
@@ -12,6 +13,10 @@ namespace GameJam {
 
     [field: SerializeField]
     public CanvasGroup PanelCanvasGroup { get; private set; }
+
+    [field: Header("Buttons")]
+    [field: SerializeField]
+    public Button ConfirmButton { get; private set; }
 
     [field: Header("State")]
     [field: SerializeField]
@@ -60,6 +65,5 @@ namespace GameJam {
 
       _showHidePanelTween.SmoothRewind();
     }
-
   }
 }

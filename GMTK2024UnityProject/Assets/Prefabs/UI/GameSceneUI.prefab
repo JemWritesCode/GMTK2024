@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MenuPanel>k__BackingField: {fileID: 4488088251868112459}
   <HelpPanel>k__BackingField: {fileID: 2256976018523294504}
+  <DialogPanel>k__BackingField: {fileID: 4337911705260856636}
   <InteractPanel>k__BackingField: {fileID: 8064073483590611012}
   <ServerPanel>k__BackingField: {fileID: 1032594290998921557}
 --- !u!1001 &1691008829380791793
@@ -412,6 +413,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21fb0f81d95bc1746b09cf65065c1ce6, type: 3}
+--- !u!114 &4337911705260856636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7850240623710337179, guid: 21fb0f81d95bc1746b09cf65065c1ce6, type: 3}
+  m_PrefabInstance: {fileID: 5819481911546703271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45509d7d1c0b5147a05a725ae43ea25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4756519733843469541 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1351219011268725058, guid: 21fb0f81d95bc1746b09cf65065c1ce6, type: 3}
