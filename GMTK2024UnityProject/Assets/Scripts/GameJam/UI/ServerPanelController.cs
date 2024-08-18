@@ -163,7 +163,7 @@ namespace GameJam {
 
       DOTween.Sequence()
           .SetTarget(UserLabel)
-          .Insert(0f, UserLabel.DOCounter(CurrentPowerValue, userValue, 0.5f))
+          .Insert(0f, UserLabel.DOCounter(CurrentUserValue, userValue, 0.5f))
           .Insert(0f, UserLabel.transform.DOPunchPosition(new(0f, 1f, 0f), 1f, 3, 1f))
           .Insert(0f, UserIcon.transform.DOPunchScale(Vector3.one * 0.1f, 1f, 5, 0f));
 
