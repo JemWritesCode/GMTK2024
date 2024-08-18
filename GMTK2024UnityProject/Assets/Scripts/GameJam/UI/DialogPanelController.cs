@@ -1,5 +1,7 @@
 using DG.Tweening;
 
+using TMPro;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +16,23 @@ namespace GameJam {
     [field: SerializeField]
     public CanvasGroup PanelCanvasGroup { get; private set; }
 
+    [field: Header("Dialog")]
+    [field: SerializeField]
+    public Image PortraitImage { get; private set; }
+
+    [field: SerializeField]
+    public TextMeshProUGUI DialogText { get; private set; }
+
     [field: Header("Buttons")]
     [field: SerializeField]
     public Button ConfirmButton { get; private set; }
+
+    [field: Header("SFX")]
+    [field: SerializeField]
+    public AudioSource SfxAudioSource { get; private set; }
+
+    [field: SerializeField]
+    public AudioClip ShowPanelSfx { get; private set; }
 
     [field: Header("State")]
     [field: SerializeField]
@@ -30,9 +46,10 @@ namespace GameJam {
       _showHidePanelTween =
           DOTween.Sequence()
               .SetTarget(PanelRectTransform)
-              .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.5f))
+              .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.4f))
               .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 25f, 0f), 0.5f).From(false, true))
-              .SetEase(Ease.InOutQuad)
+              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 0, 0f))
+              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.5f).From(true))
               .SetAutoKill(false)
               .Pause();
     }
@@ -57,6 +74,7 @@ namespace GameJam {
       IsPanelVisible = true;
 
       _showHidePanelTween.PlayAgain();
+      SfxAudioSource.PlayOneShot(ShowPanelSfx);
     }
 
     public void HidePanel() {
