@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+
 using UnityEngine;
 
 namespace GameJam
@@ -25,19 +26,31 @@ namespace GameJam
                 return;
             }
 
-            int totalUsers = 0;
-            foreach (var c in commandCenters)
-            {
-                totalUsers += c.Users;
-            }
+            UpdateLevelState();
+        }
 
+        public void UpdateLevelState() {
+          int totalUsers = GetTotalUsers();
+
+          if (TotalUsers != totalUsers) {
+            GameManager.Instance.SetUserCount(totalUsers);
             TotalUsers = totalUsers;
+          }
 
-            if ((CurrentLevel + 1) < UsersNeededForLevel.Count && TotalUsers >= UsersNeededForLevel[CurrentLevel + 1])
-            {
-                CurrentLevel++;
-                RefreshRoom();
-            }
+          if ((CurrentLevel + 1) < UsersNeededForLevel.Count && TotalUsers >= UsersNeededForLevel[CurrentLevel + 1]) {
+            CurrentLevel++;
+            RefreshRoom();
+          }
+        }
+
+        public int GetTotalUsers() {
+          int totalUsers = 0;
+
+          foreach (CommandCenter center in commandCenters) {
+            totalUsers += center.Users;
+          }
+
+          return totalUsers;
         }
 
         public void RefreshRoom()
