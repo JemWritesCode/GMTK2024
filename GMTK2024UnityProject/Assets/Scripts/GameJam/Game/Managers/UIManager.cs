@@ -19,8 +19,11 @@ namespace GameJam {
     }
 
     public void SetCurrentInteractable(Interactable interactable) {
-      InteractPanel.SetInteractable(interactable); 
-      ServerPanel.SetServer(interactable ? interactable.GetComponentInParent<Server>() : default);
+      InteractPanel.SetInteractable(interactable);
+    }
+
+    public void SetCurrentServer(Server server) {
+      ServerPanel.SetServer(server);
     }
   }
 }

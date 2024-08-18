@@ -19,6 +19,10 @@ namespace GameJam
         public GameObject FireEffects;
         public GameObject IndicatorLight;
 
+        private void Start() {
+          Temperature.Heat = Random.Range(0, Temperature.HeatLimit);
+        }
+
         public int ServeServer(int users)
         {
             if (Temperature.Overheated())
