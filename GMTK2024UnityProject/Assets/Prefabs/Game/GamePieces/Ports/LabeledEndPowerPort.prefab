@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372379343189080656}
   m_Layer: 0
-  m_Name: LabeledPowerPort
+  m_Name: LabeledEndPowerPort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
