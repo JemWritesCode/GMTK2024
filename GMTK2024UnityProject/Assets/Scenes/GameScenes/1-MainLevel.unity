@@ -725,6 +725,10 @@ PrefabInstance:
       value: LevelController
       objectReference: {fileID: 0}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
+      propertyPath: CurrentLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: Levels.Array.data[0].ParentObject
       value: 
       objectReference: {fileID: 1181681699}
