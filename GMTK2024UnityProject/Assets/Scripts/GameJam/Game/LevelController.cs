@@ -1,25 +1,13 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace GameJam
 {
     public class LevelController : MonoBehaviour
     {
-        [System.Serializable]
-        public class Level
-        {
-            [SerializeField]
-            public GameObject ParentObject;
 
-            [SerializeField]
-            public int UsersNeededForLevel = 0;
-
-            [SerializeField]
-            public UnityEvent Event;
-        }
 
         public List<Level> Levels = new List<Level>();
         public int CurrentLevel = 0;
@@ -140,16 +128,21 @@ namespace GameJam
         {
             if (Levels != null && Levels.Count > index && index >= 0)
             {
-                Levels[index].ParentObject.SetActive(activate);
+                Level level = Levels[index];
+                level.ParentObject.SetActive(activate);
 
                 if (activate)
                 {
-                    Levels[index].Event?.Invoke();
+                    level.Event?.Invoke();
+
+                    if (level.LevelStartDialogNode) {
+                      GameManager.Instance.SetDialogNode(level.LevelStartDialogNode);
+                    }
                 }
             }
         }
 
-        public List<T> GetActiveObjectsOfType<T>()
+        public List<T> GetActiveObjectsOfType<T>() where T : UnityEngine.Component
         {
             List<T> list = new List<T>();
             foreach (var level in Levels)
