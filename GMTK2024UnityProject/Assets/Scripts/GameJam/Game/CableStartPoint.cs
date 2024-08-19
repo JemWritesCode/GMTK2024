@@ -18,6 +18,9 @@ namespace GameJam
 
         public float CableWidth = 0.025f;
 
+        public AudioClip grabCableSound;
+        AudioSource grabCableAudioSource;
+
         void Start()
         {
             if (line == null)
@@ -31,6 +34,8 @@ namespace GameJam
             line.startWidth = CableWidth;
             line.endWidth = CableWidth;
             line.useWorldSpace = true;
+
+            grabCableAudioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -65,6 +70,9 @@ namespace GameJam
             HandManager.Instance.CurrentCable = this;
             BreakConnection();
             pickedUp = true;
+            if (grabCableSound && grabCableAudioSource) {
+                grabCableAudioSource.PlayOneShot(grabCableSound, .7F);
+            }
         }
 
         public void CompleteConnection(CableEndPoint cable)
