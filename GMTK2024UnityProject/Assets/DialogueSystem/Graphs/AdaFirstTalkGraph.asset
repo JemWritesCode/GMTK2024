@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: AdaFirstTalkGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: AdaFirstTalk
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 3c4289dc-e4ab-4d0d-b82d-b1bef072a4c6
+    <Name>k__BackingField: FirstTalkIntroduction
+    <Text>k__BackingField: 'Hi there <color=#6f6f6f>Admin</color>!
+
+      I''m <color=#054C7C>Adeline</color>
+      and I''m your AI assistant for this datacenter!
+
+      Let''s work on <color=#CDB526>scaling
+      up</color> the data center so we can serve all our <color=#AB3311>Users</color>
+      the best <color=#3C9447>Ads</color>!'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 115, y: 157}
+  - <ID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
+    <Name>k__BackingField: FirstTalkPluginServer
+    <Text>k__BackingField: 'We''ll need to plug-in the servers first.
+
+      Each
+      server needs a power cable and a data cable!
+
+      Good luck!'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 781, y: 157}
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - FirstTalkIntroduction
+  - FirstTalkPluginServer
+  <OldGroupedNodeNames>k__BackingField:
+    list: []

@@ -1,5 +1,8 @@
 using System.Collections;
 
+using DS;
+using DS.ScriptableObjects;
+
 using UnityEngine;
 
 using YoloBox;
@@ -77,6 +80,10 @@ namespace GameJam {
 
     public void SetCurrentUserCount(int userCount) {
       UserCountPanel.SetUserCountValue(userCount);
+    }
+
+    public void SetCurrentDialogNode(DSDialogueSO dialogNode) {
+      DialogPanel.ShowDialogNode(dialogNode);
     }
   }
 }

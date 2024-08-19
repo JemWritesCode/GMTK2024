@@ -536,6 +536,6 @@ MonoBehaviour:
   <UserCountIcon>k__BackingField: {fileID: 7032639923341518763}
   <UserCountLabel>k__BackingField: {fileID: 1427670344032460652}
   <SfxAudioSource>k__BackingField: {fileID: 3447187479089137632}
-  <UserCountChangedSfx>k__BackingField: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  <UserCountChangedSfx>k__BackingField: {fileID: 0}
   <IsPanelVisible>k__BackingField: 0
   <CurrentUserCountValue>k__BackingField: 0

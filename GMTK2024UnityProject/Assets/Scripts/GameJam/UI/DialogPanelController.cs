@@ -1,4 +1,8 @@
+using System.Linq;
+
 using DG.Tweening;
+
+using DS.ScriptableObjects;
 
 using TMPro;
 
@@ -38,18 +42,33 @@ namespace GameJam {
     [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
 
+    [field: SerializeField]
+    public DSDialogueSO CurrentDialogNode { get; private set; }
+
     Sequence _showHidePanelTween;
+    Sequence _showTextTween;
 
-    private void Awake() {
+    private void Start() {
+      CreateTweens();
       ResetPanel();
+    }
 
+    private void CreateTweens() {
       _showHidePanelTween =
           DOTween.Sequence()
               .SetTarget(PanelRectTransform)
-              .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.4f))
-              .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 25f, 0f), 0.5f).From(false, true))
-              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 0, 0f))
-              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.5f).From(true))
+              .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.3f))
+              .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 25f, 0f), 0.3f).From(false, true))
+              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.3f, 0, 0f))
+              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.3f).From(true))
+              .SetAutoKill(false)
+              .Pause();
+
+      _showTextTween =
+          DOTween.Sequence()
+              .SetTarget(PanelRectTransform)
+              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.3f, 0, 0f))
+              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.3f).From(true))
               .SetAutoKill(false)
               .Pause();
     }
@@ -82,6 +101,34 @@ namespace GameJam {
       IsPanelVisible = false;
 
       _showHidePanelTween.SmoothRewind();
+    }
+
+    public void ShowDialogNode(DSDialogueSO dialogNode) {
+      CurrentDialogNode = dialogNode;
+
+      if (CurrentDialogNode) {
+        DialogText.text = CurrentDialogNode.Text;
+
+        if (IsPanelVisible) {
+          _showTextTween.Play();
+        } else {
+          ShowPanel();
+        }
+      } else {
+        HidePanel();
+      }
+    }
+
+    public void OnConfirmButtonClick() {
+      ShowDialogNode(GetNextDialogNode(CurrentDialogNode));
+    }
+
+    private DSDialogueSO GetNextDialogNode(DSDialogueSO dialogNode) {
+      if (!dialogNode || dialogNode.Choices.Count <= 0) {
+        return default;
+      }
+
+      return dialogNode.Choices[0].NextDialogue;
     }
   }
 }
