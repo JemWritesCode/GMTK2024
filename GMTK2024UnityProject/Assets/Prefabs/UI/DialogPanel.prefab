@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8755450815946616716}
   - component: {fileID: 8737747144975239911}
   m_Layer: 5
-  m_Name: DialogText
+  m_Name: LeftDialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,8 +292,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 798016337840371699}
+  - component: {fileID: 5585374551743562978}
+  - component: {fileID: 5729647404913359026}
   m_Layer: 5
-  m_Name: Portrait
+  m_Name: LeftPortraitDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,6 +322,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &5585374551743562978
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553786918657097366}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &5729647404913359026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553786918657097366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b29b6b1269ee7f4196a671d6e847038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DisplayRectTransform>k__BackingField: {fileID: 798016337840371699}
+  <DisplayCanvasGroup>k__BackingField: {fileID: 5585374551743562978}
+  <PortraitImage>k__BackingField: {fileID: 4974236070122851104}
+  <DialogText>k__BackingField: {fileID: 8737747144975239911}
 --- !u!1 &683977628649703461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1096,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PanelRectTransform>k__BackingField: {fileID: 1351219011268725058}
   <PanelCanvasGroup>k__BackingField: {fileID: 3955824059945296103}
+  <LeftPortraitDisplay>k__BackingField: {fileID: 5729647404913359026}
+  <TopPortraitDisplay>k__BackingField: {fileID: 517454242647437249}
+  <AdPortraitDisplay>k__BackingField: {fileID: 0}
   <Portrait>k__BackingField: {fileID: 553786918657097366}
   <PortraitImage>k__BackingField: {fileID: 4974236070122851104}
   <DialogText>k__BackingField: {fileID: 8737747144975239911}
@@ -1219,13 +1252,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3993547845424292139}
+  - component: {fileID: 2996659616193360081}
+  - component: {fileID: 517454242647437249}
   m_Layer: 5
-  m_Name: TopPortrait
+  m_Name: TopPortraitDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3993547845424292139
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1247,6 +1282,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &2996659616193360081
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102760153860101084}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &517454242647437249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102760153860101084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b29b6b1269ee7f4196a671d6e847038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DisplayRectTransform>k__BackingField: {fileID: 3993547845424292139}
+  <DisplayCanvasGroup>k__BackingField: {fileID: 2996659616193360081}
+  <PortraitImage>k__BackingField: {fileID: 7324193285420092608}
+  <DialogText>k__BackingField: {fileID: 4779260911754291170}
 --- !u!1 &7579428810014027045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1323,7 @@ GameObject:
   - component: {fileID: 4974236070122851104}
   - component: {fileID: 6553921655220849778}
   m_Layer: 5
-  m_Name: PortraitImage
+  m_Name: LeftPortraitImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
