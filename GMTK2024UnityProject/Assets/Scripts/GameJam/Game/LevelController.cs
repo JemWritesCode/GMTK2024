@@ -36,7 +36,7 @@ namespace GameJam
         public float SneezeDropPercentDataCables = 0.2f;
         public float SneezeDropPercentPowerCables = 0.3f;
 
-        private readonly float updateInterval = 5f;
+        private readonly float updateInterval = 1f;
         private float updateTimer = 0f;
 
         private IEnumerator Start()

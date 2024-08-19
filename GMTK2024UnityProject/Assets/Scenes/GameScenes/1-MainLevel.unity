@@ -758,6 +758,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 69701273}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
+      propertyPath: Levels.Array.data[0].UsersPerPortAtLevel
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
+      propertyPath: Levels.Array.data[1].UsersPerPortAtLevel
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: Levels.Array.data[4].<LevelStartDialogNode>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 5586599455fb8f54997222be242582ef, type: 2}
