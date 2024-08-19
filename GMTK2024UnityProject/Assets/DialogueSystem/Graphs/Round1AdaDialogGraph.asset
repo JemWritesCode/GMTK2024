@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Round1AdaDialogGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Round1AdaDialog
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 3c4289dc-e4ab-4d0d-b82d-b1bef072a4c6
+    <Name>k__BackingField: FirstTalkIntroduction
+    <Text>k__BackingField: "Hi <color=#6f6f6f>Admin</color>! \nWe reached 10k <color=#AB3311>Users</color>!\nYay
+      yay yay!"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 40.8, y: 156}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
+    <Name>k__BackingField: FirstTalkPluginServer
+    <Text>k__BackingField: "Things are really heating up with\nall of these Users,
+      Admin!\n\nYou can pour Cool-It\xAE\Ldirectly onto servers to keep \nthem cool!
+      Feel free to take a sip\nto keep yourself cool too! \n"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2a4c1986-6a4e-49bf-84c9-4fd190d195aa
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 748, y: 156.8}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 2a4c1986-6a4e-49bf-84c9-4fd190d195aa
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "If the servers get too hot\nmay catch fire! But we have
+      a\n\u201CByeByeFire\u201D\xAE if that happens.\n\nStay cool, Admin!"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1469.2001, y: 156.8}
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - FirstTalkIntroduction
+  - FirstTalkPluginServer
+  - DialogueName
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
