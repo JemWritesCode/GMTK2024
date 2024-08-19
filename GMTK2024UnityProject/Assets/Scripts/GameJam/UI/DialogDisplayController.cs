@@ -24,6 +24,7 @@ namespace GameJam {
     public TextMeshProUGUI DialogText { get; private set; }
 
     private Sequence _showDisplayTween;
+    private Sequence _portraitImageClickTween;
 
     private void Start() {
       CreateTweens();
@@ -33,14 +34,22 @@ namespace GameJam {
       _showDisplayTween =
           DOTween.Sequence()
               .SetTarget(DisplayRectTransform)
-              .Insert(0f, DisplayCanvasGroup.DOFade(1f, 0.3f))
+              .Insert(0f, DisplayCanvasGroup.DOFade(1f, 0.2f))
               .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.4f, 0, 0f))
               .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.4f).From(true))
+              .SetAutoKill(false)
+              .Pause();
+
+      _portraitImageClickTween =
+          DOTween.Sequence()
+              .SetTarget(PortraitImage)
+              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 10, 1f))
               .SetAutoKill(false)
               .Pause();
     }
 
     public void ToggleDisplay(bool toggleOn) {
+      DisplayCanvasGroup.blocksRaycasts = toggleOn;
       _showDisplayTween.PlayOrRewind(toggleOn);
     }
 
@@ -50,6 +59,10 @@ namespace GameJam {
       }
 
       DialogText.text = dialogNode.Text;
+    }
+
+    public void OnPortraitImageClick() {
+      _portraitImageClickTween.PlayComplete();
     }
   }
 }

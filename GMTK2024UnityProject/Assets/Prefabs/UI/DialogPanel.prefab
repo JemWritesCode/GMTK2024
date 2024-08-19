@@ -331,8 +331,8 @@ CanvasGroup:
   m_GameObject: {fileID: 553786918657097366}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &5729647404913359026
 MonoBehaviour:
@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 3791695177930722832}
   - component: {fileID: 7324193285420092608}
   - component: {fileID: 2408675635383361609}
+  - component: {fileID: 8642791550344603759}
   m_Layer: 5
   m_Name: TopPortraitImage
   m_TagString: Untagged
@@ -630,6 +631,62 @@ MonoBehaviour:
   m_EffectColor: {r: 0.003921569, g: 0.18823531, b: 0.3019608, a: 0.8}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 0
+--- !u!114 &8642791550344603759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419597350375430749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7324193285420092608}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 517454242647437249}
+        m_TargetAssemblyTypeName: GameJam.DialogDisplayController, GameJam
+        m_MethodName: OnPortraitImageClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1762999943441575207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,12 +1156,6 @@ MonoBehaviour:
   <LeftPortraitDisplay>k__BackingField: {fileID: 5729647404913359026}
   <TopPortraitDisplay>k__BackingField: {fileID: 517454242647437249}
   <AdPortraitDisplay>k__BackingField: {fileID: 0}
-  <Portrait>k__BackingField: {fileID: 553786918657097366}
-  <PortraitImage>k__BackingField: {fileID: 4974236070122851104}
-  <DialogText>k__BackingField: {fileID: 8737747144975239911}
-  <TopPortrait>k__BackingField: {fileID: 5102760153860101084}
-  <TopPortraitImage>k__BackingField: {fileID: 7324193285420092608}
-  <TopPortraitText>k__BackingField: {fileID: 4779260911754291170}
   <ConfirmButton>k__BackingField: {fileID: 1458454298221850369}
   <SfxAudioSource>k__BackingField: {fileID: 4216031506759513341}
   <ShowPanelSfx>k__BackingField: {fileID: 8300000, guid: 724131bc8a7f34041bb9f1701f0cb58d, type: 3}
@@ -1322,6 +1373,7 @@ GameObject:
   - component: {fileID: 4150501280490036927}
   - component: {fileID: 4974236070122851104}
   - component: {fileID: 6553921655220849778}
+  - component: {fileID: 4956766786093945727}
   m_Layer: 5
   m_Name: LeftPortraitImage
   m_TagString: Untagged
@@ -1403,3 +1455,59 @@ MonoBehaviour:
   m_EffectColor: {r: 0.003921569, g: 0.18823531, b: 0.3019608, a: 0.8}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 0
+--- !u!114 &4956766786093945727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579428810014027045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4974236070122851104}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5729647404913359026}
+        m_TargetAssemblyTypeName: GameJam.DialogDisplayController, GameJam
+        m_MethodName: OnPortraitImageClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
