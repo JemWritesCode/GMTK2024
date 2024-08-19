@@ -18,12 +18,6 @@ namespace GameJam {
       return Heat >= HeatLimit;
     }
 
-    public void UpdateHeat(float capacityPercentage) {
-      if (capacityPercentage >= 0.8) {
-        Heat += HeatTicks;
-      }
-    }
-
     public void UpdateHeat() {
       Heat += HeatTicks;
     }

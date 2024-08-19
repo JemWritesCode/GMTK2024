@@ -50,7 +50,7 @@ namespace GameJam
             }
         }
 
-        public int ServeServer()
+        public int ServeServer(bool heatEnabled)
         {
             if (Temperature.Overheated())
             {
@@ -77,10 +77,14 @@ namespace GameJam
                 CurrentUsers = dataConnections * powerConnections * UsersPerDataConnection;
                 PowerMultiplier = powerConnections;
 
-                Temperature.UpdateHeat();
+                if (heatEnabled)
+                {
+                    Temperature.UpdateHeat();
+                }
             }
 
             UpdateIndicatorColor();
+
             return CurrentUsers;
         }
 
