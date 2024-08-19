@@ -71,7 +71,7 @@ namespace GameJam
             BreakConnection();
             pickedUp = true;
             if (grabCableSound && grabCableAudioSource) {
-                grabCableAudioSource.PlayOneShot(grabCableSound, .7F);
+                grabCableAudioSource.PlayOneShot(grabCableSound);
             }
         }
 

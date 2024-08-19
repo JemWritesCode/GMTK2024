@@ -7,6 +7,13 @@ namespace GameJam
     {
         public CableStartPoint Connection;
         public CableBoxType Type = CableBoxType.None;
+        public AudioClip cableEndPointSound;
+        AudioSource cableEndPointAudioSource;
+
+        private void Start()
+        {
+            cableEndPointAudioSource = GetComponent<AudioSource>();
+        }
 
         public bool IsConnected()
         {
@@ -35,6 +42,10 @@ namespace GameJam
         {
             Connection = cable;
             cable.CompleteConnection(this);
+            if (cableEndPointSound && cableEndPointAudioSource)
+            {
+                cableEndPointAudioSource.PlayOneShot(cableEndPointSound);
+            }
         }
 
         public void CableInteract(GameObject interactAgent)

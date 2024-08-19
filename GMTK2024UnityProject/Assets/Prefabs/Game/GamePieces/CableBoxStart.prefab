@@ -243,7 +243,7 @@ MonoBehaviour:
   Hamster: {fileID: 894642291323497926, guid: 6b7b5eb89e278f546af4d5b153d1482b, type: 3}
   HasHamster: 0
   CableWidth: 0.025
-  grabCableSound: {fileID: 8300000, guid: d5e53b46b04eaaf439f4971e9ac4983a, type: 3}
+  grabCableSound: {fileID: 8300000, guid: 188c7f1edef897849af6615c93ed81e3, type: 3}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
