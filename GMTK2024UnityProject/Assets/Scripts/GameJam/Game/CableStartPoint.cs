@@ -1,4 +1,3 @@
-using UnityEditor.MemoryProfiler;
 using UnityEngine;
 
 namespace GameJam
