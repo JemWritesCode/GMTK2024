@@ -19,7 +19,10 @@ namespace GameJam {
       yield return null;
 
       UIManager.Instance.CalloutPanels(calloutDuration: 8f);
-      SetDialogNode(StartingDialogNode);
+
+      if (StartingDialogNode) {
+        SetDialogNode(StartingDialogNode);
+      }
     }
 
     public void SetDialogNode(DSDialogueSO dialogNode) {

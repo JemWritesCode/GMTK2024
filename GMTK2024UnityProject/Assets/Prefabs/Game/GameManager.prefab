@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04afebcc2aed76c409dcc946839bc389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <StartingDialogNode>k__BackingField: {fileID: 11400000, guid: ce14403118e635741a6192ff78d77caa, type: 2}
+  <StartingDialogNode>k__BackingField: {fileID: 0}
