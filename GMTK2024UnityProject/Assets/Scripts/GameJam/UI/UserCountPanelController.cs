@@ -23,13 +23,6 @@ namespace GameJam {
     [field: SerializeField]
     public TextMeshProUGUI UserCountLabel { get; private set; }
 
-    [field: Header("SFX")]
-    [field: SerializeField]
-    public AudioSource SfxAudioSource { get; private set; }
-
-    [field: SerializeField]
-    public AudioClip UserCountChangedSfx { get; private set; }
-
     [field: Header("State")]
     [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
@@ -92,14 +85,9 @@ namespace GameJam {
           .SetTarget(UserCountLabel)
           .Insert(0f, UserCountLabel.DOCounter(CurrentUserCountValue, userCountValue, 0.5f))
           .Insert(0f, UserCountLabel.transform.DOPunchPosition(new(0f, 1f, 0f), 1f, 3, 1f))
-          .Insert(0f, UserCountIcon.transform.DOPunchScale(Vector3.one * 0.1f, 1f, 5, 0f))
-          .Insert(0f, SfxAudioSource.DOPlayOneShot(UserCountChangedSfx));
+          .Insert(0f, UserCountIcon.transform.DOPunchScale(Vector3.one * 0.1f, 1f, 5, 0f));
 
       CurrentUserCountValue = userCountValue;
-    }
-
-    public void PlayUserCountChangedSfx() {
-      SfxAudioSource.PlayOneShot(UserCountChangedSfx);
     }
   }
 }
