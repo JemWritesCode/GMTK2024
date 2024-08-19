@@ -8,6 +8,7 @@ namespace GameJam
         public CableStartPoint Connection;
         public CableBoxType Type = CableBoxType.None;
         public AudioClip cableEndPointSound;
+        public AudioClip wrongCableTypeSound;
         AudioSource cableEndPointAudioSource;
 
         private void Start()
@@ -53,13 +54,19 @@ namespace GameJam
             Debug.Log("Interact With End Cable Box...");
             if (HandManager.Instance.HoldingCable())
             {
+
                 if (!IsConnected() && HandManager.Instance.CurrentCable.Type == Type)
                 {
                     Debug.Log("Box is not connected, connecting cable");
                     CompleteConnection(HandManager.Instance.CurrentCable);
                 }
-                else
+                else if (!(HandManager.Instance.CurrentCable.Type == Type))
                 {
+                    Debug.Log("Wrong Cable Box Type, not connecting");
+                    cableEndPointAudioSource.PlayOneShot(wrongCableTypeSound, .5f);
+                }
+                else {
+
                     Debug.Log("Box is already connected, doing nothing");
                 }
             }

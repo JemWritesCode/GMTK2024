@@ -102,6 +102,7 @@ MonoBehaviour:
   Connection: {fileID: 0}
   Type: 0
   cableEndPointSound: {fileID: 8300000, guid: bf6bffdddc27fa64c852a9b28059107e, type: 3}
+  wrongCableTypeSound: {fileID: 8300000, guid: 141b2826d3cd9244eb5a90dd94f5ee9d, type: 3}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
