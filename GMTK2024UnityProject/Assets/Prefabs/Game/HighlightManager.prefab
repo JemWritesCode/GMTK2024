@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5331930437886861737}
   - component: {fileID: 5565784200204339595}
   - component: {fileID: 8861736407007419152}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HighlightManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
