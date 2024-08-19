@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2599674881892001752}
-  - component: {fileID: -4231001478486217061}
+  - component: {fileID: 9176777389321357275}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4231001478486217061
+--- !u!114 &9176777389321357275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,12 +44,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea68a6222abd074ebd47c48b8d4f2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevel: 0
   Levels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  UsersNeededForLevel: 000000001027000050c30000a086010020a1070040420f00
+  - ParentObject: {fileID: 0}
+    UsersNeededForLevel: 0
+    UsersPerPortAtLevel: 85
+    Event:
+      m_PersistentCalls:
+        m_Calls: []
+    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+  - ParentObject: {fileID: 0}
+    UsersNeededForLevel: 10000
+    UsersPerPortAtLevel: 210
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9176777389321357275}
+          m_TargetAssemblyTypeName: GameJam.LevelController, GameJam
+          m_MethodName: EventEnableHeat
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+  - ParentObject: {fileID: 0}
+    UsersNeededForLevel: 50000
+    UsersPerPortAtLevel: 1112
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9176777389321357275}
+          m_TargetAssemblyTypeName: GameJam.LevelController, GameJam
+          m_MethodName: EventEnableVirusAttacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+  - ParentObject: {fileID: 0}
+    UsersNeededForLevel: 100000
+    UsersPerPortAtLevel: 280
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9176777389321357275}
+          m_TargetAssemblyTypeName: GameJam.LevelController, GameJam
+          m_MethodName: EventEnableHamsterAttacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+  - ParentObject: {fileID: 0}
+    UsersNeededForLevel: 500000
+    UsersPerPortAtLevel: 1390
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9176777389321357275}
+          m_TargetAssemblyTypeName: GameJam.LevelController, GameJam
+          m_MethodName: EventDropPackets
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+  - ParentObject: {fileID: 0}
+    UsersNeededForLevel: 999999
+    UsersPerPortAtLevel: 2084
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9176777389321357275}
+          m_TargetAssemblyTypeName: GameJam.LevelController, GameJam
+          m_MethodName: EventEnableSneezeAttacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+  - ParentObject: {fileID: 0}
+    UsersNeededForLevel: 1000000
+    UsersPerPortAtLevel: 2084
+    Event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9176777389321357275}
+          m_TargetAssemblyTypeName: GameJam.LevelController, GameJam
+          m_MethodName: EventEnableSneezeAttacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+  CurrentLevel: 5
+  TotalUsers: 0
+  FireWalls: []
+  Servers: []
+  PowerBoxes: []
+  EnableHeat: 0
+  EnableVirusAttacks: 0
+  EnableHamsterAttacks: 0
+  EnableSneezeAttacks: 0
+  DroppedPackets: 0
