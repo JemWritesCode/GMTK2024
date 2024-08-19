@@ -103,24 +103,33 @@ namespace GameJam {
       _showHidePanelTween.SmoothRewind();
     }
 
+    public void OnConfirmButtonClick() {
+      ShowDialogNode(GetNextDialogNode(CurrentDialogNode));
+    }
+
     public void ShowDialogNode(DSDialogueSO dialogNode) {
       CurrentDialogNode = dialogNode;
 
-      if (CurrentDialogNode) {
-        DialogText.text = CurrentDialogNode.Text;
-
-        if (IsPanelVisible) {
-          _showTextTween.Play();
-        } else {
-          ShowPanel();
-        }
-      } else {
+      if (!CurrentDialogNode) {
         HidePanel();
+        return;
       }
-    }
 
-    public void OnConfirmButtonClick() {
-      ShowDialogNode(GetNextDialogNode(CurrentDialogNode));
+      DialogText.text = CurrentDialogNode.Text;
+
+      if (CurrentDialogNode.Portrait) {
+        PortraitImage.sprite = CurrentDialogNode.Portrait;
+      }
+
+      if (CurrentDialogNode.AudioClip) {
+        SfxAudioSource.PlayOneShot(CurrentDialogNode.AudioClip, CurrentDialogNode.AudioVolume);
+      }
+
+      if (IsPanelVisible) {
+        _showTextTween.Play();
+      } else {
+        ShowPanel();
+      }
     }
 
     private DSDialogueSO GetNextDialogNode(DSDialogueSO dialogNode) {

@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: FirstTalkPluginServer
+  m_Name: FirstTalkBeepBoopTest
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: FirstTalkPluginServer
-  <Text>k__BackingField: 'We''ll need to plug-in the servers first.
-
-    Each server
-    needs a power cable and a data cable!
-
-    Good luck!'
+  <DialogueName>k__BackingField: FirstTalkBeepBoopTest
+  <Text>k__BackingField: Beep boop, boop beep, boop boop.
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 17b579277cbd93249a851b5a573cbe2b, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 0}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
-  <AudioClip>k__BackingField: {fileID: 0}
-  <AudioVolume>k__BackingField: 1
+  <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: 046e84d56b7351741a42ff5561b98486, type: 3}
+  <AudioVolume>k__BackingField: 0.5

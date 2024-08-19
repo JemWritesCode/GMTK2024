@@ -73,12 +73,12 @@ namespace YoloBox {
           .SetTarget(gradient);
     }
 
-    public static Tweener DOPlayOneShot(this AudioSource target, AudioClip audioClip) {
+    public static Tweener DOPlayOneShot(this AudioSource target, AudioClip audioClip, float volumeScale) {
       float duration = audioClip.length;
 
       return DOVirtual
           .Float(0f, duration, duration, EmptyFloatCallback)
-          .OnPlay(() => target.PlayOneShot(audioClip))
+          .OnPlay(() => target.PlayOneShot(audioClip, volumeScale))
           .SetTarget(target);
     }
 
