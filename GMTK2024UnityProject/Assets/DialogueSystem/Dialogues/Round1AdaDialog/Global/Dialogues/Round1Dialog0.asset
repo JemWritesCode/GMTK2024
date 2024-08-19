@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Round1Dialog0
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Round1Dialog0
-  <Text>k__BackingField: "Hi <color=#6f6f6f>Admin</color>! \nWe reached 10k <color=#AB3311>Users</color>!\nYay
+  <Text>k__BackingField: "Hi <color=#6f6f6f>Admin</color>! \nWe reached 10k <color=#3C9447>Users</color>!\nYay
     yay yay!"
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue

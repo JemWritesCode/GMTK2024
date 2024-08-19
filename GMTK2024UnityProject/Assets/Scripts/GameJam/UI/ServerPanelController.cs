@@ -1,5 +1,7 @@
 using System.Collections;
 
+using Coffee.UIEffects;
+
 using DG.Tweening;
 
 using TMPro;
@@ -39,6 +41,15 @@ namespace GameJam {
     [field: SerializeField]
     public Image PoweredIcon { get; private set; }
 
+    [field: SerializeField]
+    public UIGradient PoweredGradient { get; private set; }
+
+    [field: SerializeField]
+    public Color PoweredOnColor1 { get; private set; }
+
+    [field: SerializeField]
+    public Color PoweredOnColor2 { get; private set; }
+
     [field: Header("Heat")]
     [field: SerializeField]
     public Image HeatIcon { get; private set; }
@@ -74,7 +85,11 @@ namespace GameJam {
     [field: SerializeField]
     public float CurrentHeatValue { get; private set; }
 
+    [field: SerializeField]
+    public bool CurrentPoweredOnValue { get; private set; }
+
     private Sequence _showHidePanelTween;
+    private Sequence _setPoweredOnTween;
 
     private void Start() {
       CreateTweens();
@@ -100,6 +115,16 @@ namespace GameJam {
               .Insert(0f, FadeMoveImage(NetworkIcon, new(0f, 3f, 0f), 0.2f))
               .SetAutoKill(false)
               .Pause();
+
+
+      _setPoweredOnTween =
+          DOTween.Sequence()
+              .SetTarget(PoweredIcon)
+              .Insert(0f, PoweredIcon.transform.DOPunchScale(Vector3.one * 0.1f, 0.4f, 5, 0f))
+              .Insert(0f, PoweredGradient.DOBlendableColor1(PoweredOnColor1, 0.4f))
+              .Insert(0f, PoweredGradient.DOBlendableColor2(PoweredOnColor2, 0.4f))
+              .SetAutoKill(false)
+              .Pause();
     }
 
     static Sequence FadeMoveImage(Graphic image, Vector3 offset, float duration) {
@@ -123,6 +148,8 @@ namespace GameJam {
 
       HeatLabel.text = "0%";
       CurrentHeatValue = 0f;
+
+      CurrentPoweredOnValue = false;
     }
 
     public void ShowPanel() {
@@ -172,6 +199,7 @@ namespace GameJam {
       SetUserValue(server.CurrentUsers);
       SetPowerValue(server.PowerMultiplier);
       SetHeatValue(server.Temperature.HeatPercent());
+      SetPoweredOnValue(server.IsOnline());
     }
 
     public void SetUserValue(int userValue) {
@@ -208,6 +236,11 @@ namespace GameJam {
           .Insert(0f, HeatIcon.transform.DOPunchScale(Vector3.one * 0.1f, 1f, 5, 0f));
 
       CurrentHeatValue = heatValue;
+    }
+
+    public void SetPoweredOnValue(bool poweredOn) {
+      _setPoweredOnTween.PlayOrRewind(poweredOn);
+      CurrentPoweredOnValue = poweredOn;
     }
   }
 }

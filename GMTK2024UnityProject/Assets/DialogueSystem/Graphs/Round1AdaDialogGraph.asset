@@ -17,14 +17,14 @@ MonoBehaviour:
   <Nodes>k__BackingField:
   - <ID>k__BackingField: 3c4289dc-e4ab-4d0d-b82d-b1bef072a4c6
     <Name>k__BackingField: Round1Dialog0
-    <Text>k__BackingField: "Hi <color=#6f6f6f>Admin</color>! \nWe reached 10k <color=#AB3311>Users</color>!\nYay
+    <Text>k__BackingField: "Hi <color=#6f6f6f>Admin</color>! \nWe reached 10k <color=#3C9447>Users</color>!\nYay
       yay yay!"
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 41, y: 156}
+    <Position>k__BackingField: {x: 40.8, y: 156}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -39,7 +39,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 2a4c1986-6a4e-49bf-84c9-4fd190d195aa
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 748, y: 157}
+    <Position>k__BackingField: {x: 748, y: 156.8}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -53,7 +53,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1469, y: 157}
+    <Position>k__BackingField: {x: 1468.8, y: 156.8}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
