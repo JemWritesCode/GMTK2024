@@ -1,5 +1,6 @@
 using DG.Tweening;
 
+using DS.Enumerations;
 using DS.ScriptableObjects;
 
 using TMPro;
@@ -11,6 +12,7 @@ using YoloBox;
 
 namespace GameJam {
   public sealed class DialogDisplayController : MonoBehaviour {
+    [field: Header("UI")]
     [field: SerializeField]
     public RectTransform DisplayRectTransform { get; private set; }
 
@@ -23,6 +25,10 @@ namespace GameJam {
     [field: SerializeField]
     public TextMeshProUGUI DialogText { get; private set; }
 
+    [field: Header("Type")]
+    [field: SerializeField]
+    public DSPortraitType DisplayPortraitType { get; private set; }
+
     private Sequence _showDisplayTween;
     private Sequence _portraitImageClickTween;
 
@@ -34,7 +40,7 @@ namespace GameJam {
       _showDisplayTween =
           DOTween.Sequence()
               .SetTarget(DisplayRectTransform)
-              .Insert(0f, DisplayCanvasGroup.DOFade(1f, 0.2f))
+              .Insert(0f, DisplayCanvasGroup.DOFade(1f, 0.4f))
               .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.4f, 0, 0f))
               .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.4f).From(true))
               .SetAutoKill(false)
@@ -48,9 +54,14 @@ namespace GameJam {
               .Pause();
     }
 
-    public void ToggleDisplay(bool toggleOn) {
-      DisplayCanvasGroup.blocksRaycasts = toggleOn;
-      _showDisplayTween.PlayOrRewind(toggleOn);
+    public void ShowDisplay() {
+      DisplayCanvasGroup.blocksRaycasts = true;
+      _showDisplayTween.PlayAgain();
+    }
+
+    public void HideDisplay() {
+      DisplayCanvasGroup.blocksRaycasts = false;
+      _showDisplayTween.SmoothRewind();
     }
 
     public void SetupDisplay(DSDialogueSO dialogNode) {

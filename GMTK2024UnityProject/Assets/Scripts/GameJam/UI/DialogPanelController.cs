@@ -47,6 +47,9 @@ namespace GameJam {
     [field: SerializeField]
     public DSDialogueSO CurrentDialogNode { get; private set; }
 
+    [field: SerializeField]
+    public DialogDisplayController CurrentDialogDisplay { get; private set; }
+
     Sequence _showHidePanelTween;
 
     private void Start() {
@@ -111,12 +114,6 @@ namespace GameJam {
 
       SetupDialogDisplay(dialogNode);
 
-      if (IsPanelVisible) {
-        //
-      } else {
-        ShowPanel();
-      }
-
       if (CurrentDialogNode.AudioClip) {
         PlaySfxAudioClip(CurrentDialogNode.AudioClip, CurrentDialogNode.AudioVolume);
       }
@@ -131,14 +128,34 @@ namespace GameJam {
     }
 
     private void SetupDialogDisplay(DSDialogueSO dialogNode) {
+      DOTween.Complete(PanelRectTransform, withCallbacks: true);
+
+      Sequence sequence =
+          DOTween.Sequence()
+              .SetTarget(PanelRectTransform);
+
+      if (!IsPanelVisible) {
+        sequence.AppendCallback(ShowPanel);
+      }
+
+      if (dialogNode.PortraitType != CurrentDialogDisplay.DisplayPortraitType) {
+        DialogDisplayController dialogDisplay = CurrentDialogDisplay;
+
+        sequence
+            .AppendCallback(dialogDisplay.HideDisplay)
+            .AppendInterval(0.15f);
+      }
+
       if (dialogNode.PortraitType == DSPortraitType.LeftPortrait) {
+        CurrentDialogDisplay = LeftPortraitDisplay;
         LeftPortraitDisplay.SetupDisplay(dialogNode);
-        LeftPortraitDisplay.ToggleDisplay(true);
-        TopPortraitDisplay.ToggleDisplay(false);
+
+        sequence.AppendCallback(LeftPortraitDisplay.ShowDisplay);
       } else if (dialogNode.PortraitType == DSPortraitType.TopPortrait) {
+        CurrentDialogDisplay = TopPortraitDisplay;
         TopPortraitDisplay.SetupDisplay(dialogNode);
-        LeftPortraitDisplay.ToggleDisplay(false);
-        TopPortraitDisplay.ToggleDisplay(true);
+
+        sequence.AppendCallback(TopPortraitDisplay.ShowDisplay);
       }
     }
 
