@@ -19,8 +19,8 @@ MonoBehaviour:
     and I''m your AI assistant for this datacenter!
 
     Let''s work on <color=#CDB526>scaling
-    up</color> the data center so we can serve all our <color=#AB3311>Users</color>
-    the best <color=#3C9447>Ads</color>!'
+    up</color> the data center so we can serve all our <color=#3C9447>Users</color>
+    the best <color=#AB3311>Ads</color>!'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9d1f9048080160648a674519eab2f4fa, type: 2}
