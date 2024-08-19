@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: FirstTalkPluginServer
+  m_Name: Round0Dialog1
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: FirstTalkPluginServer
+  <DialogueName>k__BackingField: Round0Dialog1
   <Text>k__BackingField: "We\u2019ll need to plug in the servers first. \nEach server
     needs <color=#FDDA0D>power</color> and <color=#008080>data</color> cables.\nMore
     cables means more <color=#AB3311>Users</color>!\n"
@@ -21,6 +21,7 @@ MonoBehaviour:
     <NextDialogue>k__BackingField: {fileID: 0}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
+  <PortraitType>k__BackingField: 0
   <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1

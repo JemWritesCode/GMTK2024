@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -38,8 +39,9 @@ namespace GameJam
         private readonly float updateInterval = 5f;
         private float updateTimer = 0f;
 
-        private void Awake()
+        private IEnumerator Start()
         {
+            yield return null;
             RefreshRoom();
         }
 

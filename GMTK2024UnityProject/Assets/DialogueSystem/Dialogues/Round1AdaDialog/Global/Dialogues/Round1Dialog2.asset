@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: DialogueName
+  m_Name: Round1Dialog2
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: DialogueName
+  <DialogueName>k__BackingField: Round1Dialog2
   <Text>k__BackingField: "If the servers get too hot\nmay catch fire! But we have
     a\n\u201CByeByeFire\u201D\xAE if that happens.\n\nStay cool, Admin!"
   <Choices>k__BackingField:
@@ -20,6 +20,7 @@ MonoBehaviour:
     <NextDialogue>k__BackingField: {fileID: 0}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
+  <PortraitType>k__BackingField: 0
   <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1
