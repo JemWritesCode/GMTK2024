@@ -267,5 +267,27 @@ namespace GameJam
                 }
             }
         }
+
+
+        public void ScriptedSneezeAttacks()
+        {
+            if (Servers == null)
+            {
+                return;
+            }
+            // JemThonks
+            // sneeze interval range (should be a range so it's not an annoying "every 10 seconds sneeze" noise/mechanic
+
+            // MaxNumberSneezes? but also the servers may bounce into a bad position so constant sneezing might help with that. 
+
+            //sneeze sound every time the servers move
+
+            // need this to not play until the dialog is done. (I think time is stopped anyways though? 
+
+            //foreach (var server in Servers)
+            //{
+            //    server.Sneeze();
+            //}
+        }
     }
 }
