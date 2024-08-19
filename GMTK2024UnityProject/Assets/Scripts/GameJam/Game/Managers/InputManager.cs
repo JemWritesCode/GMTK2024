@@ -41,7 +41,6 @@ namespace GameJam {
       Interactable interactable = InteractManager.Instance.ClosestInteractable;
 
       if (interactable) {
-        Debug.Log($"Has interactable, interacting.");
         interactable.Interact(InteractManager.Instance.InteractAgent);
       }
     }

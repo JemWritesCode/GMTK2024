@@ -14,12 +14,16 @@ namespace GameJam {
     private void Start() {
       UIManager.Instance.CalloutPanels(calloutDuration: 5f);
 
-      StartCoroutine(ShowStartingDialog(3f));
+      StartCoroutine(ShowStartingDialog(5f));
     }
 
     private IEnumerator ShowStartingDialog(float showDelay) {
       yield return new WaitForSeconds(seconds: showDelay);
-      UIManager.Instance.SetCurrentDialogNode(StartingDialogNode);
+      SetDialogNode(StartingDialogNode);
+    }
+
+    public void SetDialogNode(DSDialogueSO dialogNode) {
+      UIManager.Instance.SetCurrentDialogNode(dialogNode);
     }
 
     public void SetUserCount(int userCount) {
