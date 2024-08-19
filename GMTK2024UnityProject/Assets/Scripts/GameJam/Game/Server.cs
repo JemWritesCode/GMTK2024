@@ -8,11 +8,12 @@ namespace GameJam
 {
     public class Server : MonoBehaviour
     {
-        public int UsersPerDataConnection = 100;
         public int CurrentUsers = 0;
         public int PowerMultiplier = 0;
         public bool Online = false;
         public bool HasVirus = false;
+
+        public LevelController levelController;
 
         public List<CableEndPoint> PowerConnections = new List<CableEndPoint>();
         public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
@@ -78,7 +79,7 @@ namespace GameJam
             else
             {
                 SetOnline(true);
-                SetCurrentUsers(dataConnections * powerConnections * UsersPerDataConnection);
+                SetCurrentUsers(dataConnections * powerConnections * levelController.Levels[levelController.CurrentLevel].UsersPerPortAtLevel);
                 SetPowerMultiplier(powerConnections);
 
                 if (heatEnabled)

@@ -12,7 +12,10 @@ namespace GameJam {
     [SerializeField]
     public int UsersNeededForLevel = 0;
 
-    [Header("Events")]
+    [SerializeField]
+    public int UsersPerPortAtLevel = 0;
+
+        [Header("Events")]
     [SerializeField]
     public UnityEvent Event;
 
