@@ -23,7 +23,7 @@ namespace GameJam
 
         public GameObject FireEffects;
 
-        public Light IndicatorLight;
+        public List<Light> IndicatorLights;
         public float LightBlinkInterval = 0.5f;
         private float lightBlinkTimer;
 
@@ -44,7 +44,7 @@ namespace GameJam
 
         private void Update()
         {
-            if (!IndicatorLight || !HasVirus)
+            if (IndicatorLights == null || !HasVirus)
             {
                 return;
             }
@@ -52,7 +52,10 @@ namespace GameJam
             lightBlinkTimer += Time.deltaTime;
             if (lightBlinkTimer > LightBlinkInterval)
             {
-                IndicatorLight.enabled = !IndicatorLight.enabled;
+                foreach (var light in IndicatorLights)
+                {
+                    light.enabled = !light.enabled;
+                }
                 lightBlinkTimer = 0;
             }
         }
@@ -120,7 +123,10 @@ namespace GameJam
 
             if (!HasVirus)
             {
-                IndicatorLight.enabled = true;
+                foreach (var light in IndicatorLights)
+                {
+                    light.enabled = true;
+                }
             }
         }
 
@@ -225,7 +231,10 @@ namespace GameJam
 
         private void SetIndicatorColor(Color color)
         {
-            IndicatorLight.color = color;
+            foreach (var light in IndicatorLights)
+            {
+                light.color = color;
+            }
         }
     }
 }
