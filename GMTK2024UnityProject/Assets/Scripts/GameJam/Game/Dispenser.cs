@@ -9,7 +9,6 @@ namespace GameJam
 
         public void DispenserInteract(GameObject interactAgent)
         {
-            Debug.Log("Interact With Dispenser...");
             var obj = GameObject.Instantiate(DispenseObject, this.transform.position, this.transform.rotation);
             obj.transform.position = DispenseLocation.transform.position;
             obj.GetComponent<Rigidbody>().velocity = this.transform.forward * 2f;

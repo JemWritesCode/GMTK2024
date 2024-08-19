@@ -55,7 +55,6 @@ namespace GameJam
 
         public void FireWallInteract(GameObject interactAgent)
         {
-            Debug.Log("Interact With FireWall...");
             if (HandManager.Instance.HoldingItem())
             {
                 HandManager.Instance.UseItem(this);
@@ -65,7 +64,6 @@ namespace GameJam
 
         public void FireWallPasswordInteract(GameObject interactAgent)
         {
-            Debug.Log("Interact With FireWall panel...");
             if (!HandManager.Instance.HoldingItem())
             {
                 Integrity = MaximumIntegrity;

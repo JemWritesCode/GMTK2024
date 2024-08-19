@@ -11,9 +11,21 @@ namespace GameJam
         public AudioClip wrongCableTypeSound;
         AudioSource cableEndPointAudioSource;
 
+        public GameObject CableAttachPoint;
+
         private void Start()
         {
             cableEndPointAudioSource = GetComponent<AudioSource>();
+        }
+
+        public Vector3 GetCableAttachPoint()
+        {
+            if (CableAttachPoint == null)
+            {
+                return this.transform.position;
+            }
+
+            return CableAttachPoint.transform.position;
         }
 
         public bool IsConnected()
@@ -23,16 +35,15 @@ namespace GameJam
 
         public void BreakConnection()
         {
-            if (Connection != null)
+            if (IsConnected())
             {
-                Connection.Connection = null;
-                Connection = null;
+                Connection.BreakConnection();
             }
         }
 
         public void CancelConnection()
         {
-            if (Connection != null)
+            if (IsConnected())
             {
                 Connection.StartConnection();
                 Connection = null;
@@ -51,36 +62,21 @@ namespace GameJam
 
         public void CableInteract(GameObject interactAgent)
         {
-            Debug.Log("Interact With End Cable Box...");
             if (HandManager.Instance.HoldingCable())
             {
 
                 if (!IsConnected() && HandManager.Instance.CurrentCable.Type == Type)
                 {
-                    Debug.Log("Box is not connected, connecting cable");
                     CompleteConnection(HandManager.Instance.CurrentCable);
                 }
                 else if (!(HandManager.Instance.CurrentCable.Type == Type))
                 {
-                    Debug.Log("Wrong Cable Box Type, not connecting");
                     cableEndPointAudioSource.PlayOneShot(wrongCableTypeSound, .5f);
                 }
-                else {
-
-                    Debug.Log("Box is already connected, doing nothing");
-                }
             }
-            else
+            else if (IsConnected())
             {
-                if (IsConnected())
-                {
-                    Debug.Log("Box is already connected, not holding cable, try to pickup");
-                    CancelConnection();
-                }
-                else
-                {
-                    Debug.Log("Box is not connected, not holding cable, do nothing");
-                }
+                CancelConnection();
             }
         }
     }

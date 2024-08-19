@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,8 +8,6 @@ namespace GameJam
 {
     public class LevelController : MonoBehaviour
     {
-
-
         public List<Level> Levels = new List<Level>();
         public int CurrentLevel = 0;
         public int TotalUsers = 0;
@@ -21,6 +20,8 @@ namespace GameJam
         public bool EnableVirusAttacks = false;
         public bool EnableHamsterAttacks = false;
         public bool EnableSneezeAttacks = false;
+
+        public bool DroppedPackets = false;
 
         private readonly float updateInterval = 5f;
         private float updateTimer = 0f;
@@ -204,7 +205,7 @@ namespace GameJam
                 return;
             }
 
-            if (UnityEngine.Random.Range(0, 1f) < 0.2f)
+            if (UnityEngine.Random.Range(0, 1f) < 0.05f)
             {
                 var boxes = PowerBoxes.Where(item => item.IsConnected() && !item.HasHamster).ToList();
                 if (boxes.Count > 0)
@@ -219,18 +220,40 @@ namespace GameJam
         public void EventDropPackets()
         {
             Debug.Log("Enabling Dropping Packets! OwO OwO");
-            // TODO
+            if (Servers == null || DroppedPackets)
+            {
+                return;
+            }
+
+            foreach (var server in Servers)
+            {
+                server.AllDataCableAttack();
+            }
+
+            DroppedPackets = true;
         }
 
         public void EventEnableSneezeAttacks()
         {
+            Debug.Log("Enabling Virus Overload! Achooooo!");
             EnableSneezeAttacks = true;
+            RandomSneezeAttack();
         }
 
         public void RandomSneezeAttack()
         {
-            Debug.Log("Enabling Virus Overload! Achooooo!");
-            // TODO
+            if (Servers == null)
+            {
+                return;
+            }
+
+            if (UnityEngine.Random.Range(0, 1f) < 0.05f)
+            {
+                foreach (var server in Servers)
+                {
+                    server.Sneeze();
+                }
+            }
         }
     }
 }

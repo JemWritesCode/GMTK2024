@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -123,32 +124,83 @@ namespace GameJam
             }
         }
 
-        public void CableAttack()
+        public void Sneeze()
         {
-            // TODO support more kinds of attacks, make this better
-            if (UnityEngine.Random.Range(0, 1) == 0)
+            var yeet = GetComponent<Yeet>();
+            if (yeet != null)
             {
-                var connections = PowerConnections.Where(item => item.IsConnected()).ToList();
-                if (connections.Count > 0)
-                {
-                    int index = UnityEngine.Random.Range(0, connections.Count);
-                    connections[index].BreakConnection();
-                }
+                yeet.StartYeet(RandomCableAttack);
             }
-            else
+        }
+
+        public void AllDataCableAttack()
+        {
+            if (DataConnections != null && DataConnections.Count > 0)
             {
-                var connections = DataConnections.Where(item => item.IsConnected()).ToList();
-                if (connections.Count > 0)
+                foreach (var cable in DataConnections)
                 {
-                    int index = UnityEngine.Random.Range(0, connections.Count);
-                    connections[index].BreakConnection();
+                    cable.BreakConnection();
                 }
             }
         }
 
+        public void RandomCableAttack()
+        {
+            CableAttack(DataConnections, 0.2f);
+            CableAttack(PowerConnections, 0.5f);
+        }
+
+        public void CableAttack(List<CableEndPoint> connections, float percentage)
+        {
+            if (connections.Count > 0)
+            {
+                int count = Math.Clamp((int)(connections.Count * percentage), 1, connections.Count);
+                var list = SelectRandomItems(connections, count);
+
+                foreach (var cable in list)
+                {
+                    cable.BreakConnection();
+                }
+            }
+        }
+
+        private List<T> SelectRandomItems<T>(List<T> list, int n)
+        {
+            List<T> results = new List<T>();
+            var random = new System.Random();
+            HashSet<int> indexes = new HashSet<int>();
+            if (n > list.Count)
+            {
+                // Return all items
+                for (int i = 0; i < list.Count; i++)
+                {
+                    var item = list[i];
+                    results.Add(item);
+                    indexes.Add(i);
+                }
+            }
+            else
+            {
+                int count = 0;
+
+                while (count < n)
+                {
+                    var index = random.Next(0, list.Count);
+                    if (!indexes.Contains(index))
+                    {
+                        var item = list[index];
+                        results.Add(item);
+                        indexes.Add(index);
+                        count++;
+                    }
+                }
+            }
+
+            return results;
+        }
+
         public void ServerInteract(GameObject interactAgent)
         {
-            Debug.Log("Interact With Server...");
             if (HandManager.Instance.HoldingItem())
             {
                 HandManager.Instance.UseItem(this);

@@ -24,14 +24,12 @@ namespace GameJam
 
         public bool ProcessInteractable()
         {
-            Debug.Log($"Holding item, interacting.");
             Interactable interactable = InteractManager.Instance.ClosestInteractable;
 
             if (!interactable)
             {
                 if (HoldingCable())
                 {
-                    Debug.Log($"Nothing to interact with, drop cable.");
                     CurrentCable.CancelConnection();
                     return true;
                 }
