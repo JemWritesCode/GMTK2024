@@ -17,11 +17,23 @@ namespace GameJam
         public List<CableStartPoint> PowerBoxes = new List<CableStartPoint>();
 
         public bool EnableHeat = false;
-        public bool EnableVirusAttacks = false;
-        public bool EnableHamsterAttacks = false;
-        public bool EnableSneezeAttacks = false;
 
+        // Viruses
+        public bool EnableVirusAttacks = false;
+
+        // Hamsters
+        public bool EnableHamsterAttacks = false;
+        public float HamstersPercent = 0.05f;
+
+        // Drop packets
         public bool DroppedPackets = false;
+        public float DropPacketsPercent = 0.5f;
+
+        // Sneezes
+        public bool EnableSneezeAttacks = false;
+        public float SneezeAttackChance = 0.05f; // To be removed, should be set x times?
+        public float SneezeDropPercentDataCables = 0.2f;
+        public float SneezeDropPercentPowerCables = 0.3f;
 
         private readonly float updateInterval = 5f;
         private float updateTimer = 0f;
@@ -76,7 +88,7 @@ namespace GameJam
 
             if (EnableSneezeAttacks)
             {
-                RandomSneezeAttack();
+                RandomSneezeAttack(SneezeAttackChance);
             }
 
             updateTimer = time;
@@ -205,7 +217,7 @@ namespace GameJam
                 return;
             }
 
-            if (UnityEngine.Random.Range(0, 1f) < 0.05f)
+            if (UnityEngine.Random.Range(0, 1f) < HamstersPercent)
             {
                 var boxes = PowerBoxes.Where(item => item.IsConnected() && !item.HasHamster).ToList();
                 if (boxes.Count > 0)
@@ -227,7 +239,7 @@ namespace GameJam
 
             foreach (var server in Servers)
             {
-                server.AllDataCableAttack();
+                server.DataCableAttack(DropPacketsPercent);
             }
 
             DroppedPackets = true;
@@ -237,21 +249,21 @@ namespace GameJam
         {
             Debug.Log("Enabling Virus Overload! Achooooo!");
             EnableSneezeAttacks = true;
-            RandomSneezeAttack();
+            RandomSneezeAttack(1f);
         }
 
-        public void RandomSneezeAttack()
+        public void RandomSneezeAttack(float percentage)
         {
             if (Servers == null)
             {
                 return;
             }
 
-            if (UnityEngine.Random.Range(0, 1f) < 0.05f)
+            if (UnityEngine.Random.Range(0, 1f) <= percentage)
             {
                 foreach (var server in Servers)
                 {
-                    server.Sneeze();
+                    server.Sneeze(SneezeDropPercentDataCables, SneezeDropPercentPowerCables);
                 }
             }
         }
