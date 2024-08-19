@@ -15,6 +15,21 @@ MonoBehaviour:
   <FileName>k__BackingField: Round0AdaDialog
   <Groups>k__BackingField: []
   <Nodes>k__BackingField:
+  - <ID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
+    <Name>k__BackingField: Round0Dialog1
+    <Text>k__BackingField: "We\u2019ll need to plug in the servers first. \nEach
+      server needs <color=#FDDA0D>power</color> and <color=#008080>data</color> cables.\nMore
+      cables means more <color=#3C9447>Users</color>!\n"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 748, y: 156.8}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 3c4289dc-e4ab-4d0d-b82d-b1bef072a4c6
     <Name>k__BackingField: Round0Dialog0
     <Text>k__BackingField: 'Hi there <color=#6f6f6f>Admin</color>!
@@ -23,36 +38,21 @@ MonoBehaviour:
       and I''m your AI assistant for this datacenter!
 
       Let''s work on <color=#CDB526>scaling
-      up</color> the data center so we can serve all our <color=#AB3311>Users</color>
-      the best <color=#3C9447>Ads</color>!'
+      up</color> the data center so we can serve all our <color=#3C9447>Users</color>
+      the best <color=#AB3311>Ads</color>!'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 71, y: 157}
+    <Position>k__BackingField: {x: 75.200005, y: 156.8}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: 893de4a76582e8c40b54a532060aeb7c, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
-  - <ID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
-    <Name>k__BackingField: Round0Dialog1
-    <Text>k__BackingField: "We\u2019ll need to plug in the servers first. \nEach
-      server needs <color=#FDDA0D>power</color> and <color=#008080>data</color> cables.\nMore
-      cables means more <color=#AB3311>Users</color>!\n"
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 748, y: 157}
-    <PortraitType>k__BackingField: 0
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
-  - Round0Dialog0
   - Round0Dialog1
+  - Round0Dialog0
   <OldGroupedNodeNames>k__BackingField:
     list: []

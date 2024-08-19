@@ -10,12 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Round0Dialog1
+  m_Name: Round2b
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Round0Dialog1
-  <Text>k__BackingField: "We\u2019ll need to plug in the servers first. \nEach server
-    needs <color=#FDDA0D>power</color> and <color=#008080>data</color> cables.\nMore
-    cables means more <color=#3C9447>Users</color>!\n"
+  <DialogueName>k__BackingField: Round2b
+  <Text>k__BackingField: 'Not all <color=#3C9447>Users</color> are nice, Admin.
+
+
+    We
+    have to maintain the <color=#ff8000>Firewall</color>.
+
+    Be sure to check it
+    often.
+
+
+    If the Firewall starts to fail servers will become Infected
+
+    with
+    viruses. Infected servers require us to manually insert an <color=#B300B2>Antivirus
+    Disk</color>.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 0}

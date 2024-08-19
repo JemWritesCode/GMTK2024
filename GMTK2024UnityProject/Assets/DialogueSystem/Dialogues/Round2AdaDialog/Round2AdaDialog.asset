@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: caaa76378291a144d849f29230be0a5a, type: 3}
-  m_Name: Round0AdaDialog
+  m_Name: Round2AdaDialog
   m_EditorClassIdentifier: 
-  <FileName>k__BackingField: Round0AdaDialog
+  <FileName>k__BackingField: Round2AdaDialog
   <DialogueGroups>k__BackingField:
     list: []
   <UngroupedDialogues>k__BackingField:
-  - {fileID: 11400000, guid: e1f5b010f20070548ad64e220eba5855, type: 2}
-  - {fileID: 11400000, guid: 6acdc076dd0095a4b8f7433b6bf8db72, type: 2}
+  - {fileID: 11400000, guid: 8715429245f28394ebe2a3737f42070c, type: 2}
+  - {fileID: 11400000, guid: c489c9465c58e1b4b9473e0be4a3b281, type: 2}
