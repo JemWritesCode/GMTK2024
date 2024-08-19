@@ -45,8 +45,6 @@ GameObject:
   m_Component:
   - component: {fileID: 283465582234919589}
   - component: {fileID: -6156039036734707471}
-  - component: {fileID: 1212756120843843772}
-  - component: {fileID: 846243083003913536}
   m_Layer: 0
   m_Name: CommandCenter
   m_TagString: Untagged
@@ -69,7 +67,6 @@ Transform:
   m_Children:
   - {fileID: 7274471337069043126}
   - {fileID: 387226165765791659}
-  - {fileID: 2064456110032775956}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &-6156039036734707471
@@ -80,51 +77,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534066616178869991}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1212756120843843772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534066616178869991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ffac5c0dcdc5e64ba1147434d574261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DispenseObject: {fileID: 2318441034354263723, guid: 7d31bc38f7f2c784caae256b93e1ee0f, type: 3}
-  DispenseLocation: {fileID: 7842086566321781364}
---- !u!114 &846243083003913536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534066616178869991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <InteractRange>k__BackingField: 2
-  <CanInteract>k__BackingField: 1
-  <InteractText>k__BackingField: Create Encrypted Data
-  <HighlightRenderer>k__BackingField: {fileID: 1350205177545056660}
-  OnInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1212756120843843772}
-        m_TargetAssemblyTypeName: GameJam.Dispenser, GameJam
-        m_MethodName: DispenserInteract
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1957840481615754200
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,37 +474,6 @@ Transform:
   - {fileID: 8637943002177849872}
   - {fileID: 8039117554963414266}
   m_Father: {fileID: 387226165765791659}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7842086566321781364
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2064456110032775956}
-  m_Layer: 0
-  m_Name: DispenseLocation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2064456110032775956
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7842086566321781364}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.338}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 283465582234919589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8357264280053983072
 GameObject:
@@ -3169,11 +3090,6 @@ PrefabInstance:
 --- !u!4 &213860131763952379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6198975063232573576, guid: 0e16475e464050141a1bf64d51b46d48, type: 3}
-  m_PrefabInstance: {fileID: 6120645132754872947}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &1350205177545056660 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5065426040355326951, guid: 0e16475e464050141a1bf64d51b46d48, type: 3}
   m_PrefabInstance: {fileID: 6120645132754872947}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6215668910851356202

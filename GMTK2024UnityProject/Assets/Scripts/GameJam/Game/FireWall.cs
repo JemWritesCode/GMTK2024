@@ -67,6 +67,11 @@ namespace GameJam
             if (!HandManager.Instance.HoldingItem())
             {
                 Integrity = MaximumIntegrity;
+                var dispenser = GetComponent<Dispenser>();
+                if (dispenser != null)
+                {
+                    dispenser.DispenserInteract(interactAgent);
+                }
                 UpdateIndicatorColor();
             }
         }
