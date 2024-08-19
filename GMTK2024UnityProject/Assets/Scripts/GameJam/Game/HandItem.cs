@@ -79,7 +79,12 @@ namespace GameJam
             }
             else if (!CanPutOutFire && HeatReduction > 0)
             {
+                // jem: I think this only applies to the can? so this is where to remove the label? maybe?
                 temperature.LowerHeat(HeatReduction);
+                if (this.transform.Find("CanLabel"))
+                {
+                    this.transform.Find("CanLabel").GetComponent<MeshRenderer>().enabled = false;
+                }
                 return true;
             }
 
