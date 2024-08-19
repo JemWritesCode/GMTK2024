@@ -1,8 +1,8 @@
 namespace GameJam {
   public sealed class Temperature {
-    public int Heat = 0;
+    public float Heat = 0;
     public int HeatLimit = 100;
-    public int HeatTicks = 2;
+    public float HeatTicks = .25f;
 
     public float TemperatureThreshold = 0.8f;
 
@@ -19,7 +19,7 @@ namespace GameJam {
     }
 
     public void UpdateHeat() {
-      Heat += HeatTicks;
+            Heat += HeatTicks;
     }
 
     public void LowerHeat(int heat) {
