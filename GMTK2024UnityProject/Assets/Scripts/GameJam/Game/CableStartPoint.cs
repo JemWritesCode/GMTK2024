@@ -14,8 +14,11 @@ namespace GameJam
         public GameObject CableAttachPoint;
         public float CableWidth = 0.025f;
 
+
+        // SFX
+        AudioSource cableStartPointAudioSource;
         public AudioClip grabCableSound;
-        AudioSource grabCableAudioSource;
+        public AudioClip hamsterNibbleSound;
 
         private bool pickedUp = false;
 
@@ -33,7 +36,7 @@ namespace GameJam
             line.endWidth = CableWidth;
             line.useWorldSpace = true;
 
-            grabCableAudioSource = GetComponent<AudioSource>();
+            cableStartPointAudioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -82,8 +85,8 @@ namespace GameJam
             HandManager.Instance.CurrentCable = this;
             BreakConnection();
             pickedUp = true;
-            if (grabCableSound && grabCableAudioSource) {
-                grabCableAudioSource.PlayOneShot(grabCableSound);
+            if (grabCableSound && cableStartPointAudioSource) {
+                cableStartPointAudioSource.PlayOneShot(grabCableSound);
             }
         }
 
@@ -133,6 +136,10 @@ namespace GameJam
                 obj.transform.position = transform.position;
                 obj.GetComponent<Hamster>().Lunch = this;
                 HasHamster = true;
+                if (hamsterNibbleSound && cableStartPointAudioSource)
+                {
+                    cableStartPointAudioSource.PlayOneShot(hamsterNibbleSound, .4f);
+                }
             }
         }
     }

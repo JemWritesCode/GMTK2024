@@ -277,6 +277,7 @@ MonoBehaviour:
   CableAttachPoint: {fileID: 5856130180491331228}
   CableWidth: 0.025
   grabCableSound: {fileID: 8300000, guid: 188c7f1edef897849af6615c93ed81e3, type: 3}
+  hamsterNibbleSound: {fileID: 8300000, guid: df4ebf6ecdfac79428d2b727f41c399d, type: 3}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
