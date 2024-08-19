@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GameJam
 {
@@ -23,6 +24,10 @@ namespace GameJam
         public Light IndicatorLight;
         public float LightBlinkInterval = 0.5f;
         private float lightBlinkTimer;
+
+        [field: Header("Events")]
+        [field: SerializeField]
+        public UnityEvent<Server> ServerWasServed { get; set; }
 
         private void Awake()
         {
@@ -67,15 +72,14 @@ namespace GameJam
             if (dataConnections == 0 || powerConnections == 0 || Temperature.Overheated() || HasVirus)
             {
                 SetOnline(false);
-                CurrentUsers = 0;
-                PowerMultiplier = powerConnections;
+                SetCurrentUsers(0);
+                SetPowerMultiplier(powerConnections);
             }
             else
             {
                 SetOnline(true);
-
-                CurrentUsers = dataConnections * powerConnections * UsersPerDataConnection;
-                PowerMultiplier = powerConnections;
+                SetCurrentUsers(dataConnections * powerConnections * UsersPerDataConnection);
+                SetPowerMultiplier(powerConnections);
 
                 if (heatEnabled)
                 {
@@ -84,6 +88,7 @@ namespace GameJam
             }
 
             UpdateIndicatorColor();
+            ServerWasServed.Invoke(this);
 
             return CurrentUsers;
         }
@@ -96,6 +101,14 @@ namespace GameJam
         public bool IsOnline()
         {
             return Online && !HasVirus;
+        }
+
+        public void SetCurrentUsers(int currentUsers) { 
+          CurrentUsers = currentUsers;
+        }
+
+        public void SetPowerMultiplier(int powerMultiplier) {
+          PowerMultiplier = powerMultiplier;
         }
 
         public void SetVirus(bool virus)

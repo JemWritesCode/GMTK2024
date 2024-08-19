@@ -1,3 +1,5 @@
+using System.Collections;
+
 using DG.Tweening;
 
 using TMPro;
@@ -142,13 +144,27 @@ namespace GameJam {
         return;
       }
 
+      RemoveServerListeners(CurrentServer);
       CurrentServer = server;
 
       if (server) {
         RefreshPanel(server);
+        AddServerListeners(server);
         ShowPanel();
       } else {
         HidePanel();
+      }
+    }
+
+    private void RemoveServerListeners(Server server) {
+      if (server) {
+        server.ServerWasServed.RemoveListener(RefreshPanel);
+      }
+    }
+
+    private void AddServerListeners(Server server) {
+      if (server) {
+        server.ServerWasServed.AddListener(RefreshPanel);
       }
     }
 
