@@ -1,7 +1,6 @@
-using System.Linq;
-
 using DG.Tweening;
 
+using DS.Enumerations;
 using DS.ScriptableObjects;
 
 using TMPro;
@@ -59,7 +58,7 @@ namespace GameJam {
     public DSDialogueSO CurrentDialogNode { get; private set; }
 
     Sequence _showHidePanelTween;
-    Sequence _showTextTween;
+    Sequence _showDialogNodeTween;
 
     private void Start() {
       CreateTweens();
@@ -77,11 +76,13 @@ namespace GameJam {
               .SetAutoKill(false)
               .Pause();
 
-      _showTextTween =
+      _showDialogNodeTween =
           DOTween.Sequence()
               .SetTarget(PanelRectTransform)
-              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.3f, 0, 0f))
-              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.3f).From(true))
+              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.4f, 0, 0f))
+              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.4f).From(true))
+              .Insert(0f, TopPortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.4f, 0, 0f))
+              .Insert(0f, TopPortraitText.transform.DOLocalMoveY(5f, 0.4f).From(true))
               .SetAutoKill(false)
               .Pause();
     }
@@ -131,14 +132,10 @@ namespace GameJam {
         return;
       }
 
-      DialogText.text = CurrentDialogNode.Text;
-
-      if (CurrentDialogNode.Portrait) {
-        PortraitImage.sprite = CurrentDialogNode.Portrait;
-      }
+      SetupPortrait(dialogNode);
 
       if (IsPanelVisible) {
-        _showTextTween.Play();
+        _showDialogNodeTween.PlayComplete();
       } else {
         ShowPanel();
       }
@@ -154,6 +151,22 @@ namespace GameJam {
       }
 
       return dialogNode.Choices[0].NextDialogue;
+    }
+
+    private void SetupPortrait(DSDialogueSO dialogNode) {
+      if (dialogNode.PortraitType == DSPortraitType.LeftPortrait) {
+        Portrait.SetActive(true);
+        TopPortrait.SetActive(false);
+
+        DialogText.text = dialogNode.Text;
+        PortraitImage.SetSpriteIfValid(dialogNode.Portrait);
+      } else if (dialogNode.PortraitType == DSPortraitType.TopPortrait) {
+        Portrait.SetActive(false);
+        TopPortrait.SetActive(true);
+
+        TopPortraitText.text = dialogNode.Text;
+        TopPortraitImage.SetSpriteIfValid(dialogNode.Portrait);
+      }
     }
 
     private void PlaySfxAudioClip(AudioClip audioClip, float audioVolume = 1f) {
