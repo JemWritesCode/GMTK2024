@@ -19,25 +19,15 @@ namespace GameJam {
     [field: SerializeField]
     public CanvasGroup PanelCanvasGroup { get; private set; }
 
-    [field: Header("Dialog")]
+    [field: Header("Display")]
     [field: SerializeField]
-    public GameObject Portrait { get; private set; }
+    public DialogDisplayController LeftPortraitDisplay { get; private set; }
 
     [field: SerializeField]
-    public Image PortraitImage { get; private set; }
+    public DialogDisplayController TopPortraitDisplay { get; private set; }
 
     [field: SerializeField]
-    public TextMeshProUGUI DialogText { get; private set; }
-
-    [field: Header("TopPortrait")]
-    [field: SerializeField]
-    public GameObject TopPortrait { get; private set; }
-
-    [field: SerializeField]
-    public Image TopPortraitImage { get; private set; }
-
-    [field: SerializeField]
-    public TextMeshProUGUI TopPortraitText { get; private set; }
+    public DialogDisplayController AdPortraitDisplay { get; private set; }
 
     [field: Header("Buttons")]
     [field: SerializeField]
@@ -58,7 +48,6 @@ namespace GameJam {
     public DSDialogueSO CurrentDialogNode { get; private set; }
 
     Sequence _showHidePanelTween;
-    Sequence _showDialogNodeTween;
 
     private void Start() {
       CreateTweens();
@@ -71,18 +60,6 @@ namespace GameJam {
               .SetTarget(PanelRectTransform)
               .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.3f))
               .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 25f, 0f), 0.3f).From(false, true))
-              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.3f, 0, 0f))
-              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.3f).From(true))
-              .SetAutoKill(false)
-              .Pause();
-
-      _showDialogNodeTween =
-          DOTween.Sequence()
-              .SetTarget(PanelRectTransform)
-              .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.4f, 0, 0f))
-              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.4f).From(true))
-              .Insert(0f, TopPortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.4f, 0, 0f))
-              .Insert(0f, TopPortraitText.transform.DOLocalMoveY(5f, 0.4f).From(true))
               .SetAutoKill(false)
               .Pause();
     }
@@ -132,10 +109,10 @@ namespace GameJam {
         return;
       }
 
-      SetupPortrait(dialogNode);
+      SetupDialogDisplay(dialogNode);
 
       if (IsPanelVisible) {
-        _showDialogNodeTween.PlayComplete();
+        //
       } else {
         ShowPanel();
       }
@@ -153,19 +130,15 @@ namespace GameJam {
       return dialogNode.Choices[0].NextDialogue;
     }
 
-    private void SetupPortrait(DSDialogueSO dialogNode) {
+    private void SetupDialogDisplay(DSDialogueSO dialogNode) {
       if (dialogNode.PortraitType == DSPortraitType.LeftPortrait) {
-        Portrait.SetActive(true);
-        TopPortrait.SetActive(false);
-
-        DialogText.text = dialogNode.Text;
-        PortraitImage.SetSpriteIfValid(dialogNode.Portrait);
+        LeftPortraitDisplay.SetupDisplay(dialogNode);
+        LeftPortraitDisplay.ToggleDisplay(true);
+        TopPortraitDisplay.ToggleDisplay(false);
       } else if (dialogNode.PortraitType == DSPortraitType.TopPortrait) {
-        Portrait.SetActive(false);
-        TopPortrait.SetActive(true);
-
-        TopPortraitText.text = dialogNode.Text;
-        TopPortraitImage.SetSpriteIfValid(dialogNode.Portrait);
+        TopPortraitDisplay.SetupDisplay(dialogNode);
+        LeftPortraitDisplay.ToggleDisplay(false);
+        TopPortraitDisplay.ToggleDisplay(true);
       }
     }
 

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Red0DialogGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Red0Dialog
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: 4a6e9dd8-10d2-4a09-ac05-dede1446e953
+    <Name>k__BackingField: Red0Dialog0
+    <Text>k__BackingField: Lorem ipsum something something.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 254ce641-bc96-495b-8006-089ea94b55c3
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 287, y: 240}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 893de4a76582e8c40b54a532060aeb7c, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 254ce641-bc96-495b-8006-089ea94b55c3
+    <Name>k__BackingField: Red0Dialog1
+    <Text>k__BackingField: Also lorem ipsum but nani kore ga?
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: ef29ce1b-378e-42b4-b27c-6b8d6f501393
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 511, y: 604}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 60b83dd918a89bf429fb1ddbf6443e4c, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: ef29ce1b-378e-42b4-b27c-6b8d6f501393
+    <Name>k__BackingField: Red0Dialog2
+    <Text>k__BackingField: UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT A B SELECT START
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2cac8b15-9419-4a09-949a-f3256bf5e720
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1124, y: 226}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6983c6826175ac944b99ea1f07e304d1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 2cac8b15-9419-4a09-949a-f3256bf5e720
+    <Name>k__BackingField: Red0Dialog3
+    <Text>k__BackingField: 'To the left to the left.
+
+
+      All your code in a package
+      to the left.'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1336, y: 604}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Red0Dialog0
+  - Red0Dialog1
+  - Red0Dialog2
+  - Red0Dialog3
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
