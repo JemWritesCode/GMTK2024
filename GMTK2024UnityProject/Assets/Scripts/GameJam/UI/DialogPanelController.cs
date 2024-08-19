@@ -22,10 +22,23 @@ namespace GameJam {
 
     [field: Header("Dialog")]
     [field: SerializeField]
+    public GameObject Portrait { get; private set; }
+
+    [field: SerializeField]
     public Image PortraitImage { get; private set; }
 
     [field: SerializeField]
     public TextMeshProUGUI DialogText { get; private set; }
+
+    [field: Header("TopPortrait")]
+    [field: SerializeField]
+    public GameObject TopPortrait { get; private set; }
+
+    [field: SerializeField]
+    public Image TopPortraitImage { get; private set; }
+
+    [field: SerializeField]
+    public TextMeshProUGUI TopPortraitText { get; private set; }
 
     [field: Header("Buttons")]
     [field: SerializeField]
