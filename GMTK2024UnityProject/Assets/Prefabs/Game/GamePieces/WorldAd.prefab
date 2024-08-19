@@ -129,6 +129,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569a2924d5065684b92d0601bb8d321b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <AdTransform>k__BackingField: {fileID: 0}
-  <AdSpriteRenderer>k__BackingField: {fileID: 0}
-  <TimeToLive>k__BackingField: 5
+  <AdTransform>k__BackingField: {fileID: 1259133425726184764}
+  <AdSpriteRenderer>k__BackingField: {fileID: 7367745591681490025}

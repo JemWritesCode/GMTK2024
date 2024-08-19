@@ -1,3 +1,5 @@
+using DG.Tweening;
+
 using UnityEngine;
 
 namespace GameJam {
@@ -9,8 +11,15 @@ namespace GameJam {
     [field: SerializeField]
     public SpriteRenderer AdSpriteRenderer { get; private set; }
 
-    [field: Header("State")]
-    [field: SerializeField]
-    public float TimeToLive { get; private set; } = 5f;
+    public void DisplayAd(float timeToLive) {
+      AdSpriteRenderer.enabled = true;
+      AdSpriteRenderer.DOFade(1f, 3f).From(0f, true);
+
+      Invoke(nameof(DestroyAd), timeToLive);
+    }
+
+    public void DestroyAd() {
+      Destroy(gameObject);
+    }
   }
 }

@@ -9086,6 +9086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldAd
       objectReference: {fileID: 0}
+    - target: {fileID: 5272578453842045947, guid: 67fd27dbb4db6b04f9b9738c0b9ecedf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

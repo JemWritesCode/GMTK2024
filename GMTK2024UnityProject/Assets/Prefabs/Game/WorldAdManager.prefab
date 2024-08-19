@@ -44,3 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7bd10a4e4603e44959e028d5fe8488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <WorldAdPrefab>k__BackingField: {fileID: 5272578453842045947, guid: 67fd27dbb4db6b04f9b9738c0b9ecedf, type: 3}
+  <AdSprites>k__BackingField:
+  - {fileID: 21300000, guid: 6cc95062f54a9f64da073be16efa7130, type: 3}
+  - {fileID: 21300000, guid: d51b96ce81b9cee46bc5ae536f274693, type: 3}
+  - {fileID: 21300000, guid: 4a9fb5f41b14fb44685810ce9ab4ba78, type: 3}
+  - {fileID: 21300000, guid: 5679e981d19f3a94785985b4ed36ad57, type: 3}
+  - {fileID: 21300000, guid: bcf3b3f006a80c3488a4216d8edd12c3, type: 3}
+  - {fileID: 21300000, guid: 2e02515bcb53cab46acf26269549033d, type: 3}
+  - {fileID: 21300000, guid: 6469e212c86218540b95e39fa66ba1bb, type: 3}
+  - {fileID: 21300000, guid: 859b427b1d690e74ab209e4fbc3efa0c, type: 3}
+  - {fileID: 21300000, guid: 790e213327bccc64bb7bc5bc4bce4d48, type: 3}
