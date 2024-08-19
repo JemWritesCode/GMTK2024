@@ -6660,16 +6660,12 @@ PrefabInstance:
       value: DataDisk (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6486659679448921178, guid: 7d31bc38f7f2c784caae256b93e1ee0f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.10000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6486659679448921178, guid: 7d31bc38f7f2c784caae256b93e1ee0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.294
       objectReference: {fileID: 0}
     - target: {fileID: 6486659679448921178, guid: 7d31bc38f7f2c784caae256b93e1ee0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.854
+      value: -0.868
       objectReference: {fileID: 0}
     - target: {fileID: 6486659679448921178, guid: 7d31bc38f7f2c784caae256b93e1ee0f, type: 3}
       propertyPath: m_LocalPosition.z
