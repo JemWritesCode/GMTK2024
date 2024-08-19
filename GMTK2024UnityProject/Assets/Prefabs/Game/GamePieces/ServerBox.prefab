@@ -998,7 +998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5865865799143198362, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6348922600615868385, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalPosition.x

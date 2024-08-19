@@ -12,6 +12,8 @@ namespace GameJam
         AudioSource cableEndPointAudioSource;
 
         public GameObject CableAttachPoint;
+        public GameObject FlameEffects;
+        public GameObject DataEffects;
 
         private void Start()
         {
@@ -33,11 +35,31 @@ namespace GameJam
             return Connection != null;
         }
 
-        public void BreakConnection()
+        public void BreakConnection(bool playEffects)
         {
             if (IsConnected())
             {
                 Connection.BreakConnection();
+                if (playEffects)
+                {
+                    ParticleSystem[] effects = null;
+                    if (Type == CableBoxType.Data)
+                    {
+                        effects = DataEffects.GetComponentsInChildren<ParticleSystem>();
+                    }
+                    else if (Type == CableBoxType.Power)
+                    {
+                        effects = FlameEffects.GetComponentsInChildren<ParticleSystem>();
+                    }
+
+                    if (effects != null)
+                    {
+                        foreach (var effect in effects)
+                        {
+                            effect.Play();
+                        }
+                    }
+                }
             }
         }
 

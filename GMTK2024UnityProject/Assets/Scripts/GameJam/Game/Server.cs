@@ -62,23 +62,42 @@ namespace GameJam
 
         public int ServeServer(bool heatEnabled)
         {
-            if (Temperature.Overheated())
+            bool overheated = Temperature.Overheated();
+            if (FireEffects != null)
             {
-                FireEffects.SetActive(true);
-            }
-            else
-            {
-                FireEffects.SetActive(false);
+                var effects = FireEffects.GetComponentsInChildren<ParticleSystem>();
+                foreach (var effect in effects)
+                {
+                    if (overheated)
+                    {
+                        effect.Play();
+                    }
+                    else
+                    {
+                        effect.Stop();
+                    }
+                }
             }
 
             int dataConnections = DataConnections.Where(data => data.IsConnected()).Count();
             int powerConnections = PowerConnections.Where(data => data.IsConnected()).Count();
 
-            if (dataConnections == 0 || powerConnections == 0 || Temperature.Overheated() || HasVirus)
+            if (dataConnections == 0 || powerConnections == 0 || overheated || HasVirus)
             {
                 SetOnline(false);
                 SetCurrentUsers(0);
                 SetPowerMultiplier(powerConnections);
+
+                // TODO balance
+                if (overheated)
+                {
+                    RandomCableAttack(powerConnections, 0.25f);
+                }
+
+                if (HasVirus)
+                {
+                    RandomCableAttack(dataConnections, 0.25f);
+                }
             }
             else
             {
@@ -164,7 +183,7 @@ namespace GameJam
 
                 foreach (var cable in list)
                 {
-                    cable.BreakConnection();
+                    cable.BreakConnection(true);
                 }
             }
         }
