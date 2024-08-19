@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 5244018642680843693}
   - component: {fileID: 6020329424751168739}
   - component: {fileID: 172275653566076879}
-  - component: {fileID: 8752656265610125913}
+  - component: {fileID: 8108034612157158753}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_GradientStyle: 0
   m_ColorSpace: -1
   m_IgnoreAspectRatio: 1
---- !u!114 &8752656265610125913
+--- !u!114 &8108034612157158753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5019608}
-  m_EffectDistance: {x: 2, y: -2}
+  m_EffectDistance: {x: 1.5, y: -2}
   m_UseGraphicAlpha: 0
 --- !u!1 &800325227722949477
 GameObject:
@@ -2863,15 +2863,20 @@ MonoBehaviour:
   <PowerIcon>k__BackingField: {fileID: 537403470656295613}
   <PowerLabel>k__BackingField: {fileID: 5560296658930240200}
   <PoweredIcon>k__BackingField: {fileID: 6020329424751168739}
+  <PoweredGradient>k__BackingField: {fileID: 172275653566076879}
+  <PoweredOnColor1>k__BackingField: {r: 1, g: 0.87058824, b: 0, a: 1}
+  <PoweredOnColor2>k__BackingField: {r: 0.681, g: 0.6162896, b: 0.19721265, a: 1}
   <HeatIcon>k__BackingField: {fileID: 1504975213130291762}
   <HeatLabel>k__BackingField: {fileID: 3109538227324913435}
   <FireIcon>k__BackingField: {fileID: 228480130229871035}
   <CoolantIcon>k__BackingField: {fileID: 7929416318841220856}
   <NetworkIcon>k__BackingField: {fileID: 1965613525404510391}
   <IsPanelVisible>k__BackingField: 0
-  <CurrentUserValue>k__BackingField: 
-  <CurrentPowerValue>k__BackingField: 
+  <CurrentServer>k__BackingField: {fileID: 0}
+  <CurrentUserValue>k__BackingField: 0
+  <CurrentPowerValue>k__BackingField: 0
   <CurrentHeatValue>k__BackingField: 0
+  <CurrentPoweredOnValue>k__BackingField: 0
 --- !u!1 &8278862949678214879
 GameObject:
   m_ObjectHideFlags: 0

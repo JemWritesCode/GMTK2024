@@ -149,13 +149,10 @@ namespace GameJam
             }
         }
 
-        public void Sneeze(float dataCablePercent, float powerCablePercent)
-        {
-            var yeet = GetComponent<Yeet>();
-            if (yeet != null)
-            {
-                yeet.StartYeet(() => RandomCableAttack(dataCablePercent, powerCablePercent));
-            }
+        public void Sneeze(float dataCablePercent, float powerCablePercent) {
+          if (TryGetComponent(out Yeet yeet)) {
+            yeet.StartYeet(() => RandomCableAttack(dataCablePercent, powerCablePercent));
+          }
         }
 
         public void PowerCableAttack(float percentage)

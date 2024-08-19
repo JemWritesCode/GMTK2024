@@ -55,6 +55,24 @@ namespace YoloBox {
           .SetTarget(gradient);
     }
 
+    public static TweenerCore<Color, Color, ColorOptions> DOBlendableColor1(
+        this UIGradient gradient, Color color1, float duration) {
+      Color endColor = color1 - gradient.color1;
+      Color currentColor = Color.clear;
+
+      Color GetColor() => currentColor;
+
+      void SetColor(Color x) {
+        Color diff = x - currentColor;
+        currentColor = x;
+        gradient.color1 += diff;
+      }
+
+      return DOTween.To(GetColor, SetColor, endColor, duration)
+          .Blendable()
+          .SetTarget(gradient);
+    }
+
     public static TweenerCore<Color, Color, ColorOptions> DOBlendableColor2(
         this UIGradient gradient, Color color2, float duration) {
       Color endColor = color2 - gradient.color2;

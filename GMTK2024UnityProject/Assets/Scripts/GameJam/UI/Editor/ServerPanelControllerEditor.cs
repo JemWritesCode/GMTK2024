@@ -45,6 +45,7 @@ namespace GameJam.Editor {
     int _userValue;
     int _powerValue;
     float _heatValue;
+    bool _poweredOnValue;
 
     private void DrawUserControls() {
       GUILayout.BeginVertical("ValueControls", GUI.skin.window);
@@ -73,6 +74,15 @@ namespace GameJam.Editor {
       }
 
       _heatValue = EditorGUILayout.FloatField(_heatValue);
+
+      GUILayout.EndHorizontal();
+      EditorGUILayout.Separator();
+      GUILayout.BeginHorizontal();
+
+      if (GUILayout.Button("PoweredOn")) {
+        _poweredOnValue = !_poweredOnValue;
+        _controller.SetPoweredOnValue(_poweredOnValue);
+      }
 
       GUILayout.EndHorizontal();
       GUILayout.EndVertical();
