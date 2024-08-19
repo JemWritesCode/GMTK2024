@@ -51,7 +51,7 @@ namespace GameJam {
 
     public void CalloutPanels(float calloutDuration) {
       StartCoroutine(ShowHideHelpPanel(0.5f, calloutDuration));
-      StartCoroutine(ShowUserCountPanel(1f));
+      StartCoroutine(ShowUserCountPanel(1.5f));
     }
 
     private IEnumerator ShowHideHelpPanel(float showDelay, float hideDelay) {

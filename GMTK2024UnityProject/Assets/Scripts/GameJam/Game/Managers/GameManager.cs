@@ -12,13 +12,13 @@ namespace GameJam {
     public DSDialogueSO StartingDialogNode { get; private set; }
 
     private void Start() {
-      UIManager.Instance.CalloutPanels(calloutDuration: 5f);
-
-      StartCoroutine(ShowStartingDialog(5f));
+      StartCoroutine(StartGame());
     }
 
-    private IEnumerator ShowStartingDialog(float showDelay) {
-      yield return new WaitForSeconds(seconds: showDelay);
+    private IEnumerator StartGame() {
+      yield return null;
+
+      UIManager.Instance.CalloutPanels(calloutDuration: 8f);
       SetDialogNode(StartingDialogNode);
     }
 
