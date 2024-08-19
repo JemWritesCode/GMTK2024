@@ -46,12 +46,25 @@ MonoBehaviour:
     <Text>k__BackingField: UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT A B SELECT START
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 2cac8b15-9419-4a09-949a-f3256bf5e720
+      <NodeID>k__BackingField: 3d5c983c-e96c-4914-94fa-c34a01d2963c
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1124, y: 226}
     <PortraitType>k__BackingField: 1
     <Portrait>k__BackingField: {fileID: 21300000, guid: 6983c6826175ac944b99ea1f07e304d1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 3d5c983c-e96c-4914-94fa-c34a01d2963c
+    <Name>k__BackingField: Red0Ad0
+    <Text>k__BackingField: Horizontal ad?
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 2cac8b15-9419-4a09-949a-f3256bf5e720
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2194, y: 491}
+    <PortraitType>k__BackingField: 2
+    <Portrait>k__BackingField: {fileID: 21300000, guid: bcf3b3f006a80c3488a4216d8edd12c3, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 2cac8b15-9419-4a09-949a-f3256bf5e720
@@ -66,7 +79,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1336, y: 604}
+    <Position>k__BackingField: {x: 1751, y: 821}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -76,6 +89,7 @@ MonoBehaviour:
   - Red0Dialog0
   - Red0Dialog1
   - Red0Dialog2
+  - Red0Ad0
   - Red0Dialog3
   <OldGroupedNodeNames>k__BackingField:
     list: []
