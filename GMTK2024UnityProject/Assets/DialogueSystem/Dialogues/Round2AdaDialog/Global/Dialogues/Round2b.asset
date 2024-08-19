@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Round2b
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Round2b
-  <Text>k__BackingField: 'Not all <color=#3C9447>Users</color> are nice, Admin.
+  <Text>k__BackingField: 'Not all <color=#3C9447>Users</color> are nice, <color=#6f6f6f>Admin</color>.
 
 
     We

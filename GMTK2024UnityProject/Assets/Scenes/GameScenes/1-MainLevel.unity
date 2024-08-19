@@ -727,7 +727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: CurrentLevel
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: Levels.Array.data[0].ParentObject
@@ -757,18 +757,6 @@ PrefabInstance:
       propertyPath: Levels.Array.data[6].ParentObject
       value: 
       objectReference: {fileID: 69701273}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: Levels.Array.data[0].<LevelStartDialogNode>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 6acdc076dd0095a4b8f7433b6bf8db72, type: 2}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: Levels.Array.data[1].<LevelStartDialogNode>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 5e875849958c1b4478de40600b997dc1, type: 2}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: Levels.Array.data[2].<LevelStartDialogNode>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 8715429245f28394ebe2a3737f42070c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

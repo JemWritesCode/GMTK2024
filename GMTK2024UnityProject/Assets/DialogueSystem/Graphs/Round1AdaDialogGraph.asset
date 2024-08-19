@@ -47,7 +47,7 @@ MonoBehaviour:
   - <ID>k__BackingField: 2a4c1986-6a4e-49bf-84c9-4fd190d195aa
     <Name>k__BackingField: Round1Dialog2
     <Text>k__BackingField: "If the servers get too hot\nmay catch fire! But we have
-      a\n\u201CByeByeFire\u201D\xAE if that happens.\n\nStay cool, Admin!"
+      a\n\u201CByeByeFire\u201D\xAE if that happens.\n\nStay cool, <color=#6f6f6f>Admin</color>!"
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 

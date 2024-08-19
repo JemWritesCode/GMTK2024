@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Round2a
+  m_Name: Round3b
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Round2a
-  <Text>k__BackingField: 'We reached 50k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
-
-    Horray!'
+  <DialogueName>k__BackingField: Round3b
+  <Text>k__BackingField: "Oh no, <color=#6f6f6f>Admin</color>!!! I accidentally let
+    all the \nserver hamsters out!"
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: c489c9465c58e1b4b9473e0be4a3b281, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 0}
   <DialogueType>k__BackingField: 0
-  <IsStartingDialogue>k__BackingField: 1
-  <PortraitType>k__BackingField: 0
-  <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+  <IsStartingDialogue>k__BackingField: 0
+  <PortraitType>k__BackingField: 1
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 60b83dd918a89bf429fb1ddbf6443e4c, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1
