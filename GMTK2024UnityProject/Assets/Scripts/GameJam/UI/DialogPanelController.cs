@@ -104,10 +104,13 @@ namespace GameJam {
     }
 
     public void OnConfirmButtonClick() {
+      StopSfxAudioClip();
       ShowDialogNode(GetNextDialogNode(CurrentDialogNode));
     }
 
     public void ShowDialogNode(DSDialogueSO dialogNode) {
+      StopSfxAudioClip();
+
       CurrentDialogNode = dialogNode;
 
       if (!CurrentDialogNode) {
@@ -121,14 +124,14 @@ namespace GameJam {
         PortraitImage.sprite = CurrentDialogNode.Portrait;
       }
 
-      if (CurrentDialogNode.AudioClip) {
-        SfxAudioSource.PlayOneShot(CurrentDialogNode.AudioClip, CurrentDialogNode.AudioVolume);
-      }
-
       if (IsPanelVisible) {
         _showTextTween.Play();
       } else {
         ShowPanel();
+      }
+
+      if (CurrentDialogNode.AudioClip) {
+        PlaySfxAudioClip(CurrentDialogNode.AudioClip, CurrentDialogNode.AudioVolume);
       }
     }
 
@@ -138,6 +141,18 @@ namespace GameJam {
       }
 
       return dialogNode.Choices[0].NextDialogue;
+    }
+
+    private void PlaySfxAudioClip(AudioClip audioClip, float audioVolume = 1f) {
+      SfxAudioSource.clip = audioClip;
+      SfxAudioSource.volume = audioVolume;
+      SfxAudioSource.PlayDelayed(delay: 0.25f);
+    }
+
+    private void StopSfxAudioClip() {
+      if (SfxAudioSource.isPlaying) {
+        SfxAudioSource.Stop();
+      }
     }
   }
 }
