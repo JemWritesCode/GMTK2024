@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Round5AdaDialogGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Round5AdaDialog
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: b79756e2-5dfe-4cec-91b3-a7d21da1c117
+    <Name>k__BackingField: Round5b
+    <Text>k__BackingField: 999,999 users...<color=#3C9447>Users</color>...just *sniffle*
+      one more to our goal...
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 26ec582c-977e-4543-822e-36a5d378d653
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 981.2, y: 181.2}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 3a6bf1ff3b82e3c40bdcf5a26fffaf13, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 26ec582c-977e-4543-822e-36a5d378d653
+    <Name>k__BackingField: Round5c
+    <Text>k__BackingField: ACHOO!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1781.6001, y: 181.2}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 4625abb05ae93f64ba6b053b7bf4b311, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 0320ac09-704f-4423-b6fd-6861c50e7d98
+    <Name>k__BackingField: Round5a
+    <Text>k__BackingField: <color=#6f6f6f>Adminnnn</color>! *sniffle* I think I've
+      caught a virus... *sniffle* I guess the Firewall didn't catch everything...
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b79756e2-5dfe-4cec-91b3-a7d21da1c117
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 202, y: 181.2}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 3a6bf1ff3b82e3c40bdcf5a26fffaf13, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Round5b
+  - Round5c
+  - Round5a
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
