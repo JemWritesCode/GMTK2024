@@ -3527,10 +3527,6 @@ PrefabInstance:
       value: Super First Person Controller
       objectReference: {fileID: 0}
     - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: CurrentLevel
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: Levels.Array.data[0].ParentObject
       value: 
       objectReference: {fileID: 1181681699}

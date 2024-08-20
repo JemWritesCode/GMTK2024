@@ -271,11 +271,11 @@ MonoBehaviour:
   MaximumIntegrity: 100
   Integrity: 100
   IntegrityThreshold: 0.1
-  IntegrityTicks: 0.5
+  IntegrityTicks: 4
   Temperature:
     Heat: 0
     HeatLimit: 100
-    HeatTicks: 5
+    HeatTicks: 10
     TemperatureThreshold: 0.8
   FireEffects: {fileID: 9024481117541524685}
   SmokeEffects: {fileID: 7490503111584165976}

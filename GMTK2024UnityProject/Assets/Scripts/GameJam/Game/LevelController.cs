@@ -52,8 +52,8 @@ namespace GameJam
         public AudioClip sneezeEventSound;
         private readonly float updateInterval = 1f;
         private float updateTimer = 0f;
-        public float minimumTimeBetweenSneezes = 15f;
-        public float maximumTimeBetweenSneezes = 30f;
+        public float minimumTimeBetweenSneezes = 35f;
+        public float maximumTimeBetweenSneezes = 45f;
         public float timeOfLastSneeze = 0f;
         public bool firstSneezeCompleted = false;
 
