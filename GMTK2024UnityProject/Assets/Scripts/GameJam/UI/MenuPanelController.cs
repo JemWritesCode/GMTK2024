@@ -18,13 +18,20 @@ namespace GameJam {
     [field: SerializeField]
     public Button CloseButton { get; private set; }
 
+    [field: Header("Settings")]
+    [field: SerializeField]
+    public Slider AudioVolumeSlider { get; private set; }
+
+    [field: SerializeField]
+    public Slider VoiceVolumeSlider { get; private set; }
+
     [field: Header("State")]
     [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
 
     Sequence _showHidePanelTween;
 
-    private void Awake() {
+    private void Start() {
       ResetPanel();
 
       _showHidePanelTween =
@@ -56,6 +63,9 @@ namespace GameJam {
       PanelCanvasGroup.blocksRaycasts = true;
       IsPanelVisible = true;
 
+      AudioVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.AudioVolume);
+      VoiceVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.VoiceVolume);
+
       _showHidePanelTween.PlayAgain();
     }
 
@@ -65,5 +75,7 @@ namespace GameJam {
 
       _showHidePanelTween.SmoothRewind();
     }
+
+
   }
 }
