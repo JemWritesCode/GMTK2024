@@ -52,7 +52,7 @@ MonoBehaviour:
       Then the datacenter will be done and we can serve ads forever!
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
+      <NodeID>k__BackingField: 02df330e-e09e-4edb-a00c-125c2148ea14
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1722, y: 84.399994}
@@ -60,10 +60,24 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 02df330e-e09e-4edb-a00c-125c2148ea14
+    <Name>k__BackingField: Round4AdConnection
+    <Text>k__BackingField: Reconnect data cables.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2505.6, y: 84.399994}
+    <PortraitType>k__BackingField: 2
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 790e213327bccc64bb7bc5bc4bce4d48, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - Round4a
   - Round4b
   - Round4c
+  - Round4AdConnection
   <OldGroupedNodeNames>k__BackingField:
     list: []

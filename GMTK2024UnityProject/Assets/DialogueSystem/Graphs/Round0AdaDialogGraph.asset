@@ -55,7 +55,7 @@ MonoBehaviour:
     <Text>k__BackingField: Lets get to 10k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
+      <NodeID>k__BackingField: 2a2f92da-238f-4430-9d46-e1e4368cc48a
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1535.6001, y: 156.8}
@@ -63,10 +63,25 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 2a2f92da-238f-4430-9d46-e1e4368cc48a
+    <Name>k__BackingField: Round0d
+    <Text>k__BackingField: Connect <color=#FDDA0D>power</color> and <color=#008080>data</color>
+      cables today!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2278.8, y: 156.8}
+    <PortraitType>k__BackingField: 2
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 790e213327bccc64bb7bc5bc4bce4d48, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - Round0Dialog1
   - Round0Dialog0
   - Round0c
+  - Round0d
   <OldGroupedNodeNames>k__BackingField:
     list: []

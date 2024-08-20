@@ -10,20 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Round1d
+  m_Name: Round0d
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Round1d
-  <Text>k__BackingField: 'Stay cool, <color=#6f6f6f>Admin</color>!
-
-
-    Lets get
-    to 50k <color=#3C9447>Users</color>!'
+  <DialogueName>k__BackingField: Round0d
+  <Text>k__BackingField: Connect <color=#FDDA0D>power</color> and <color=#008080>data</color>
+    cables today!
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 89516e9020ef2e741b19cd423cd5624b, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 0}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <PortraitType>k__BackingField: 0
-  <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+  <PortraitType>k__BackingField: 2
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 790e213327bccc64bb7bc5bc4bce4d48, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1
