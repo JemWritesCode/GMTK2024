@@ -149,8 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Consumable: 0
+  Used: 0
   CanPutOutFire: 1
   HeatReduction: 100
+  CanResetVirus: 0
   UseEffects: {fileID: 5332909706956856852}
 --- !u!114 &4519596778316588596
 MonoBehaviour:
@@ -195,9 +197,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExtinguisherEffects
       objectReference: {fileID: 0}
+    - target: {fileID: 6348922600615868385, guid: 28a2dfb65c3e1384b847bbc10da1e4d4, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: 28a2dfb65c3e1384b847bbc10da1e4d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3
+      value: 0.4993
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: 28a2dfb65c3e1384b847bbc10da1e4d4, type: 3}
       propertyPath: m_LocalPosition.y

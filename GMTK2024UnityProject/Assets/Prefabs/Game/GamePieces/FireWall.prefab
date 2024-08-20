@@ -166,6 +166,9 @@ MonoBehaviour:
   IntegrityTicks: 10
   FireEffects: {fileID: 9024481117541524685}
   IndicatorLight: {fileID: 5722646762050046352}
+  AttackChanceUp: 0.01
+  AttackChanceVulnerable: 0.02
+  AttackChanceDown: 0.05
 --- !u!114 &2274834963206870690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,7 +1144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5865865799143198362, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1149,7 +1152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.275
+      value: 0.558
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalPosition.z

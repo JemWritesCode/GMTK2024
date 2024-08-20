@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,20 +8,23 @@ namespace GameJam
 {
     public class Server : MonoBehaviour
     {
+        public LevelController levelController;
+
+        [Header("Live Populated Fields, Don't Touch")]
         public int CurrentUsers = 0;
         public int PowerMultiplier = 0;
         public bool Online = false;
         public bool HasVirus = false;
-
-        public LevelController levelController;
 
         public List<CableEndPoint> PowerConnections = new List<CableEndPoint>();
         public List<CableEndPoint> DataConnections = new List<CableEndPoint>();
 
         public Temperature Temperature = new Temperature();
 
+        [Header("Effects")]
         public GameObject FireEffects;
 
+        [Header("Lights")]
         public List<Light> IndicatorLights;
         public float LightBlinkInterval = 0.5f;
         private float lightBlinkTimer;
@@ -80,31 +82,31 @@ namespace GameJam
                 }
             }
 
-            int dataConnections = DataConnections.Where(data => data.IsConnected()).Count();
-            int powerConnections = PowerConnections.Where(data => data.IsConnected()).Count();
+            var dataConnections = DataConnections.Where(data => data.IsConnected()).ToList();
+            var powerConnections = PowerConnections.Where(data => data.IsConnected()).ToList();
 
-            if (dataConnections == 0 || powerConnections == 0 || overheated || HasVirus)
+            if (dataConnections.Count == 0 || powerConnections.Count == 0 || overheated || HasVirus)
             {
                 SetOnline(false);
                 SetCurrentUsers(0);
-                SetPowerMultiplier(powerConnections);
+                SetPowerMultiplier(powerConnections.Count);
 
                 // TODO balance
                 if (overheated)
                 {
-                    RandomCableAttack(powerConnections, 0.25f);
+                    CableAttackChance(powerConnections, levelController.PowerCableDisconnectChance, true);
                 }
 
                 if (HasVirus)
                 {
-                    RandomCableAttack(dataConnections, 0.25f);
+                    CableAttackChance(dataConnections, levelController.DataCableDisconnectChance, true);
                 }
             }
             else
             {
                 SetOnline(true);
-                SetCurrentUsers(dataConnections * powerConnections * levelController.Levels[levelController.CurrentLevel].UsersPerPortAtLevel);
-                SetPowerMultiplier(powerConnections);
+                SetCurrentUsers(dataConnections.Count * powerConnections.Count * levelController.Levels[levelController.CurrentLevel].UsersPerPortAtLevel);
+                SetPowerMultiplier(powerConnections.Count);
 
                 if (heatEnabled)
                 {
@@ -150,38 +152,33 @@ namespace GameJam
             }
         }
 
-        public void Sneeze(float dataCablePercent, float powerCablePercent) {
-          if (TryGetComponent(out Yeet yeet)) {
-            yeet.StartYeet(() => RandomCableAttack(dataCablePercent, powerCablePercent));
-          }
-        }
-
-        public void PowerCableAttack(float percentage)
+        public void Sneeze(float dataCablePercent, float powerCablePercent)
         {
-            CableAttack(PowerConnections, percentage);
+            if (TryGetComponent(out Yeet yeet))
+            {
+                // If we want to reenable this need to make sure fire effects on cables don't play
+                //yeet.StartYeet(() => RandomCableAttack(dataCablePercent, powerCablePercent));
+                yeet.StartYeet(null);
+            }
         }
 
-        public void DataCableAttack(float percentage)
+        public void CableAttackChance(List<CableEndPoint> connections, float percentage, bool playEffects)
         {
-            CableAttack(DataConnections, percentage);
+            if (UnityEngine.Random.Range(0f, 1f) <= percentage)
+            {
+                CableAttack(connections, 1, playEffects);
+            }
         }
 
-        public void RandomCableAttack(float dataCablePercent, float powerCablePercent)
-        {
-            CableAttack(DataConnections, dataCablePercent);
-            CableAttack(PowerConnections, powerCablePercent);
-        }
-
-        public void CableAttack(List<CableEndPoint> connections, float percentage)
+        public void CableAttack(List<CableEndPoint> connections, int count, bool playEffects)
         {
             if (connections.Count > 0)
             {
-                int count = Math.Clamp((int)(connections.Count * percentage), 1, connections.Count);
                 var list = SelectRandomItems(connections, count);
 
                 foreach (var cable in list)
                 {
-                    cable.BreakConnection(true);
+                    cable.BreakConnection(playEffects);
                 }
             }
         }

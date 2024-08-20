@@ -15,28 +15,28 @@ namespace GameJam
         public GameObject FireEffects;
         public Light IndicatorLight;
 
+        [Header("Attack chances")]
+        public float AttackChanceUp = 0.01f;
+        public float AttackChanceVulnerable = 0.02f;
+        public float AttackChanceDown = 0.05f;
+
         public bool TryBlockAttack()
         {
-            // TODO Balance
-            // Chance when down = 20%
-            // Chance when low integrity = 10%
-            // Chance when up = 5%
-
-            float attackChance = 0.05f;
+            float attackChance = AttackChanceUp;
 
             if (Temperature.Overheated())
             {
                 FireEffects.SetActive(true);
                 SetIndicatorColor(Color.red);
 
-                attackChance = 0.2f;
+                attackChance = AttackChanceDown;
             }
             else
             {
                 FireEffects.SetActive(false);
                 if (Integrity < IntegrityThreshold * MaximumIntegrity)
                 {
-                    attackChance = 0.1f;
+                    attackChance = AttackChanceVulnerable;
                 }
             }
 
