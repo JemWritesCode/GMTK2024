@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Round1Dialog1
   <Text>k__BackingField: "Things are really heating up with all of these <color=#3C9447>Users</color>,
-    <color=#6f6f6f>Admin</color>!\n\nYou can pour Cool-It\xAE directly onto servers
+    <color=#6f6f6f>Admin</color>! \nYou can pour Cool-It\xAE directly onto servers
     to keep them cool! Feel free to take a sip to keep yourself cool too! \n"
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
