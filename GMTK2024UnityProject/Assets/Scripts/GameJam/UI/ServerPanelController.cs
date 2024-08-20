@@ -61,9 +61,27 @@ namespace GameJam {
     [field: SerializeField]
     public Image FireIcon { get; private set; }
 
-    [field: Header("Coolant")]
     [field: SerializeField]
-    public Image CoolantIcon { get; private set; }
+    public UIGradient FireGradient { get; private set; }
+
+    [field: SerializeField]
+    public Color FireOnColor1 { get; private set; }
+
+    [field: SerializeField]
+    public Color FireOnColor2 { get; private set; }
+
+    [field: Header("Virus")]
+    [field: SerializeField]
+    public Image VirusIcon { get; private set; }
+
+    [field: SerializeField]
+    public UIGradient VirusGradient { get; private set; }
+
+    [field: SerializeField]
+    public Color VirusOnColor1 { get; private set; }
+
+    [field: SerializeField]
+    public Color VirusOnColor2 { get; private set; }
 
     [field: Header("Network")]
     [field: SerializeField]
@@ -88,8 +106,16 @@ namespace GameJam {
     [field: SerializeField]
     public bool CurrentPoweredOnValue { get; private set; }
 
+    [field: SerializeField]
+    public bool CurrentFireOnValue { get; private set; }
+
+    [field: SerializeField]
+    public bool CurrentVirusOnValue { get; private set; }
+
     private Sequence _showHidePanelTween;
     private Sequence _setPoweredOnTween;
+    private Sequence _setFireOnTween;
+    private Sequence _setVirusOnTween;
 
     private void Start() {
       CreateTweens();
@@ -111,9 +137,10 @@ namespace GameJam {
               .Insert(0f, FadeMoveImage(HeatIcon, new(0f, -3f, 0f), 0.2f))
               .Insert(0f, FadeMoveImage(HeatLabel, new(-2f, 0f, 0f), 0.2f))
               .Insert(0f, FadeMoveImage(FireIcon, new(0f, 3f, 0f), 0.2f))
-              .Insert(0f, FadeMoveImage(CoolantIcon, new(0f, 3f, 0f), 0.2f))
+              .Insert(0f, FadeMoveImage(VirusIcon, new(0f, 3f, 0f), 0.2f))
               .Insert(0f, FadeMoveImage(NetworkIcon, new(0f, 3f, 0f), 0.2f))
               .SetAutoKill(false)
+              .SetUpdate(isIndependentUpdate: true)
               .Pause();
 
 
@@ -124,6 +151,27 @@ namespace GameJam {
               .Insert(0f, PoweredGradient.DOBlendableColor1(PoweredOnColor1, 0.4f))
               .Insert(0f, PoweredGradient.DOBlendableColor2(PoweredOnColor2, 0.4f))
               .SetAutoKill(false)
+              .SetUpdate(isIndependentUpdate: true)
+              .Pause();
+
+      _setFireOnTween =
+          DOTween.Sequence()
+              .SetTarget(FireIcon)
+              .Insert(0f, FireIcon.transform.DOPunchScale(Vector3.one * 0.1f, 0.4f, 5, 0f))
+              .Insert(0f, FireGradient.DOBlendableColor1(FireOnColor1, 0.4f))
+              .Insert(0f, FireGradient.DOBlendableColor2(FireOnColor2, 0.4f))
+              .SetAutoKill(false)
+              .SetUpdate(isIndependentUpdate: true)
+              .Pause();
+
+      _setVirusOnTween =
+          DOTween.Sequence()
+              .SetTarget(VirusIcon)
+              .Insert(0f, VirusIcon.transform.DOPunchScale(Vector3.one * 0.1f, 0.4f, 5, 0f))
+              .Insert(0f, VirusGradient.DOBlendableColor1(VirusOnColor1, 0.4f))
+              .Insert(0f, VirusGradient.DOBlendableColor2(VirusOnColor2, 0.4f))
+              .SetAutoKill(false)
+              .SetUpdate(isIndependentUpdate: true)
               .Pause();
     }
 
@@ -150,6 +198,8 @@ namespace GameJam {
       CurrentHeatValue = 0f;
 
       CurrentPoweredOnValue = false;
+      CurrentFireOnValue = false;
+      CurrentVirusOnValue = false;
     }
 
     public void ShowPanel() {
@@ -199,7 +249,18 @@ namespace GameJam {
       SetUserValue(server.CurrentUsers);
       SetPowerValue(server.PowerMultiplier);
       SetHeatValue(server.Temperature.HeatPercent());
-      SetPoweredOnValue(server.IsOnline());
+
+      if (server.IsOnline() != CurrentPoweredOnValue) {
+        SetPoweredOnValue(server.IsOnline());
+      }
+
+      if (server.Temperature.Overheated() != CurrentFireOnValue) {
+        SetFireOnValue(server.Temperature.Overheated());
+      }
+
+      if (server.HasVirus != CurrentVirusOnValue) {
+        SetVirusOnValue(server.HasVirus);
+      }
     }
 
     public void SetUserValue(int userValue) {
@@ -241,6 +302,16 @@ namespace GameJam {
     public void SetPoweredOnValue(bool poweredOn) {
       _setPoweredOnTween.PlayOrRewind(poweredOn);
       CurrentPoweredOnValue = poweredOn;
+    }
+
+    public void SetFireOnValue(bool fireOn) {
+      _setFireOnTween.PlayOrRewind(fireOn);
+      CurrentPoweredOnValue = fireOn;
+    }
+
+    public void SetVirusOnValue(bool virusOn) {
+      _setVirusOnTween.PlayOrRewind(virusOn);
+      CurrentVirusOnValue = virusOn;
     }
   }
 }

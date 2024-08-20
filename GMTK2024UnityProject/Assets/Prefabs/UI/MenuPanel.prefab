@@ -324,6 +324,8 @@ MonoBehaviour:
   <PanelRectTransform>k__BackingField: {fileID: 338912871525126050}
   <PanelCanvasGroup>k__BackingField: {fileID: 6607841949122421704}
   <CloseButton>k__BackingField: {fileID: 5228681204800685035}
+  <AudioVolumeSlider>k__BackingField: {fileID: 5242928281066942245}
+  <VoiceVolumeSlider>k__BackingField: {fileID: 4021878658466327970}
   <IsPanelVisible>k__BackingField: 0
 --- !u!1 &1017163517961427686
 GameObject:
@@ -336,7 +338,7 @@ GameObject:
   - component: {fileID: 193829712964355093}
   - component: {fileID: 4021878658466327970}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: VoiceSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,7 +517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6012896536859845429}
   m_Layer: 5
-  m_Name: SoundSettingsRow
+  m_Name: AudioSettingsRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1164,7 +1166,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound
+  m_text: Audio
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8db1be665df2b7439ea194419050fff, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: d35205be57ca66647b60c7907289f3b9, type: 2}
@@ -1382,7 +1384,7 @@ GameObject:
   - component: {fileID: 1780485308324489407}
   - component: {fileID: 5242928281066942245}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: AudioSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
