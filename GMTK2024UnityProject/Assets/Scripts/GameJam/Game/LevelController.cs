@@ -282,7 +282,7 @@ namespace GameJam
 
             foreach (var server in Servers)
             {
-                server.CableAttack(server.DataConnections, server.DataConnections.Count / 2, true);
+                server.CableAttack(server.DataConnections, (int)(server.DataConnections.Count * DropPacketsPercent), true);
             }
 
             DroppedPackets = true;
