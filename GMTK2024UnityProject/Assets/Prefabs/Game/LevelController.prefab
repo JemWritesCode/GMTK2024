@@ -74,7 +74,7 @@ MonoBehaviour:
     <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 5e875849958c1b4478de40600b997dc1, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 50000
-    UsersPerPortAtLevel: 1112
+    UsersPerPortAtLevel: 280
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -93,7 +93,7 @@ MonoBehaviour:
     <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 8715429245f28394ebe2a3737f42070c, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 100000
-    UsersPerPortAtLevel: 280
+    UsersPerPortAtLevel: 1390
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -112,7 +112,7 @@ MonoBehaviour:
     <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 48839ab15d0159144971d4c8a5e70793, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 500000
-    UsersPerPortAtLevel: 1390
+    UsersPerPortAtLevel: 2084
     Event:
       m_PersistentCalls:
         m_Calls:
