@@ -42,7 +42,7 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1433.6001, y: 62.8}
-    <PortraitType>k__BackingField: 1
+    <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
@@ -56,7 +56,7 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 2140.4001, y: 62.8}
-    <PortraitType>k__BackingField: 1
+    <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
@@ -73,20 +73,6 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: 5679e981d19f3a94785985b4ed36ad57, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
-  - <ID>k__BackingField: b441eaf7-a3ad-469b-9e8c-f42971a95706
-    <Name>k__BackingField: Round6f
-    <Text>k__BackingField: "Admin, I'm so glad we got everything working so smoothly.\r\nThank
-      you for putting up with my mistakes! ^^\r"
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: fda8d771-403d-4e9a-8773-8bddfc7cdd1b
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 3262, y: 62.8}
-    <PortraitType>k__BackingField: 1
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 04bac4f5-6a37-4ef1-a5ba-0aa09f5b7056
     <Name>k__BackingField: Round6a
     <Text>k__BackingField: We did it Admin! 1M users! You've reached the end. You
@@ -101,6 +87,61 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 88543b85-2c06-4adc-8b92-7efbf536d71f
+    <Name>k__BackingField: Round6h
+    <Text>k__BackingField: "*laughs* I know the way we managed the datacenter was
+      a bit unorthodox, so let's review the textbook!\r"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 5b9bb8bd-2418-4ece-b7f2-417526e52f7c
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 4702.8, y: 62.8}
+    <PortraitType>k__BackingField: 4
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 5b9bb8bd-2418-4ece-b7f2-417526e52f7c
+    <Name>k__BackingField: Round6SnowmanAd
+    <Text>k__BackingField: 
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 11607ccf-e156-48a0-a5cb-dec53363f442
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5450.4, y: 62.8}
+    <PortraitType>k__BackingField: 3
+    <Portrait>k__BackingField: {fileID: 21300000, guid: d10fca8833859df4bacccbc34b9019c2, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 11607ccf-e156-48a0-a5cb-dec53363f442
+    <Name>k__BackingField: round6NetworkSwitch
+    <Text>k__BackingField: "Do you remember what a network switch is?\r\nI wish we
+      could've ordered some.\r\nYou could\u2019ve probably run around the command
+      center less often."
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 58f1a029-67dc-4cbb-972b-10b2786e496b
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 5891.5996, y: 62.8}
+    <PortraitType>k__BackingField: 4
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 58f1a029-67dc-4cbb-972b-10b2786e496b
+    <Name>k__BackingField: AdInfecton
+    <Text>k__BackingField: 
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 047e0e3b-6dfd-46d1-8c4a-371ba195c307
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 6699.5996, y: 62.8}
+    <PortraitType>k__BackingField: 3
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6469e212c86218540b95e39fa66ba1bb, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 047e0e3b-6dfd-46d1-8c4a-371ba195c307
     <Name>k__BackingField: Round6Looper
     <Text>k__BackingField: Don't worry Admin, there isn't really an end to this.
@@ -109,8 +150,22 @@ MonoBehaviour:
       <NodeID>k__BackingField: 97127ddc-aa37-47fe-80c1-d002a6d0bf7e
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1433.6001, y: -534.4}
+    <Position>k__BackingField: {x: 1469.6001, y: -574.4}
     <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: b441eaf7-a3ad-469b-9e8c-f42971a95706
+    <Name>k__BackingField: Round6f
+    <Text>k__BackingField: "Admin, I'm so glad we got everything working so smoothly.\r\nThank
+      you for putting up with my mistakes! ^^\r"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: c4641c96-f0b7-4e53-915e-4634e6f7e9b9
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3190.8, y: 291.59998}
+    <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
@@ -122,22 +177,22 @@ MonoBehaviour:
       <NodeID>k__BackingField: 88543b85-2c06-4adc-8b92-7efbf536d71f
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 3994, y: 62.8}
+    <Position>k__BackingField: {x: 4011.2, y: -74}
     <PortraitType>k__BackingField: 2
     <Portrait>k__BackingField: {fileID: 21300000, guid: 79a60d026d002fd40b3b56021c4c8997, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
-  - <ID>k__BackingField: 88543b85-2c06-4adc-8b92-7efbf536d71f
-    <Name>k__BackingField: Round6h
-    <Text>k__BackingField: "*laughs* I know the way we managed the datacenter was
-      a bit unorthodox, so let's review the textbook!\r"
+  - <ID>k__BackingField: c4641c96-f0b7-4e53-915e-4634e6f7e9b9
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: 'Admin Override: Thank you for playing our game! - Cheery
+      Bit Games team'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 047e0e3b-6dfd-46d1-8c4a-371ba195c307
+      <NodeID>k__BackingField: fda8d771-403d-4e9a-8773-8bddfc7cdd1b
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 4702.8, y: 62.8}
-    <PortraitType>k__BackingField: 1
+    <Position>k__BackingField: {x: 4011.2, y: 336.4}
+    <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
@@ -147,10 +202,14 @@ MonoBehaviour:
   - Round6c
   - Round6d
   - Round6e
-  - Round6f
   - Round6a
-  - Round6Looper
-  - Round6g
   - Round6h
+  - Round6SnowmanAd
+  - round6NetworkSwitch
+  - AdInfecton
+  - Round6Looper
+  - Round6f
+  - Round6g
+  - DialogueName
   <OldGroupedNodeNames>k__BackingField:
     list: []

@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Round6f
+  m_Name: Round6SnowmanAd
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Round6f
-  <Text>k__BackingField: "Admin, I'm so glad we got everything working so smoothly.\r\nThank
-    you for putting up with my mistakes! ^^\r"
+  <DialogueName>k__BackingField: Round6SnowmanAd
+  <Text>k__BackingField: 
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 40aab3d2fab62c844b8056e3242cd7d7, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 135db6098bae75143802b9a79f52016b, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <PortraitType>k__BackingField: 4
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
+  <PortraitType>k__BackingField: 3
+  <Portrait>k__BackingField: {fileID: 21300000, guid: d10fca8833859df4bacccbc34b9019c2, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1
