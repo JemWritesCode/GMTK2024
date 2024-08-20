@@ -96,7 +96,7 @@ namespace GameJam
             {
                 if (time > timeOfLastVirus + minimumTimeBetweenViruses)
                 {
-                    RandomVirusAttack();
+                    RandomVirusAttack(); 
                 }
             }
 
@@ -206,14 +206,20 @@ namespace GameJam
 
         public void RandomVirusAttack()
         {
+            bool guaranteeVirusAttack = false;
             if (FireWalls == null || Servers == null)
             {
                 return;
             }
 
+            if (Time.time > timeOfLastVirus + maximumTimeBetweenViruses)
+            {
+                guaranteeVirusAttack = true;
+            }
+
             foreach (var firewall in FireWalls)
             {
-                if (!firewall.TryBlockAttack())
+                if (!firewall.TryBlockAttack() || guaranteeVirusAttack == true)
                 {
                     var servers = Servers.Where(item => item.IsOnline()).ToList();
                     if (servers.Count > 0)
@@ -222,7 +228,8 @@ namespace GameJam
                         Debug.Log($"ATTACK on server {index}!!");
                         servers[index].SetVirus(true);
                         timeOfLastVirus = Time.time;
-                        if ( levelControllerAudioSource && virusEventSound)
+                        guaranteeVirusAttack = false;
+                        if ( levelControllerAudioSource && virusEventSound) 
                         {
                             levelControllerAudioSource.PlayOneShot(virusEventSound, 1f);
                         }
