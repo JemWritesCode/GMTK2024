@@ -27,7 +27,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: af99290e-2f57-4a31-9812-c57d4d243fd3
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 733.2, y: 62.8}
+    <Position>k__BackingField: {x: 733, y: 63}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 97127ddc-aa37-47fe-80c1-d002a6d0bf7e
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1433.6001, y: 62.8}
+    <Position>k__BackingField: {x: 1434, y: 63}
     <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 9a1df81e-bddf-4c63-84e4-ace29f312c2b
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 2140.4001, y: 62.8}
+    <Position>k__BackingField: {x: 2140, y: 63}
     <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -68,7 +68,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: b441eaf7-a3ad-469b-9e8c-f42971a95706
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 2851.6, y: 62.8}
+    <Position>k__BackingField: {x: 2852, y: 63}
     <PortraitType>k__BackingField: 2
     <Portrait>k__BackingField: {fileID: 21300000, guid: 5679e981d19f3a94785985b4ed36ad57, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 4a3e5b32-2fe1-42fc-9858-f95226164df2
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 34.8, y: 62.8}
+    <Position>k__BackingField: {x: 35, y: 63}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 5b9bb8bd-2418-4ece-b7f2-417526e52f7c
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 4702.8, y: 62.8}
+    <Position>k__BackingField: {x: 4703, y: 63}
     <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 11607ccf-e156-48a0-a5cb-dec53363f442
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 5450.4, y: 62.8}
+    <Position>k__BackingField: {x: 5450, y: 63}
     <PortraitType>k__BackingField: 3
     <Portrait>k__BackingField: {fileID: 21300000, guid: d10fca8833859df4bacccbc34b9019c2, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 58f1a029-67dc-4cbb-972b-10b2786e496b
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 5891.5996, y: 62.8}
+    <Position>k__BackingField: {x: 5892, y: 63}
     <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 047e0e3b-6dfd-46d1-8c4a-371ba195c307
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 6699.5996, y: 62.8}
+    <Position>k__BackingField: {x: 6700, y: 63}
     <PortraitType>k__BackingField: 3
     <Portrait>k__BackingField: {fileID: 21300000, guid: 6469e212c86218540b95e39fa66ba1bb, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -150,8 +150,8 @@ MonoBehaviour:
       <NodeID>k__BackingField: 97127ddc-aa37-47fe-80c1-d002a6d0bf7e
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1469.6001, y: -574.4}
-    <PortraitType>k__BackingField: 1
+    <Position>k__BackingField: {x: 1470, y: -574}
+    <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: c4641c96-f0b7-4e53-915e-4634e6f7e9b9
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 3190.8, y: 291.59998}
+    <Position>k__BackingField: {x: 3191, y: 292}
     <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -177,7 +177,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 88543b85-2c06-4adc-8b92-7efbf536d71f
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 4011.2, y: -74}
+    <Position>k__BackingField: {x: 4011, y: -74}
     <PortraitType>k__BackingField: 2
     <Portrait>k__BackingField: {fileID: 21300000, guid: 79a60d026d002fd40b3b56021c4c8997, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: fda8d771-403d-4e9a-8773-8bddfc7cdd1b
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 4011.2, y: 336.4}
+    <Position>k__BackingField: {x: 4011, y: 336}
     <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
