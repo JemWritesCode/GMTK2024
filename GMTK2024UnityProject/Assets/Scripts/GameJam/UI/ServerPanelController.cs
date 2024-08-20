@@ -87,6 +87,15 @@ namespace GameJam {
     [field: SerializeField]
     public Image NetworkIcon { get; private set; }
 
+    [field: SerializeField]
+    public UIGradient NetworkGradient { get; private set; }
+
+    [field: SerializeField]
+    public Color NetworkOnColor1 { get; private set; }
+
+    [field: SerializeField]
+    public Color NetworkOnColor2 { get; private set; }
+
     [field: Header("State")]
     [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
@@ -112,10 +121,14 @@ namespace GameJam {
     [field: SerializeField]
     public bool CurrentVirusOnValue { get; private set; }
 
+    [field: SerializeField]
+    public bool CurrentNetworkOnValue { get; private set; }
+
     private Sequence _showHidePanelTween;
     private Sequence _setPoweredOnTween;
     private Sequence _setFireOnTween;
     private Sequence _setVirusOnTween;
+    private Sequence _setNetworkOnTween;
 
     private void Start() {
       CreateTweens();
@@ -173,6 +186,16 @@ namespace GameJam {
               .SetAutoKill(false)
               .SetUpdate(isIndependentUpdate: true)
               .Pause();
+
+      _setNetworkOnTween =
+          DOTween.Sequence()
+              .SetTarget(NetworkIcon)
+              .Insert(0f, NetworkIcon.transform.DOPunchScale(Vector3.one * 0.1f, 0.4f, 5, 0f))
+              .Insert(0f, NetworkGradient.DOBlendableColor1(NetworkOnColor1, 0.4f))
+              .Insert(0f, NetworkGradient.DOBlendableColor2(NetworkOnColor2, 0.4f))
+              .SetAutoKill(false)
+              .SetUpdate(isIndependentUpdate: true)
+              .Pause();
     }
 
     static Sequence FadeMoveImage(Graphic image, Vector3 offset, float duration) {
@@ -200,6 +223,7 @@ namespace GameJam {
       CurrentPoweredOnValue = false;
       CurrentFireOnValue = false;
       CurrentVirusOnValue = false;
+      CurrentNetworkOnValue = false;
     }
 
     public void ShowPanel() {
@@ -250,16 +274,24 @@ namespace GameJam {
       SetPowerValue(server.PowerMultiplier);
       SetHeatValue(server.Temperature.HeatPercent());
 
-      if (server.IsOnline() != CurrentPoweredOnValue) {
-        SetPoweredOnValue(server.IsOnline());
+      bool poweredOnValue = server.PowerMultiplier > 0;
+
+      if (poweredOnValue != CurrentPoweredOnValue) {
+        SetPoweredOnValue(poweredOnValue);
       }
 
-      if (server.Temperature.Overheated() != CurrentFireOnValue) {
-        SetFireOnValue(server.Temperature.Overheated());
+      bool fireOnValue = server.Temperature.Overheated();
+
+      if (fireOnValue != CurrentFireOnValue) {
+        SetFireOnValue(fireOnValue);
       }
 
       if (server.HasVirus != CurrentVirusOnValue) {
         SetVirusOnValue(server.HasVirus);
+      }
+
+      if (server.IsOnline() != CurrentNetworkOnValue) {
+        SetNetworkOnValue(server.IsOnline());
       }
     }
 
@@ -312,6 +344,11 @@ namespace GameJam {
     public void SetVirusOnValue(bool virusOn) {
       _setVirusOnTween.PlayOrRewind(virusOn);
       CurrentVirusOnValue = virusOn;
+    }
+
+    public void SetNetworkOnValue(bool networkOn) {
+      _setNetworkOnTween.PlayOrRewind(networkOn);
+      CurrentNetworkOnValue = networkOn;
     }
   }
 }

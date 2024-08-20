@@ -42,14 +42,15 @@ namespace GameJam
                     return false;
                 }
             }
-            else if (!ModifyTemperature(server.Temperature))
+            else if (ModifyTemperature(server.Temperature))
             {
-                return false;
+                // TODO: server should be the one firing this event, but good enough for now.
+                server.ServerWasServed.Invoke(server);
+                PlayEffects();
+                return true;
             }
 
-            PlayEffects();
-
-            return true;
+            return false;
         }
 
         public bool UseItem(FireWall firewall)
