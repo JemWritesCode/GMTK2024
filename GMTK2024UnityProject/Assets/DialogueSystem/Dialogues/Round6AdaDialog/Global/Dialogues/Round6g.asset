@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Round6e
+  m_Name: Round6g
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Round6e
-  <Text>k__BackingField: Ever After Airlines
+  <DialogueName>k__BackingField: Round6g
+  <Text>k__BackingField: Another game by Cheery Bit Games.
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 13295b70b715a0a4ebb3641cfdd091df, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: dd420752a01282f47a9082f2da99a261, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
   <PortraitType>k__BackingField: 2
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 5679e981d19f3a94785985b4ed36ad57, type: 3}
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 79a60d026d002fd40b3b56021c4c8997, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1
