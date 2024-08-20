@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Round1Dialog2
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Round1Dialog2
-  <Text>k__BackingField: "If the servers get too hot\nmay catch fire! But we have
-    a\n\u201CByeByeFire\u201D\xAE if that happens.\n\nStay cool, <color=#6f6f6f>Admin</color>!"
+  <Text>k__BackingField: "If a server gets too hot it may <color=#e99216>catch fire</color>,
+    and the power cables will eject themselves for safety!\n\nBut we have a \u201CByeByeFire\u201D\xAE
+    if that happens."
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: b055e37a4f7ff814ebff5ac6d3064a34, type: 2}

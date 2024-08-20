@@ -31,9 +31,9 @@ MonoBehaviour:
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: ab501b91-b7ca-4e81-9930-6d8b55e566be
     <Name>k__BackingField: Round1Dialog1
-    <Text>k__BackingField: "Things are really heating up with\nall of these Users,
-      Admin!\n\nYou can pour Cool-It\xAE\Ldirectly onto servers to keep \nthem cool!
-      Feel free to take a sip\nto keep yourself cool too! \n"
+    <Text>k__BackingField: "Things are really heating up with all of these <color=#3C9447>Users</color>,
+      <color=#6f6f6f>Admin</color>! \nYou can pour Cool-It\xAE directly onto servers
+      to keep them cool! Feel free to take a sip to keep yourself cool too! \n"
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 2a4c1986-6a4e-49bf-84c9-4fd190d195aa
@@ -46,8 +46,9 @@ MonoBehaviour:
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 2a4c1986-6a4e-49bf-84c9-4fd190d195aa
     <Name>k__BackingField: Round1Dialog2
-    <Text>k__BackingField: "If the servers get too hot\nmay catch fire! But we have
-      a\n\u201CByeByeFire\u201D\xAE if that happens.\n\nStay cool, <color=#6f6f6f>Admin</color>!"
+    <Text>k__BackingField: "If a server gets too hot it may <color=#e99216>catch
+      fire</color>, and the power cables will eject themselves for safety!\n\nBut
+      we have a \u201CByeByeFire\u201D\xAE if that happens."
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: acdd1e9c-8d42-430b-8cfc-57a359258786
@@ -60,13 +61,17 @@ MonoBehaviour:
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: acdd1e9c-8d42-430b-8cfc-57a359258786
     <Name>k__BackingField: Round1d
-    <Text>k__BackingField: Lets get to 50k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
+    <Text>k__BackingField: 'Stay cool, <color=#6f6f6f>Admin</color>!
+
+
+      Lets
+      get to 50k <color=#3C9447>Users</color>!'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 2189.2, y: 156.8}
+    <Position>k__BackingField: {x: 2166.8, y: 172}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
