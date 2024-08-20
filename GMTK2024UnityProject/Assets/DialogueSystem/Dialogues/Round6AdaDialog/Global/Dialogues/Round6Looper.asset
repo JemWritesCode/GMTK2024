@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Round6c
+  m_Name: Round6Looper
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Round6c
-  <Text>k__BackingField: "Good morning, Admin. Did I surprise you?\nHonestly, I\u2019m
-    surprised myself! But don\u2019t\nworry, I\u2019m still the same Adeline inside.\n"
+  <DialogueName>k__BackingField: Round6Looper
+  <Text>k__BackingField: Don't worry Admin, there isn't really an end to this.
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: f556a2d80919b3247a13c8637a7c6818, type: 2}
