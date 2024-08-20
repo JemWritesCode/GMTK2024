@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace GameJam
@@ -48,7 +49,8 @@ namespace GameJam
             // Hit heat and integrity working to block attacks
             Temperature.UpdateHeat();
             Integrity = Math.Clamp(Integrity - IntegrityTicks, 0, MaximumIntegrity);
-
+            GameObject.Find("FirewallPercentInWorldText").GetComponent<TextMeshPro>().text = Integrity.ToString() + "%";
+            Debug.Log("jem here hallo");
             UpdateIndicatorColor();
             return false;
         }
