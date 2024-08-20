@@ -3554,6 +3554,10 @@ PrefabInstance:
       propertyPath: Levels.Array.data[6].ParentObject
       value: 
       objectReference: {fileID: 69701273}
+    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
+      propertyPath: Levels.Array.data[5].UsersPerPortAtLevel
+      value: 3500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
