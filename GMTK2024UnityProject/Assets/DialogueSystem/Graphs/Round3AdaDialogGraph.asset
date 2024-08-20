@@ -22,10 +22,23 @@ MonoBehaviour:
       Amazing!'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 18745055-72a9-4439-a631-3beaf092f562
+      <NodeID>k__BackingField: dc28a128-1d21-4b1d-808a-f0030bce8cbf
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 171.6, y: 201.6}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: dc28a128-1d21-4b1d-808a-f0030bce8cbf
+    <Name>k__BackingField: Round3c
+    <Text>k__BackingField: Lets get to 500k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 18745055-72a9-4439-a631-3beaf092f562
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 888, y: 201.6}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -36,25 +49,12 @@ MonoBehaviour:
       let all the \nserver hamsters out!"
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: dc28a128-1d21-4b1d-808a-f0030bce8cbf
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 928, y: 214.8}
-    <PortraitType>k__BackingField: 1
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 60b83dd918a89bf429fb1ddbf6443e4c, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
-  - <ID>k__BackingField: dc28a128-1d21-4b1d-808a-f0030bce8cbf
-    <Name>k__BackingField: Round3c
-    <Text>k__BackingField: Lets get to 500k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 74a35ef7-aa68-478c-8d04-3805d6583b9b
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1621.6001, y: 228}
-    <PortraitType>k__BackingField: 0
-    <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+    <Position>k__BackingField: {x: 1629.2001, y: 201.6}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 60b83dd918a89bf429fb1ddbf6443e4c, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 74a35ef7-aa68-478c-8d04-3805d6583b9b
@@ -65,7 +65,7 @@ MonoBehaviour:
       <NodeID>k__BackingField: 
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 2346, y: 228}
+    <Position>k__BackingField: {x: 2344.8, y: 201.6}
     <PortraitType>k__BackingField: 3
     <Portrait>k__BackingField: {fileID: 21300000, guid: 859b427b1d690e74ab209e4fbc3efa0c, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -73,8 +73,8 @@ MonoBehaviour:
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - Round3a
-  - Round3b
   - Round3c
+  - Round3b
   - Round3AdHamsters
   <OldGroupedNodeNames>k__BackingField:
     list: []
