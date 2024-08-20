@@ -93,6 +93,7 @@ namespace GameJam {
     public void HidePanel() {
       PanelCanvasGroup.blocksRaycasts = false;
       IsPanelVisible = false;
+      CurrentDialogDisplay.HideDisplay();
 
       _showHidePanelTween.SmoothRewind();
     }
