@@ -20,10 +20,16 @@ namespace GameJam {
     public CanvasGroup DisplayCanvasGroup { get; private set; }
 
     [field: SerializeField]
+    public Image Background { get; private set; }
+
+    [field: SerializeField]
     public Image PortraitImage { get; private set; }
 
     [field: SerializeField]
     public TextMeshProUGUI DialogText { get; private set; }
+
+    [field: SerializeField]
+    public Button ConfirmButton { get; private set; }
 
     [field: Header("Type")]
     [field: SerializeField]

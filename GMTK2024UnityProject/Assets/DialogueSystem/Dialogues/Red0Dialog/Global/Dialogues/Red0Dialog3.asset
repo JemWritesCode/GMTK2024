@@ -20,7 +20,7 @@ MonoBehaviour:
     to the left.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 0}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: c9d65574a6033864c84eddfe3c94a293, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
   <PortraitType>k__BackingField: 0

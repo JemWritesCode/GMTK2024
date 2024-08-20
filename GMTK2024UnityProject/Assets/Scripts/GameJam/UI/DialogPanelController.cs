@@ -3,10 +3,7 @@ using DG.Tweening;
 using DS.Enumerations;
 using DS.ScriptableObjects;
 
-using TMPro;
-
 using UnityEngine;
-using UnityEngine.UI;
 
 using YoloBox;
 
@@ -27,11 +24,10 @@ namespace GameJam {
     public DialogDisplayController TopPortraitDisplay { get; private set; }
 
     [field: SerializeField]
-    public DialogDisplayController AdPortraitDisplay { get; private set; }
+    public DialogDisplayController AdHorizontalDisplay { get; private set; }
 
-    [field: Header("Buttons")]
     [field: SerializeField]
-    public Button ConfirmButton { get; private set; }
+    public DialogDisplayController AdVerticalDisplay { get; private set; }
 
     [field: Header("SFX")]
     [field: SerializeField]
@@ -149,13 +145,19 @@ namespace GameJam {
       if (dialogNode.PortraitType == DSPortraitType.LeftPortrait) {
         CurrentDialogDisplay = LeftPortraitDisplay;
         LeftPortraitDisplay.SetupDisplay(dialogNode);
-
         sequence.AppendCallback(LeftPortraitDisplay.ShowDisplay);
       } else if (dialogNode.PortraitType == DSPortraitType.TopPortrait) {
         CurrentDialogDisplay = TopPortraitDisplay;
         TopPortraitDisplay.SetupDisplay(dialogNode);
-
         sequence.AppendCallback(TopPortraitDisplay.ShowDisplay);
+      } else if (dialogNode.PortraitType == DSPortraitType.AdHorizontal) {
+        CurrentDialogDisplay = AdHorizontalDisplay;
+        AdHorizontalDisplay.SetupDisplay(dialogNode);
+        sequence.AppendCallback(AdHorizontalDisplay.ShowDisplay);
+      } else if (dialogNode.PortraitType == DSPortraitType.AdVertical) {
+        CurrentDialogDisplay = AdVerticalDisplay;
+        AdVerticalDisplay.SetupDisplay(dialogNode);
+        sequence.AppendCallback(AdVerticalDisplay.ShowDisplay);
       }
     }
 
