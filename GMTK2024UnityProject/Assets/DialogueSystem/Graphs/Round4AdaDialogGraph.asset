@@ -48,8 +48,7 @@ MonoBehaviour:
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: e3ccdf8c-9f58-41f7-a92c-7b50430f5fca
     <Name>k__BackingField: Round4c
-    <Text>k__BackingField: Lets get to 750k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
-      Then the datacenter will be done and we can serve ads always and forever!
+    <Text>k__BackingField: 'Lets get to 750k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>! '
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: 5d8cbfca-d25f-4868-8e86-5f9b5732a604

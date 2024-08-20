@@ -3218,6 +3218,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: ef08d776c3e860447809a23da7d8cc20, type: 3}
     - target: {fileID: 824037169898276130, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
+      propertyPath: IntegrityTicks
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 824037169898276130, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
       propertyPath: firewallAudioSource
       value: 
       objectReference: {fileID: 2132281896}
