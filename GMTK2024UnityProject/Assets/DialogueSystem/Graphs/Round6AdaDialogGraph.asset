@@ -15,21 +15,6 @@ MonoBehaviour:
   <FileName>k__BackingField: Round6AdaDialog
   <Groups>k__BackingField: []
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: af99290e-2f57-4a31-9812-c57d4d243fd3
-    <Name>k__BackingField: Round6c
-    <Text>k__BackingField: "Good morning, Admin.\n\nDid I surprise you?\n\nHonestly,
-      I\u2019m surprised myself! But don\u2019t\nworry, I\u2019m still the same Adeline
-      inside.\n\nI\u2019m so glad we got the datacenter up and\nrunning."
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1433.6001, y: 62.8}
-    <PortraitType>k__BackingField: 1
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 04bac4f5-6a37-4ef1-a5ba-0aa09f5b7056
     <Name>k__BackingField: Round6a
     <Text>k__BackingField: We did it Admin! 1M users! You've reached the end. You
@@ -57,14 +42,72 @@ MonoBehaviour:
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 733.2, y: 62.8}
-    <PortraitType>k__BackingField: 1
+    <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: af99290e-2f57-4a31-9812-c57d4d243fd3
+    <Name>k__BackingField: Round6c
+    <Text>k__BackingField: "Good morning, Admin. Did I surprise you?\nHonestly, I\u2019m
+      surprised myself! But don\u2019t\nworry, I\u2019m still the same Adeline inside.\n"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 97127ddc-aa37-47fe-80c1-d002a6d0bf7e
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1433.6001, y: 62.8}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 97127ddc-aa37-47fe-80c1-d002a6d0bf7e
+    <Name>k__BackingField: Round6d
+    <Text>k__BackingField: "I\u2019m so glad we got the datacenter up and\nrunning.
+      Lets look at ads together. Always and forever."
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 9a1df81e-bddf-4c63-84e4-ace29f312c2b
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2140.4001, y: 62.8}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 9a1df81e-bddf-4c63-84e4-ace29f312c2b
+    <Name>k__BackingField: Round6e
+    <Text>k__BackingField: Ever After Airlines
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b441eaf7-a3ad-469b-9e8c-f42971a95706
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2851.6, y: 62.8}
+    <PortraitType>k__BackingField: 2
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 5679e981d19f3a94785985b4ed36ad57, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: b441eaf7-a3ad-469b-9e8c-f42971a95706
+    <Name>k__BackingField: DialogueName
+    <Text>k__BackingField: "Admin, I'm so glad we got everything working so smoothly.\r\nThank
+      you for putting up with my mistakes! ^^\r"
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3262, y: 62.8}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
-  - Round6c
   - Round6a
   - Round6b
+  - Round6c
+  - Round6d
+  - Round6e
+  - DialogueName
   <OldGroupedNodeNames>k__BackingField:
     list: []
