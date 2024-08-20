@@ -35,7 +35,7 @@ namespace GameJam
                 {
                     server.SetVirus(false);
                     PlayEffects();
-                    Destroy(gameObject, .75f); // jem: thing you're holding. im cheesing timedelay to let particles play zzz callback for nonjammers
+                    Destroy(gameObject, .5f); // jem: thing you're holding. im cheesing timedelay to let particles play zzz callback for nonjammers
                 }
                 else
                 {

@@ -22,6 +22,7 @@ namespace GameJam
         public Temperature Temperature = new Temperature();
 
         [Header("Effects")]
+        public GameObject SmokeEffects;
         public GameObject FireEffects;
         public GameObject VirusIndicator;
         public float VirusInterval = 0.75f;
@@ -51,6 +52,24 @@ namespace GameJam
 
         private void Update()
         {
+            /*if (PowerMultiplier == 0)
+            {
+                if (IndicatorLights != null)
+                {
+                    foreach (var light in IndicatorLights)
+                    {
+                        light.enabled = false;
+                    }
+                }
+
+                if (VirusIndicator != null)
+                {
+                    VirusIndicator.gameObject.SetActive(false);
+                }
+
+                return;
+            }*/
+
             if (HasVirus && IndicatorLights != null)
             {
                 lightBlinkTimer += Time.deltaTime;
@@ -92,21 +111,7 @@ namespace GameJam
         public int ServeServer(bool heatEnabled)
         {
             bool overheated = Temperature.Overheated();
-            if (FireEffects != null)
-            {
-                var effects = FireEffects.GetComponentsInChildren<ParticleSystem>();
-                foreach (var effect in effects)
-                {
-                    if (overheated)
-                    {
-                        effect.Play();
-                    }
-                    else
-                    {
-                        effect.Stop();
-                    }
-                }
-            }
+            Temperature.PlayEffects(FireEffects, SmokeEffects);
 
             var dataConnections = DataConnections.Where(data => data.IsConnected()).ToList();
             var powerConnections = PowerConnections.Where(data => data.IsConnected()).ToList();
@@ -254,7 +259,11 @@ namespace GameJam
 
         private void UpdateIndicatorColor()
         {
-            if (!Online || Temperature.Overheated() || HasVirus)
+            if (HasVirus)
+            {
+                SetIndicatorColor(new Color(0.616f, 0, 1));
+            }
+            else if (!Online || Temperature.Overheated())
             {
                 SetIndicatorColor(Color.red);
             }
