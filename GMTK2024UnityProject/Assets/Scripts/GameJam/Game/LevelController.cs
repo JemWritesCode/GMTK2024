@@ -53,8 +53,9 @@ namespace GameJam
         private readonly float updateInterval = 1f;
         private float updateTimer = 0f;
         public float minimumTimeBetweenSneezes = 15f;
-        public float maximumTimeBetweenSneezes = 45f;
+        public float maximumTimeBetweenSneezes = 30f;
         public float timeOfLastSneeze = 0f;
+        public bool firstSneezeCompleted = false;
 
         private IEnumerator Start()
         {
@@ -113,9 +114,9 @@ namespace GameJam
 
             if (EnableSneezeAttacks)
             {
-                if (time > timeOfLastSneeze + minimumTimeBetweenSneezes)
+                if (time > timeOfLastSneeze + minimumTimeBetweenSneezes || (time > timeOfLastSneeze && firstSneezeCompleted == false))
                 {
-                    RandomSneezeAttack(SneezeAttackChance);
+                    SneezeAttack(SneezeAttackChance);
                 }
             }
 
@@ -158,6 +159,7 @@ namespace GameJam
 
             timeOfLastVirus = Time.time + minimumTimeBetweenViruses;
             timeOfLastHamster = Time.time + minimumTimeBetweenHamsters;
+            timeOfLastSneeze = Time.time + 1;
 
             Servers = GetActiveObjectsOfType<Server>();
             FireWalls = GetActiveObjectsOfType<FireWall>();
@@ -298,16 +300,21 @@ namespace GameJam
         {
             Debug.Log("Enabling Virus Overload! Achooooo!");
             EnableSneezeAttacks = true;
-            RandomSneezeAttack(1f);
+            SneezeAttack(1f);
         }
 
-        public void RandomSneezeAttack(float percentage)
+        public void SneezeAttack(float percentage)
         {
-            bool guaranteeSneezeAttack = false;
             if (Servers == null)
             {
                 return;
             }
+
+            bool guaranteeSneezeAttack = false;
+            if (firstSneezeCompleted == false) {  
+                guaranteeSneezeAttack = true;
+            }
+
             if (Time.time > timeOfLastSneeze + maximumTimeBetweenSneezes)
             {
                 guaranteeSneezeAttack = true;
@@ -319,9 +326,11 @@ namespace GameJam
                 {
                     server.Sneeze(SneezeDropPercentDataCables, SneezeDropPercentPowerCables);
                     timeOfLastSneeze = Time.time;
+                    Debug.Log("Adeline Sneezed!");
+                    firstSneezeCompleted = true;
                     if (levelControllerAudioSource && sneezeEventSound)
                     {
-                        levelControllerAudioSource.PlayOneShot(sneezeEventSound, .4f);
+                        levelControllerAudioSource.PlayOneShot(sneezeEventSound, .05f);
                     }
                 }
             }
