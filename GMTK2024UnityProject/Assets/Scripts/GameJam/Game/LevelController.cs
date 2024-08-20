@@ -38,6 +38,8 @@ namespace GameJam
         public float SneezeAttackChance = 0.05f; // To be removed, should be set x times?
         public float SneezeDropPercentDataCables = 0.2f;
         public float SneezeDropPercentPowerCables = 0.3f;
+        public AudioSource levelControllerAudioSource;
+        public AudioClip sneezeEventSound;
 
         private readonly float updateInterval = 1f;
         private float updateTimer = 0f;
@@ -273,6 +275,11 @@ namespace GameJam
                 foreach (var server in Servers)
                 {
                     server.Sneeze(SneezeDropPercentDataCables, SneezeDropPercentPowerCables);
+                    // jemtodo sneeze sound
+                    if (levelControllerAudioSource && sneezeEventSound)
+                    {
+                        levelControllerAudioSource.PlayOneShot(sneezeEventSound, .4f);
+                    }
                 }
             }
         }

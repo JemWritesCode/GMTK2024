@@ -31,6 +31,7 @@ namespace GameJam
         [field: SerializeField]
         public UnityEvent<Server> ServerWasServed { get; set; }
 
+
         private void Awake()
         {
             var cablePoints = this.GetComponentsInChildren<CableEndPoint>();

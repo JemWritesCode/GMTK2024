@@ -726,10 +726,6 @@ PrefabInstance:
       value: LevelController
       objectReference: {fileID: 0}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: CurrentLevel
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: Levels.Array.data[0].ParentObject
       value: 
       objectReference: {fileID: 1181681699}
@@ -757,22 +753,6 @@ PrefabInstance:
       propertyPath: Levels.Array.data[6].ParentObject
       value: 
       objectReference: {fileID: 69701273}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: Levels.Array.data[0].UsersPerPortAtLevel
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: Levels.Array.data[1].UsersPerPortAtLevel
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: Levels.Array.data[4].<LevelStartDialogNode>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: 5586599455fb8f54997222be242582ef, type: 2}
-    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: Levels.Array.data[5].<LevelStartDialogNode>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: dcc3ee6f76a88874d9883be502eee06c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

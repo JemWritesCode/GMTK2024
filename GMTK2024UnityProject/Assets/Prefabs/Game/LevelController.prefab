@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2599674881892001752}
   - component: {fileID: 9176777389321357275}
+  - component: {fileID: 5759754823328228345}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -47,14 +48,14 @@ MonoBehaviour:
   Levels:
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 0
-    UsersPerPortAtLevel: 85
+    UsersPerPortAtLevel: 250
     Event:
       m_PersistentCalls:
         m_Calls: []
     <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 6acdc076dd0095a4b8f7433b6bf8db72, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 10000
-    UsersPerPortAtLevel: 210
+    UsersPerPortAtLevel: 250
     Event:
       m_PersistentCalls:
         m_Calls:
@@ -127,7 +128,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+    <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 5586599455fb8f54997222be242582ef, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 999999
     UsersPerPortAtLevel: 2084
@@ -146,7 +147,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+    <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: dcc3ee6f76a88874d9883be502eee06c, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 1000000
     UsersPerPortAtLevel: 2084
@@ -166,7 +167,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     <LevelStartDialogNode>k__BackingField: {fileID: 0}
-  CurrentLevel: 2
+  CurrentLevel: 0
   TotalUsers: 0
   FireWalls: []
   Servers: []
@@ -175,9 +176,109 @@ MonoBehaviour:
   EnableVirusAttacks: 0
   EnableHamsterAttacks: 0
   HamstersPercent: 0.05
+  timeOfLastHamster: 0
+  minimumTimeBetweenHamsters: 10
   DroppedPackets: 0
   DropPacketsPercent: 0.5
   EnableSneezeAttacks: 0
   SneezeAttackChance: 0.05
   SneezeDropPercentDataCables: 0.2
   SneezeDropPercentPowerCables: 0.3
+  levelControllerAudioSource: {fileID: 5759754823328228345}
+  sneezeEventSound: {fileID: 8300000, guid: 794bccb2455f1f240bc8c5cef405926e, type: 3}
+--- !u!82 &5759754823328228345
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800889513532320684}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
