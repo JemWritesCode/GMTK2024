@@ -18,6 +18,8 @@ namespace GameJam
         public List<Server> Servers = new List<Server>();
         public List<CableStartPoint> PowerBoxes = new List<CableStartPoint>();
 
+        public AudioSource levelControllerAudioSource;
+
         [Header("Heat")]
         public bool EnableHeat = false;
         public float PowerCableDisconnectChance = 0.02f;
@@ -26,6 +28,7 @@ namespace GameJam
         [Header("Virus")]
         public bool EnableVirusAttacks = false;
         public float DataCableDisconnectChance = 0.02f;
+        public AudioClip virusEventSound;
 
         [Header("❤ Hamsters ❤")]
         public bool EnableHamsterAttacks = false;
@@ -42,9 +45,7 @@ namespace GameJam
         public float SneezeAttackChance = 0.05f; // To be removed, should be set x times?
         public float SneezeDropPercentDataCables = 0.2f;
         public float SneezeDropPercentPowerCables = 0.3f;
-        public AudioSource levelControllerAudioSource;
         public AudioClip sneezeEventSound;
-
         private readonly float updateInterval = 1f;
         private float updateTimer = 0f;
 
@@ -213,6 +214,10 @@ namespace GameJam
                         int index = UnityEngine.Random.Range(0, servers.Count);
                         Debug.Log($"ATTACK on server {index}!!");
                         servers[index].SetVirus(true);
+                        if( levelControllerAudioSource && virusEventSound)
+                        {
+                            levelControllerAudioSource.PlayOneShot(virusEventSound, 1f);
+                        }
                     }
                 }
             }

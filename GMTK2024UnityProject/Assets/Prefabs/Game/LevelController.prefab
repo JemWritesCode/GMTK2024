@@ -52,7 +52,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
-    <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 212e706cbaac1664395fa1fb96368a17, type: 2}
+    <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 6acdc076dd0095a4b8f7433b6bf8db72, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 10000
     UsersPerPortAtLevel: 250
@@ -166,16 +166,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    <LevelStartDialogNode>k__BackingField: {fileID: 0}
+    <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 0c5df3e92795d534e908e5b98c8d0a85, type: 2}
   CurrentLevel: 0
   TotalUsers: 0
   FireWalls: []
   Servers: []
   PowerBoxes: []
+  levelControllerAudioSource: {fileID: 5759754823328228345}
   EnableHeat: 0
   PowerCableDisconnectChance: 0.02
   EnableVirusAttacks: 0
   DataCableDisconnectChance: 0.02
+  virusEventSound: {fileID: 8300000, guid: cbc919ff3cc8d7d4a96af59e34f32ba5, type: 3}
   EnableHamsterAttacks: 0
   HamstersPercent: 0.05
   timeOfLastHamster: 0
@@ -186,7 +188,6 @@ MonoBehaviour:
   SneezeAttackChance: 0.05
   SneezeDropPercentDataCables: 0.2
   SneezeDropPercentPowerCables: 0.3
-  levelControllerAudioSource: {fileID: 5759754823328228345}
   sneezeEventSound: {fileID: 8300000, guid: 794bccb2455f1f240bc8c5cef405926e, type: 3}
 --- !u!82 &5759754823328228345
 AudioSource:
