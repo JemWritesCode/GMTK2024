@@ -29,12 +29,16 @@ namespace GameJam
         public bool EnableVirusAttacks = false;
         public float DataCableDisconnectChance = 0.02f;
         public AudioClip virusEventSound;
+        public float timeOfLastVirus = 0f;
+        public float minimumTimeBetweenViruses = 10f;
+        public float maximumTimeBetweenViruses = 30f;
 
         [Header("❤ Hamsters ❤")]
         public bool EnableHamsterAttacks = false;
         public float HamstersPercent = 0.05f;
         public float timeOfLastHamster = 0f;
         public float minimumTimeBetweenHamsters = 10f;
+        public float maximumTimeBetweenHamsters = 30f;
 
         [Header("▰ Drop Packets ▰")]
         public bool DroppedPackets = false;
@@ -90,7 +94,10 @@ namespace GameJam
 
             if (EnableVirusAttacks)
             {
-                RandomVirusAttack();
+                if (time > timeOfLastVirus + minimumTimeBetweenViruses)
+                {
+                    RandomVirusAttack();
+                }
             }
 
             if (EnableHamsterAttacks)
@@ -214,7 +221,8 @@ namespace GameJam
                         int index = UnityEngine.Random.Range(0, servers.Count);
                         Debug.Log($"ATTACK on server {index}!!");
                         servers[index].SetVirus(true);
-                        if( levelControllerAudioSource && virusEventSound)
+                        timeOfLastVirus = Time.time;
+                        if ( levelControllerAudioSource && virusEventSound)
                         {
                             levelControllerAudioSource.PlayOneShot(virusEventSound, 1f);
                         }
