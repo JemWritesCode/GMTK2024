@@ -52,7 +52,7 @@ MonoBehaviour:
     Event:
       m_PersistentCalls:
         m_Calls: []
-    <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 6acdc076dd0095a4b8f7433b6bf8db72, type: 2}
+    <LevelStartDialogNode>k__BackingField: {fileID: 11400000, guid: 212e706cbaac1664395fa1fb96368a17, type: 2}
   - ParentObject: {fileID: 0}
     UsersNeededForLevel: 10000
     UsersPerPortAtLevel: 250
@@ -173,7 +173,9 @@ MonoBehaviour:
   Servers: []
   PowerBoxes: []
   EnableHeat: 0
+  PowerCableDisconnectChance: 0.02
   EnableVirusAttacks: 0
+  DataCableDisconnectChance: 0.02
   EnableHamsterAttacks: 0
   HamstersPercent: 0.05
   timeOfLastHamster: 0
