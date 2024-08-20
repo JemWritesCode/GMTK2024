@@ -62,20 +62,6 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: 2e02515bcb53cab46acf26269549033d, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
-  - <ID>k__BackingField: 262a506c-1da3-4d16-a0bc-12e41c0c5d48
-    <Name>k__BackingField: Round2AntiVirusAd
-    <Text>k__BackingField: Use Antivirus disks to fix Infected servers. Get them
-      from the Firewall.
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 3989.2, y: 94.8}
-    <PortraitType>k__BackingField: 3
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 6cc95062f54a9f64da073be16efa7130, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: b88b7755-1348-4820-8ecf-a5d01bb43a79
     <Name>k__BackingField: Round2c
     <Text>k__BackingField: 'The lower the <color=#ff8000>Firewall Integrity</color>
@@ -108,13 +94,27 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 262a506c-1da3-4d16-a0bc-12e41c0c5d48
+    <Name>k__BackingField: Round2AntiVirusAd
+    <Text>k__BackingField: Use Antivirus disks to fix Infected servers. Get them
+      from the Firewall.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 3989.2, y: 94.8}
+    <PortraitType>k__BackingField: 3
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6cc95062f54a9f64da073be16efa7130, type: 3}
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: cbc919ff3cc8d7d4a96af59e34f32ba5, type: 3}
+    <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - Round2b
   - Round2d
   - Round2FirewallAd
-  - Round2AntiVirusAd
   - Round2c
   - Round2a
+  - Round2AntiVirusAd
   <OldGroupedNodeNames>k__BackingField:
     list: []
