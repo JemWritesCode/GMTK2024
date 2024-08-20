@@ -3502,10 +3502,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6237396657297555633, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6817638361354391144, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.366
@@ -3551,10 +3547,6 @@ PrefabInstance:
       value: Super First Person Controller
       objectReference: {fileID: 0}
     - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: CurrentLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: Levels.Array.data[0].ParentObject
       value: 
       objectReference: {fileID: 1181681699}
@@ -3582,34 +3574,6 @@ PrefabInstance:
       propertyPath: Levels.Array.data[6].ParentObject
       value: 
       objectReference: {fileID: 69701273}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: Levels.Array.data[1].UsersPerPortAtLevel
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: Levels.Array.data[2].UsersPerPortAtLevel
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: Levels.Array.data[3].UsersPerPortAtLevel
-      value: 1700
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: Levels.Array.data[4].UsersPerPortAtLevel
-      value: 2700
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: Levels.Array.data[5].UsersNeededForLevel
-      value: 750000
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: Levels.Array.data[5].UsersPerPortAtLevel
-      value: 2700
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
-      propertyPath: Levels.Array.data[6].UsersPerPortAtLevel
-      value: 2700
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9421,6 +9385,10 @@ PrefabInstance:
     - target: {fileID: 4402362912461462567, guid: 988498dfddb911f4e922ee4b8629cfa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100295253802251269, guid: 988498dfddb911f4e922ee4b8629cfa9, type: 3}
+      propertyPath: HeatReduction
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

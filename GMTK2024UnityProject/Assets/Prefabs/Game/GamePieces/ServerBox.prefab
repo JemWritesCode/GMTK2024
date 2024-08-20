@@ -213,7 +213,7 @@ MonoBehaviour:
   Temperature:
     Heat: 0
     HeatLimit: 100
-    HeatTicks: 0.2
+    HeatTicks: 0.5
     TemperatureThreshold: 0.8
   SmokeEffects: {fileID: 2702419122350885439}
   FireEffects: {fileID: 8260618849769160973}

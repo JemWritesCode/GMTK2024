@@ -29,7 +29,7 @@ namespace GameJam
         public bool EnableVirusAttacks = false;
         public float DataCableDisconnectChance = 0.02f;
         public AudioClip virusEventSound;
-        public float minimumTimeBetweenViruses = 30f;
+        public float minimumTimeBetweenViruses = 35f;
         public float maximumTimeBetweenViruses = 45f;
         public float timeOfLastVirus = 0f;
 

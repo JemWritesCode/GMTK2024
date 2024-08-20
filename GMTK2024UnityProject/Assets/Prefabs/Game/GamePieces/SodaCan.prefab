@@ -137,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240391072824180620}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.082, y: -0.773, z: -6.121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
   Consumable: 1
   Used: 0
   CanPutOutFire: 0
-  HeatReduction: 50
+  HeatReduction: 75
   CanResetVirus: 0
   UseEffects: {fileID: 8425966145285029858}
 --- !u!114 &5899799395236502656
