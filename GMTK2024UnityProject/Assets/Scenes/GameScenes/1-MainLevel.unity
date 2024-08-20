@@ -726,9 +726,17 @@ PrefabInstance:
       value: LevelController
       objectReference: {fileID: 0}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
-      propertyPath: CurrentLevel
+      propertyPath: EnableVirusAttacks
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
+      propertyPath: FireWalls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
+      propertyPath: FireWalls.Array.data[0]
+      value: 
+      objectReference: {fileID: 2132281890}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: Levels.Array.data[0].ParentObject
       value: 
@@ -3277,14 +3285,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireWall
       objectReference: {fileID: 0}
+    - target: {fileID: 2455037992792687603, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
+      propertyPath: m_text
+      value: '%'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2555694172955616247, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 5710336066040814331, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 7249888980501626687, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5046933537777127003, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
@@ -4429,6 +4447,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1798142624}
     m_Modifications:
+    - target: {fileID: 1171063430019120820, guid: ee85a76324fbc48468345ccf5fb30c5b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171063430019120820, guid: ee85a76324fbc48468345ccf5fb30c5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603431158061379651, guid: ee85a76324fbc48468345ccf5fb30c5b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603431158061379651, guid: ee85a76324fbc48468345ccf5fb30c5b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175549920067409580, guid: ee85a76324fbc48468345ccf5fb30c5b, type: 3}
       propertyPath: m_Name
       value: GameSceneUI
@@ -8928,6 +8962,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3916496462391171717, guid: 80cbb9df11318004a95e198e69e78a10, type: 3}
   m_PrefabInstance: {fileID: 2131396003}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2132281890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 824037169898276130, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
+  m_PrefabInstance: {fileID: 783951996}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c1c7ea7b3e0e649938782571a5ee60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2141249925
 PrefabInstance:
   m_ObjectHideFlags: 0
