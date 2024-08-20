@@ -246,12 +246,16 @@ namespace GameJam
 
         public void RandomHamsterAttack()
         {
+            bool guaranteeHamsterAttack = false;
             if (PowerBoxes == null || PowerBoxes.Count == 0)
             {
                 return;
             }
-
-            if (UnityEngine.Random.Range(0, 1f) < HamstersPercent)
+            if (Time.time > timeOfLastHamster + maximumTimeBetweenHamsters)
+            {
+                guaranteeHamsterAttack = true;
+            }
+            if (UnityEngine.Random.Range(0, 1f) < HamstersPercent || guaranteeHamsterAttack)
             {
                 var boxes = PowerBoxes.Where(item => item.IsConnected() && !item.HasHamster).ToList();
                 if (boxes.Count > 0)
@@ -260,6 +264,7 @@ namespace GameJam
                     Debug.Log($"Hamster ATTACK on power box {index}!!");
                     boxes[index].HamsterAttack();
                     timeOfLastHamster = Time.time;
+                    guaranteeHamsterAttack = false;
                 }
             }
         }
