@@ -32,6 +32,7 @@ namespace GameJam {
               .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 25f, 0f), 0.5f).From(false, true))
               .SetEase(Ease.InOutQuad)
               .SetAutoKill(false)
+              .SetUpdate(isIndependentUpdate: true)
               .Pause();
     }
 

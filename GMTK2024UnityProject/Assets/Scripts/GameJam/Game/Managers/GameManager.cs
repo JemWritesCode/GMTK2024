@@ -45,9 +45,11 @@ namespace GameJam {
       if (toggleOn && !IsGamePaused) {
         IsGamePaused = true;
         Time.timeScale = 0f;
+        UIManager.Instance.ToggleDarkOverlay(true);
       } else if (!toggleOn && IsGamePaused) {
         IsGamePaused = false;
         Time.timeScale = 1f;
+        UIManager.Instance.ToggleDarkOverlay(false);
       }
     }
 
