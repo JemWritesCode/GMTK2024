@@ -10,7 +10,7 @@ namespace GameJam
         [SerializeField]
         public int HeatLimit = 100;
         [SerializeField]
-        public float HeatTicks = 0.5f;
+        public float HeatTicks = 1f;
 
         [SerializeField]
         public float TemperatureThreshold = 0.8f;

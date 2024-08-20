@@ -29,16 +29,16 @@ namespace GameJam
         public bool EnableVirusAttacks = false;
         public float DataCableDisconnectChance = 0.02f;
         public AudioClip virusEventSound;
+        public float minimumTimeBetweenViruses = 30f;
+        public float maximumTimeBetweenViruses = 45f;
         public float timeOfLastVirus = 0f;
-        public float minimumTimeBetweenViruses = 10f;
-        public float maximumTimeBetweenViruses = 30f;
 
         [Header("❤ Hamsters ❤")]
         public bool EnableHamsterAttacks = false;
         public float HamstersPercent = 0.05f;
+        public float minimumTimeBetweenHamsters = 30f;
+        public float maximumTimeBetweenHamsters = 45f;
         public float timeOfLastHamster = 0f;
-        public float minimumTimeBetweenHamsters = 10f;
-        public float maximumTimeBetweenHamsters = 30f;
 
         [Header("▰ Drop Packets ▰")]
         public bool DroppedPackets = false;
@@ -149,6 +149,9 @@ namespace GameJam
             {
                 ActivateLevel(lcv, lcv <= CurrentLevel);
             }
+
+            timeOfLastVirus = Time.time + minimumTimeBetweenViruses;
+            timeOfLastHamster = Time.time + minimumTimeBetweenHamsters;
 
             Servers = GetActiveObjectsOfType<Server>();
             FireWalls = GetActiveObjectsOfType<FireWall>();
