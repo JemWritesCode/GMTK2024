@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Red0Dialog2
+  m_Name: Red0Ada0
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Red0Dialog2
-  <Text>k__BackingField: UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT A B SELECT START
+  <DialogueName>k__BackingField: Red0Ada0
+  <Text>k__BackingField: 'Whoa, cool.
+
+    Bananas.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 0e6e50288dd7d4e458f25dedd953c81a, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 3056b4dbdc8706f4fb73d819cbcca193, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <PortraitType>k__BackingField: 1
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 6983c6826175ac944b99ea1f07e304d1, type: 3}
+  <PortraitType>k__BackingField: 4
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1

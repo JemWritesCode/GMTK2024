@@ -29,6 +29,9 @@ namespace GameJam {
     [field: SerializeField]
     public DialogDisplayController AdVerticalDisplay { get; private set; }
 
+    [field: SerializeField]
+    public DialogDisplayController BigPortraitDisplay { get; private set; }
+
     [field: Header("SFX")]
     [field: SerializeField]
     public AudioSource SfxAudioSource { get; private set; }
@@ -160,6 +163,10 @@ namespace GameJam {
         CurrentDialogDisplay = AdVerticalDisplay;
         AdVerticalDisplay.SetupDisplay(dialogNode);
         sequence.AppendCallback(AdVerticalDisplay.ShowDisplay);
+      } else if (dialogNode.PortraitType == DSPortraitType.BigPortrait) {
+        CurrentDialogDisplay = BigPortraitDisplay;
+        BigPortraitDisplay.SetupDisplay(dialogNode);
+        sequence.AppendCallback(BigPortraitDisplay.ShowDisplay);
       }
     }
 

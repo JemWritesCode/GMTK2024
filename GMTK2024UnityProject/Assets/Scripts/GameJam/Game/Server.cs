@@ -23,6 +23,10 @@ namespace GameJam
 
         [Header("Effects")]
         public GameObject FireEffects;
+        public GameObject VirusIndicator;
+        public float VirusInterval = 0.75f;
+        private float VirusTimer;
+        private bool VirusPosition = false;
 
         [Header("Lights")]
         public List<Light> IndicatorLights;
@@ -47,19 +51,41 @@ namespace GameJam
 
         private void Update()
         {
-            if (IndicatorLights == null || !HasVirus)
+            if (HasVirus && IndicatorLights != null)
             {
-                return;
+                lightBlinkTimer += Time.deltaTime;
+                if (lightBlinkTimer > LightBlinkInterval)
+                {
+                    foreach (var light in IndicatorLights)
+                    {
+                        light.enabled = !light.enabled;
+                    }
+                    lightBlinkTimer = 0;
+                }
             }
 
-            lightBlinkTimer += Time.deltaTime;
-            if (lightBlinkTimer > LightBlinkInterval)
+            if (VirusIndicator != null)
             {
-                foreach (var light in IndicatorLights)
+                VirusIndicator.gameObject.SetActive(HasVirus);
+
+                if (HasVirus)
                 {
-                    light.enabled = !light.enabled;
+                    VirusTimer += Time.deltaTime;
+                    if (VirusTimer > VirusInterval)
+                    {
+                        if (VirusPosition)
+                        {
+                            VirusPosition = !VirusPosition;
+                            VirusIndicator.transform.position += new Vector3(0, 0.1f, 0);
+                        }
+                        else
+                        {
+                            VirusPosition = !VirusPosition;
+                            VirusIndicator.transform.position += new Vector3(0, -0.1f, 0);
+                        }
+                        VirusTimer = 0;
+                    }
                 }
-                lightBlinkTimer = 0;
             }
         }
 

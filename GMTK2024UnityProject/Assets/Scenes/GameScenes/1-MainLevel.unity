@@ -770,6 +770,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 69701273}
     - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
+      propertyPath: Levels.Array.data[0].<LevelStartDialogNode>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 6acdc076dd0095a4b8f7433b6bf8db72, type: 2}
+    - target: {fileID: 9176777389321357275, guid: 1796abe15d60c4144938cb220e4b0de4, type: 3}
       propertyPath: Levels.Array.data[6].<LevelStartDialogNode>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 0c5df3e92795d534e908e5b98c8d0a85, type: 2}

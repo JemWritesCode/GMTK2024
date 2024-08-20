@@ -46,6 +46,8 @@ namespace GameJam.Editor {
     int _powerValue;
     float _heatValue;
     bool _poweredOnValue;
+    bool _fireOnValue;
+    bool _virusOnValue;
 
     private void DrawUserControls() {
       GUILayout.BeginVertical("ValueControls", GUI.skin.window);
@@ -82,6 +84,16 @@ namespace GameJam.Editor {
       if (GUILayout.Button("PoweredOn")) {
         _poweredOnValue = !_poweredOnValue;
         _controller.SetPoweredOnValue(_poweredOnValue);
+      }
+
+      if (GUILayout.Button("FireOn")) {
+        _fireOnValue = !_fireOnValue;
+        _controller.SetFireOnValue(_fireOnValue);
+      }
+
+      if (GUILayout.Button("VirusOn")) {
+        _virusOnValue = !_virusOnValue;
+        _controller.SetVirusOnValue(_virusOnValue);
       }
 
       GUILayout.EndHorizontal();
