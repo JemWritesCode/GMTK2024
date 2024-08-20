@@ -52,6 +52,9 @@ namespace GameJam
         public AudioClip sneezeEventSound;
         private readonly float updateInterval = 1f;
         private float updateTimer = 0f;
+        public float minimumTimeBetweenSneezes = 15f;
+        public float maximumTimeBetweenSneezes = 45f;
+        public float timeOfLastSneeze = 0f;
 
         private IEnumerator Start()
         {
@@ -110,7 +113,10 @@ namespace GameJam
 
             if (EnableSneezeAttacks)
             {
-                RandomSneezeAttack(SneezeAttackChance);
+                if (time > timeOfLastSneeze + minimumTimeBetweenSneezes)
+                {
+                    RandomSneezeAttack(SneezeAttackChance);
+                }
             }
 
             updateTimer = time;
@@ -297,45 +303,28 @@ namespace GameJam
 
         public void RandomSneezeAttack(float percentage)
         {
+            bool guaranteeSneezeAttack = false;
             if (Servers == null)
             {
                 return;
             }
+            if (Time.time > timeOfLastSneeze + maximumTimeBetweenSneezes)
+            {
+                guaranteeSneezeAttack = true;
+            }
 
-            if (UnityEngine.Random.Range(0, 1f) <= percentage)
+            if (UnityEngine.Random.Range(0, 1f) <= percentage || guaranteeSneezeAttack)
             {
                 foreach (var server in Servers)
                 {
                     server.Sneeze(SneezeDropPercentDataCables, SneezeDropPercentPowerCables);
-                    // jemtodo sneeze sound
+                    timeOfLastSneeze = Time.time;
                     if (levelControllerAudioSource && sneezeEventSound)
                     {
                         levelControllerAudioSource.PlayOneShot(sneezeEventSound, .4f);
                     }
                 }
             }
-        }
-
-
-        public void ScriptedSneezeAttacks()
-        {
-            if (Servers == null)
-            {
-                return;
-            }
-            // JemThonks
-            // sneeze interval range (should be a range so it's not an annoying "every 10 seconds sneeze" noise/mechanic
-
-            // MaxNumberSneezes? but also the servers may bounce into a bad position so constant sneezing might help with that. 
-
-            //sneeze sound every time the servers move
-
-            // need this to not play until the dialog is done. (I think time is stopped anyways though? 
-
-            //foreach (var server in Servers)
-            //{
-            //    server.Sneeze();
-            //}
         }
     }
 }
