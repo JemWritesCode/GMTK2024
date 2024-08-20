@@ -23,7 +23,7 @@ namespace GameJam {
     public Slider AudioVolumeSlider { get; private set; }
 
     [field: SerializeField]
-    public Slider VoiceVolumeSlider { get; private set; }
+    public Slider DialogVolumeSlider { get; private set; }
 
     [field: Header("State")]
     [field: SerializeField]
@@ -64,7 +64,7 @@ namespace GameJam {
       IsPanelVisible = true;
 
       AudioVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.AudioVolume);
-      VoiceVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.VoiceVolume);
+      DialogVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.DialogVolume);
 
       _showHidePanelTween.PlayAgain();
     }
@@ -76,6 +76,12 @@ namespace GameJam {
       _showHidePanelTween.SmoothRewind();
     }
 
+    public void OnAudioVolumeValueChanged(float value) {
+      AudioManager.Instance.SetAudioVolume(value);
+    }
 
+    public void OnDialogVolumeValueChanged(float value) {
+      AudioManager.Instance.SetDialogVolume(value);
+    }
   }
 }

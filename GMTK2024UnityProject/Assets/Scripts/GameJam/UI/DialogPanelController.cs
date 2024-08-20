@@ -171,14 +171,17 @@ namespace GameJam {
     }
 
     private void PlaySfxAudioClip(AudioClip audioClip, float audioVolume = 1f) {
-      SfxAudioSource.clip = audioClip;
-      SfxAudioSource.volume = audioVolume;
-      SfxAudioSource.PlayDelayed(delay: 0.25f);
+      AudioSource audioSource = AudioManager.Instance.DialogAudioSource;
+      audioSource.clip = audioClip;
+      audioSource.volume = Mathf.Min(audioVolume, AudioManager.Instance.DialogVolume);
+      audioSource.PlayDelayed(delay: 0.25f);
     }
 
     private void StopSfxAudioClip() {
-      if (SfxAudioSource.isPlaying) {
-        SfxAudioSource.Stop();
+      AudioSource audioSource = AudioManager.Instance.DialogAudioSource;
+
+      if (audioSource.isPlaying) {
+        audioSource.Stop();
       }
     }
   }

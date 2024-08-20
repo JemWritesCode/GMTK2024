@@ -325,7 +325,7 @@ MonoBehaviour:
   <PanelCanvasGroup>k__BackingField: {fileID: 6607841949122421704}
   <CloseButton>k__BackingField: {fileID: 5228681204800685035}
   <AudioVolumeSlider>k__BackingField: {fileID: 5242928281066942245}
-  <VoiceVolumeSlider>k__BackingField: {fileID: 4021878658466327970}
+  <DialogVolumeSlider>k__BackingField: {fileID: 4021878658466327970}
   <IsPanelVisible>k__BackingField: 0
 --- !u!1 &1017163517961427686
 GameObject:
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 193829712964355093}
   - component: {fileID: 4021878658466327970}
   m_Layer: 5
-  m_Name: VoiceSlider
+  m_Name: DialogVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +415,19 @@ MonoBehaviour:
   m_Value: 0.552
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2783020014658360239}
+        m_TargetAssemblyTypeName: GameJam.MenuPanelController, GameJam
+        m_MethodName: OnDialogVolumeValueChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1213924584037159645
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6012896536859845429}
   m_Layer: 5
-  m_Name: AudioSettingsRow
+  m_Name: AudioVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,7 +1209,7 @@ MonoBehaviour:
   m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_fontSizeMin: 16
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -1205,7 +1217,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 10
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1341,7 +1353,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 10
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1384,7 +1396,7 @@ GameObject:
   - component: {fileID: 1780485308324489407}
   - component: {fileID: 5242928281066942245}
   m_Layer: 5
-  m_Name: AudioSlider
+  m_Name: AudioVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1461,7 +1473,19 @@ MonoBehaviour:
   m_Value: 0.552
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2783020014658360239}
+        m_TargetAssemblyTypeName: GameJam.MenuPanelController, GameJam
+        m_MethodName: OnAudioVolumeValueChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7203794889296280047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1344788078631524771}
   m_Layer: 5
-  m_Name: VoiceSettingsRow
+  m_Name: DialogVolume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
