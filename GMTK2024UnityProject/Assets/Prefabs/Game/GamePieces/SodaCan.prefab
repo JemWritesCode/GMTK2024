@@ -306,41 +306,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanEffects
       objectReference: {fileID: 0}
-    - target: {fileID: 6348922600615868385, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
-      propertyPath: simulationSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348922600615868385, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348922600615868385, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348922600615868385, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348922600615868390, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348922600615868390, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.205
-      objectReference: {fileID: 0}
-    - target: {fileID: 6348922600615868390, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: d456be10ac77cb14f91ec83f71391396, type: 3}
       propertyPath: m_LocalPosition.z

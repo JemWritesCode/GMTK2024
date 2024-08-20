@@ -200,11 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a994be96f937849b0ee7385918990b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelController: {fileID: 0}
   CurrentUsers: 0
   PowerMultiplier: 0
   Online: 0
   HasVirus: 0
-  levelController: {fileID: 0}
   PowerConnections: []
   DataConnections: []
   FireEffects: {fileID: 8260618849769160973}
@@ -993,6 +993,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4988411190106308917}
     m_Modifications:
     - target: {fileID: 5865865799143198362, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 5865865799143198362, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_Name
       value: FireEffects
       objectReference: {fileID: 0}
@@ -1006,15 +1010,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.049
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.047
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7911865980605431299, guid: ec506635f9960ff4aa2ffb43a57142a3, type: 3}
       propertyPath: m_LocalRotation.w

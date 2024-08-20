@@ -11,18 +11,22 @@ namespace GameJam
     {
         public List<Level> Levels = new List<Level>();
         public int CurrentLevel = 0;
-        public int TotalUsers = 0;
 
+        [Header("Live Populated Fields, Don't Touch")]
+        public int TotalUsers = 0;
         public List<FireWall> FireWalls = new List<FireWall>();
         public List<Server> Servers = new List<Server>();
         public List<CableStartPoint> PowerBoxes = new List<CableStartPoint>();
 
+        [Header("Heat")]
         public bool EnableHeat = false;
+        public float PowerCableDisconnectChance = 0.02f;
 
         // Viruses
+        [Header("Virus")]
         public bool EnableVirusAttacks = false;
+        public float DataCableDisconnectChance = 0.02f;
 
-        
         [Header("❤ Hamsters ❤")]
         public bool EnableHamsterAttacks = false;
         public float HamstersPercent = 0.05f;
@@ -250,7 +254,7 @@ namespace GameJam
 
             foreach (var server in Servers)
             {
-                server.DataCableAttack(DropPacketsPercent);
+                server.CableAttack(server.DataConnections, server.DataConnections.Count / 2, true);
             }
 
             DroppedPackets = true;
