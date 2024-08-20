@@ -1,9 +1,12 @@
 using System.Collections;
 
+using DG.Tweening;
+
 using DS;
 using DS.ScriptableObjects;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 using YoloBox;
 
@@ -28,6 +31,10 @@ namespace GameJam {
     [field: SerializeField]
     public ServerPanelController ServerPanel { get; private set; }
 
+    [field: Header("Overlays")]
+    [field: SerializeField]
+    public OverlayController DarkOverlay { get; private set; }
+
     private void Start() {
       SetupButtonListeners();
     }
@@ -46,6 +53,12 @@ namespace GameJam {
 
       if (MenuPanel.IsPanelVisible != HelpPanel.IsPanelVisible) {
         HelpPanel.TogglePanel();
+      }
+    }
+
+    public void ToggleDarkOverlay(bool toggleOn) {
+      if (DarkOverlay.IsOverlayVisible != toggleOn) {
+        DarkOverlay.ToggleOverlay(toggleOn);
       }
     }
 
