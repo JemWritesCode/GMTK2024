@@ -2877,6 +2877,9 @@ MonoBehaviour:
   <VirusOnColor1>k__BackingField: {r: 0.6117647, g: 0, b: 0.6509804, a: 1}
   <VirusOnColor2>k__BackingField: {r: 0.39607844, g: 0.08627451, b: 0.41568628, a: 1}
   <NetworkIcon>k__BackingField: {fileID: 1965613525404510391}
+  <NetworkGradient>k__BackingField: {fileID: 2480979346585966185}
+  <NetworkOnColor1>k__BackingField: {r: 0, g: 0.7019608, b: 0.7176471, a: 1}
+  <NetworkOnColor2>k__BackingField: {r: 0, g: 0.54901963, b: 0.56078434, a: 1}
   <IsPanelVisible>k__BackingField: 0
   <CurrentServer>k__BackingField: {fileID: 0}
   <CurrentUserValue>k__BackingField: 0
@@ -2885,6 +2888,7 @@ MonoBehaviour:
   <CurrentPoweredOnValue>k__BackingField: 0
   <CurrentFireOnValue>k__BackingField: 0
   <CurrentVirusOnValue>k__BackingField: 0
+  <CurrentNetworkOnValue>k__BackingField: 0
 --- !u!1 &8278862949678214879
 GameObject:
   m_ObjectHideFlags: 0
