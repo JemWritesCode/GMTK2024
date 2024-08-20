@@ -48,6 +48,15 @@ namespace GameJam {
       return MenuPanel.IsPanelVisible || DialogPanel.IsPanelVisible;
     }
 
+    public bool ProcessInteractKey() {
+      if (DialogPanel.IsPanelVisible) {
+        DialogPanel.OnConfirmButtonClick();
+        return true;
+      }
+
+      return false;
+    }
+
     public void ToggleMenu() {
       MenuPanel.TogglePanel();
 

@@ -270,9 +270,19 @@ namespace GameJam {
     }
 
     private void RefreshPanel(Server server) {
-      SetUserValue(server.CurrentUsers);
-      SetPowerValue(server.PowerMultiplier);
-      SetHeatValue(server.Temperature.HeatPercent());
+      if (server.CurrentUsers != CurrentUserValue) {
+        SetUserValue(server.CurrentUsers);
+      }
+
+      if (server.PowerMultiplier != CurrentPowerValue) {
+        SetPowerValue(server.PowerMultiplier);
+      }
+
+      float heatPercent = server.Temperature.HeatPercent();
+
+      if (heatPercent != CurrentHeatValue) {
+        SetHeatValue(server.Temperature.HeatPercent());
+      }
 
       bool poweredOnValue = server.PowerMultiplier > 0;
 

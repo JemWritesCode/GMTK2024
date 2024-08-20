@@ -27,7 +27,7 @@ namespace GameJam {
     [field: SerializeField]
     public SceneReference GameScene { get; private set; }
 
-    private void Awake() {
+    private void Start() {
       CreateTweens();
       AnimateIntro();
     }
@@ -37,11 +37,22 @@ namespace GameJam {
 
       DOTween.Sequence()
           .SetTarget(gameObject)
+          .SetLink(gameObject)
           .Insert(0f, CreateTranslateFade(GameLogoImage, 0.25f, new(0f, -200f, 0f), 0f, 2.5f))
           .Insert(0.5f, CreateTranslateFade(StartButtonImage, 0.25f, new(0f, 50f, 0f), 0f, 3f))
           .Insert(0.5f, CreateTranslateFade(SettingsButtonImage, 0.75f, new(-50f, 0f, 0f), 0f, 3f))
           .Insert(0.5f, CreateTranslateFade(CreditsButtonImage, 1.25f, new(-50f, 0f, 0f), 0f, 3f))
-          .SetEase(Ease.InOutQuad);
+          .OnComplete(AnimateGameLogo);
+    }
+
+    private void AnimateGameLogo() {
+      DOTween.Sequence()
+          .SetTarget(GameLogoImage)
+          .SetLink(GameLogoImage.gameObject)
+          .AppendInterval(0.5f)
+          .Insert(
+              0f, GameLogoImage.transform.DOLocalMove(new(0f, -30f, 0f), 3f).SetRelative(true).SetEase(Ease.InOutQuad))
+          .SetLoops(-1, LoopType.Yoyo);
     }
 
     private Sequence _gameLogoOnClickTween;
@@ -51,6 +62,8 @@ namespace GameJam {
       _gameLogoOnClickTween =
           DOTween.Sequence()
               .SetAutoKill(false)
+              .SetTarget(GameLogoImage)
+              .SetLink(GameLogoImage.gameObject)
               .Insert(0f, GameLogoImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 10, 1f))
               .Pause();
     }
