@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Red0Dialog3
+  m_Name: Red0Ad1
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Red0Dialog3
-  <Text>k__BackingField: 'To the left to the left.
-
-
-    All your code in a package
-    to the left.'
+  <DialogueName>k__BackingField: Red0Ad1
+  <Text>k__BackingField: Vertical ad.
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: c9d65574a6033864c84eddfe3c94a293, type: 2}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: acaad288a62bc4a4da26be04bbb7943c, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
-  <PortraitType>k__BackingField: 0
-  <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
+  <PortraitType>k__BackingField: 3
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 6469e212c86218540b95e39fa66ba1bb, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1

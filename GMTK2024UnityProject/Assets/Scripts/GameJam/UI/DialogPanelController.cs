@@ -154,6 +154,10 @@ namespace GameJam {
         CurrentDialogDisplay = AdHorizontalDisplay;
         AdHorizontalDisplay.SetupDisplay(dialogNode);
         sequence.AppendCallback(AdHorizontalDisplay.ShowDisplay);
+      } else if (dialogNode.PortraitType == DSPortraitType.AdVertical) {
+        CurrentDialogDisplay = AdVerticalDisplay;
+        AdVerticalDisplay.SetupDisplay(dialogNode);
+        sequence.AppendCallback(AdVerticalDisplay.ShowDisplay);
       }
     }
 
