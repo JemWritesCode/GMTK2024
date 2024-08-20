@@ -34,6 +34,10 @@ namespace GameJam {
     }
 
     public void OnInteractKey() {
+      if (UIManager.Instance.ProcessInteractKey()) {
+        return;
+      }
+
       if (HandManager.Instance.ProcessInteractable()) {
         return;
       }
