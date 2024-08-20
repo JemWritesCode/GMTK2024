@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,15 +22,18 @@ namespace GameJam
         // Viruses
         public bool EnableVirusAttacks = false;
 
-        // Hamsters
+        
+        [Header("❤ Hamsters ❤")]
         public bool EnableHamsterAttacks = false;
         public float HamstersPercent = 0.05f;
+        public float timeOfLastHamster = 0f;
+        public float minimumTimeBetweenHamsters = 10f;
 
-        // Drop packets
+        [Header("▰ Drop Packets ▰")]
         public bool DroppedPackets = false;
         public float DropPacketsPercent = 0.5f;
 
-        // Sneezes
+        [Header("ミ Sneeze ミ")]
         public bool EnableSneezeAttacks = false;
         public float SneezeAttackChance = 0.05f; // To be removed, should be set x times?
         public float SneezeDropPercentDataCables = 0.2f;
@@ -85,7 +88,10 @@ namespace GameJam
 
             if (EnableHamsterAttacks)
             {
-                RandomHamsterAttack();
+                if (time > timeOfLastHamster + minimumTimeBetweenHamsters)
+                {
+                    RandomHamsterAttack();
+                }
             }
 
             if (EnableSneezeAttacks)
@@ -227,6 +233,7 @@ namespace GameJam
                     int index = UnityEngine.Random.Range(0, boxes.Count);
                     Debug.Log($"Hamster ATTACK on power box {index}!!");
                     boxes[index].HamsterAttack();
+                    timeOfLastHamster = Time.time;
                 }
             }
         }

@@ -2,7 +2,7 @@ namespace GameJam {
   public sealed class Temperature {
     public float Heat = 0;
     public int HeatLimit = 100;
-    public float HeatTicks = .25f;
+    public float HeatTicks = .5f;
 
     public float TemperatureThreshold = 0.8f;
 
