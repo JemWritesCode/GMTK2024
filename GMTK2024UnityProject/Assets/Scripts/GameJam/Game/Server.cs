@@ -28,6 +28,8 @@ namespace GameJam
         public float VirusInterval = 0.75f;
         private float VirusTimer;
         private bool VirusPosition = false;
+        public AudioSource serverAudioSource;
+        public AudioClip fireSFX;
 
         [Header("Lights")]
         public List<Light> IndicatorLights;
@@ -112,6 +114,12 @@ namespace GameJam
         {
             bool overheated = Temperature.Overheated();
             Temperature.PlayEffects(FireEffects, SmokeEffects);
+
+            //jem todo: the fire sound plays on repeat this way. fix to play only once.
+            //if (overheated)
+            //{
+            //    serverAudioSource.PlayOneShot(fireSFX);
+            //}
 
             var dataConnections = DataConnections.Where(data => data.IsConnected()).ToList();
             var powerConnections = PowerConnections.Where(data => data.IsConnected()).ToList();

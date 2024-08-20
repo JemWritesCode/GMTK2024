@@ -17,6 +17,9 @@ namespace GameJam
         public Light IndicatorLight;
         public TextMeshPro IntegrityText;
 
+        public AudioSource firewallAudioSource;
+        public AudioClip fireSFX;
+
         [Header("Attack chances")]
         public float AttackChanceUp = 0.01f;
         public float AttackChanceVulnerable = 0.02f;
