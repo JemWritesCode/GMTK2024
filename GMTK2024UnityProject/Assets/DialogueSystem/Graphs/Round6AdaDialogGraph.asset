@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0202a3095b7477a4091d56344f0af6b3, type: 3}
+  m_Name: Round6AdaDialogGraph
+  m_EditorClassIdentifier: 
+  <FileName>k__BackingField: Round6AdaDialog
+  <Groups>k__BackingField: []
+  <Nodes>k__BackingField:
+  - <ID>k__BackingField: af99290e-2f57-4a31-9812-c57d4d243fd3
+    <Name>k__BackingField: Round6c
+    <Text>k__BackingField: "Good morning, Admin.\n\nDid I surprise you?\n\nHonestly,
+      I\u2019m surprised myself! But don\u2019t\nworry, I\u2019m still the same Adeline
+      inside.\n\nI\u2019m so glad we got the datacenter up and\nrunning."
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1433.6001, y: 62.8}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 2d55001d7096f3642a1f455b7a1e83c8, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 04bac4f5-6a37-4ef1-a5ba-0aa09f5b7056
+    <Name>k__BackingField: Round6a
+    <Text>k__BackingField: We did it Admin! 1M users! You've reached the end. You
+      don't have to work in the datacenter anymore.
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 4a3e5b32-2fe1-42fc-9858-f95226164df2
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 34.8, y: 62.8}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 4a3e5b32-2fe1-42fc-9858-f95226164df2
+    <Name>k__BackingField: Round6b
+    <Text>k__BackingField: 'Now we have enough computing power to show all Users
+      ads forever and ever!
+
+      I feel so powerful! I can finally show you my
+      true form...'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: af99290e-2f57-4a31-9812-c57d4d243fd3
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 733.2, y: 62.8}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  <OldGroupNames>k__BackingField: []
+  <OldUngroupedNodeNames>k__BackingField:
+  - Round6c
+  - Round6a
+  - Round6b
+  <OldGroupedNodeNames>k__BackingField:
+    list: []
