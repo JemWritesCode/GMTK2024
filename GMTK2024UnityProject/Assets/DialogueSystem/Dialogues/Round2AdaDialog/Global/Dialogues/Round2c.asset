@@ -13,13 +13,20 @@ MonoBehaviour:
   m_Name: Round2c
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Round2c
-  <Text>k__BackingField: Lets get to 100k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
+  <Text>k__BackingField: 'If the <color=#ff8000>Firewall</color> fails, servers will
+    become Infected with viruses. Watch for the <color=#ff0000>blinking lights</color>
+    on top of each server!
+
+
+    To fix an infected server, pick up and insert an
+    <color=#B300B2>Antivirus Disk</color>! You can get more from the Firewall keypad
+    if you run out.'
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue
-    <NextDialogue>k__BackingField: {fileID: 0}
+    <NextDialogue>k__BackingField: {fileID: 11400000, guid: dbd148a75dfd0e44f8afebd3137d3aa9, type: 2}
   <DialogueType>k__BackingField: 0
   <IsStartingDialogue>k__BackingField: 0
   <PortraitType>k__BackingField: 0
-  <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+  <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1

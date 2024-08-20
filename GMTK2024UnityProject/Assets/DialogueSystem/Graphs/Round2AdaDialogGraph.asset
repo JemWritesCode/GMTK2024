@@ -19,60 +19,74 @@ MonoBehaviour:
     <Name>k__BackingField: Round2a
     <Text>k__BackingField: 'We reached 50k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
 
-      Horray!'
+      Hurray!'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: e7e8fd30-4925-4893-9ee2-f6276aefc9be
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 621.6, y: 94.8}
+    <Position>k__BackingField: {x: 622, y: 95}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: db2e3e52-00b2-4441-8b7b-46d30599e807
+    <Name>k__BackingField: Round2d
+    <Text>k__BackingField: Let's get to 100k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 2169, y: 95}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: e7e8fd30-4925-4893-9ee2-f6276aefc9be
     <Name>k__BackingField: Round2b
-    <Text>k__BackingField: 'Not all <color=#3C9447>Users</color> are nice, <color=#6f6f6f>Admin</color>.
+    <Text>k__BackingField: 'Now, not all <color=#3C9447>Users</color> are nice, <color=#6f6f6f>Admin</color>.
 
 
       We
-      have to maintain the <color=#ff8000>Firewall</color>.
+      have to maintain the <color=#ff8000>Firewall</color> - it''s the latest and
+      greatest, so it ought to do great! But be sure to check it often.
 
-      Be sure to check
-      it often.
+'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: b88b7755-1348-4820-8ecf-a5d01bb43a79
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1272, y: 15}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: b88b7755-1348-4820-8ecf-a5d01bb43a79
+    <Name>k__BackingField: Round2c
+    <Text>k__BackingField: 'If the <color=#ff8000>Firewall</color> fails, servers
+      will become Infected with viruses. Watch for the <color=#ff0000>blinking lights</color>
+      on top of each server!
 
 
-      If the Firewall starts to fail servers will become Infected
-
-      with
-      viruses. Infected servers require us to manually insert an <color=#B300B2>Antivirus
-      Disk</color>.'
+      To fix an infected server, pick up and insert
+      an <color=#B300B2>Antivirus Disk</color>! You can get more from the Firewall
+      keypad if you run out.'
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
       <NodeID>k__BackingField: db2e3e52-00b2-4441-8b7b-46d30599e807
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1384.4, y: 94.8}
+    <Position>k__BackingField: {x: 1632, y: 410}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: 14f2de273650c644a95fcd0484ca44a1, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
-  - <ID>k__BackingField: db2e3e52-00b2-4441-8b7b-46d30599e807
-    <Name>k__BackingField: Round2c
-    <Text>k__BackingField: Lets get to 100k <color=#3C9447>Users</color>, <color=#6f6f6f>Admin</color>!
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 2169.2, y: 94.8}
-    <PortraitType>k__BackingField: 0
-    <Portrait>k__BackingField: {fileID: 21300000, guid: a43328b7314cebb43bfa71ac769ef171, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
   - Round2a
+  - Round2d
   - Round2b
   - Round2c
   <OldGroupedNodeNames>k__BackingField:
