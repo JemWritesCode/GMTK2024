@@ -21,5 +21,5 @@ MonoBehaviour:
   <IsStartingDialogue>k__BackingField: 0
   <PortraitType>k__BackingField: 1
   <Portrait>k__BackingField: {fileID: 21300000, guid: 60b83dd918a89bf429fb1ddbf6443e4c, type: 3}
-  <AudioClip>k__BackingField: {fileID: 0}
+  <AudioClip>k__BackingField: {fileID: 8300000, guid: 046e84d56b7351741a42ff5561b98486, type: 3}
   <AudioVolume>k__BackingField: 1
