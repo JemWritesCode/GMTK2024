@@ -55,13 +55,9 @@ namespace GameJam {
       bool shouldUnlockCursor = ShouldUnlockCursor();
 
       if (shouldUnlockCursor) {
-        if (IsCursorLocked) {
-          UnlockCursor();
-        }
+        UnlockCursor();
       } else {
-        if (!IsCursorLocked) {
-          LockCursor();
-        }
+        LockCursor();
       }
     }
 
@@ -70,25 +66,29 @@ namespace GameJam {
     }
 
     public void LockCursor() {
-      IsCursorLocked = true;
-
-      if (PlayerCharacterController) {
+      if (!IsCursorLocked && PlayerCharacterController) {
         PlayerCharacterController.UnpausePlayer();
       }
 
-      Cursor.lockState = CursorLockMode.Locked;
-      Cursor.visible = false;
+      IsCursorLocked = true;
+
+      if (Cursor.lockState != CursorLockMode.Locked) {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+      }
     }
 
     public void UnlockCursor() {
-      IsCursorLocked = false;
-
-      if (PlayerCharacterController) {
+      if (IsCursorLocked && PlayerCharacterController) {
         PlayerCharacterController.PausePlayer(PauseModes.BlockInputOnly);
       }
 
-      Cursor.lockState = CursorLockMode.Confined;
-      Cursor.visible = true;
+      IsCursorLocked = false;
+
+      if (Cursor.lockState != CursorLockMode.Confined) {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+      }
     }
   }
 }

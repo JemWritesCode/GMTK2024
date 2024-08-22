@@ -324,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PanelRectTransform>k__BackingField: {fileID: 338912871525126050}
   <PanelCanvasGroup>k__BackingField: {fileID: 6607841949122421704}
-  <CloseButton>k__BackingField: {fileID: 5228681204800685035}
+  <CloseButton>k__BackingField: {fileID: 8871572186780454098}
   <AudioVolumeSlider>k__BackingField: {fileID: 5242928281066942245}
   <DialogVolumeSlider>k__BackingField: {fileID: 4021878658466327970}
   <IsPanelVisible>k__BackingField: 0
@@ -1799,8 +1799,8 @@ GameObject:
   - component: {fileID: 1111007659456975271}
   - component: {fileID: 1641543086843217209}
   - component: {fileID: 7028088111912476495}
-  - component: {fileID: 5228681204800685035}
   - component: {fileID: 6835982820144803968}
+  - component: {fileID: 8871572186780454098}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   <TweenToScale>k__BackingField: {x: 1.065, y: 1.065, z: 1}
   <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 15}
   <TweenToColor>k__BackingField: {r: 0.8113208, g: 0.5930393, b: 0.28702387, a: 1}
---- !u!114 &5228681204800685035
+--- !u!114 &6835982820144803968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1895,7 +1895,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 8176301732815076402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 0848bff101191904ead4bb831f7084db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BlurFactor: 1
+  m_Style: 1
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.69803923}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 0
+--- !u!114 &8871572186780454098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176301732815076402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8214726fed1f647a4c98a71919f9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1905,7 +1922,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1930,23 +1947,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6835982820144803968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8176301732815076402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0848bff101191904ead4bb831f7084db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BlurFactor: 1
-  m_Style: 1
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.69803923}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 0
+  <OnPointerDownClick>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2783020014658360239}
+        m_TargetAssemblyTypeName: GameJam.MenuPanelController, GameJam
+        m_MethodName: HidePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8343008466861974430
 GameObject:
   m_ObjectHideFlags: 0

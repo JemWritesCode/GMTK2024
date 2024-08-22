@@ -36,8 +36,8 @@ namespace GameJam {
     }
 
     private void SetupButtonListeners() {
-      MenuPanel.CloseButton.onClick.AddListener(MenuPanel.HidePanel);
-      MenuPanel.CloseButton.onClick.AddListener(HelpPanel.HidePanel);
+      MenuPanel.CloseButton.OnPointerDownClick.AddListener(MenuPanel.HidePanel);
+      MenuPanel.CloseButton.OnPointerDownClick.AddListener(HelpPanel.HidePanel);
     }
 
     public bool ShouldUnlockCursor() {

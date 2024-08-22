@@ -16,7 +16,7 @@ namespace GameJam {
 
     [field: Header("Buttons")]
     [field: SerializeField]
-    public Button CloseButton { get; private set; }
+    public WebGlButton CloseButton { get; private set; }
 
     [field: Header("Settings")]
     [field: SerializeField]
