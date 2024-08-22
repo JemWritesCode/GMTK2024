@@ -1,12 +1,8 @@
 using System.Collections;
 
-using DG.Tweening;
-
-using DS;
 using DS.ScriptableObjects;
 
 using UnityEngine;
-using UnityEngine.UI;
 
 using YoloBox;
 

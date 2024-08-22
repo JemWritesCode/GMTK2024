@@ -83,5 +83,13 @@ namespace GameJam {
     public void OnDialogVolumeValueChanged(float value) {
       AudioManager.Instance.SetDialogVolume(value);
     }
+
+    public void QuitGame() {
+#if UNITY_EDITOR
+      UnityEditor.EditorApplication.isPlaying = false;
+#else
+      Application.Quit();
+#endif
+    }
   }
 }
