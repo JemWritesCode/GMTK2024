@@ -1,3 +1,5 @@
+using Coffee.UIEffects;
+
 using DG.Tweening;
 
 using Eflatun.SceneReference;
@@ -10,13 +12,20 @@ using YoloBox;
 
 namespace GameJam {
   public sealed class StartScreenUIController : MonoBehaviour {
-    [field: Header("UI")]
+    [field: Header("Logo")]
     [field: SerializeField]
     public RectTransform LogoRectTransform { get; private set; }
 
     [field: SerializeField]
-    public Image LogoBow { get; private set; }
+    public UIGradient LogoAdvertisingGradient { get; private set; }
 
+    [field: SerializeField]
+    public UIGradient LogoAdelineGradient { get; private set; }
+
+    [field: SerializeField]
+    public UIGradient LogoBowGradient { get; private set; }
+
+    [field: Header("Buttons")]
     [field: SerializeField]
     public Image StartButtonImage { get; private set; }
 
@@ -26,6 +35,7 @@ namespace GameJam {
     [field: SerializeField]
     public Image CreditsButtonImage { get; private set; }
 
+    [field: Header("Overlay")]
     [field: SerializeField]
     public Image LoadingOverlayImage { get; private set; }
 
@@ -46,8 +56,19 @@ namespace GameJam {
           .SetLink(gameObject)
           .Insert(0f, LoadingOverlayImage.DOColor(Color.black, 0f))
           .Insert(0.5f, LoadingOverlayImage.DOFade(0f, 3f).From(1f, true).SetEase(Ease.InSine))
-          .Insert(0.5f, LogoRectTransform.DOLocalMove(new(0f, -50f, 0f), 2f).From(true))
-          .Insert(0.5f, StartButtonImage.rectTransform.DOLocalMove(new(0f, 20f, 0f), 1f).From(true));
+          .Insert(0.5f, LogoAdvertisingGradient.transform.DOLocalMove(new(0f, -50f, 0f), 2f).From(true))
+          .Insert(0.6f, LogoAdelineGradient.transform.DOLocalMove(new(0f, -30f, 0f), 2f).From(true))
+          .Insert(0.7f, LogoBowGradient.transform.DOLocalMove(new(0f, -20f, 0f), 1f).From(true))
+          .Insert(0.6f, StartButtonImage.rectTransform.DOLocalMove(new(0f, 20f, 0f), 1f).From(true));
+
+      DOTween.Sequence()
+          .SetTarget(gameObject)
+          .SetLink(gameObject)
+          .Insert(0f, LogoAdvertisingGradient.DOBlendableColor2(new(0.45f, 0.68f, 0.54f), 4f))
+          .Insert(0f, LogoAdvertisingGradient.transform.DOBlendableScaleBy(new(0.01f, 0.01f, 0f), 3f))
+          .SetLoops(-1, LoopType.Yoyo)
+          .SetTarget(gameObject)
+          .SetLink(gameObject);
     }
 
     private Sequence _gameLogoOnClickTween;
@@ -57,9 +78,9 @@ namespace GameJam {
       _gameLogoOnClickTween =
           DOTween.Sequence()
               .SetAutoKill(false)
-              .SetTarget(LogoBow)
-              .SetLink(LogoBow.gameObject)
-              .Insert(0f, LogoBow.rectTransform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 10, 1f))
+              .SetTarget(LogoBowGradient)
+              .SetLink(LogoBowGradient.gameObject)
+              .Insert(0f, LogoBowGradient.transform.DOPunchScale(Vector3.one * 0.05f, 0.5f, 10, 1f))
               .Pause();
     }
 

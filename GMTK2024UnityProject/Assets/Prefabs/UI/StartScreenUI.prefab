@@ -104,7 +104,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3898178880384647422}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Direction: 2
   m_Color1: {r: 1, g: 1, b: 1, a: 1}
-  m_Color2: {r: 0.9811321, g: 0.50445, b: 0.5245562, a: 1}
+  m_Color2: {r: 0.6117647, g: 0.78846216, b: 0.98039216, a: 1}
   m_Color3: {r: 1, g: 1, b: 1, a: 1}
   m_Color4: {r: 1, g: 1, b: 1, a: 1}
   m_Rotation: -45
@@ -208,9 +208,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Image>k__BackingField: {fileID: 8204977480807910763}
   <ImageGradient>k__BackingField: {fileID: 960285272655869182}
-  <TweenToDuration>k__BackingField: 0.5
-  <TweenToScale>k__BackingField: {x: 1.025, y: 1.025, z: 1}
-  <TweenToColor>k__BackingField: {r: 1, g: 0.9714885, b: 0.5990566, a: 1}
+  <TweenToDuration>k__BackingField: 0.8
+  <TweenToScale>k__BackingField: {x: 1.0125, y: 1.0125, z: 1}
+  <TweenToColor>k__BackingField: {r: 0.9716981, g: 0.52425617, b: 0.45376468, a: 1}
+  <TweenToRotation>k__BackingField: {x: 0, y: 0, z: -5}
+  <SfxAudioSource>k__BackingField: {fileID: 0}
+  <OnHoverSfx>k__BackingField: {fileID: 0}
 --- !u!114 &7886272868469946149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +454,9 @@ MonoBehaviour:
   <TweenToDuration>k__BackingField: 0.6
   <TweenToScale>k__BackingField: {x: 1.0375, y: 1.0375, z: 1}
   <TweenToColor>k__BackingField: {r: 1, g: 0.27843142, b: 0.3599889, a: 1}
+  <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 0}
+  <SfxAudioSource>k__BackingField: {fileID: 0}
+  <OnHoverSfx>k__BackingField: {fileID: 0}
 --- !u!1 &5135984740672510647
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +554,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <LogoRectTransform>k__BackingField: {fileID: 63272816445657701}
-  <LogoBow>k__BackingField: {fileID: 8204977480807910763}
+  <LogoAdvertisingGradient>k__BackingField: {fileID: 2112914417068117524}
+  <LogoAdelineGradient>k__BackingField: {fileID: 4087466520769265778}
+  <LogoBowGradient>k__BackingField: {fileID: 960285272655869182}
   <StartButtonImage>k__BackingField: {fileID: 4280213125972616273}
   <SettingsButtonImage>k__BackingField: {fileID: 4546736610772106029}
   <CreditsButtonImage>k__BackingField: {fileID: 1534578626170206539}
@@ -668,8 +676,8 @@ MonoBehaviour:
   m_Color2: {r: 0.45224357, g: 0.6810256, b: 0.83, a: 1}
   m_Color3: {r: 1, g: 1, b: 1, a: 1}
   m_Color4: {r: 1, g: 1, b: 1, a: 1}
-  m_Rotation: -25
-  m_Offset1: 0.285
+  m_Rotation: 25
+  m_Offset1: 0
   m_Offset2: 0
   m_GradientStyle: 0
   m_ColorSpace: -1
@@ -686,9 +694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectFactor: 0.7005778
+  m_EffectFactor: 0
   m_Width: 0.75
-  m_Rotation: 45
+  m_Rotation: -25
   m_Softness: 1
   m_Brightness: 1
   m_Gloss: 1
@@ -809,6 +817,9 @@ MonoBehaviour:
   <TweenToDuration>k__BackingField: 0.6
   <TweenToScale>k__BackingField: {x: 1.0375, y: 1.0375, z: 0}
   <TweenToColor>k__BackingField: {r: 1, g: 0.9446705, b: 0.27843142, a: 1}
+  <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 0}
+  <SfxAudioSource>k__BackingField: {fileID: 0}
+  <OnHoverSfx>k__BackingField: {fileID: 0}
 --- !u!1 &6031946230331128046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1043,7 @@ GameObject:
   - component: {fileID: 6557108634633463394}
   - component: {fileID: 1446283241890996457}
   - component: {fileID: 4280213125972616273}
+  - component: {fileID: 4415432315470584162}
   - component: {fileID: 758015420897165429}
   - component: {fileID: 1018601862343387286}
   - component: {fileID: 8258597283940929168}
@@ -1100,6 +1112,102 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!82 &4415432315470584162
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8133957060507863129}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &758015420897165429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,6 +1225,9 @@ MonoBehaviour:
   <TweenToDuration>k__BackingField: 0.8
   <TweenToScale>k__BackingField: {x: 1.025, y: 1.025, z: 1}
   <TweenToColor>k__BackingField: {r: 0.501222, g: 0.83137256, b: 0.4509804, a: 1}
+  <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 0}
+  <SfxAudioSource>k__BackingField: {fileID: 4415432315470584162}
+  <OnHoverSfx>k__BackingField: {fileID: 8300000, guid: 188c7f1edef897849af6615c93ed81e3, type: 3}
 --- !u!114 &1018601862343387286
 MonoBehaviour:
   m_ObjectHideFlags: 0
