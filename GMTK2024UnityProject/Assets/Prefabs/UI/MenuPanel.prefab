@@ -632,7 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -665,19 +665,7 @@ MonoBehaviour:
       m_Calls: []
   <OnPointerDownClick>k__BackingField:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2783020014658360239}
-        m_TargetAssemblyTypeName: GameJam.MenuPanelController, GameJam
-        m_MethodName: HidePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8343008466861974430
 GameObject:
   m_ObjectHideFlags: 0

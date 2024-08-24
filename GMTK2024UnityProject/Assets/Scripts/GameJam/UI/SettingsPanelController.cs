@@ -37,6 +37,9 @@ namespace GameJam {
     [field: SerializeField]
     public SliderSettingController AudioVolumeSetting { get; private set; }
 
+    [field: SerializeField]
+    public SliderSettingController FieldOfViewSetting { get; private set; }
+
     [field: Header("State")]
     [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
@@ -77,8 +80,6 @@ namespace GameJam {
 
       PanelRectTransform.sizeDelta = ClosedSizeDelta;
       OpenButtonLabel.text = "Open";
-
-      AudioVolumeSetting.SetValueWithoutNotify(AudioManager.SavedAudioVolume);
     }
 
     public void OpenOrClosePanel() {
@@ -107,6 +108,9 @@ namespace GameJam {
       IsPanelOpen = true;
       OpenButtonLabel.text = "Close";
       _openClosePanelTween.PlayAgain();
+
+      AudioVolumeSetting.SetValueWithoutNotify(AudioManager.Instance.AudioVolume);
+      FieldOfViewSetting.SetValueWithoutNotify(CameraManager.Instance.FieldOfViewHorizontal);
     }
 
     public void ClosePanel() {
@@ -117,6 +121,10 @@ namespace GameJam {
 
     public void OnAudioVolumeValueChanged(float value) {
       AudioManager.Instance.SetAudioVolume(value);
+    }
+
+    public void OnFieldOfViewValueChanged(float value) {
+      CameraManager.Instance.SetFieldOfViewHorizontal(value);
     }
   }
 }

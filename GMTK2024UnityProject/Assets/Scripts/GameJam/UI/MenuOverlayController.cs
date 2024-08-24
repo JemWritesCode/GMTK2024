@@ -27,6 +27,8 @@ namespace GameJam {
     private Sequence _showHideOverlayTween;
 
     private void Start() {
+      MenuPanel.CloseButton.OnPointerDownClick.AddListener(HideOverlay);
+
       CreateTweens();
       ResetOverlay();
     }
