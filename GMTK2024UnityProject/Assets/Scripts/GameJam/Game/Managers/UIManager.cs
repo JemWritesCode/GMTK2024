@@ -31,6 +31,9 @@ namespace GameJam {
     [field: SerializeField]
     public OverlayController DarkOverlay { get; private set; }
 
+    [field: SerializeField]
+    public MenuOverlayController MenuOverlay { get; private set; }
+
     private void Start() {
       SetupButtonListeners();
     }
@@ -41,7 +44,7 @@ namespace GameJam {
     }
 
     public bool ShouldUnlockCursor() {
-      return MenuPanel.IsPanelVisible || DialogPanel.IsPanelVisible;
+      return MenuOverlay.IsOverlayVisible || DialogPanel.IsPanelVisible;
     }
 
     public bool ProcessInteractKey() {
@@ -54,9 +57,9 @@ namespace GameJam {
     }
 
     public void ToggleMenu() {
-      MenuPanel.TogglePanel();
+      MenuOverlay.ToggleOverlay();
 
-      if (MenuPanel.IsPanelVisible != HelpPanel.IsPanelVisible) {
+      if (MenuOverlay.IsOverlayVisible != HelpPanel.IsPanelVisible) {
         HelpPanel.TogglePanel();
       }
     }
@@ -70,6 +73,8 @@ namespace GameJam {
     public void CalloutPanels(float calloutDuration) {
       StartCoroutine(ShowHideHelpPanel(0.5f, calloutDuration));
       StartCoroutine(ShowUserCountPanel(1.5f));
+
+      MenuOverlay.SettingsPanel.OpenPanel();
     }
 
     private IEnumerator ShowHideHelpPanel(float showDelay, float hideDelay) {

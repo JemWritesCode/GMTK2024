@@ -421,7 +421,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2903593315796493011}
         m_TargetAssemblyTypeName: GameJam.SettingsPanelController, GameJam
-        m_MethodName: TogglePanel
+        m_MethodName: OpenOrClosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -658,6 +658,7 @@ MonoBehaviour:
   <ClosedSizeDelta>k__BackingField: {x: 400, y: 100}
   <OpenedSizeDelta>k__BackingField: {x: 400, y: 187.5}
   <AudioVolumeSetting>k__BackingField: {fileID: 825792398283518893}
+  <IsPanelVisible>k__BackingField: 0
   <IsPanelOpen>k__BackingField: 0
 --- !u!1 &7179417098728546676
 GameObject:

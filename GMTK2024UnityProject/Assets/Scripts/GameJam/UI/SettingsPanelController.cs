@@ -39,8 +39,12 @@ namespace GameJam {
 
     [field: Header("State")]
     [field: SerializeField]
+    public bool IsPanelVisible { get; private set; }
+
+    [field: SerializeField]
     public bool IsPanelOpen { get; private set; }
 
+    private Sequence _showHidePanelTween;
     private Sequence _openClosePanelTween;
 
     private void Start() {
@@ -49,6 +53,15 @@ namespace GameJam {
     }
 
     private void CreateTweens() {
+      _showHidePanelTween =
+          DOTween.Sequence()
+              .SetTarget(PanelRectTransform)
+              .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.5f))
+              .Insert(0f, PanelRectTransform.DOLocalMove(new(25f, 0f, 0f), 0.5f).From(false, true))
+              .SetEase(Ease.InOutQuad)
+              .SetAutoKill(false)
+              .Pause();
+
       _openClosePanelTween =
           DOTween.Sequence()
               .SetTarget(PanelRectTransform)
@@ -59,19 +72,35 @@ namespace GameJam {
     }
 
     public void ResetPanel() {
+      IsPanelVisible = true;
       IsPanelOpen = false;
+
       PanelRectTransform.sizeDelta = ClosedSizeDelta;
       OpenButtonLabel.text = "Open";
 
       AudioVolumeSetting.SetValueWithoutNotify(AudioManager.SavedAudioVolume);
     }
 
-    public void TogglePanel() {
+    public void OpenOrClosePanel() {
       if (IsPanelOpen) {
         ClosePanel();
       } else {
         OpenPanel();
       }
+    }
+
+    public void ShowPanel() {
+      PanelCanvasGroup.blocksRaycasts = true;
+      IsPanelVisible = true;
+
+      _showHidePanelTween.PlayAgain();
+    }
+
+    public void HidePanel() {
+      PanelCanvasGroup.blocksRaycasts = false;
+      IsPanelVisible = false;
+
+      _showHidePanelTween.SmoothRewind();
     }
 
     public void OpenPanel() {

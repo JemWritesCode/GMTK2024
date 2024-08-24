@@ -18,13 +18,6 @@ namespace GameJam {
     [field: SerializeField]
     public WebGlButton CloseButton { get; private set; }
 
-    [field: Header("Settings")]
-    [field: SerializeField]
-    public Slider AudioVolumeSlider { get; private set; }
-
-    [field: SerializeField]
-    public Slider DialogVolumeSlider { get; private set; }
-
     [field: Header("State")]
     [field: SerializeField]
     public bool IsPanelVisible { get; private set; }
@@ -63,9 +56,6 @@ namespace GameJam {
       PanelCanvasGroup.blocksRaycasts = true;
       IsPanelVisible = true;
 
-      AudioVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.AudioVolume);
-      DialogVolumeSlider.SetValueWithoutNotify(AudioManager.Instance.DialogVolume);
-
       _showHidePanelTween.PlayAgain();
     }
 
@@ -74,14 +64,6 @@ namespace GameJam {
       IsPanelVisible = false;
 
       _showHidePanelTween.SmoothRewind();
-    }
-
-    public void OnAudioVolumeValueChanged(float value) {
-      AudioManager.Instance.SetAudioVolume(value);
-    }
-
-    public void OnDialogVolumeValueChanged(float value) {
-      AudioManager.Instance.SetDialogVolume(value);
     }
 
     public void QuitGame() {
