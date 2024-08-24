@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Round0d
   m_EditorClassIdentifier: 
   <DialogueName>k__BackingField: Round0d
-  <Text>k__BackingField: Connect <color=#FDDA0D>power</color> and <color=#008080>data</color>
+  <Text>k__BackingField: Connect <color=#CDB526>power</color> and <color=#008080>data</color>
     cables today!
   <Choices>k__BackingField:
   - <Text>k__BackingField: Next Dialogue

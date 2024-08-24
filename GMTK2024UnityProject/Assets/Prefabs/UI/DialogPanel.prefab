@@ -1624,7 +1624,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -115, y: 90}
-  m_SizeDelta: {x: 520, y: 100}
+  m_SizeDelta: {x: 510, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6872843586662020877
 CanvasRenderer:
@@ -1654,9 +1654,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A line of words.
-
-    Second line with xyz.'
+  m_text: Connect <color=#CDB526>power</color> and <color=#008080>data</color> cables
+    today!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8db1be665df2b7439ea194419050fff, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6aa4f5a02a5f54d4fb94658d662c56c9, type: 2}
@@ -4535,7 +4534,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -115, y: 90}
-  m_SizeDelta: {x: 520, y: 105}
+  m_SizeDelta: {x: 510, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3832656309175036685
 CanvasRenderer:
@@ -4565,9 +4564,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A line of words.
-
-    Second line with xyz.'
+  m_text: Connect <color=#CDB526>power</color> and <color=#008080>data</color> cables
+    today!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8db1be665df2b7439ea194419050fff, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 6aa4f5a02a5f54d4fb94658d662c56c9, type: 2}
