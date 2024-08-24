@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectFactor: 0.8292257
+  m_EffectFactor: 0
   m_Width: 0.75
   m_Rotation: -25
   m_Softness: 1
@@ -1374,7 +1374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3171926245474986925, guid: d85c990f7fe9797469a4c27c6c4494f8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 187.5
       objectReference: {fileID: 0}
     - target: {fileID: 3171926245474986925, guid: d85c990f7fe9797469a4c27c6c4494f8, type: 3}
       propertyPath: m_LocalPosition.x

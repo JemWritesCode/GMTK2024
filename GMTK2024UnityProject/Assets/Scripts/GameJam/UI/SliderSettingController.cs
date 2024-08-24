@@ -29,6 +29,11 @@ namespace GameJam {
       SetHandleValueLabel(SettingSlider.value);
     }
 
+    public void SetValueWithoutNotify(float value) {
+      SettingSlider.SetValueWithoutNotify(value);
+      SetHandleValueLabel(value);
+    }
+
     public void SetHandleValueLabel(float value) {
       HandleValueLabel.text =
           HandleValueFormat switch {

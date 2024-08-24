@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2089564778355501187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3430626068819036462}
+  - component: {fileID: 5969619586887431662}
+  m_Layer: 5
+  m_Name: SettingArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3430626068819036462
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089564778355501187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 541844644209133908}
+  m_Father: {fileID: 3171926245474986925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5969619586887431662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089564778355501187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &3016540806323460182
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +63,7 @@ GameObject:
   - component: {fileID: 4793582917255886897}
   - component: {fileID: 8889518445036075228}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a6035fceccefb64abee3da835726a3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e437903d29191f42a904ff31f1dbbd8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -242,7 +293,7 @@ GameObject:
   - component: {fileID: 8147285086266751045}
   - component: {fileID: 2494254953818194342}
   m_Layer: 5
-  m_Name: OpenCloseButton
+  m_Name: OpenButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,13 +418,10 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5103905057672605175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
-  <OnPointerDownClick>k__BackingField:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameJam.DialogPanelController, GameJam
-        m_MethodName: OnConfirmButtonClick
+      - m_Target: {fileID: 2903593315796493011}
+        m_TargetAssemblyTypeName: GameJam.SettingsPanelController, GameJam
+        m_MethodName: TogglePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -383,6 +431,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  <OnPointerDownClick>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2494254953818194342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,7 +451,7 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 5648554198939623993}
   <TweenToDuration>k__BackingField: 0.3
   <TweenToScale>k__BackingField: {x: 1.065, y: 1.065, z: 1}
-  <TweenToRotation>k__BackingField: {x: 0, y: 0, z: -15}
+  <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 0}
   <TweenToColor>k__BackingField: {r: 0.8113208, g: 0.5930393, b: 0.28702387, a: 1}
 --- !u!1 &5807592724217525627
 GameObject:
@@ -567,7 +618,7 @@ RectTransform:
   - {fileID: 5454046248759439866}
   - {fileID: 1861385351364058540}
   - {fileID: 6159000946828405092}
-  - {fileID: 541844644209133908}
+  - {fileID: 3430626068819036462}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -599,6 +650,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58db489d7733bf74197b10c1cc9aad48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <PanelRectTransform>k__BackingField: {fileID: 3171926245474986925}
+  <PanelCanvasGroup>k__BackingField: {fileID: 7572469289210770073}
+  <PanelTitleLabel>k__BackingField: {fileID: 8845357708525154410}
+  <OpenButtonIcon>k__BackingField: {fileID: 5648554198939623993}
+  <OpenButtonLabel>k__BackingField: {fileID: 8889518445036075228}
+  <ClosedSizeDelta>k__BackingField: {x: 400, y: 100}
+  <OpenedSizeDelta>k__BackingField: {x: 400, y: 187.5}
+  <AudioVolumeSetting>k__BackingField: {fileID: 825792398283518893}
+  <IsPanelOpen>k__BackingField: 0
 --- !u!1 &7179417098728546676
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,15 +801,11 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3171926245474986925}
+    m_TransformParent: {fileID: 3430626068819036462}
     m_Modifications:
     - target: {fileID: 2449860320660845006, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_text
       value: Audio
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449860320660845006, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
-      propertyPath: m_fontSize
-      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4623962120431034721, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_AnchorMax.x
@@ -774,6 +830,34 @@ PrefabInstance:
     - target: {fileID: 5810162192779469382, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2903593315796493011}
+    - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnAudioVolumeValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameJam.SettingsPanelController, GameJam
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_Pivot.x
@@ -825,15 +909,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -865,3 +949,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
   m_PrefabInstance: {fileID: 7737175484530392241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &825792398283518893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6929410160198897436, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
+  m_PrefabInstance: {fileID: 7737175484530392241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c607185ca419447985ae3ac156d72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

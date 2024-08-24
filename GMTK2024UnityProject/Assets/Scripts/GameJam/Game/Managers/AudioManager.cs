@@ -4,6 +4,8 @@ using YoloBox;
 
 namespace GameJam {
   public sealed class AudioManager : SingletonManager<AudioManager> {
+    public static float SavedAudioVolume { get; set; } = 0.75f;
+
     [field: Header("Volumes")]
     [field: SerializeField]
     public float AudioVolume { get; private set; } = 0.75f;
@@ -16,12 +18,14 @@ namespace GameJam {
     public AudioSource DialogAudioSource { get; private set; }
 
     private void Start() {
-      SetAudioVolume(AudioVolume);
+      SetAudioVolume(Mathf.Min(SavedAudioVolume, AudioVolume));
       SetDialogVolume(DialogVolume);
     }
 
     public void SetAudioVolume(float audioVolume) {
-      AudioVolume = Mathf.Clamp01(audioVolume);
+      SavedAudioVolume = Mathf.Clamp01(audioVolume);
+      AudioVolume = SavedAudioVolume;
+
       AudioListener.volume = AudioVolume;
     }
 

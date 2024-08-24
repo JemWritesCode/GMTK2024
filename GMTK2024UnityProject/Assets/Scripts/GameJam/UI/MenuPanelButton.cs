@@ -42,7 +42,7 @@ namespace GameJam {
               .Insert(0f, Label.transform.DOScale(TweenToScale, TweenToDuration))
               .Insert(0f, Image.DOColor(TweenToColor, TweenToDuration))
               .Insert(0f, Icon.transform.DOScale(TweenToScale, TweenToDuration))
-              .Insert(0f, Icon.transform.DOLocalRotate(TweenToRotation, TweenToDuration))
+              .Insert(0f, Icon.transform.DOBlendableRotateBy(TweenToRotation, TweenToDuration))
               .SetAutoKill(false)
               .SetUpdate(true)
               .Pause();
