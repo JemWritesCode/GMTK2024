@@ -668,6 +668,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4083224285292004037, guid: 0f165219d6ef20842aa697c2f4a01e84, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083224285292004037, guid: 0f165219d6ef20842aa697c2f4a01e84, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4083224285292004037, guid: 0f165219d6ef20842aa697c2f4a01e84, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5135984740672510647, guid: 0f165219d6ef20842aa697c2f4a01e84, type: 3}
       propertyPath: m_Name
       value: StartScreenUI
