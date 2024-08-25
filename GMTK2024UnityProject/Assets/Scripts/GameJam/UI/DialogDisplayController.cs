@@ -103,12 +103,14 @@ namespace GameJam {
     }
 
     private void SetupCancelButton(DSDialogueSO dialogNode) {
-      CancelButton.gameObject.SetActive(dialogNode.Choices.Count > 1);
+      if (CancelButton) {
+        CancelButton.gameObject.SetActive(dialogNode.Choices.Count > 1);
 
-      CancelLabel.text =
-          dialogNode.Choices.Count > 1 && TryGetCustomChoiceText(dialogNode.Choices[1], out string choiceText)
-              ? choiceText
-              : "Cancel";
+        CancelLabel.text =
+            dialogNode.Choices.Count > 1 && TryGetCustomChoiceText(dialogNode.Choices[1], out string choiceText)
+                ? choiceText
+                : "Cancel";
+      }
     }
 
     private bool TryGetCustomChoiceText(DSDialogueChoiceData choiceData, out string choiceText) {

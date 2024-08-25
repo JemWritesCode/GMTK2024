@@ -43,6 +43,9 @@ namespace GameJam {
     [field: SerializeField]
     public SceneReference GameScene { get; private set; }
 
+    [field: SerializeField]
+    public SceneReference NovelScene { get; private set; }
+
     private void Awake() {
       DOTween.SetTweensCapacity(250, 250);
     }

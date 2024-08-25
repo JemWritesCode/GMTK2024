@@ -657,7 +657,7 @@ MonoBehaviour:
   <OpenButtonIcon>k__BackingField: {fileID: 5648554198939623993}
   <OpenButtonLabel>k__BackingField: {fileID: 8889518445036075228}
   <ClosedSizeDelta>k__BackingField: {x: 400, y: 100}
-  <OpenedSizeDelta>k__BackingField: {x: 400, y: 250}
+  <OpenedSizeDelta>k__BackingField: {x: 400, y: 355}
   <AudioVolumeSetting>k__BackingField: {fileID: 825792398283518893}
   <FieldOfViewSetting>k__BackingField: {fileID: 5243591628905974930}
   <IsPanelVisible>k__BackingField: 0
@@ -810,10 +810,6 @@ PrefabInstance:
       propertyPath: m_text
       value: Field of View
       objectReference: {fileID: 0}
-    - target: {fileID: 2449860320660845006, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
-      propertyPath: m_fontSize
-      value: 27.6
-      objectReference: {fileID: 0}
     - target: {fileID: 4900010767776429872, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_Name
       value: FieldOfView
@@ -824,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_MaxValue
-      value: 105
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 6114688147463803510, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_MinValue
@@ -892,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 70
+      value: 107.5
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_LocalPosition.x
@@ -928,7 +924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -205
+      value: -290
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -973,11 +969,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2449860320660845006, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_text
-      value: Audio
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449860320660845006, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
-      propertyPath: m_fontSize
-      value: 32
+      value: Audio Volume
       objectReference: {fileID: 0}
     - target: {fileID: 4900010767776429872, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_Name
@@ -1041,7 +1033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 70
+      value: 107.5
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1077,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -140
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 7843859642945107429, guid: 81e748a6158a2eb4aaa83be4fd401315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
