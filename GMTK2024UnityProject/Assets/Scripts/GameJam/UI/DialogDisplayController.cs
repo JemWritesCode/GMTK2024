@@ -1,5 +1,6 @@
 using DG.Tweening;
 
+using DS.Data;
 using DS.Enumerations;
 using DS.ScriptableObjects;
 
@@ -28,8 +29,19 @@ namespace GameJam {
     [field: SerializeField]
     public TextMeshProUGUI DialogText { get; private set; }
 
+    [field: Header("Confirm")]
     [field: SerializeField]
     public Button ConfirmButton { get; private set; }
+
+    [field: SerializeField]
+    public TextMeshProUGUI ConfirmLabel { get; private set; }
+
+    [field: Header("Cancel")]
+    [field: SerializeField]
+    public Button CancelButton { get; private set; }
+
+    [field: SerializeField]
+    public TextMeshProUGUI CancelLabel { get; private set; }
 
     [field: Header("Type")]
     [field: SerializeField]
@@ -78,6 +90,36 @@ namespace GameJam {
       }
 
       DialogText.text = dialogNode.Text;
+
+      SetupConfirmButton(dialogNode);
+      SetupCancelButton(dialogNode);
+    }
+
+    private void SetupConfirmButton(DSDialogueSO dialogNode) {
+      ConfirmLabel.text =
+          dialogNode.Choices.Count > 0 && TryGetCustomChoiceText(dialogNode.Choices[0], out string choiceText)
+              ? choiceText
+              : "Confirm";
+    }
+
+    private void SetupCancelButton(DSDialogueSO dialogNode) {
+      CancelButton.gameObject.SetActive(dialogNode.Choices.Count > 1);
+
+      CancelLabel.text =
+          dialogNode.Choices.Count > 1 && TryGetCustomChoiceText(dialogNode.Choices[1], out string choiceText)
+              ? choiceText
+              : "Cancel";
+    }
+
+    private bool TryGetCustomChoiceText(DSDialogueChoiceData choiceData, out string choiceText) {
+      choiceText = choiceData.Text;
+
+      if (string.IsNullOrEmpty(choiceText) || choiceText == "Next Dialogue") {
+        choiceText = string.Empty;
+        return false;
+      }
+
+      return true;
     }
 
     public void OnPortraitImageClick() {

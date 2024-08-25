@@ -15,38 +15,12 @@ MonoBehaviour:
   <FileName>k__BackingField: TestNovel
   <Groups>k__BackingField: []
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: c9a9cfbc-2a7e-4291-912d-5964bcffab14
-    <Name>k__BackingField: TestNovel-1
-    <Text>k__BackingField: Wow Sparrow, where are we?
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: d49c17e5-12f6-4d7c-a23a-98fe48dffd78
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -30, y: -71}
-    <PortraitType>k__BackingField: 0
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
-  - <ID>k__BackingField: d49c17e5-12f6-4d7c-a23a-98fe48dffd78
-    <Name>k__BackingField: TestNovel-2
-    <Text>k__BackingField: '*chirp* OK'
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 420591e7-edc6-49e2-acd9-a723dde37200
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 701, y: -71}
-    <PortraitType>k__BackingField: 0
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 4e7fe7954f5cd3e448333e5ad46074c8, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 420591e7-edc6-49e2-acd9-a723dde37200
     <Name>k__BackingField: TestNovel-3
     <Text>k__BackingField: Oh a data center you say!
     <Choices>k__BackingField:
     - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 
+      <NodeID>k__BackingField: 5cc82b3b-da3b-4b13-8f63-1ee7f49477e4
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
     <Position>k__BackingField: {x: 1099, y: -36}
@@ -54,10 +28,66 @@ MonoBehaviour:
     <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 789b89d8-cf0e-4662-a4fb-c7568bdcf427
+    <Name>k__BackingField: TestNovel-2
+    <Text>k__BackingField: '*chirp chirp chirp*'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: '*chirp* OK'
+      <NodeID>k__BackingField: 420591e7-edc6-49e2-acd9-a723dde37200
+    - <Text>k__BackingField: '*chirp* Yolo'
+      <NodeID>k__BackingField: 310a6e9f-911b-4670-9665-192164bebf5f
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 659, y: 59}
+    <PortraitType>k__BackingField: 4
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 4e7fe7954f5cd3e448333e5ad46074c8, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: c9a9cfbc-2a7e-4291-912d-5964bcffab14
+    <Name>k__BackingField: TestNovel-1
+    <Text>k__BackingField: Wow Sparrow, where are we?
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 789b89d8-cf0e-4662-a4fb-c7568bdcf427
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: -30, y: -71}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 310a6e9f-911b-4670-9665-192164bebf5f
+    <Name>k__BackingField: TestNovel-4
+    <Text>k__BackingField: Ehhhh? Who might you two be?
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Next Dialogue
+      <NodeID>k__BackingField: 5cc82b3b-da3b-4b13-8f63-1ee7f49477e4
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1163, y: 284}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: d61e8b5b45310494493549bcb3756828, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 5cc82b3b-da3b-4b13-8f63-1ee7f49477e4
+    <Name>k__BackingField: TestNovel-5
+    <Text>k__BackingField: Ahh I dropped my packets!
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Oh no!
+      <NodeID>k__BackingField: 
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 2030, y: 125}
+    <PortraitType>k__BackingField: 1
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 6983c6826175ac944b99ea1f07e304d1, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
-  - TestNovel-1
-  - TestNovel-2
   - TestNovel-3
+  - TestNovel-2
+  - TestNovel-1
+  - TestNovel-4
+  - TestNovel-5
   <OldGroupedNodeNames>k__BackingField:
     list: []

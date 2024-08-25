@@ -100,7 +100,12 @@ namespace GameJam {
 
     public void OnConfirmButtonClick() {
       StopSfxAudioClip();
-      ShowDialogNode(GetNextDialogNode(CurrentDialogNode));
+      ShowDialogNode(GetNextDialogNode(CurrentDialogNode, 0));
+    }
+
+    public void OnCancelButtonClick() {
+      StopSfxAudioClip();
+      ShowDialogNode(GetNextDialogNode(CurrentDialogNode, 1));
     }
 
     public void ShowDialogNode(DSDialogueSO dialogNode) {
@@ -120,12 +125,12 @@ namespace GameJam {
       }
     }
 
-    private DSDialogueSO GetNextDialogNode(DSDialogueSO dialogNode) {
-      if (!dialogNode || dialogNode.Choices.Count <= 0) {
+    private DSDialogueSO GetNextDialogNode(DSDialogueSO dialogNode, int choiceIndex) {
+      if (!dialogNode || dialogNode.Choices.Count < choiceIndex) {
         return default;
       }
 
-      return dialogNode.Choices[0].NextDialogue;
+      return dialogNode.Choices[choiceIndex].NextDialogue;
     }
 
     private void SetupDialogDisplay(DSDialogueSO dialogNode) {
