@@ -15,30 +15,17 @@ MonoBehaviour:
   <FileName>k__BackingField: TestNovel
   <Groups>k__BackingField: []
   <Nodes>k__BackingField:
-  - <ID>k__BackingField: 420591e7-edc6-49e2-acd9-a723dde37200
-    <Name>k__BackingField: TestNovel-3
-    <Text>k__BackingField: Oh a data center you say!
-    <Choices>k__BackingField:
-    - <Text>k__BackingField: Next Dialogue
-      <NodeID>k__BackingField: 5cc82b3b-da3b-4b13-8f63-1ee7f49477e4
-    <GroupID>k__BackingField: 
-    <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1099, y: -36}
-    <PortraitType>k__BackingField: 0
-    <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
-    <AudioClip>k__BackingField: {fileID: 0}
-    <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 789b89d8-cf0e-4662-a4fb-c7568bdcf427
     <Name>k__BackingField: TestNovel-2
     <Text>k__BackingField: '*chirp chirp chirp*'
     <Choices>k__BackingField:
-    - <Text>k__BackingField: '*chirp* OK'
-      <NodeID>k__BackingField: 420591e7-edc6-49e2-acd9-a723dde37200
-    - <Text>k__BackingField: '*chirp* Yolo'
+    - <Text>k__BackingField: '*chirp*'
+      <NodeID>k__BackingField: ad29fce4-5f73-41f5-bf15-bcb01bf4f584
+    - <Text>k__BackingField: '*burp*'
       <NodeID>k__BackingField: 310a6e9f-911b-4670-9665-192164bebf5f
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 1
-    <Position>k__BackingField: {x: 659, y: 59}
+    <Position>k__BackingField: {x: 574, y: -161}
     <PortraitType>k__BackingField: 4
     <Portrait>k__BackingField: {fileID: 21300000, guid: 4e7fe7954f5cd3e448333e5ad46074c8, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -51,7 +38,20 @@ MonoBehaviour:
       <NodeID>k__BackingField: 789b89d8-cf0e-4662-a4fb-c7568bdcf427
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: -30, y: -71}
+    <Position>k__BackingField: {x: -150, y: 237}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: ad29fce4-5f73-41f5-bf15-bcb01bf4f584
+    <Name>k__BackingField: TestNovel-3
+    <Text>k__BackingField: Oh a data center you say?
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: 
+      <NodeID>k__BackingField: 4d14ca20-a103-4419-95e1-92b28c2a286a
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 1047, y: -295}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
@@ -64,9 +64,24 @@ MonoBehaviour:
       <NodeID>k__BackingField: 5cc82b3b-da3b-4b13-8f63-1ee7f49477e4
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 0
-    <Position>k__BackingField: {x: 1163, y: 284}
+    <Position>k__BackingField: {x: 1047, y: 783}
     <PortraitType>k__BackingField: 0
     <Portrait>k__BackingField: {fileID: 21300000, guid: d61e8b5b45310494493549bcb3756828, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 4d14ca20-a103-4419-95e1-92b28c2a286a
+    <Name>k__BackingField: TestNovel-7
+    <Text>k__BackingField: I wonder who could be here...
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Hmm...
+      <NodeID>k__BackingField: 310a6e9f-911b-4670-9665-192164bebf5f
+    - <Text>k__BackingField: '*chirp*'
+      <NodeID>k__BackingField: 5cc82b3b-da3b-4b13-8f63-1ee7f49477e4
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 1809, y: -2}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
   - <ID>k__BackingField: 5cc82b3b-da3b-4b13-8f63-1ee7f49477e4
@@ -74,20 +89,51 @@ MonoBehaviour:
     <Text>k__BackingField: Ahh I dropped my packets!
     <Choices>k__BackingField:
     - <Text>k__BackingField: Oh no!
-      <NodeID>k__BackingField: 
+      <NodeID>k__BackingField: 4a574288-3eae-4404-aff7-4bc9b1ac1c2e
     <GroupID>k__BackingField: 
     <DialogueType>k__BackingField: 1
-    <Position>k__BackingField: {x: 2030, y: 125}
+    <Position>k__BackingField: {x: 2086, y: 541}
     <PortraitType>k__BackingField: 1
     <Portrait>k__BackingField: {fileID: 21300000, guid: 6983c6826175ac944b99ea1f07e304d1, type: 3}
     <AudioClip>k__BackingField: {fileID: 0}
     <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: 4a574288-3eae-4404-aff7-4bc9b1ac1c2e
+    <Name>k__BackingField: TestNovel-8
+    <Text>k__BackingField: '*chirp*'
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: Done?
+      <NodeID>k__BackingField: 
+    - <Text>k__BackingField: Once more..
+      <NodeID>k__BackingField: d36f6c5e-76ef-4244-b8dc-0cb9b3db1c34
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 1
+    <Position>k__BackingField: {x: 1047, y: 1183}
+    <PortraitType>k__BackingField: 4
+    <Portrait>k__BackingField: {fileID: 21300000, guid: c52e9265847fadf429dda3742294db89, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
+  - <ID>k__BackingField: d36f6c5e-76ef-4244-b8dc-0cb9b3db1c34
+    <Name>k__BackingField: TestNovel-9
+    <Text>k__BackingField: OK if you say so...
+    <Choices>k__BackingField:
+    - <Text>k__BackingField: 
+      <NodeID>k__BackingField: c9a9cfbc-2a7e-4291-912d-5964bcffab14
+    <GroupID>k__BackingField: 
+    <DialogueType>k__BackingField: 0
+    <Position>k__BackingField: {x: 334, y: 1608}
+    <PortraitType>k__BackingField: 0
+    <Portrait>k__BackingField: {fileID: 21300000, guid: 893de4a76582e8c40b54a532060aeb7c, type: 3}
+    <AudioClip>k__BackingField: {fileID: 0}
+    <AudioVolume>k__BackingField: 1
   <OldGroupNames>k__BackingField: []
   <OldUngroupedNodeNames>k__BackingField:
-  - TestNovel-3
   - TestNovel-2
   - TestNovel-1
+  - TestNovel-3
   - TestNovel-4
+  - TestNovel-7
   - TestNovel-5
+  - TestNovel-8
+  - TestNovel-9
   <OldGroupedNodeNames>k__BackingField:
     list: []

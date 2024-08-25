@@ -18,9 +18,8 @@ MonoBehaviour:
   - <Text>k__BackingField: Next Dialogue
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 9ca33710ddcd29643816ee0b95f88267, type: 2}
   <DialogueType>k__BackingField: 0
-  <IsStartingDialogue>k__BackingField: 1
+  <IsStartingDialogue>k__BackingField: 0
   <PortraitType>k__BackingField: 0
   <Portrait>k__BackingField: {fileID: 21300000, guid: 9ac2ff77eb6fbfb4a95165ae77f84965, type: 3}
-  <PortraitSizeOffset>k__BackingField: {x: 0, y: 0}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1

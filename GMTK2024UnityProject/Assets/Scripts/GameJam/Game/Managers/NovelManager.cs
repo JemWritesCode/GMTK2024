@@ -1,3 +1,5 @@
+using System.Collections;
+
 using DS.ScriptableObjects;
 
 using UnityEngine;
@@ -14,7 +16,8 @@ namespace GameJam {
     [field: SerializeField]
     public DSDialogueSO StartingDialogNode { get; private set; }
 
-    private void Start() {
+    private IEnumerator Start() {
+      yield return new WaitForSeconds(seconds: 2f);
       UIController.DialogPanel.ShowDialogNode(StartingDialogNode);
     }
   }

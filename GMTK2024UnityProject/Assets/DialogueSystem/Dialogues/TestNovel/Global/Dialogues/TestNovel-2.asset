@@ -15,14 +15,13 @@ MonoBehaviour:
   <DialogueName>k__BackingField: TestNovel-2
   <Text>k__BackingField: '*chirp chirp chirp*'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: '*chirp* OK'
+  - <Text>k__BackingField: '*chirp*'
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: 825bb52e3d7492845ae0c59f51a2ba9c, type: 2}
-  - <Text>k__BackingField: '*chirp* Yolo'
+  - <Text>k__BackingField: '*burp*'
     <NextDialogue>k__BackingField: {fileID: 11400000, guid: e8e164010558f514d988c3488e310899, type: 2}
   <DialogueType>k__BackingField: 1
   <IsStartingDialogue>k__BackingField: 0
   <PortraitType>k__BackingField: 4
   <Portrait>k__BackingField: {fileID: 21300000, guid: 4e7fe7954f5cd3e448333e5ad46074c8, type: 3}
-  <PortraitSizeOffset>k__BackingField: {x: 0, y: 0}
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1

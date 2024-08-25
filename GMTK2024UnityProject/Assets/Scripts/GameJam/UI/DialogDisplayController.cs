@@ -97,8 +97,8 @@ namespace GameJam {
 
     private void SetupConfirmButton(DSDialogueSO dialogNode) {
       ConfirmLabel.text =
-          dialogNode.Choices.Count > 0 && TryGetCustomChoiceText(dialogNode.Choices[0], out string choiceText)
-              ? choiceText
+          dialogNode.Choices.Count > 0 && dialogNode.Choices[0].HasCustomChoiceText()
+              ? dialogNode.Choices[0].Text
               : "Confirm";
     }
 
@@ -107,21 +107,10 @@ namespace GameJam {
         CancelButton.gameObject.SetActive(dialogNode.Choices.Count > 1);
 
         CancelLabel.text =
-            dialogNode.Choices.Count > 1 && TryGetCustomChoiceText(dialogNode.Choices[1], out string choiceText)
-                ? choiceText
+            dialogNode.Choices.Count > 1 && dialogNode.Choices[1].HasCustomChoiceText()
+                ? dialogNode.Choices[1].Text
                 : "Cancel";
       }
-    }
-
-    private bool TryGetCustomChoiceText(DSDialogueChoiceData choiceData, out string choiceText) {
-      choiceText = choiceData.Text;
-
-      if (string.IsNullOrEmpty(choiceText) || choiceText == "Next Dialogue") {
-        choiceText = string.Empty;
-        return false;
-      }
-
-      return true;
     }
 
     public void OnPortraitImageClick() {
