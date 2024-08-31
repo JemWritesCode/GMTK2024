@@ -88,6 +88,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuperPowerBox
       objectReference: {fileID: 0}
+    - target: {fileID: 8961382159964967380, guid: eac682d94fb32744d86be785cddbd155, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961382159964967380, guid: eac682d94fb32744d86be785cddbd155, type: 3}
+      propertyPath: m_Size.z
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961382159964967380, guid: eac682d94fb32744d86be785cddbd155, type: 3}
+      propertyPath: m_Center.x
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961382159964967380, guid: eac682d94fb32744d86be785cddbd155, type: 3}
+      propertyPath: m_Center.z
+      value: -0.025
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -150,18 +166,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerBox (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_Name
-      value: PowerLogo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-    - {fileID: 6398304061357392291, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
@@ -222,18 +228,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerBox (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_Name
-      value: PowerLogo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-    - {fileID: 6398304061357392291, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
@@ -294,18 +290,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerBox
       objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_Name
-      value: PowerLogo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-    - {fileID: 6398304061357392291, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
@@ -366,18 +352,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerBox (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_Name
-      value: PowerLogo
-      objectReference: {fileID: 0}
-    - target: {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 9068781270968339239, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
-    - {fileID: 6398304061357392291, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb30598a72cf8404e9e72e1e8a28875c, type: 3}
