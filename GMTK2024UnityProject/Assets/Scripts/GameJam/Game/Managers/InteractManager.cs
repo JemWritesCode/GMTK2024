@@ -17,6 +17,9 @@ namespace GameJam {
     [field: SerializeField, Min(0f)]
     public float SphereCastRadius { get; private set; } = 0.1f;
 
+    [field: SerializeField]
+    public LayerMask SphereCastLayerMask { get; private set; }
+
     [field: Header("Interact")]
     [field: SerializeField]
     public bool CanInteract { get; set; } = true;
@@ -56,7 +59,7 @@ namespace GameJam {
               origin.forward,
               _raycastHits,
               range,
-              -1,
+              SphereCastLayerMask,
               QueryTriggerInteraction.Ignore);
 
       for (int i = 0; i < _raycastHitsCount; i++) {
@@ -83,6 +86,10 @@ namespace GameJam {
       for (int i = 0; i < _raycastHitsCount; i++) {
         RaycastHit raycastHit = _raycastHits[i];
         Interactable interactable = raycastHit.collider.GetComponentInParent<Interactable>();
+
+        if (!interactable) {
+          return default;
+        }
 
         if (interactable
             && interactable.enabled
