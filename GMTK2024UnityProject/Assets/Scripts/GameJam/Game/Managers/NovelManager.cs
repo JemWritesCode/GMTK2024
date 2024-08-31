@@ -16,8 +16,11 @@ namespace GameJam {
     [field: SerializeField]
     public DSDialogueSO StartingDialogNode { get; private set; }
 
-    private IEnumerator Start() {
-      yield return new WaitForSeconds(seconds: 2f);
+    private void Start() {
+      UIController.StartButton.ButtonRef.OnPointerDownClick.AddListener(ShowStartingDialogNode);
+    }
+
+    private void ShowStartingDialogNode() {
       UIController.DialogPanel.ShowDialogNode(StartingDialogNode);
     }
   }

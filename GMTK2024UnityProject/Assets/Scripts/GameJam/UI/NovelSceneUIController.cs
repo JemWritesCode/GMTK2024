@@ -1,5 +1,3 @@
-using DS.ScriptableObjects;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +6,10 @@ namespace GameJam {
     [field: Header("Background")]
     [field: SerializeField]
     public Image BackgroundImage { get; private set; }
+
+    [field: Header("Buttons")]
+    [field: SerializeField]
+    public IconLabelButton StartButton { get; private set; }
 
     [field: Header("Dialog")]
     [field: SerializeField]
