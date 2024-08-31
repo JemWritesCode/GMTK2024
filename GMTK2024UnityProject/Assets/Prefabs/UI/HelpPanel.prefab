@@ -150,7 +150,10 @@ MonoBehaviour:
     <color=#054C7C>Space</color>
     to jump
 
-    <color=#054C7C>Tab</color> to toggle menu'
+    <color=#054C7C>LeftShift</color> to run
+
+    <color=#054C7C>Tab</color>
+    to toggle menu'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e8db1be665df2b7439ea194419050fff, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: d35205be57ca66647b60c7907289f3b9, type: 2}
@@ -286,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <PanelRectTransform>k__BackingField: {fileID: 844159994369933836}
   <PanelCanvasGroup>k__BackingField: {fileID: 2562409671719553078}
+  <IsPanelVisible>k__BackingField: 0
 --- !u!1 &8027758420653855877
 GameObject:
   m_ObjectHideFlags: 0
