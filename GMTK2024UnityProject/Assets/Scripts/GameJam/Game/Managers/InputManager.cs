@@ -38,6 +38,10 @@ namespace GameJam {
         return;
       }
 
+      if (ShouldUnlockCursor()) {
+        return;
+      }
+
       if (HandManager.Instance.ProcessInteractable()) {
         return;
       }
@@ -52,9 +56,7 @@ namespace GameJam {
     public bool IsCursorLocked { get; private set; }
 
     public void UpdateCursorLockState() {
-      bool shouldUnlockCursor = ShouldUnlockCursor();
-
-      if (shouldUnlockCursor) {
+      if (ShouldUnlockCursor()) {
         UnlockCursor();
       } else {
         LockCursor();

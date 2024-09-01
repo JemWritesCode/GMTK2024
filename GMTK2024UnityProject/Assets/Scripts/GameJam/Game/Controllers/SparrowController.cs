@@ -1,9 +1,14 @@
-using UnityEngine;
+using DS.ScriptableObjects;
 
-using static UnityEngine.GraphicsBuffer;
+using UnityEngine;
 
 namespace GameJam {
   public sealed class SparrowController : MonoBehaviour {
+    [field: Header("Interact")]
+    [field: SerializeField]
+    public DSDialogueSO OnInteractDialogNode { get; set; }
+
+    [field: Header("Follow")]
     [field: SerializeField]
     public GameObject TargetToFollow { get; set; }
 
@@ -29,6 +34,10 @@ namespace GameJam {
 
       Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
       transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotateSpeed * Time.deltaTime);
+    }
+
+    public void OnInteract() {
+      GameManager.Instance.SetDialogNode(OnInteractDialogNode);
     }
   }
 }
