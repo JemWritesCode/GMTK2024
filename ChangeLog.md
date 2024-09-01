@@ -1,5 +1,10 @@
 ## Changelog
 
+### 1.2.0
+
+  * Power and Data ports will now highlight when connected.
+  * A friendly Sparrow appeared...?
+
 ### 1.1.0
 
   * Post-jam updates!
