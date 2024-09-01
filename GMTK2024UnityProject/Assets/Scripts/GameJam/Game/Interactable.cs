@@ -13,7 +13,7 @@ namespace GameJam {
     public string InteractText { get; set; } = string.Empty;
 
     [field: SerializeField, Header("Highlight")]
-    public MeshRenderer HighlightRenderer { get; set; }
+    public Renderer HighlightRenderer { get; set; }
 
     [Header("Events")]
     [Space(10f)]
