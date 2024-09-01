@@ -9280,6 +9280,10 @@ PrefabInstance:
       value: WebGlAdjustment
       objectReference: {fileID: 0}
     - target: {fileID: 2064572338014936044, guid: 6cb38c9627568d84185ac7fdbbf0eeb3, type: 3}
+      propertyPath: <MouseSensitivity>k__BackingField
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064572338014936044, guid: 6cb38c9627568d84185ac7fdbbf0eeb3, type: 3}
       propertyPath: <SuperCharacterController>k__BackingField
       value: 
       objectReference: {fileID: 272993316}
