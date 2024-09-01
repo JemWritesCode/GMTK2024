@@ -226,7 +226,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d11a47995dd8164ebba140b312ac6fb, type: 2}
+  - {fileID: 2100000, guid: 338465409801ade4ebdc3de1a6b35d2c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,6 +278,10 @@ MonoBehaviour:
   CableWidth: 0.025
   grabCableSound: {fileID: 8300000, guid: 188c7f1edef897849af6615c93ed81e3, type: 3}
   hamsterNibbleSound: {fileID: 8300000, guid: df4ebf6ecdfac79428d2b727f41c399d, type: 3}
+  <EndPointRenderer>k__BackingField: {fileID: 6426750441360516512}
+  <UnconnectedColor>k__BackingField: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+  <DataConnectedColor>k__BackingField: {r: 0.61960787, g: 1, b: 0.8509804, a: 1}
+  <PowerConnectedColor>k__BackingField: {r: 1, g: 0.93333334, b: 0.5411765, a: 1}
 --- !u!114 &7374436309394499127
 MonoBehaviour:
   m_ObjectHideFlags: 0
