@@ -138,7 +138,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 4915385733069476164}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -173,7 +173,7 @@ MonoBehaviour:
   <Label>k__BackingField: {fileID: 418067754904492803}
   <Icon>k__BackingField: {fileID: 2785827907111286173}
   <TweenToDuration>k__BackingField: 0.3
-  <TweenToScale>k__BackingField: {x: 1.065, y: 1.065, z: 1}
+  <TweenToScale>k__BackingField: {x: 0.065, y: 0.065, z: 1}
   <TweenToRotation>k__BackingField: {x: 0, y: 0, z: -15}
   <TweenToColor>k__BackingField: {r: 0.8113208, g: 0.5930393, b: 0.28702387, a: 1}
 --- !u!114 &99691936062073547
@@ -981,7 +981,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 4723664860071799800}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   <Label>k__BackingField: {fileID: 4597627406087862669}
   <Icon>k__BackingField: {fileID: 4331085795522326289}
   <TweenToDuration>k__BackingField: 0.3
-  <TweenToScale>k__BackingField: {x: 1.065, y: 1.065, z: 1}
+  <TweenToScale>k__BackingField: {x: 0.065, y: 0.065, z: 1}
   <TweenToRotation>k__BackingField: {x: 0, y: 0, z: -15}
   <TweenToColor>k__BackingField: {r: 0.8113208, g: 0.5930393, b: 0.28702387, a: 1}
 --- !u!114 &8861945526339377657

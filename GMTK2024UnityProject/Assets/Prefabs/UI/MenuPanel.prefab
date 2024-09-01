@@ -599,7 +599,7 @@ MonoBehaviour:
   <Label>k__BackingField: {fileID: 1458249678624358098}
   <Icon>k__BackingField: {fileID: 3615549884078907041}
   <TweenToDuration>k__BackingField: 0.3
-  <TweenToScale>k__BackingField: {x: 1.065, y: 1.065, z: 1}
+  <TweenToScale>k__BackingField: {x: 0.065, y: 0.065, z: 1}
   <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 15}
   <TweenToColor>k__BackingField: {r: 0.8113208, g: 0.5930393, b: 0.28702387, a: 1}
 --- !u!114 &6835982820144803968

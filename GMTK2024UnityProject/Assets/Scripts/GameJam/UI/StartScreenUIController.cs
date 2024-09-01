@@ -63,10 +63,10 @@ namespace GameJam {
           .SetLink(gameObject)
           .Insert(0f, LoadingOverlayImage.DOColor(Color.black, 0f))
           .Insert(0.5f, LoadingOverlayImage.DOFade(0f, 3f).From(1f, true).SetEase(Ease.InSine))
-          .Insert(0.5f, LogoAdvertisingGradient.transform.DOLocalMove(new(0f, -50f, 0f), 2f).From(true))
-          .Insert(0.6f, LogoAdelineGradient.transform.DOLocalMove(new(0f, -30f, 0f), 2f).From(true))
-          .Insert(0.7f, LogoBowGradient.transform.DOLocalMove(new(0f, -20f, 0f), 1f).From(true))
-          .Insert(0.6f, StartButtonImage.rectTransform.DOLocalMove(new(0f, 20f, 0f), 1f).From(true));
+          .Insert(0.5f, LogoAdvertisingGradient.transform.DOBlendableLocalMoveBy(new(0f, -50f, 0f), 2f).From(true))
+          .Insert(0.6f, LogoAdelineGradient.transform.DOBlendableLocalMoveBy(new(0f, -30f, 0f), 2f).From(true))
+          .Insert(0.7f, LogoBowGradient.transform.DOBlendableLocalMoveBy(new(0f, -20f, 0f), 1f).From(true))
+          .Insert(0.6f, StartButtonImage.rectTransform.DOBlendableLocalMoveBy(new(0f, 20f, 0f), 1f).From(true));
 
       DOTween.Sequence()
           .SetTarget(gameObject)

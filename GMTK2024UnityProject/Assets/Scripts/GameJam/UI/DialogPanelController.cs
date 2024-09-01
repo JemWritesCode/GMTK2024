@@ -61,7 +61,7 @@ namespace GameJam {
           DOTween.Sequence()
               .SetTarget(PanelRectTransform)
               .Insert(0f, PanelCanvasGroup.DOFade(1f, 0.3f))
-              .Insert(0f, PanelRectTransform.DOLocalMove(new(0f, 25f, 0f), 0.3f).From(false, true))
+              .Insert(0f, PanelRectTransform.DOBlendableLocalMoveBy(new(0f, 25f, 0f), 0.3f).From(false, true))
               .SetAutoKill(false)
               .SetUpdate(isIndependentUpdate: true)
               .Pause();

@@ -44,9 +44,9 @@ namespace GameJam {
       _onHoverTween =
           DOTween.Sequence()
               .SetLink(gameObject)
-              .Insert(0f, transform.DOScale(TweenToScale, TweenToDuration))
+              .Insert(0f, transform.DOBlendableScaleBy(TweenToScale, TweenToDuration))
               .Insert(0f, ImageGradient.DOBlendableColor2(TweenToColor, TweenToDuration))
-              .Insert(0f, Image.transform.DOLocalMove(new(0f, -5f, 0f), TweenToDuration).From(isRelative: true))
+              .Insert(0f, Image.transform.DOBlendableLocalMoveBy(new(0f, -5f, 0f), TweenToDuration).From(true))
               .Insert(0f, Image.transform.DOBlendableLocalRotateBy(TweenToRotation, TweenToDuration))
               .SetAutoKill(false)
               .SetUpdate(true)

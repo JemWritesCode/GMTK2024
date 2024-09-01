@@ -33,8 +33,8 @@ namespace GameJam {
           DOTween.Sequence()
               .SetTarget(OverlayRectTransform)
               .Insert(0f, OverlayCanvasGroup.DOFade(1f, 0.5f))
-              .Insert(0f, LogoImage.transform.DOLocalMoveX(-50f, 0.5f).From(false, true))
-              .Insert(0f, LogoImage.transform.DOScale(Vector3.one * 1.05f, 0.5f))
+              .Insert(0f, LogoImage.transform.DOBlendableMoveBy(new(-50f, 0f, 0f), 0.5f).From(false, true))
+              .Insert(0f, LogoImage.transform.DOBlendableScaleBy(Vector3.one * 0.05f, 0.5f))
               .SetAutoKill(false)
               .SetUpdate(isIndependentUpdate: true)
               .Pause();

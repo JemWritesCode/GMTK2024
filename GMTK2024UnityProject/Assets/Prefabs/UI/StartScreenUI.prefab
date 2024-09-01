@@ -209,7 +209,7 @@ MonoBehaviour:
   <Image>k__BackingField: {fileID: 8204977480807910763}
   <ImageGradient>k__BackingField: {fileID: 960285272655869182}
   <TweenToDuration>k__BackingField: 0.8
-  <TweenToScale>k__BackingField: {x: 1.0125, y: 1.0125, z: 1}
+  <TweenToScale>k__BackingField: {x: 0.0125, y: 0.0125, z: 1}
   <TweenToColor>k__BackingField: {r: 0.9716981, g: 0.52425617, b: 0.45376468, a: 1}
   <TweenToRotation>k__BackingField: {x: 0, y: 0, z: -5}
   <SfxAudioSource>k__BackingField: {fileID: 0}
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   <Image>k__BackingField: {fileID: 4280213125972616273}
   <ImageGradient>k__BackingField: {fileID: 1018601862343387286}
   <TweenToDuration>k__BackingField: 0.8
-  <TweenToScale>k__BackingField: {x: 1.025, y: 1.025, z: 1}
+  <TweenToScale>k__BackingField: {x: 0.025, y: 0.025, z: 1}
   <TweenToColor>k__BackingField: {r: 0.501222, g: 0.83137256, b: 0.4509804, a: 1}
   <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 0}
   <SfxAudioSource>k__BackingField: {fileID: 4415432315470584162}

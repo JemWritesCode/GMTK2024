@@ -60,7 +60,7 @@ namespace GameJam {
               .SetTarget(DisplayRectTransform)
               .Insert(0f, DisplayCanvasGroup.DOFade(1f, 0.4f))
               .Insert(0f, PortraitImage.transform.DOPunchScale(Vector3.one * 0.05f, 0.4f, 0, 0f))
-              .Insert(0f, DialogText.transform.DOLocalMoveY(5f, 0.4f).From(true))
+              .Insert(0f, DialogText.transform.DOBlendableLocalMoveBy(new(0f, 5f, 0f), 0.4f).From(true))
               .SetAutoKill(false)
               .SetUpdate(isIndependentUpdate: true)
               .Pause();
