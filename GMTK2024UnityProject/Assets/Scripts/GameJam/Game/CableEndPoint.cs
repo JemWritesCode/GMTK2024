@@ -104,9 +104,9 @@ namespace GameJam {
       }
     }
 
-    public void CancelConnection() {
+    public void CancelConnection(GameObject interactAgent) {
       if (IsConnected()) {
-        Connection.StartConnection();
+        Connection.StartConnection(interactAgent);
         Connection = null;
       }
 
@@ -132,7 +132,7 @@ namespace GameJam {
           cableEndPointAudioSource.PlayOneShot(wrongCableTypeSound, .5f);
         }
       } else if (IsConnected()) {
-        CancelConnection();
+        CancelConnection(interactAgent);
       }
     }
   }

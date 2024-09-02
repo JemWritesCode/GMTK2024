@@ -38,7 +38,15 @@ namespace GameJam {
       return _propertyBlock ??= new();
     }
 
-    private bool pickedUp = false;
+    private bool _pickedUp = false;
+
+    private Transform _pickedUpTransform = default;
+    private float _pickedUpForwardMultiplier = 1f;
+
+    public void SetPickedUpTarget(GameObject target, float forwardMultiplier = 1f) {
+      _pickedUpTransform = target.transform;
+      _pickedUpForwardMultiplier = forwardMultiplier;
+    }
 
     void Start() {
       if (line == null) {
@@ -58,9 +66,8 @@ namespace GameJam {
     }
 
     void Update() {
-      if (pickedUp) {
-        var transform = InteractManager.Instance.InteractAgent.transform;
-        line.SetPosition(1, transform.forward + transform.position);
+      if (_pickedUp) {
+        line.SetPosition(1, (_pickedUpTransform.forward * _pickedUpForwardMultiplier) + _pickedUpTransform.position);
       } else {
         RedrawCable();
       }
@@ -106,7 +113,7 @@ namespace GameJam {
         Connection = null;
       }
 
-      pickedUp = false;
+      _pickedUp = false;
       line.SetPosition(1, GetCableAttachPoint());
 
       RefreshEndPointColor();
@@ -119,10 +126,11 @@ namespace GameJam {
       RefreshEndPointColor();
     }
 
-    public void StartConnection() {
+    public void StartConnection(GameObject interactAgent) {
       HandManager.Instance.CurrentCable = this;
       BreakConnection();
-      pickedUp = true;
+      _pickedUp = true;
+      SetPickedUpTarget(interactAgent);
       if (grabCableSound && cableStartPointAudioSource) {
         cableStartPointAudioSource.PlayOneShot(grabCableSound);
       }
@@ -131,7 +139,7 @@ namespace GameJam {
     }
 
     public void CompleteConnection(CableEndPoint cable) {
-      pickedUp = false;
+      _pickedUp = false;
       HandManager.Instance.CurrentCable = null;
       Connection = cable;
       line.SetPosition(1, Connection.GetCableAttachPoint());
@@ -152,7 +160,7 @@ namespace GameJam {
     public void CableInteract(GameObject interactAgent) {
       if (HandManager.Instance.TryPickup(this)) {
         if (!IsConnected()) {
-          StartConnection();
+          StartConnection(interactAgent);
         }
       } else if (HandManager.Instance.CurrentCable == this) {
         CancelConnection();
