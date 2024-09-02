@@ -1645,7 +1645,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5522063727655563455, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5488855602202325639, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1120641136}
     m_AddedComponents:
@@ -3252,6 +3252,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6143219327004046910, guid: d1cf9186315116346862a8381d7df43e, type: 3}
   m_PrefabInstance: {fileID: 756057795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &774075508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5488855602202325639, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+  m_PrefabInstance: {fileID: 467378835}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &783951996
 PrefabInstance:
@@ -5156,12 +5161,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120641135}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.546, z: 0.2165}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.0000001192093, z: -2.4868996e-14, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0072679603, z: 0.0058670924}
+  m_LocalScale: {x: 0.025000004, y: 0.02500001, z: 0.02500001}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 467378836}
+  m_Father: {fileID: 774075508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1130467599
 PrefabInstance:
@@ -7339,8 +7344,14 @@ MonoBehaviour:
   <CarryingCables>k__BackingField: []
   <TargetToFollow>k__BackingField: {fileID: 869713557}
   <BufferDistance>k__BackingField: 2
+  <RunDistance>k__BackingField: 3.5
   <FollowSpeed>k__BackingField: 0.95
-  <RotateSpeed>k__BackingField: 25
+  <FollowRunSpeed>k__BackingField: 2
+  <RotateSpeed>k__BackingField: 10
+  <SparrowAnimator>k__BackingField: {fileID: 1615909637}
+  IsRolling: -1181490662
+  IsWalking: 1282839668
+  IsMoving: 120489994
 --- !u!114 &1615909635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7372,6 +7383,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &1615909637 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4579580695738256425, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+  m_PrefabInstance: {fileID: 467378835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1622838516
 PrefabInstance:
   m_ObjectHideFlags: 0

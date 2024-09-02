@@ -24,12 +24,28 @@ namespace GameJam {
     public float BufferDistance { get; set; }
 
     [field: SerializeField]
+    public float RunDistance { get; set; }
+
+    [field: SerializeField]
     public float FollowSpeed { get; set; }
+
+    [field: SerializeField]
+    public float FollowRunSpeed { get; set; }
 
     [field: SerializeField]
     public float RotateSpeed { get; set; }
 
+    [field: Header("Animator")]
+    [field: SerializeField]
+    public Animator SparrowAnimator { get; private set; }
+
+    public int IsRolling = Animator.StringToHash("IsRolling");
+    public int IsWalking = Animator.StringToHash("IsWalking");
+    public int IsMoving = Animator.StringToHash("IsMoving");
+
     private void Update() {
+      float deltaTime = Time.deltaTime;
+
       Vector3 direction = TargetToFollow.transform.position - transform.position;
       direction.y = 0f;
 
@@ -37,11 +53,23 @@ namespace GameJam {
 
       if (distance > BufferDistance) {
         direction.Normalize();
-        transform.position += FollowSpeed * Time.deltaTime * direction;
+        SparrowAnimator.SetBool(IsMoving, true);
+
+        if (distance > RunDistance) {
+          transform.position += FollowRunSpeed * deltaTime * direction;
+          SparrowAnimator.SetBool(IsRolling, true);
+          SparrowAnimator.SetBool(IsWalking, false);
+        } else {
+          transform.position += FollowSpeed * deltaTime * direction;
+          SparrowAnimator.SetBool(IsRolling, false);
+          SparrowAnimator.SetBool(IsWalking, true);
+        }
+      } else {
+        SparrowAnimator.SetBool(IsMoving, false);
       }
 
       Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
-      transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotateSpeed * Time.deltaTime);
+      transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotateSpeed * deltaTime);
     }
 
     public void OnInteract(GameObject interactAgent) {
