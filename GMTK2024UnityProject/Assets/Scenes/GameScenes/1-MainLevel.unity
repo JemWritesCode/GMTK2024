@@ -1594,6 +1594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparrow_LOD0
       objectReference: {fileID: 0}
+    - target: {fileID: 4579580695738256425, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3cdab92566abf994e9b00ff7d778167e, type: 2}
     - target: {fileID: 5522063727655563455, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
