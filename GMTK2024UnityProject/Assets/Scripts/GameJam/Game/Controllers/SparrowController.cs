@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using DS.ScriptableObjects;
 
 using UnityEngine;
@@ -12,7 +14,7 @@ namespace GameJam {
     public GameObject CarryingAttachPoint { get; set; }
 
     [field: SerializeField]
-    public CableStartPoint CarryingCable { get; set; }
+    public List<CableStartPoint> CarryingCables { get; set; } = new();
 
     [field: Header("Follow")]
     [field: SerializeField]
@@ -44,22 +46,37 @@ namespace GameJam {
 
     public void OnInteract(GameObject interactAgent) {
       if (HandManager.Instance.HoldingCable()) {
-        if (CarryingCable) {
-          // ...
-        } else {
-          CarryingCable = HandManager.Instance.CurrentCable;
+        CableStartPoint cable = HandManager.Instance.CurrentCable;
+
+        if (TryAddCarryingCable(cable)) {
           HandManager.Instance.CurrentCable = default;
-          CarryingCable.SetPickedUpTarget(CarryingAttachPoint, 0f);
+          cable.SetPickedUpTarget(CarryingAttachPoint, 0f);
         }
       } else if (!HandManager.Instance.HoldingItem()) {
-        if (CarryingCable) {
-          HandManager.Instance.CurrentCable = CarryingCable;
-          CarryingCable = default;
+        if (TryGetCarryingCable(out CableStartPoint cable)) {
+          HandManager.Instance.CurrentCable = cable;;
           HandManager.Instance.CurrentCable.SetPickedUpTarget(interactAgent);
         } else {
           GameManager.Instance.SetDialogNode(OnInteractDialogNode);
         }
       }
+    }
+
+    private bool TryGetCarryingCable(out CableStartPoint cable) {
+      if (CarryingCables.Count > 0) {
+        cable = CarryingCables[0];
+        CarryingCables.RemoveAt(0);
+        return true;
+      }
+
+      cable = default;
+      return false;
+    }
+
+    private bool TryAddCarryingCable(CableStartPoint cable) {
+      // We can set a limit here in the future, for now unlimited.
+      CarryingCables.Add(cable);
+      return true;
     }
   }
 }

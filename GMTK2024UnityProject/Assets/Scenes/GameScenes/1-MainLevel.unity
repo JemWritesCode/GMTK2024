@@ -7336,9 +7336,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <OnInteractDialogNode>k__BackingField: {fileID: 11400000, guid: 5d63493ba152bec41852862ec863d77b, type: 2}
   <CarryingAttachPoint>k__BackingField: {fileID: 1120641135}
-  <CarryingCable>k__BackingField: {fileID: 0}
+  <CarryingCables>k__BackingField: []
   <TargetToFollow>k__BackingField: {fileID: 869713557}
-  <BufferDistance>k__BackingField: 3
+  <BufferDistance>k__BackingField: 2
   <FollowSpeed>k__BackingField: 0.95
   <RotateSpeed>k__BackingField: 25
 --- !u!114 &1615909635
@@ -7353,7 +7353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b428c16d122cd0468ddb62fdaae385e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InteractRange>k__BackingField: 3
+  <InteractRange>k__BackingField: 2.5
   <CanInteract>k__BackingField: 1
   <InteractText>k__BackingField: Sparrow
   <HighlightRenderer>k__BackingField: {fileID: 1991127919}
