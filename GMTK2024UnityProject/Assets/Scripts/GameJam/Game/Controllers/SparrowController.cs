@@ -4,6 +4,8 @@ using DS.ScriptableObjects;
 
 using UnityEngine;
 
+using static GameJam.SparrowAnimatorController;
+
 namespace GameJam {
   public sealed class SparrowController : MonoBehaviour {
     [field: Header("Interact")]
@@ -35,13 +37,15 @@ namespace GameJam {
     [field: SerializeField]
     public float RotateSpeed { get; set; }
 
+    [field: SerializeField]
+    public bool IsFlying { get; set; }
+
+    [field: SerializeField]
+    public float FlySpeed { get; set; }
+
     [field: Header("Animator")]
     [field: SerializeField]
-    public Animator SparrowAnimator { get; private set; }
-
-    public int IsRolling = Animator.StringToHash("IsRolling");
-    public int IsWalking = Animator.StringToHash("IsWalking");
-    public int IsMoving = Animator.StringToHash("IsMoving");
+    public SparrowAnimatorController SparrowAnimator { get; private set; }
 
     private void Update() {
       float deltaTime = Time.deltaTime;
@@ -50,23 +54,27 @@ namespace GameJam {
       direction.y = 0f;
 
       float distance = direction.magnitude;
+      MovementState movementState;
 
       if (distance > BufferDistance) {
         direction.Normalize();
-        SparrowAnimator.SetBool(IsMoving, true);
 
         if (distance > RunDistance) {
           transform.position += FollowRunSpeed * deltaTime * direction;
-          SparrowAnimator.SetBool(IsRolling, true);
-          SparrowAnimator.SetBool(IsWalking, false);
+          movementState = MovementState.Rolling;
         } else {
           transform.position += FollowSpeed * deltaTime * direction;
-          SparrowAnimator.SetBool(IsRolling, false);
-          SparrowAnimator.SetBool(IsWalking, true);
+          movementState = MovementState.Walking;
         }
       } else {
-        SparrowAnimator.SetBool(IsMoving, false);
+        movementState = MovementState.Idle;
       }
+
+      if (IsFlying) {
+        movementState = MovementState.Flying;
+      }
+
+      SparrowAnimator.SetMovementState(movementState);
 
       Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
       transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotateSpeed * deltaTime);

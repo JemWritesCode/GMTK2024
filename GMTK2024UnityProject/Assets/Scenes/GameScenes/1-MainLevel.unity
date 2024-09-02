@@ -1655,10 +1655,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2919116957122212826, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1615909635}
+    - targetCorrespondingSourceObject: {fileID: 2919116957122212826, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1615909634}
     - targetCorrespondingSourceObject: {fileID: 2919116957122212826, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1615909635}
+      addedObject: {fileID: 1615909639}
   m_SourcePrefab: {fileID: 100100000, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
 --- !u!4 &467378836 stripped
 Transform:
@@ -7352,7 +7355,7 @@ MonoBehaviour:
   <FollowSpeed>k__BackingField: 0.95
   <FollowRunSpeed>k__BackingField: 2
   <RotateSpeed>k__BackingField: 10
-  <SparrowAnimator>k__BackingField: {fileID: 1615909637}
+  <SparrowAnimator>k__BackingField: {fileID: 1615909639}
   IsRolling: -1181490662
   IsWalking: 1282839668
   IsMoving: 120489994
@@ -7392,6 +7395,20 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4579580695738256425, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
   m_PrefabInstance: {fileID: 467378835}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1615909639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615909631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afef30255ec5f27428c6863f7e16d424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SparrowAnimator>k__BackingField: {fileID: 1615909637}
+  <CurrentMovementState>k__BackingField: 0
 --- !u!1001 &1622838516
 PrefabInstance:
   m_ObjectHideFlags: 0
