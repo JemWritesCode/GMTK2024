@@ -3,7 +3,7 @@
 ### 1.2.0
 
   * Power and Data ports will now highlight when connected.
-  * A friendly Sparrow appeared...?
+  * A friendly Sparrow appeared... you can interact with him for some extra help!
 
 ### 1.1.0
 
