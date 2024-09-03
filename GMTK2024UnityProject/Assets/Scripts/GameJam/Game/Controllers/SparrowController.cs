@@ -71,6 +71,20 @@ namespace GameJam {
     private void Update() {
       float deltaTime = Time.deltaTime;
 
+      MovementState movementState = MovementState.Idle;
+
+      if (TargetToFollow) {
+        movementState = UpdateFollow(deltaTime);
+      }
+
+      if (UpdateFlying(deltaTime)) {
+        movementState = MovementState.Flying;
+      }
+
+      SparrowAnimator.SetMovementState(movementState);
+    }
+
+    private MovementState UpdateFollow(float deltaTime) {
       Vector3 targetPosition = TargetToFollow.transform.position;
       Vector3 direction = targetPosition - transform.position;
       direction.y = 0;
@@ -92,16 +106,12 @@ namespace GameJam {
         movementState = MovementState.Idle;
       }
 
-      if (UpdateFlying(deltaTime)) {
-        movementState = MovementState.Flying;
-      }
-
-      SparrowAnimator.SetMovementState(movementState);
-
       if (distance > BufferDistance) {
         Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotateSpeed * deltaTime);
       }
+
+      return movementState;
     }
 
     private bool UpdateFlying(float deltaTime) {
@@ -114,7 +124,7 @@ namespace GameJam {
           IsFlying = false;
           FlightTimeElapsed = 0f;
         }
-      } else {
+      } else if (TargetToFollow) {
         FlightTimeElapsed += deltaTime;
 
         if (FlightTimeElapsed > GroundTimeMin) {
