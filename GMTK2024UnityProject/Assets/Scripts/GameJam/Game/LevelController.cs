@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 using UnityEngine;
 
-namespace GameJam
-{
-    public class LevelController : MonoBehaviour
+namespace GameJam {
+  public class LevelController : MonoBehaviour
     {
         public List<Level> Levels = new List<Level>();
         public int CurrentLevel = 0;
