@@ -10,19 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f262818b55b0f4418296bad0176bdab, type: 3}
-  m_Name: Sparrow-1
+  m_Name: Sparrow-IsHelping
   m_EditorClassIdentifier: 
-  <DialogueName>k__BackingField: Sparrow-1
-  <Text>k__BackingField: '*chirp* *chirp* *chirp*
+  <DialogueName>k__BackingField: Sparrow-IsHelping
+  <Text>k__BackingField: '*chirp*
 
-    <i>I can carry cables for
-    you!</i>
-
-    <i>Want my help?</i>'
+    <i>Yay! I''m helping!</i>'
   <Choices>k__BackingField:
-  - <Text>k__BackingField: Sure!
-    <NextDialogue>k__BackingField: {fileID: 11400000, guid: 6225e6c3ceee5bc4995d3ce5db02eb2f, type: 2}
-  - <Text>k__BackingField: No thanks.
+  - <Text>k__BackingField: Thanks!
     <NextDialogue>k__BackingField: {fileID: 0}
   <DialogueType>k__BackingField: 1
   <IsStartingDialogue>k__BackingField: 1
