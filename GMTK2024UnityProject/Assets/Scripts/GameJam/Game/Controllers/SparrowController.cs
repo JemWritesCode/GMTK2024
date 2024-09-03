@@ -15,6 +15,9 @@ namespace GameJam {
     public DSDialogueSO OnInteractDialogNode { get; set; }
 
     [field: SerializeField]
+    public DSDialogueSO IsHelpingDialogNode { get; set; }
+
+    [field: SerializeField]
     public GameObject CarryingAttachPoint { get; set; }
 
     [field: SerializeField]
@@ -147,6 +150,11 @@ namespace GameJam {
     }
 
     public void OnInteract(GameObject interactAgent) {
+      if (!TargetToFollow) {
+        GameManager.Instance.SetDialogNode(OnInteractDialogNode);
+        return;
+      }
+
       if (HandManager.Instance.HoldingCable()) {
         CableStartPoint cable = HandManager.Instance.CurrentCable;
 
@@ -159,7 +167,7 @@ namespace GameJam {
           HandManager.Instance.CurrentCable = cable;;
           HandManager.Instance.CurrentCable.SetPickedUpTarget(interactAgent);
         } else {
-          GameManager.Instance.SetDialogNode(OnInteractDialogNode);
+          GameManager.Instance.SetDialogNode(IsHelpingDialogNode);
         }
       }
     }
@@ -179,6 +187,11 @@ namespace GameJam {
       // We can set a limit here in the future, for now unlimited.
       CarryingCables.Add(cable);
       return true;
+    }
+
+    public void StartFollowingTarget(GameObject target) {
+      Debug.Log($"Sparrow will start following: {target.name}");
+      TargetToFollow = target;
     }
   }
 }

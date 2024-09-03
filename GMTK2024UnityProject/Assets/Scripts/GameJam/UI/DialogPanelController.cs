@@ -1,6 +1,7 @@
 using DG.Tweening;
 
 using DS.Enumerations;
+using DS.Events;
 using DS.ScriptableObjects;
 
 using UnityEngine;
@@ -116,6 +117,10 @@ namespace GameJam {
       if (!CurrentDialogNode) {
         HidePanel();
         return;
+      }
+
+      foreach (DSDialogEvent dialogEvent in dialogNode.OnDialogStartEvents) {
+        EventManager.Instance.ProcessDialogEvent(dialogEvent);
       }
 
       SetupDialogDisplay(dialogNode);

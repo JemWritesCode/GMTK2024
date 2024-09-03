@@ -1186,6 +1186,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4988411190106308917, guid: 7aa04350200134445ae726a1b7b49dba, type: 3}
   m_PrefabInstance: {fileID: 309597365}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &326852443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+  m_PrefabInstance: {fileID: 2719208167572363886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &332399253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4413,6 +4418,7 @@ Transform:
   - {fileID: 1020943466}
   - {fileID: 1573257406}
   - {fileID: 380137506}
+  - {fileID: 326852443}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &992915705
@@ -7347,6 +7353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <OnInteractDialogNode>k__BackingField: {fileID: 11400000, guid: 5d63493ba152bec41852862ec863d77b, type: 2}
+  <IsHelpingDialogNode>k__BackingField: {fileID: 11400000, guid: 758836dc050545446819ac7b45a41364, type: 2}
   <CarryingAttachPoint>k__BackingField: {fileID: 1120641135}
   <CarryingCables>k__BackingField: []
   <TargetToFollow>k__BackingField: {fileID: 0}
@@ -9553,6 +9560,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59fbd281ede42834ab9375f0479b0b34, type: 3}
+--- !u!1001 &2719208167572363886
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 987360177}
+    m_Modifications:
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387304721845849750, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525666345853671284, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: <Sparrow>k__BackingField
+      value: 
+      objectReference: {fileID: 1615909634}
+    - target: {fileID: 6525666345853671284, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: <PlayerTarget>k__BackingField
+      value: 
+      objectReference: {fileID: 869713557}
+    - target: {fileID: 8026195790231043294, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
+      propertyPath: m_Name
+      value: EventManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5921cf93612fb864288b902d20bd653b, type: 3}
 --- !u!1001 &3242442306433952465
 PrefabInstance:
   m_ObjectHideFlags: 0
