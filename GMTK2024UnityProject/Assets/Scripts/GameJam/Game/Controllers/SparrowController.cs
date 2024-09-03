@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 
+using Codice.Client.BaseCommands;
+
 using DS.ScriptableObjects;
 
 using UnityEngine;
@@ -37,11 +39,30 @@ namespace GameJam {
     [field: SerializeField]
     public float RotateSpeed { get; set; }
 
+    [field: Header("Flying")]
     [field: SerializeField]
     public bool IsFlying { get; set; }
 
     [field: SerializeField]
     public float FlySpeed { get; set; }
+
+    [field: SerializeField]
+    public float FlightTimeMax { get; set; }
+
+    [field: SerializeField]
+    public float FlightTimeElapsed { get; set; }
+
+    [field: SerializeField, Range(0f, 1f)]
+    public float ChanceToFly { get; set; }
+
+    [field: SerializeField]
+    public float GroundTimeMin { get; set; }
+
+    [field: SerializeField]
+    public float GroundHeight { get; set; }
+
+    [field: SerializeField]
+    public float FlyingHeight { get; set; }
 
     [field: Header("Animator")]
     [field: SerializeField]
@@ -50,8 +71,9 @@ namespace GameJam {
     private void Update() {
       float deltaTime = Time.deltaTime;
 
-      Vector3 direction = TargetToFollow.transform.position - transform.position;
-      direction.y = 0f;
+      Vector3 targetPosition = TargetToFollow.transform.position;
+      Vector3 direction = targetPosition - transform.position;
+      direction.y = 0;
 
       float distance = direction.magnitude;
       MovementState movementState;
@@ -70,14 +92,48 @@ namespace GameJam {
         movementState = MovementState.Idle;
       }
 
-      if (IsFlying) {
+      if (UpdateFlying(deltaTime)) {
         movementState = MovementState.Flying;
       }
 
       SparrowAnimator.SetMovementState(movementState);
 
-      Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
-      transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotateSpeed * deltaTime);
+      if (distance > BufferDistance) {
+        Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotateSpeed * deltaTime);
+      }
+    }
+
+    private bool UpdateFlying(float deltaTime) {
+      if (IsFlying) {
+        FlightTimeElapsed += deltaTime;
+
+        if (FlightTimeElapsed > FlightTimeMax) {
+          Debug.Log("Landing!");
+
+          IsFlying = false;
+          FlightTimeElapsed = 0f;
+        }
+      } else {
+        FlightTimeElapsed += deltaTime;
+
+        if (FlightTimeElapsed > GroundTimeMin) {
+          if (Random.Range(0f, 1f) < ChanceToFly) {
+            Debug.Log("Flying!");
+            IsFlying = true;
+          }
+
+          FlightTimeElapsed = 0f;
+        }
+      }
+
+      Vector3 targetLocalPosition = transform.localPosition;
+      float targetHeight = IsFlying ? FlyingHeight : GroundHeight;
+      targetLocalPosition.y = targetHeight;
+      transform.localPosition =
+          Vector3.Lerp(transform.localPosition, targetLocalPosition, deltaTime * (IsFlying ? FollowSpeed : FlySpeed));
+
+      return IsFlying || Mathf.Abs(transform.localPosition.y - targetHeight) > 0.1f;
     }
 
     public void OnInteract(GameObject interactAgent) {

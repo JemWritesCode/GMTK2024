@@ -7351,14 +7351,19 @@ MonoBehaviour:
   <CarryingCables>k__BackingField: []
   <TargetToFollow>k__BackingField: {fileID: 869713557}
   <BufferDistance>k__BackingField: 2
-  <RunDistance>k__BackingField: 3.5
+  <RunDistance>k__BackingField: 5
   <FollowSpeed>k__BackingField: 0.95
   <FollowRunSpeed>k__BackingField: 2
-  <RotateSpeed>k__BackingField: 10
+  <RotateSpeed>k__BackingField: 5
+  <IsFlying>k__BackingField: 0
+  <FlySpeed>k__BackingField: 3
+  <FlightTimeMax>k__BackingField: 15
+  <FlightTimeElapsed>k__BackingField: 0
+  <ChanceToFly>k__BackingField: 0.3
+  <GroundTimeMin>k__BackingField: 6
+  <GroundHeight>k__BackingField: -0.885
+  <FlyingHeight>k__BackingField: 0.1
   <SparrowAnimator>k__BackingField: {fileID: 1615909639}
-  IsRolling: -1181490662
-  IsWalking: 1282839668
-  IsMoving: 120489994
 --- !u!114 &1615909635
 MonoBehaviour:
   m_ObjectHideFlags: 0
