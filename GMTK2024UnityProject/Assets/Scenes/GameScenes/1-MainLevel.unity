@@ -3370,6 +3370,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 824037169898276130, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
+      propertyPath: IntegrityTicks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2424716733209661058, guid: 1004f2af9e2d4664e9a245961093d978, type: 3}
       propertyPath: m_Name
       value: FireWall
@@ -3753,7 +3757,7 @@ PrefabInstance:
       objectReference: {fileID: 69701273}
     - target: {fileID: 7366511450584147091, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: Levels.Array.data[5].UsersPerPortAtLevel
-      value: 3500
+      value: 4000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
