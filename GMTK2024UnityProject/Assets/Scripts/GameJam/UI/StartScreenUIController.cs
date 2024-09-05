@@ -35,6 +35,9 @@ namespace GameJam {
     [field: SerializeField]
     public Image CreditsButtonImage { get; private set; }
 
+    [field: SerializeField]
+    public IconLabelButton SpecialModeButton { get; private set; }
+
     [field: Header("Overlay")]
     [field: SerializeField]
     public Image LoadingOverlayImage { get; private set; }
@@ -45,6 +48,9 @@ namespace GameJam {
 
     [field: SerializeField]
     public SceneReference NovelScene { get; private set; }
+
+    [field: SerializeField]
+    public SceneReference SpecialScene { get; private set; }
 
     private void Awake() {
       DOTween.SetTweensCapacity(250, 250);
@@ -66,7 +72,8 @@ namespace GameJam {
           .Insert(0.5f, LogoAdvertisingGradient.transform.DOBlendableLocalMoveBy(new(0f, -50f, 0f), 2f).From(true))
           .Insert(0.6f, LogoAdelineGradient.transform.DOBlendableLocalMoveBy(new(0f, -30f, 0f), 2f).From(true))
           .Insert(0.7f, LogoBowGradient.transform.DOBlendableLocalMoveBy(new(0f, -20f, 0f), 1f).From(true))
-          .Insert(0.6f, StartButtonImage.rectTransform.DOBlendableLocalMoveBy(new(0f, 20f, 0f), 1f).From(true));
+          .Insert(0.6f, StartButtonImage.rectTransform.DOBlendableLocalMoveBy(new(0f, 20f, 0f), 1f).From(true))
+          .Insert(0.6f, SpecialModeButton.transform.DOBlendableLocalMoveBy(new(-20f, 0f, 0f), 1f).From(true));
 
       DOTween.Sequence()
           .SetTarget(gameObject)
@@ -98,6 +105,11 @@ namespace GameJam {
     public void OnStartButtonClick() {
       Cursor.lockState = CursorLockMode.Locked;
       LoadScene(GameScene);
+    }
+
+    public void OnSpecialButtonClick() {
+      Cursor.lockState = CursorLockMode.Locked;
+      LoadScene(SpecialScene);
     }
 
     private void LoadScene(SceneReference scene) {

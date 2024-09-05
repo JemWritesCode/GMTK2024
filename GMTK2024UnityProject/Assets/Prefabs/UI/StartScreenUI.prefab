@@ -653,6 +653,7 @@ MonoBehaviour:
   <StartButtonImage>k__BackingField: {fileID: 4280213125972616273}
   <SettingsButtonImage>k__BackingField: {fileID: 4546736610772106029}
   <CreditsButtonImage>k__BackingField: {fileID: 1534578626170206539}
+  <SpecialModeButton>k__BackingField: {fileID: 9010746926424595857}
   <LoadingOverlayImage>k__BackingField: {fileID: 9013582031514287551}
   <GameScene>k__BackingField:
     asset: {fileID: 102900000, guid: fed46f0bf882fbc43b3603b2c95a5bf0, type: 3}
@@ -660,6 +661,9 @@ MonoBehaviour:
   <NovelScene>k__BackingField:
     asset: {fileID: 102900000, guid: 597fcb23d82d4fa4ba979b92ed41dc01, type: 3}
     guid: 597fcb23d82d4fa4ba979b92ed41dc01
+  <SpecialScene>k__BackingField:
+    asset: {fileID: 102900000, guid: ec9404fb3a3dcec4b9de67708194b6f5, type: 3}
+    guid: ec9404fb3a3dcec4b9de67708194b6f5
 --- !u!1 &5236131328649443348
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,7 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectFactor: 0.71396327
+  m_EffectFactor: 0.9955742
   m_Width: 0.75
   m_Rotation: -25
   m_Softness: 1
@@ -1139,9 +1143,9 @@ GameObject:
   - component: {fileID: 5778632747663649267}
   - component: {fileID: 8604244881795388522}
   - component: {fileID: 2707375770553275227}
-  - component: {fileID: 8166866378640688055}
-  - component: {fileID: 2587850003405546992}
   - component: {fileID: 4405980917788828773}
+  - component: {fileID: 9010746926424595857}
+  - component: {fileID: 209508959684934224}
   m_Layer: 5
   m_Name: SpecialButton
   m_TagString: Untagged
@@ -1208,7 +1212,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8166866378640688055
+--- !u!114 &4405980917788828773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1217,17 +1221,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 6967220686921266896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e9a62536342827458813e1758d8b14b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0848bff101191904ead4bb831f7084db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BlurFactor: 1
+  m_Style: 1
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.69803923}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 0
+--- !u!114 &9010746926424595857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6967220686921266896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 327c02c5e6fac524d99f0c780bd69152, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ButtonRef>k__BackingField: {fileID: 209508959684934224}
   <Image>k__BackingField: {fileID: 2707375770553275227}
   <Label>k__BackingField: {fileID: 7092488324458720738}
   <Icon>k__BackingField: {fileID: 5399940345728396273}
   <TweenToDuration>k__BackingField: 0.3
-  <TweenToScale>k__BackingField: {x: 0.035, y: 0.035, z: 1}
+  <TweenToScale>k__BackingField: {x: 0.025, y: 0.025, z: 0}
+  <TweenToPosition>k__BackingField: {x: 2.5, y: -2.5, z: 0}
   <TweenToRotation>k__BackingField: {x: 0, y: 0, z: 0}
-  <TweenToColor>k__BackingField: {r: 0.8117647, g: 0.29164279, b: 0.28627458, a: 1}
---- !u!114 &2587850003405546992
+  <TweenToColor>k__BackingField: {r: 0.8117647, g: 0.2901961, b: 0.28627452, a: 1}
+--- !u!114 &209508959684934224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1236,11 +1259,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6967220686921266896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8214726fed1f647a4c98a71919f9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1271,23 +1294,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4405980917788828773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6967220686921266896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0848bff101191904ead4bb831f7084db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BlurFactor: 1
-  m_Style: 1
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.69803923}
-  m_EffectDistance: {x: 3, y: -3}
-  m_UseGraphicAlpha: 0
+  <OnPointerDownClick>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2100939559401763710}
+        m_TargetAssemblyTypeName: GameJam.StartScreenUIController, GameJam
+        m_MethodName: OnSpecialButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8027693605854209141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1321,7 @@ GameObject:
   - component: {fileID: 7630016059834641579}
   - component: {fileID: 7092488324458720738}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
