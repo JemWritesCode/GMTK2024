@@ -1,5 +1,10 @@
 ## Changelog
 
+### 1.2.1
+
+  * The friendly Sparrow no longer blocks your movement (collider disabled).
+  * Fixed a bug where certain ports would not de-highlight when disconnected.
+
 ### 1.2.0
 
   * Power and Data ports will now highlight when connected.
