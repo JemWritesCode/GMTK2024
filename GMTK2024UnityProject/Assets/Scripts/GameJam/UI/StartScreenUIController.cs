@@ -110,6 +110,8 @@ namespace GameJam {
     public void OnSpecialButtonClick() {
       Cursor.lockState = CursorLockMode.Locked;
       LoadScene(SpecialScene);
+
+      SpecialModeButton.enabled = false;
     }
 
     private void LoadScene(SceneReference scene) {

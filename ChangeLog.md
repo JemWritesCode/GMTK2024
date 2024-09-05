@@ -1,5 +1,10 @@
 ## Changelog
 
+### 1.3.0
+
+  * Slightly adjusted difficulty of later levels.
+  * Added a new 'Special Mode' to the Start Screen! Sparrow moved to appear in this new mode.
+
 ### 1.2.1
 
   * The friendly Sparrow no longer blocks your movement (collider disabled).
