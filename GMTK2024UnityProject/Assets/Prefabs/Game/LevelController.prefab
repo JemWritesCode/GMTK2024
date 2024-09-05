@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2599674881892001752}
   - component: {fileID: 9176777389321357275}
   - component: {fileID: 5759754823328228345}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LevelController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,10 +178,14 @@ MonoBehaviour:
   EnableVirusAttacks: 0
   DataCableDisconnectChance: 0.02
   virusEventSound: {fileID: 8300000, guid: cbc919ff3cc8d7d4a96af59e34f32ba5, type: 3}
+  minimumTimeBetweenViruses: 35
+  maximumTimeBetweenViruses: 45
+  timeOfLastVirus: 0
   EnableHamsterAttacks: 0
   HamstersPercent: 0.05
-  timeOfLastHamster: 0
   minimumTimeBetweenHamsters: 10
+  maximumTimeBetweenHamsters: 45
+  timeOfLastHamster: 0
   DroppedPackets: 0
   DropPacketsPercent: 0.5
   EnableSneezeAttacks: 0
@@ -189,6 +193,10 @@ MonoBehaviour:
   SneezeDropPercentDataCables: 0.2
   SneezeDropPercentPowerCables: 0.3
   sneezeEventSound: {fileID: 8300000, guid: 794bccb2455f1f240bc8c5cef405926e, type: 3}
+  minimumTimeBetweenSneezes: 35
+  maximumTimeBetweenSneezes: 45
+  timeOfLastSneeze: 0
+  firstSneezeCompleted: 0
 --- !u!82 &5759754823328228345
 AudioSource:
   m_ObjectHideFlags: 0

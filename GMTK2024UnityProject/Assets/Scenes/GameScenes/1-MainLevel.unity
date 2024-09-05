@@ -1595,14 +1595,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 132921613}
     m_Modifications:
+    - target: {fileID: 221259821562761193, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 629827374154537986, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 845830619456116686, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 858720916012434038, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315454929684124266, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868917848580071163, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2919116957122212826, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       propertyPath: m_Name
       value: Sparrow_LOD0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919116957122212826, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220649749427715642, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4579580695738256425, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3cdab92566abf994e9b00ff7d778167e, type: 2}
+    - target: {fileID: 5040927331314945865, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5522063727655563455, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.303
@@ -1650,6 +1686,22 @@ PrefabInstance:
     - target: {fileID: 6032076663051587653, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104561715665903665, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324151461670317738, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6888144131066138620, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609365130847635102, guid: 0c98f994f7df1f849858fd2d6de9b731, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3599,6 +3651,14 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 6817638361354391143, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817638361354391143, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6817638361354391144, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.366
@@ -3641,15 +3701,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817638361354391145, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: Sensitivity
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6817638361354391145, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: FOVKickAmount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6817638361354391145, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817638361354391145, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: FOVSensitivityMultiplier
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817638361354391146, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6817638361354391147, guid: 32fce1012f8c24c43af86f00f457f500, type: 3}
       propertyPath: m_Name
@@ -5159,7 +5227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1120641136}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
