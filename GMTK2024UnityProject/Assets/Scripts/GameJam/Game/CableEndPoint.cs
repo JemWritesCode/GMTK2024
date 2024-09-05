@@ -79,6 +79,7 @@ namespace GameJam {
     public void BreakConnection(bool playEffects) {
       if (IsConnected()) {
         Connection.BreakConnection();
+        Connection = default;
 
         if (playEffects) {
           PlayBreakConnectionEffects();
