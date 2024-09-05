@@ -26,6 +26,13 @@ MonoBehaviour:
   <AudioClip>k__BackingField: {fileID: 0}
   <AudioVolume>k__BackingField: 1
   <OnDialogStartEvents>k__BackingField:
-  - <EventName>k__BackingField: SparrowFollowPlayer
-    <EventDescription>k__BackingField: 
-    <EventType>k__BackingField: 1
+  - rid: 2853286664692563968
+  references:
+    version: 2
+    RefIds:
+    - rid: 2853286664692563968
+      type: {class: DSDialogEvent, ns: DS.Events, asm: Wafflus.DialogueSystem}
+      data:
+        <EventName>k__BackingField: SparrowFollowPlayer
+        <EventDescription>k__BackingField: 
+        <EventType>k__BackingField: 1
